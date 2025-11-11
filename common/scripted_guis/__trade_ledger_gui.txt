@@ -1,0 +1,380 @@
+scripted_gui = {
+	trade_ledger_window = {
+		context_type = player_context
+
+		window_name = "trade_ledger_window"
+		#dirty = caps_number_display
+		visible = {
+			is_ai = no
+			check_variable = { show_trade_ledger > 0 }
+			all_of_scopes = {
+				array = state_controlled_nodes
+				all_of = {
+					array = node_organizations
+					if = {
+						limit = {
+							NOT = {
+								is_in_array = {
+									array = temp_country_generated_trade_arary
+									value = v
+								}
+							}
+						}
+						add_to_temp_array = {
+							array = temp_country_generated_trade_arary
+							value = v
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				add_to_temp_array = {
+					array = temp_country_generated_trade_arary
+					value = 1
+				}
+				add_to_temp_array = {
+					array = temp_country_generated_trade_arary
+					value = 2
+				}
+				add_to_temp_array = {
+					array = temp_country_generated_trade_arary
+					value = 3
+				}
+				add_to_temp_array = {
+					array = temp_country_generated_trade_arary
+					value = 4
+				}
+				add_to_temp_array = {
+					array = temp_country_generated_trade_arary
+					value = 5
+				}
+			}
+		}
+		triggers = {
+			item_cost_click_enabled = {
+				set_temp_variable = { org_selector = selected_market_organization }
+				set_temp_variable = { caps_diff = v }
+				multiply_temp_variable = { caps_diff = -1 }
+				calculate_deal_percentage = yes
+				multiply_temp_variable = { caps_diff = temp_org_discount }
+				caps_cost_trigger = yes
+				custom_trigger_tooltip = {
+					meta_trigger = {
+						text = {
+							check_variable = {
+								[AMOUNT_VAR_NAME] > 249
+							}
+						}
+						AMOUNT_VAR_NAME = "[GetMarketAmountString]"
+					}
+					tooltip = "Organization Has 250 Equipment"
+				}
+				hidden_trigger = {
+					ROOT = {
+						set_temp_variable = { org_selector = selected_market_organization }
+						get_minimum_organization_opinion = yes
+						set_temp_variable = { temp_current_influence = current_minimum_organization_opinion }
+					}
+				}
+				custom_trigger_tooltip = {
+					meta_trigger = {
+						text = {
+							check_variable = {
+								var = temp_current_influence
+								value = [OPINION_ARRAY_NAME]^i
+								compare = greater_than_or_equals
+							}
+						}
+						OPINION_ARRAY_NAME = "global.organization_opinion_arary_[?selected_market_organization|0]"
+					}
+					tooltip = "minimum_opinion_purchase_tt"
+				}
+				custom_trigger_tooltip = {
+					meta_trigger = {
+						text = {
+							NOT = { has_country_flag = recent_transaction_with_[CURRENT_ORGANIZATION] }
+						}
+						CURRENT_ORGANIZATION = "[?selected_market_organization|0]"
+					}
+					tooltip = "recent_transaction_cooldown"
+				}
+				#always = no
+			}
+			item_sell_cost_click_enabled = {
+				set_temp_variable = { org_selector = selected_market_organization }
+				custom_trigger_tooltip = {
+					meta_trigger = {
+						text = {
+							check_variable = { num_equipment@[EQUIP_NAME][EQ_NAME2] > 250 }
+						}
+						###Due to 1.15 update, had to split the name of the equipment in half to avoid getting output as the loc string instead of as the equipment code
+						EQUIP_NAME = "[GetMarketEquipment]"
+						EQ_NAME2 = "[GetMarketEquipment2]"
+					}
+					tooltip = "At least 250 [GetMarketInventory] to sell"
+				}
+				custom_trigger_tooltip = {
+					meta_trigger = {
+						text = {
+							NOT = { has_country_flag = recent_transaction_with_[CURRENT_ORGANIZATION] }
+						}
+						CURRENT_ORGANIZATION = "[?selected_market_organization|0]"
+					}
+					tooltip = "recent_transaction_cooldown"
+				}
+			}
+		}
+		effects = {
+			close_button_click = {
+				clear_variable = show_trade_ledger
+				clear_variable = selected_market_organization
+				clear_array = temp_selected_org_inventory
+			}
+			org_name_click = {
+				if = {
+					limit = {
+						check_variable = { v = selected_market_organization }
+					}
+					clear_variable = selected_market_organization
+					clear_array = temp_selected_org_inventory
+				}
+				else = {
+					set_variable = { selected_market_organization = v }
+					pull_currently_selected_market_items = yes
+				}
+			}
+			### Buy Equipment
+			item_cost_click = {
+				hidden_effect = {
+					set_temp_variable = { org_selector = selected_market_organization }
+					###Actually Grant equipment
+					meta_effect = {
+						text = {
+							add_equipment_to_stockpile = {
+								type = [EQ_NAME][EQ_NAME2]
+								amount = 250
+								producer = USA
+							}
+						}
+						###Due to 1.15 update, had to split the name of the equipment in half to avoid getting output as the loc string instead of as the equipment code
+						EQ_NAME = "[GetMarketEquipment]"
+						EQ_NAME2 = "[GetMarketEquipment2]"
+					}
+					### Remove caps
+					### Calculate Discount
+					if = {
+						limit = {
+							calculate_deal_percentage = yes
+							always = yes
+						}
+						set_temp_variable = { caps_to_add = v }
+						set_temp_variable = { temp_caps_spend = caps_to_add }
+						multiply_temp_variable = { caps_to_add = -1 }
+						multiply_temp_variable = { caps_to_add = temp_org_discount }
+						transaction_caps = yes
+					}
+					### Remove Stock
+					meta_effect = {
+						text = {
+							add_to_variable = {
+								var = [AMOUNT_VAR_NAME]
+								value = -250
+							}
+						}
+						AMOUNT_VAR_NAME = "[GetMarketAmountString]"
+					}
+					log = "[GetMarketAmount]"
+					meta_effect = {
+						text = {
+							set_country_flag = {
+								flag = recent_transaction_with_[CURRENT_ORGANIZATION]
+								days = 40
+								value = 1
+							}
+						}
+						CURRENT_ORGANIZATION = "[?selected_market_organization|0]"
+					}
+				}
+				divide_temp_variable = { temp_caps_spend = 9 }
+				round_temp_variable = temp_caps_spend
+				set_temp_variable = { org_influence_amount = temp_caps_spend }
+				organization_add_influence = yes
+				set_temp_variable = { org_selector = selected_market_organization }
+				if = {
+					limit = {
+						check_variable = {
+							selected_market_organization = 1
+						}
+						OR = {
+							has_idea = currencytexdollar
+							TAG = RRG
+						}
+					}
+					add_opinion_modifier = {
+						target = TAA
+						modifier = taa_equipment
+					}
+					TAA = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = taa_equipment
+						}
+						meta_effect = {
+							text = {
+								add_equipment_to_stockpile = {
+									type = [EQ_NAME][EQ_NAME2]
+									amount = -250
+								}
+							}
+							EQ_NAME = "[GetMarketEquipment]"
+							EQ_NAME2 = "[GetMarketEquipment2]"
+						}
+						set_temp_variable = { caps_to_add = v }
+						multiply_temp_variable = { caps_to_add = temp_org_discount }
+						add_caps = yes
+					}
+				}
+			}
+			### Sell Equipment
+			item_sell_cost_click = {
+				hidden_effect = {
+					set_temp_variable = { org_selector = selected_market_organization }
+					meta_effect = {
+						text = {
+							add_equipment_to_stockpile = {
+								type = [EQ_NAME][EQ_NAME2]
+								amount = -250
+							}
+						}
+						### index is equip selector
+						#### value is equip base cost
+						###Due to 1.15 update, had to split the name of the equipment in half to avoid getting output as the loc string instead of as the equipment code
+						EQ_NAME = "[GetMarketEquipment]"
+						EQ_NAME2 = "[GetMarketEquipment2]"
+					}
+					###Add Caps
+					### Calculate Oversaturation/Deal
+					if = {
+						limit = {
+							calculate_deal_percentage = yes
+							always = yes
+						}
+						set_temp_variable = { caps_to_add = v }
+						set_temp_variable = { temp_caps_earned = caps_to_add }
+						multiply_temp_variable = { caps_to_add = 0.3 }
+						multiply_temp_variable = { caps_to_add = temp_org_bonus }
+						set_temp_variable = { caps_to_add_taa = caps_to_add }
+						meta_effect = {
+							text = {
+								set_temp_variable = {
+									var = current_inventory_org
+									value = [AMOUNT_VAR_NAME]
+								}
+							}
+							AMOUNT_VAR_NAME = "[GetMarketAmountString]"
+						}
+						### Divide to find % of 15000
+						divide_temp_variable = { current_inventory_org = 15000 }
+						set_temp_variable = { inventory_reduction = 1 }
+						subtract_from_temp_variable = { inventory_reduction = current_inventory_org }
+						### Add base of 10%
+						clamp_temp_variable = {
+							var = inventory_reduction
+							min = 0.1
+							max = 1.0
+						}
+						### Add multiplier
+						multiply_temp_variable = { temp_sell_price = inventory_reduction }
+						transaction_caps = yes
+					}
+
+					### Add stock
+					meta_effect = {
+						text = {
+							add_to_variable = {
+								var = [AMOUNT_VAR_NAME]
+								value = 250
+							}
+						}
+						AMOUNT_VAR_NAME = "[GetMarketAmountString]"
+					}
+					meta_effect = {
+						text = {
+							set_country_flag = {
+								flag = recent_transaction_with_[CURRENT_ORGANIZATION]
+								days = 40
+								value = 1
+							}
+						}
+						CURRENT_ORGANIZATION = "[?selected_market_organization|0]"
+					}
+				}
+				divide_temp_variable = { temp_caps_earned = 4 }
+				round_temp_variable = temp_caps_earned
+				set_temp_variable = { org_influence_amount = temp_caps_earned }
+				organization_add_influence = yes
+				if = {
+					limit = {
+						check_variable = {
+							selected_market_organization = 1
+						}
+						OR = {
+							has_idea = currencytexdollar
+							TAG = RRG
+						}
+					}
+					add_opinion_modifier = {
+						target = TAA
+						modifier = taa_equipment
+					}
+					TAA = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = taa_equipment
+						}
+						set_temp_variable = { org_selector = selected_market_organization }
+						meta_effect = {
+							text = {
+								add_equipment_to_stockpile = {
+									type = [EQ_NAME][EQ_NAME2]
+									amount = 250
+									producer = USA
+								}
+							}
+							EQ_NAME = "[GetMarketEquipment]"
+							EQ_NAME2 = "[GetMarketEquipment2]"
+						}
+						set_temp_variable = { caps_to_add = caps_to_add_taa }
+						multiply_temp_variable = { caps_to_add = -1 }
+						add_caps = yes
+					}
+				}
+			}
+		}
+		properties = {
+			item_picture = {
+				image = "[GetMarketIcon]"
+			}
+			entry_flag = {
+				image = "[GetGunRunnerMarketIcon]"
+			}
+		}
+		dynamic_lists = {
+			trade_ledger_gridbox = {
+				array = temp_selected_org_inventory
+				#array = global.nodes_states
+				entry_container = trade_ledger_entry
+				#change_scope = yes
+			}
+			organizations_gridbox = {
+				array = country_organizations
+				#array = global.nodes_states
+				entry_container = organization_entry
+				#change_scope = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,2950 @@
+focus_tree = {
+	id = texas_brotherhood_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 25
+			tag = TBH
+		}
+	}
+
+	default = no
+	shared_focus = tex_two_nations_one_system
+
+	focus = {
+		id = tbh_nf_rhombus_chase
+		icon = GFX_goal_TBH_startup_icon
+		cost = 7
+		x = 16
+		y = 0
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_rhombus_chase entered"
+			}
+			country_event = { id = nf_tbh.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_rhombus_chase exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_national_guard
+		icon = GFX_goal_TBH_startup_icon
+		cost = 7
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_rhombus_chase
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_chase
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_guard entered"
+			}
+			country_event = { id = nf_tbh.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_guard exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_texas_rangers
+		icon = GFX_goal_TBH_startup_icon
+		cost = 7
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_national_guard
+
+		prerequisite = {
+			focus = tbh_nf_national_guard
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_rangers entered"
+			}
+			country_event = { id = nf_tbh.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_rangers exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_rhombus_legacy
+		icon = GFX_goal_TBH_startup_icon
+		cost = 7
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_texas_rangers
+
+		prerequisite = {
+			focus = tbh_nf_texas_rangers
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_rhombus_legacy entered"
+			}
+			country_event = { id = nf_tbh.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_rhombus_legacy exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_development_1
+		icon = GFX_goal_generic_sledgehammers
+		cost = 40
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_1 entered"
+			}
+			892 = {
+				add_extra_state_shared_building_slots = 3
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = industrial_complex level = 1 } }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_1 exited"
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+
+	focus = {
+		id = tbh_nf_development_2
+		icon = GFX_goal_generic_slums_focus
+		cost = 40
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_2 entered"
+			}
+			911 = {
+				add_extra_state_shared_building_slots = 3
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = industrial_complex level = 1 } }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_2 exited"
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+
+	focus = {
+		id = tbh_nf_doctrinal_thought
+		icon = GFX_goal_generic_helm_army_2
+		cost = 40
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_doctrinal_thought entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = caf_land_doctrine_xp
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_doctrinal_thought exited"
+			}
+		}
+		ai_will_do = {
+			factor = 0.75
+		}
+	}
+
+	focus = {
+		id = tbh_nf_doctrinal_thought_2
+		icon = GFX_goal_generic_books
+		cost = 40
+		x = 0
+		y = 3
+
+		relative_position_id = tbh_nf_doctrinal_thought
+
+		prerequisite = {
+			focus = tbh_nf_roots_new_recruits
+			focus = tbh_nf_shores_new_vehicles
+			focus = tbh_nf_roots_new_weapons
+			focus = tbh_nf_shores_new_tactics
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_doctrinal_thought
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_doctrinal_thought entered"
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_naval_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = caf_land_doctrine_xp
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_doctrinal_thought exited"
+			}
+		}
+	}
+
+	# Buisness as usual
+	focus = {
+		id = tbh_nf_our_path_roots
+		icon = GFX_goal_TBH_rusk
+		cost = 30
+		x = -2
+		y = 3
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_our_path_new_shores
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_roots entered"
+			}
+			swap_ideas = {
+				remove_idea = tbh_military_heritage
+				add_idea = tbh_military_heritage_a
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_roots exited"
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = tbh_nf_roots_new_recruits
+		icon = GFX_goal_generic_helm_army
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_our_path_roots
+
+		prerequisite = {
+			focus = tbh_nf_our_path_roots
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_roots_new_recruits entered"
+			}
+			add_ideas = tbh_new_recruits
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_roots_new_recruits exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_roots_new_weapons
+		icon = GFX_goal_generic_rifle_1
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_our_path_roots
+
+		prerequisite = {
+			focus = tbh_nf_our_path_roots
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_roots_new_weapons entered"
+			}
+			add_tech_bonus = {
+				name = infantry_weapons_tech_category_bonus
+				bonus = 0.4
+				uses = 2
+				category = infantry_weapons_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_roots_new_weapons exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_our_path_roots_2
+		icon = GFX_goal_TBH_rusk
+		cost = 60
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_our_path_roots
+
+		prerequisite = {
+			focus = tbh_nf_roots_new_weapons
+			focus = tbh_nf_roots_new_recruits
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_roots_2 entered"
+			}
+			swap_ideas = {
+				remove_idea = tbh_military_heritage_a
+				add_idea = tbh_military_heritage_aa
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_roots_2 exited"
+			}
+		}
+	}
+
+	# Reforms
+	focus = {
+		id = tbh_nf_our_path_new_shores
+		icon = GFX_goal_BOS_victory_or_death
+		cost = 30
+		x = 2
+		y = 3
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_our_path_roots
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_new_shores entered"
+			}
+			swap_ideas = {
+				remove_idea = tbh_military_heritage
+				add_idea = tbh_military_heritage_b
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_new_shores exited"
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = tbh_nf_shores_new_tactics
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_our_path_new_shores
+
+		prerequisite = {
+			focus = tbh_nf_our_path_new_shores
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_shores_new_tactics entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = cat_land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_shores_new_tactics exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_shores_new_vehicles
+		icon = GFX_goal_generic_nice_car
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_our_path_new_shores
+
+		prerequisite = {
+			focus = tbh_nf_our_path_new_shores
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_shores_new_vehicles entered"
+			}
+			add_tech_bonus = {
+				name = vehicle_tech_category_bonus
+				bonus = 0.4
+				uses = 2
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_shores_new_vehicles exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_our_path_new_shores_2
+		icon = GFX_goal_generic_BOS_focus_combined_operations
+		cost = 60
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_our_path_new_shores
+
+		prerequisite = {
+			focus = tbh_nf_shores_new_vehicles
+			focus = tbh_nf_shores_new_tactics
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_new_shores_2 entered"
+			}
+			swap_ideas = {
+				remove_idea = tbh_military_heritage_b
+				add_idea = tbh_military_heritage_bb
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_path_new_shores_2 exited"
+			}
+		}
+	}
+
+	# Protect the wasteland
+	focus = {
+		id = tbh_nf_protector_of_texas
+		icon = GFX_goal_generic_lever_action
+		cost = 30
+		x = 0
+		y = 5
+
+		relative_position_id = tbh_nf_doctrinal_thought
+
+		prerequisite = {
+			focus = tbh_nf_our_path_new_shores_2
+			focus = tbh_nf_our_path_roots_2
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_protector_of_texas entered"
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = tbh_lawkeepers_tech_1 }
+				}
+				set_technology = {
+					tbh_lawkeepers_tech_1 = 1
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_1
+						NOT = { has_tech = tbh_lawkeepers_tech_2 }
+					}
+					set_technology = {
+						tbh_lawkeepers_tech_2 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_2
+						NOT = { has_tech = tbh_lawkeepers_tech_3 }
+					}
+					set_technology = {
+						tbh_lawkeepers_tech_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_3
+					}
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 1
+						category = cat_land_doctrine
+					}
+					add_doctrine_cost_reduction = {
+						cost_reduction = 0.5
+						uses = 1
+						category = caf_land_doctrine_xp
+					}
+				}
+			}
+			swap_ideas = {
+				remove_idea = tbh_texas_rangers
+				add_idea = tbh_keepers_of_law
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_protector_of_texas exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_development_3
+		icon = GFX_goal_generic_workshop
+		cost = 40
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_protector_of_texas
+
+		prerequisite = {
+			focus = tbh_nf_protector_of_texas
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_3 entered"
+			}
+			892 = {
+				add_extra_state_shared_building_slots = 3
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = industrial_complex level = 1 } }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_3 exited"
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+
+	focus = {
+		id = tbh_nf_development_4
+		icon = GFX_goal_generic_megaloader
+		cost = 40
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_development_3
+
+		prerequisite = {
+			focus = tbh_nf_development_3
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_4 entered"
+			}
+			911 = {
+				add_extra_state_shared_building_slots = 3
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = industrial_complex level = 1 } }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_development_4 exited"
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+
+	# Hand gang wins focus line
+	focus = {
+		id = tbh_nf_we_have_been_betrayed
+		icon = GFX_goal_MOJ_technology_raids
+		cost = 30
+		x = -17
+		y = 1
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+		relative_position_id = tbh_nf_rhombus_legacy
+		available = {
+			OR = {
+				LNS = { has_completed_focus = lns_victory_for_the_greater_good }
+				has_idea = gamerule_unifier_idea
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_we_have_been_betrayed entered"
+			}
+			add_political_power = 250
+			add_stability = -0.2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_we_have_been_betrayed exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_to_hell_with_texas
+		icon = GFX_goal_MOJ_gun_runner_caravan_raids
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_we_have_been_betrayed
+
+		prerequisite = {
+			focus = tbh_nf_we_have_been_betrayed
+		}
+
+		available = {
+			NOT = { LNS = { has_government = people } }
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_steady_as_she_goes_texas
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_to_hell_with_texas entered"
+			}
+			if = {
+				limit = {
+					has_idea = brotherhood_elder_conflicts
+				}
+				remove_ideas = brotherhood_elder_conflicts
+			}
+			add_war_support = 0.2
+			add_manpower = 500
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = TBH
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_to_hell_with_texas exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_steady_as_she_goes_texas
+		icon = GFX_goal_generic_texas1
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_we_have_been_betrayed
+
+		prerequisite = {
+			focus = tbh_nf_we_have_been_betrayed
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_to_hell_with_texas
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_steady_as_she_goes_texas entered"
+			}
+			add_stability = 0.05
+			LNS = {
+				add_ideas = tbh_will_come_for_us
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_steady_as_she_goes_texas exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_our_future
+		icon = GFX_goal_generic_power_armour_t51
+		cost = 30
+		x = 0
+		y = 3
+
+		relative_position_id = tbh_nf_we_have_been_betrayed
+
+		prerequisite = {
+			focus = tbh_nf_to_hell_with_texas
+			focus = tbh_nf_steady_as_she_goes_texas
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_future entered"
+			}
+			add_stability = 0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_future exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_fortress_brotherhood
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_our_future
+
+		prerequisite = {
+			focus = tbh_nf_our_future
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_to_hell_with_texas
+			NOT = { LNS = { has_government = people } }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_fortress_brotherhood entered"
+			}
+			add_ideas = bunkerblues
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_fortress_brotherhood exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_fortress_texas
+		icon = GFX_goal_generic_mountain_fortress
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_our_future
+
+		prerequisite = {
+			focus = tbh_nf_our_future
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_steady_as_she_goes_texas
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_fortress_texas entered"
+			}
+			add_stability = 0.05
+			every_state = {
+				limit = { is_core_of = TBH }
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_fortress_texas exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_texas_our_dreams_and_hopes
+		icon = GFX_goal_generic_texas2
+		cost = 40
+		x = -1
+		y = 6
+
+		relative_position_id = tbh_nf_we_have_been_betrayed
+
+		prerequisite = {
+			focus = tbh_nf_fortress_texas
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_texas_old_world_blues
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes entered"
+			}
+			add_timed_idea = {
+				idea = tbh_tex_patriots
+				days = 360
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_texas_old_world_blues
+		icon = GFX_goal_MOJ_paladin_thought
+		cost = 40
+		x = 1
+		y = 6
+
+		relative_position_id = tbh_nf_we_have_been_betrayed
+
+		prerequisite = {
+			focus = tbh_nf_fortress_brotherhood
+		}
+
+		available = {
+			NOT = { LNS = { has_government = people } }
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_texas_our_dreams_and_hopes
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_old_world_blues entered"
+			}
+			add_ideas = {
+				outsider_law_none
+				mutant_law_none
+				officer_law_military_academy
+				training_law_military_academy
+				tbh_paladin_conscription_law
+			}
+			remove_ideas = TBH_idea_lns_advisors
+			remove_dynamic_modifier = {
+				modifier = texan_economic_union
+			}
+			give_military_access = ACH
+			leave_current_faction = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_old_world_blues exited"
+			}
+		}
+	}
+
+	# LNS restauration
+	focus = {
+		id = tbh_nf_lonestar_exodus
+		icon = GFX_goal_generic_infrastructure2
+		cost = 40
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_texas_our_dreams_and_hopes
+
+		prerequisite = {
+			focus = tbh_nf_texas_our_dreams_and_hopes
+		}
+
+		prerequisite = {
+			focus = tbh_nf_protector_of_texas
+		}
+
+		prerequisite = {
+			focus = tbh_nf_consolidate_conquests
+		}
+
+		available = {
+			NOT = { has_idea = tbh_torn_leadership }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes entered"
+			}
+			add_timed_idea = {
+				idea = tbh_lns_refugees
+				days = 360
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_lonestar_reconquest
+		icon = GFX_goal_LNS_rising_star
+		cost = 40
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_lonestar_exodus
+
+		prerequisite = {
+			focus = tbh_nf_lonestar_exodus
+		}
+		bypass = {
+			LNS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = LNS
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes entered"
+			}
+			LNS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_restore_the_lone_star
+		icon = GFX_goal_LNS_Victory_Lone
+		cost = 40
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_lonestar_reconquest
+
+		prerequisite = {
+			focus = tbh_nf_lonestar_reconquest
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_restore_the_lone_star entered"
+			}
+			release = LNS
+			hidden_effect = {
+				LNS = {
+					leave_current_faction = yes
+					complete_national_focus = lns_victory_of_the_greater_good
+					complete_national_focus = lns_rekindle_economic_union
+					complete_national_focus = tex_two_nations_one_system
+					complete_national_focus = lns_develop_join_arms_production
+					complete_national_focus = lns_announce_fiscal_reform
+					complete_national_focus = lns_expand_inter_nation_inf
+					set_politics = {
+						ruling_party = people
+					}
+					set_popularities = {
+						elites = 5
+						people = 75
+						intellectuals = 15
+						ruler = 5
+					}
+					add_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+			}
+			if = {
+				limit = {
+					texan_economic_union_exists = yes
+					NOT = { TBH = { is_in_faction_with = LNS } }
+					TBH = { is_texan_economic_union_member = yes }
+				}
+				LNS = {
+					join_texan_economic_union = yes
+				}
+			}
+			else_if = {
+				limit = {
+					texan_economic_union_exists = no
+					NOT = { TBH = { is_in_faction_with = LNS } }
+				}
+				create_or_join_texan_economic_union = yes
+				LNS = {
+					join_texan_economic_union = yes
+				}
+			}
+			custom_effect_tooltip = tbh_lns_restauration
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_restore_the_lone_star exited"
+			}
+		}
+	}
+
+	# War Branch, wargoals, coring that kinda stuff, some mil developments
+	focus = {
+		id = tbh_nf_listening_posts
+		icon = GFX_goal_generic_thing
+		cost = 30
+		x = 12
+		y = 1
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		available = {
+			OR = {
+				has_completed_focus = tbh_nf_our_path_new_shores
+				has_completed_focus = tbh_nf_our_path_roots
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_listening_posts entered"
+			}
+			if = {
+				limit = {
+					has_tech = radio_detection
+					NOT = { has_tech = decimetric_radar }
+				}
+				set_technology = { decimetric_radar = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = radio_detection }
+				}
+				set_technology = {
+					radio_detection = 1
+					decimetric_radar = 1
+				}
+			}
+			895 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			896 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			894 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_listening_posts exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_national_excersizes
+		icon = GFX_KHA_focus_army_1
+		cost = 30
+		x = -4
+		y = 2
+
+		relative_position_id = tbh_nf_listening_posts
+
+		prerequisite = {
+			focus = tbh_nf_listening_posts
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes entered"
+			}
+			army_experience = 35
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes exited"
+			}
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}
+
+	focus = {
+		id = tbh_nf_national_excersizes_2
+		icon = GFX_goal_NCR_Infantry_Drills
+		cost = 45
+		x = -2
+		y = 1
+
+		relative_position_id = tbh_nf_listening_posts
+
+		prerequisite = {
+			focus = tbh_nf_listening_posts
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_2 entered"
+			}
+			army_experience = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_2 exited"
+			}
+		}
+		ai_will_do = {
+			base = 0.25
+			modifier = {
+				factor = 5
+				NOT = { has_completed_focus = tbh_nf_the_hard_road }
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_national_excersizes_3
+		icon = GFX_goal_NCR_Infantry_Drills
+		cost = 45
+		x = 2
+		y = 1
+
+		relative_position_id = tbh_nf_listening_posts
+
+		prerequisite = {
+			focus = tbh_nf_listening_posts
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_3 entered"
+			}
+			army_experience = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_3 exited"
+			}
+		}
+		ai_will_do = {
+			base = 0.25
+			modifier = {
+				factor = 5
+				NOT = { has_completed_focus = tbh_nf_the_hard_road }
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_national_excersizes_4
+		icon = GFX_KHA_focus_army_1
+		cost = 30
+		x = 4
+		y = 2
+
+		relative_position_id = tbh_nf_listening_posts
+
+		prerequisite = {
+			focus = tbh_nf_listening_posts
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_4 entered"
+			}
+			army_experience = 35
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_4 exited"
+			}
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}
+
+	# Tubeheads
+	focus = {
+		id = tbh_nf_mister_entertainment
+		icon = GFX_goal_TBH_entertainment
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_listening_posts
+
+		prerequisite = {
+			focus = tbh_nf_listening_posts
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mister_entertainment entered"
+			}
+			country_event = { id = nf_tbh.5 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mister_entertainment exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_a_mutually_benefitial_deal
+		icon = GFX_goal_generic_radio
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_mister_entertainment
+
+		prerequisite = {
+			focus = tbh_nf_mister_entertainment
+		}
+
+		bypass = {
+			NOT = { country_exists  = TUB }
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			add_stability = 0.05
+			add_war_support = 0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_assasin_city_rumble
+		icon = GFX_goal_TBH_assasinate_assasains
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_a_mutually_benefitial_deal
+
+		prerequisite = {
+			focus = tbh_nf_a_mutually_benefitial_deal
+		}
+
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		will_lead_to_war_with = ASS
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			if = {
+				limit = { TUB = { is_subject_of = TBH } }
+				TUB = { country_event = { id = nf_tbh.7 } }
+			}
+			else = {
+				ASS = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {	# This focus is handled in the strategy plan, this is a backup
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = tbh_nf_of_gators_and_maws
+		icon = GFX_goal_TBH_gatormaws
+		cost = 30
+		x = 2
+		y = 1
+
+		relative_position_id = tbh_nf_a_mutually_benefitial_deal
+
+		prerequisite = {
+			focus = tbh_nf_a_mutually_benefitial_deal
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_the_question_of_carthage
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			OR = {
+				TPM = {
+					GAM = {
+					all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+					}
+			}
+		}
+		will_lead_to_war_with = GAM
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			GAM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = tbh_nf_desperado_no_more }
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_taming_the_jungle
+		icon = GFX_goal_TBH_taming_the_jungle
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_of_gators_and_maws
+
+		prerequisite = {
+			focus = tbh_nf_of_gators_and_maws
+		}
+
+		available = {
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		bypass = {
+			TPM = {
+				GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			#every_state = {
+			#	limit = {
+			#		is_core_of = GAM
+			#	}
+			#	add_core_of = ROOT
+			#}
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 874
+			}
+			add_resource = {
+				type = water
+				amount = 8
+				state = 874
+			}
+			add_resource = {
+				type = energy
+				amount = 4
+				state = 874
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+
+	focus = {
+		id = tbh_nf_desperado_no_more
+		icon = GFX_goal_TBH_desperados_no_more
+		cost = 30
+		x = -2
+		y = 1
+
+		relative_position_id = tbh_nf_a_mutually_benefitial_deal
+
+		prerequisite = {
+			focus = tbh_nf_a_mutually_benefitial_deal
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_the_question_of_carthage
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			DSP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = DSP
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			DSP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = tbh_nf_the_question_of_carthage }
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_desperado_for_law
+		icon = GFX_goal_TBH_desperados_for_law
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_desperado_no_more
+
+		prerequisite = {
+			focus = tbh_nf_desperado_no_more
+		}
+
+		available = {
+			DSP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			#every_state = {
+			#	limit = {
+			#		is_core_of = DSP
+			#	}
+			#	add_core_of = ROOT
+			#}
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 871
+			}
+			add_resource = {
+				type = water
+				amount = 8
+				state = 871
+			}
+			add_resource = {
+				type = energy
+				amount = 4
+				state = 871
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+
+	focus = {
+		id = tbh_nf_the_question_of_carthage
+		icon = GFX_goal_TBH_question_of_carthage
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_a_mutually_benefitial_deal
+
+		prerequisite = {
+			focus = tbh_nf_a_mutually_benefitial_deal
+		}
+
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			CAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CAR
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			# country_event = { id = nf_tbh.8 }
+			CAR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {		# This focus is handled in the strategy plan, this is a backup
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = tbh_nf_assasin_city_rumble }
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_approach_the_patrolmen
+		icon = GFX_goal_TBH_approach_patrolmen
+		cost = 30
+		x = -1
+		y = 2
+
+		relative_position_id = tbh_nf_consolidate_conquests
+
+		prerequisite = {
+			focus = tbh_nf_consolidate_conquests
+		}
+
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			TPM = {
+				OR = {
+					people < 0.10
+					ruler > 0.60
+					NOT = {
+						has_government = people
+					}
+				}
+			}
+		}
+
+		bypass = {
+			OR = {
+			NOT = { country_exists  = TPM }
+			TPM = {	all_core_land_owned_by_prev_sphere = yes }
+			has_country_flag = tbh_accepted_offer
+		}
+	}
+		will_lead_to_war_with = TPM
+		completion_reward = {
+			if = {
+				limit = {
+				OR = {
+				TBH = {
+					has_country_flag = tbh_denied_offer
+				}
+				TPM = {
+					has_country_flag = tpm_WAR_WAR_WAR
+					}
+				}
+			}
+			TPM = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			else = {
+				country_event = { id = nf_tbh.9 }
+			}
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+
+	focus = {
+		id = tbh_nf_consolidate_conquests
+		icon = GFX_goal_TBH_flag_gear
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_the_question_of_carthage
+
+		prerequisite = {
+			focus = tbh_nf_desperado_for_law
+		}
+		prerequisite = {
+			focus = tbh_nf_taming_the_jungle
+		}
+		prerequisite = {
+			focus = tbh_nf_the_question_of_carthage
+		}
+		prerequisite = {
+			focus = tbh_nf_assasin_city_rumble
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_consolidate_conquests entered"
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = tbh_lawkeepers_tech_1 }
+				}
+				set_technology = {
+					tbh_lawkeepers_tech_1 = 1
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_1
+						NOT = { has_tech = tbh_lawkeepers_tech_2 }
+					}
+					set_technology = {
+						tbh_lawkeepers_tech_2 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_2
+						NOT = { has_tech = tbh_lawkeepers_tech_3 }
+					}
+					set_technology = {
+						tbh_lawkeepers_tech_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_3
+					}
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 1
+						category = cat_land_doctrine
+					}
+					add_doctrine_cost_reduction = {
+						cost_reduction = 0.5
+						uses = 1
+						category = caf_land_doctrine_xp
+					}
+				}
+				add_ideas = tbh_consolidated_conquests
+			}
+
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_consolidate_conquests exited"
+			}
+		}
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	# Form Texas
+	focus = {
+		id = tbh_nf_form_texas_yehaw
+		icon = GFX_goal_uoa_texas
+		cost = 60
+		x = 0
+		y = 13
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_protector_of_texas
+		}
+		prerequisite = {
+			focus = tbh_nf_consolidate_conquests
+		}
+		prerequisite = {
+			focus = tbh_nf_all_systems_ready
+		}
+		prerequisite = {
+			focus = tbh_nf_things_that_make
+		}
+		prerequisite = {
+			focus = tex_union_economic_boom
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = tex_owns_controlls_all_lns_states
+				all_state = {
+					OR = {
+						NOT = { is_core_of = LNS }
+						owner = {
+							has_dynamic_modifier = {
+								modifier = texan_economic_union
+							}
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tex_owns_controlls_all_tbh_states
+				all_state = {
+					OR = {
+						NOT = { is_core_of = TBH }
+						owner = {
+							has_dynamic_modifier = {
+								modifier = texan_economic_union
+							}
+						}
+					}
+				}
+			}
+			has_dynamic_modifier = {
+				modifier = texan_economic_union
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					LNS = { is_ai = no }
+				}
+				always = no
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_form_texas_yehaw entered"
+			}
+			country_event = nf_texas.500
+			set_country_flag = formed_texas
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_form_texas_yehaw exited"
+			}
+		}
+	}
+
+	# The deal with ACH
+	focus = {
+		id = tbh_nf_broken_apart
+		icon = GFX_goal_TBH_two_coins
+		cost = 40
+		x = 5
+		y = 1
+
+		relative_position_id = tbh_nf_protector_of_texas
+
+		prerequisite = {
+			focus = tbh_nf_protector_of_texas
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = complete_when_alamo_is_there
+				always = no
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_broken_apart entered"
+			}
+			custom_effect_tooltip = tbh_adress_alamo_chapter_tt
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_broken_apart exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_the_hard_road
+		icon = GFX_goal_generic_dark_paladins
+		cost = 40
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_broken_apart
+
+		mutually_exclusive = {
+			focus = tbh_nf_the_long_road
+			focus = tbh_nf_the_alamo_was_right
+		}
+
+		continue_if_invalid = yes
+
+		select_effect = {
+			army_experience  = -200
+		}
+
+		cancelable = no
+
+		prerequisite = {
+			focus = tbh_nf_broken_apart
+		}
+
+		available = {
+			OR = {
+				has_army_experience > 199
+				AND = {
+					has_completed_focus = tbh_nf_protector_of_texas
+					has_completed_focus = tbh_nf_mobilization_2
+				}
+				has_completed_focus = tbh_nf_consolidate_conquests
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_the_hard_road entered"
+			}
+			add_timed_idea = {
+				idea = tbh_the_hard_road
+				days = 60
+			}
+			remove_ideas = tbh_torn_leadership
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_the_hard_road exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_the_long_road
+		icon = GFX_goal_generic_f76_player3
+		cost = 40
+		x = -2
+		y = 1
+
+		relative_position_id = tbh_nf_broken_apart
+
+		mutually_exclusive = {
+			focus = tbh_nf_the_hard_road
+			focus = tbh_nf_the_alamo_was_right
+		}
+
+		continue_if_invalid = yes
+
+		prerequisite = {
+			focus = tbh_nf_broken_apart
+		}
+
+		select_effect = {
+			army_experience  = -200
+		}
+
+		cancelable = no
+
+		available = {
+			OR = {
+				has_army_experience > 199
+				AND = {
+					has_completed_focus = tbh_nf_protector_of_texas
+					has_completed_focus = tbh_nf_mobilization_2
+				}
+				has_completed_focus = tbh_nf_consolidate_conquests
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_the_long_road entered"
+			}
+			add_timed_idea = {
+				idea = tbh_the_long_road
+				days = 360
+			}
+			remove_ideas = tbh_torn_leadership
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_the_long_road exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_the_alamo_was_right
+		icon = GFX_goal_focus_alamo_ach
+		cost = 40
+		x = 2
+		y = 1
+
+		relative_position_id = tbh_nf_broken_apart
+
+		prerequisite = {
+			focus = tbh_nf_broken_apart
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_the_hard_road
+			focus = tbh_nf_the_long_road
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_we_have_been_betrayed
+			country_exists = ACH
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					LNS = { is_ai = yes }
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			ACH = {
+				puppet = TBH
+			}
+			remove_ideas = tbh_torn_leadership
+			set_technology = {
+				electronics_tech_level_scientific = 1
+				power_armour_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+			ACH = {
+				country_event = nf_event_ach.107
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_combat_our_deficits
+		icon = GFX_goal_TBH_T51
+		cost = 40
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_broken_apart
+
+		prerequisite = {
+			focus = tbh_nf_the_hard_road
+			focus = tbh_nf_the_long_road
+			focus = tbh_nf_the_alamo_was_right
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_combat_our_deficits entered"
+			}
+			swap_ideas = {
+				remove_idea = provisions_for_protection
+				add_idea = low_economic_mobilisation
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_combat_our_deficits exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_all_systems_ready
+		icon = GFX_goal_TBH_flag_gear
+		cost = 40
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_combat_our_deficits
+
+		prerequisite = {
+			focus = tbh_nf_combat_our_deficits
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_all_systems_ready entered"
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = tbh_lawkeepers_tech_1 }
+				}
+				set_technology = {
+					tbh_lawkeepers_tech_1 = 1
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_1
+						NOT = { has_tech = tbh_lawkeepers_tech_2 }
+					}
+					set_technology = {
+						tbh_lawkeepers_tech_2 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_2
+						NOT = { has_tech = tbh_lawkeepers_tech_3 }
+					}
+					set_technology = {
+						tbh_lawkeepers_tech_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = tbh_lawkeepers_tech_3
+					}
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 1
+						category = cat_land_doctrine
+					}
+					add_doctrine_cost_reduction = {
+						cost_reduction = 0.5
+						uses = 1
+						category = caf_land_doctrine_xp
+					}
+				}
+			}
+			add_command_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_all_systems_ready exited"
+			}
+		}
+	}
+
+	# Random Ideas Davy Crocket
+	focus = {
+		id = tbh_nf_our_fatman
+		icon = GFX_goal_generic_nuka_break_nuke
+		cost = 40
+		x = -4
+		y = 1
+
+		relative_position_id = tbh_nf_protector_of_texas
+
+		prerequisite = {
+			focus = tbh_nf_protector_of_texas
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_fatman entered"
+			}
+			set_technology = {
+				mininuke_unlock_tech = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_our_fatman exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_things_that_go_boom
+		icon = GFX_goal_generic_grenade_launcher
+		cost = 40
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_our_fatman
+
+		prerequisite = {
+			focus = tbh_nf_our_fatman
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_things_that_spit_lead
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_go_boom entered"
+			}
+			if = {
+				limit = { has_idea = tbh_military_heritage_bb }
+				swap_ideas = {
+					remove_idea = tbh_military_heritage_bb
+					add_idea = tbh_military_heritage_bbdemo
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = tbh_military_heritage_aa
+						add_idea = tbh_military_heritage_aademo
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_go_boom exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_things_that_spit_lead
+		icon = GFX_goal_generic_minigun
+		cost = 40
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_our_fatman
+
+		prerequisite = {
+			focus = tbh_nf_our_fatman
+		}
+
+		mutually_exclusive = {
+			focus = tbh_nf_things_that_go_boom
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead entered"
+			}
+			if = {
+				limit = { has_idea = tbh_military_heritage_bb }
+				swap_ideas = {
+					remove_idea = tbh_military_heritage_bb
+					add_idea = tbh_military_heritage_bbfire
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = tbh_military_heritage_aa
+						add_idea = tbh_military_heritage_aafire
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_things_that_protect
+		icon = GFX_goal_generic_power_armor_blue
+		cost = 40
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_our_fatman
+
+		prerequisite = {
+			focus = tbh_nf_things_that_spit_lead
+			focus = tbh_nf_things_that_go_boom
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_protect entered"
+			}
+			add_tech_bonus = {
+				uses = 2
+				bonus = 0.4
+				category = spec_force_equipment_tech_category
+				category = power_armor_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_protect exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_things_that_make
+		icon = GFX_goal_generic_workshop
+		cost = 40
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_things_that_protect
+
+		prerequisite = {
+			focus = tbh_nf_things_that_protect
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_make entered"
+			}
+			add_tech_bonus = {
+				uses = 3
+				bonus = 0.25
+				category = industry_specialisation_category
+				category = tool_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_make exited"
+			}
+		}
+	}
+
+	#focus = {
+	#	id = tbh_nf_adventurer_extraordinare
+	#	icon = GFX_goal_generic_building_focus
+	#	cost = 30
+	#	x = -5
+	#	y = 1
+
+	#	relative_position_id = tbh_nf_rhombus_legacy
+
+	#	prerequisite = {
+	#		focus = tbh_nf_rhombus_legacy
+	#	}
+
+	#	available = {
+	#	}
+
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare entered"
+	#		}
+	#		custom_effect_tooltip = tbh_davy_crocket_adventures_tt
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare exited"
+	#		}
+	#	}
+	#}
+
+	#focus = {
+	#	id = tbh_nf_adventurer_extraordinare_2
+	#	icon = GFX_goal_generic_building_focus
+	#	cost = 30
+	#	x = 0
+	#	y = 1
+
+	#	relative_position_id = tbh_nf_adventurer_extraordinare
+
+	#	prerequisite = {
+	#		focus = tbh_nf_adventurer_extraordinare
+	#	}
+
+	#	available = {
+	#	}
+
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare_2 entered"
+	#		}
+	#		add_ideas = tbh_davy_crocket_adventures
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare_2 exited"
+	#		}
+	#	}
+	#}
+
+	focus = {
+		id = tbh_nf_occupation_theory
+		icon = GFX_goal_generic_pipe_revolver
+		cost = 40
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_protector_of_texas
+
+		prerequisite = {
+			focus = tbh_nf_protector_of_texas
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare entered"
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 500
+				producer = TBH
+			}
+			swap_ideas = {
+				remove_idea = tbh_keepers_of_law
+				add_idea = tbh_keepers_of_law_2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_occupation_theory_2
+		icon = GFX_goal_revolver
+		cost = 40
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_occupation_theory
+
+		prerequisite = {
+			focus = tbh_nf_occupation_theory
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare_2 entered"
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 300
+				producer = TBH
+			}
+			swap_ideas = {
+				remove_idea = tbh_keepers_of_law_2
+				add_idea = tbh_keepers_of_law_3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_adventurer_extraordinare_2 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = tbh_nf_mobilization
+		icon = GFX_goal_TBH_conscription_4
+		cost = 30
+		x = -4
+		y = 1
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		available = {
+			OR = {
+				AND = {
+					OR = {
+						has_completed_focus = tbh_nf_our_path_new_shores_2
+						has_completed_focus = tbh_nf_our_path_roots_2
+					}
+					TBH = { has_manpower < 1500 }
+				}
+				TBH = { has_manpower < 800 }
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization entered"
+			}
+			swap_ideas = {
+				remove_idea = voluntairy_deputization
+				add_idea = limited_deputization
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization exited"
+			}
+		}
+		continue_if_invalid = yes
+	}
+
+	focus = {
+		id = tbh_nf_mobilization_2
+		icon = GFX_goal_TBH_conscription_3
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_mobilization
+
+		prerequisite = {
+			focus = tbh_nf_mobilization
+		}
+
+		available = {
+			OR = {
+				AND = {
+					OR = {
+						has_completed_focus = tbh_nf_our_path_new_shores_2
+						has_completed_focus = tbh_nf_our_path_roots_2
+					}
+					TBH = { has_manpower < 1500 }
+				}
+				TBH = { has_manpower < 800 }
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization_2 entered"
+			}
+			swap_ideas = {
+				remove_idea = voluntairy_deputization
+				add_idea = commonplace_deputization
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization_2 exited"
+			}
+		}
+		continue_if_invalid = yes
+	}
+
+	focus = {
+		id = tbh_nf_mobilization_3
+		icon = GFX_goal_TBH_conscription_2
+		cost = 30
+		x = 4
+		y = 1
+
+		relative_position_id = tbh_nf_rhombus_legacy
+
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_mobilization_2
+			OR = {
+				AND = {
+					OR = {
+						has_completed_focus = tbh_nf_our_path_new_shores_2
+						has_completed_focus = tbh_nf_our_path_roots_2
+					}
+					TBH = { has_manpower < 1500 }
+				}
+				TBH = { has_manpower < 800 }
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization_3 entered"
+			}
+			swap_ideas = {
+				remove_idea = commonplace_deputization
+				add_idea = extensive_deputization
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization_3 exited"
+			}
+		}
+		continue_if_invalid = yes
+	}
+
+	focus = {
+		id = tbh_nf_mobilization_4
+		icon = GFX_goal_TBH_conscription_1
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_mobilization_3
+
+		prerequisite = {
+			focus = tbh_nf_mobilization_3
+		}
+
+		available = {
+			OR = {
+				AND = {
+					OR = {
+						has_completed_focus = tbh_nf_our_path_new_shores_2
+						has_completed_focus = tbh_nf_our_path_roots_2
+					}
+					TBH = { has_manpower < 1500 }
+				}
+				TBH = { has_manpower < 800 }
+			}
+		}
+		continue_if_invalid = yes
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization_4 entered"
+			}
+			swap_ideas = {
+				remove_idea = extensive_deputization
+				add_idea = universal_deputization
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_mobilization_4 exited"
+			}
+		}
+	}
+	#TEXAS CHANGES
+	focus = {
+		id = tbh_nf_houston
+		icon = GFX_goal_TBH_conscription_1
+		cost = 30
+		x = 1
+		y = 2
+
+		relative_position_id = tbh_nf_consolidate_conquests
+
+		prerequisite = {
+			focus = tbh_nf_consolidate_conquests
+		}
+
+		available = {
+			country_exists = HRO
+			NOT = { country_exists = ACH }
+		}
+
+		bypass = {
+			NOT = { country_exists = HRO }
+		}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = tbh_nf_bayou
+		icon = GFX_goal_TBH_conscription_1
+		cost = 30
+		x = 2
+		y = 1
+
+		relative_position_id = tbh_nf_consolidate_conquests
+
+		prerequisite = {
+			focus = tbh_nf_consolidate_conquests
+		}
+
+		available = {
+			country_exists = BAM
+			NOT = { country_exists = TPM }
+		}
+
+		bypass = {
+			NOT = { country_exists = BAM }
+		}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = tbh_nf_lincoln
+		icon = GFX_goal_TBH_conscription_1
+		cost = 30
+		x = -2
+		y = 1
+
+		relative_position_id = tbh_nf_consolidate_conquests
+
+		prerequisite = {
+			focus = tbh_nf_consolidate_conquests
+		}
+
+		available = {
+			any_country = {
+				has_cosmetic_tag = LIN_lincoln_league
+				OR = {
+					tag = LOS
+					tag = CBN
+				}
+			}
+			NOT = { country_exists = SHA }
+		}
+
+		bypass = {
+			AND = {
+				NOT = { country_exists = LOS }
+				NOT = { country_exists = CBN }
+			}
+		}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = tbh_nf_austin_support
+		icon = GFX_goal_TBH_conscription_1
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_consolidate_conquests
+
+		prerequisite = {
+			focus = tbh_nf_consolidate_conquests
+		}
+
+		available = {
+			country_exists = UOA
+			any_country = {
+				has_war_with = UOA
+			}
+		}
+
+		bypass = {
+			country_exists = UOA
+			NOT = { country_exists = IMO }
+			NOT = { country_exists = SHA }
+			NOT = { country_exists = EDN }
+		}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = tbh_nf_austin_lost
+		icon = GFX_goal_TBH_conscription_1
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_austin_support
+
+		prerequisite = {
+			focus = tbh_nf_austin_support
+		}
+
+		available = {
+			915 = {
+				OR = {
+					is_owned_by = SHA
+					is_owned_by = IMO
+					AND = {
+						is_owned_by = IMO
+						EDN = {
+							OR = {
+								has_completed_focus = EDN_looking_west
+								has_completed_focus = EDN_looking_inwards
+							}
+						}
+					}
+				}
+			}
+			NOT = { country_exists = UOA }
+		}
+
+		bypass = {
+			country_exists = UOA
+			NOT = {
+				any_country = {
+					has_war_with = UOA
+				}
+			}
+		}
+
+		completion_reward = {
+			
+		}
+	}
+}

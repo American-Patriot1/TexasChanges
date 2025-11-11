@@ -1,0 +1,1884 @@
+﻿add_namespace = nf_lns
+
+country_event = { # Silos of the 578th
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.1" }
+	id = nf_lns.1
+	title = nf_lns.1.t
+	desc = nf_lns.1.d
+	picture = GFX_event_generic_missile_silo
+
+	is_triggered_only = yes
+
+	option = { # The national guard took priority!
+		name = nf_lns.1.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 300
+			producer = USA
+		}
+	}
+
+	option = { # We needed all the stockpiles we could get.
+		name = nf_lns.1.b
+		921 = {
+			add_resource = {
+				type = circuitry
+				amount = 6
+			}
+			add_resource = {
+				type = advanced
+				amount = 4
+			}
+		}
+	}
+
+	option = { # Abilene's citizens found shelter in the 12.
+		name = nf_lns.1.c
+		every_owned_state = {
+			set_temp_variable = {
+				pop_add = 750
+			}
+			add_state_population_no_state_name = yes
+		}
+	}
+}
+
+country_event = { # What Survived The Apocalypse
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.2" }
+	id = nf_lns.2
+	title = nf_lns.2.t
+	desc = nf_lns.2.d
+	picture = GFX_event_lns_lone_star
+
+	is_triggered_only = yes
+
+	option = { # Our priority was food and water.
+		name = nf_lns.2.a
+		921 = {
+			add_resource = {
+				type = water
+				amount = 12
+			}
+			add_resource = {
+				type = energy
+				amount = 6
+			}
+		}
+	}
+
+	option = { # Dyess AFB needed defending first and foremost.
+		name = nf_lns.2.b
+		921 = {
+			if = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker2
+				level = 2
+				province = 11666
+				instant_build = yes
+			}
+		}
+	}
+
+	option = { # The I-20 needed clearing, so we could regroup with the world.
+		name = nf_lns.2.c
+		every_state = {
+			limit = {
+				OR = {
+					state = 921
+					state = 925
+					state = 929
+					state = 931
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			set_temp_variable = {
+				pop_add = 100
+			}
+			add_state_population_no_state_name = yes
+		}
+	}
+}
+
+country_event = { # Mutants Block the I-10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.3" }
+	id = nf_lns.3
+	title = nf_lns.3.t
+	desc = nf_lns.3.d
+	picture = GFX_event_generic_mutant
+
+	is_triggered_only = yes
+
+	option = { # Lone Star's industry boomed to provide for the traders.
+		name = nf_lns.3.a
+		921 = {
+			if = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			factor = 3
+		}
+	}
+
+	option = { # Booming trade on the rivers needed protection.
+		name = nf_lns.3.b
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_2_arms_factories = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	option = {
+		name = nf_lns.3.c
+		# Upgrade the Lone Star node by 1 level
+		921 = {
+			set_temp_variable = { development_to_add = 1 }
+			add_development_to_node = yes
+		}
+	}
+}
+
+country_event = { # Friendship across Texas
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.4" }
+	id = nf_lns.4
+	title = nf_lns.4.t
+	desc = nf_lns.4.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = nf_lns.6
+				days = 55
+				random = 120 # hours!
+			}
+		}
+	}
+
+	option = { # The extension passed: unanimously!
+		name = nf_lns.4.a
+		ai_chance = {
+			base = 1
+		}
+		add_stability = 0.05
+		add_political_power = 40
+	}
+
+	option = { # The extension passed, conditional on greater military advice.
+		name = nf_lns.4.b
+		ai_chance = {
+			base = 2
+		}
+		army_experience = 30
+		add_command_power = 20
+	}
+
+	option = { # The extension passed, but closer than many would have wished...
+		name = nf_lns.4.c
+		ai_chance = {
+			base = 0
+		}
+		add_war_support = 0.05
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.075
+		}
+	}
+}
+
+country_event = { # Lone Star Recalls the Lubbock Expedition
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.5" }
+	id = nf_lns.5
+	title = nf_lns.5.t
+	desc = nf_lns.5.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.5.a
+		diplomatic_relation = {
+			country = LNS
+			relation = military_access
+			active = no
+		}
+		remove_ideas = LNS_idea_lubbock_expedition
+		event_target:LUB_cap_aaron_saunders_target = {
+			set_nationality = LNS
+		}
+		delete_unit_template_and_units = { division_template = "Lone Star Expeditionaries" }
+		LNS = {
+			remove_opinion_modifier = {
+				target = LUB
+				modifier = lubbock_expedition
+			}
+		}
+		remove_opinion_modifier = {
+			target = LNS
+			modifier = lubbock_expedition
+		}
+	}
+}
+
+## Chaos Across The Land Chain
+
+country_event = { # More than the Hand Gang?
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.6" }
+	id = nf_lns.6
+	title = nf_lns.6.t
+	desc = nf_lns.6.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = nf_lns.7
+				days = 55
+				random = 120 # hours!
+			}
+		}
+	}
+
+	option = { # The only movement amongst the bodies was a banner fluttering: the banner of a red hand.
+		name = nf_lns.6.a
+		add_stability = -0.1
+		921 = {
+			if = {
+				limit = {
+					infrastructure > 0
+				}
+				remove_building = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			if = {
+				limit = {
+					has_resources_amount = {
+						resource = metal
+						amount > 5
+					}
+				}
+				add_resource = {
+					type = metal
+					amount = -6
+				}
+			}
+			else_if = {
+				limit = {
+					arms_factory > 0
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = LNS_idea_hand_gang_resurgence
+			add_idea = LNS_idea_warlord_rises
+		}
+	}
+
+	option = { # The caravan was still fighting for its life, and so we joined the fray.
+		name = nf_lns.6.b
+		add_manpower = -170
+		add_stability = -0.05
+		921 = {
+			if = {
+				limit = {
+					has_resources_amount = {
+						resource = metal
+						amount > 3
+					}
+				}
+				add_resource = {
+					type = metal
+					amount = -4
+				}
+			}
+			else_if = {
+				limit = {
+					infrastructure > 0
+				}
+				remove_building = {
+					type = infrastructure
+					level = 1
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = LNS_idea_hand_gang_resurgence
+			add_idea = LNS_idea_warlord_rises
+		}
+	}
+}
+
+country_event = { # Crisis on the Colorado
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.7" }
+	id = nf_lns.7
+	title = nf_lns.7.t
+	desc = nf_lns.7.d
+	picture = GFX_event_BRK_shipwreck
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = nf_lns.8
+				days = 55
+				random = 120 # hours!
+			}
+		}
+	}
+
+	option = { # Double our river patrols. This must not happen again!
+		name = nf_lns.7.a
+		add_equipment_to_stockpile = {
+			type = convoy_1
+			producer = LNS
+			amount = -80
+		}
+		add_political_power = -25
+		swap_ideas = {
+			remove_idea = LNS_idea_warlord_rises
+			add_idea = LNS_idea_foreign_player
+		}
+	}
+
+	option = { # The I-20 is surely their next target.
+		name = nf_lns.7.b
+		add_manpower = -120
+		swap_ideas = {
+			remove_idea = LNS_idea_warlord_rises
+			add_idea = LNS_idea_foreign_player
+		}
+	}
+
+	option = { # Our settlements could be next. Protect them!
+		name = nf_lns.7.c
+		add_manpower = -300
+		add_stability = 0.05
+		swap_ideas = {
+			remove_idea = LNS_idea_warlord_rises
+			add_idea = LNS_idea_foreign_player
+		}
+	}
+}
+
+country_event = { # Legionaries in Lone Star
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.8" }
+	id = nf_lns.8
+	title = nf_lns.8.t
+	desc = nf_lns.8.d
+	picture = GFX_event_lns_lone_star
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = nf_lns.9
+				days = 55
+				random = 120 # hours!
+			}
+		}
+	}
+
+	option = { # Find those Legionaries: now!
+		name = nf_lns.8.a
+		ai_chance = {
+			base = 1
+		}
+		custom_effect_tooltip = lns_reduce_uprising_leaders_tt
+		set_country_flag = lns_reduce_uprising_leaders
+		921 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		swap_ideas = {
+			remove_idea = LNS_idea_foreign_player
+			add_idea = LNS_idea_caesars_hand
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 400
+				has_country_flag = lns_weak_revolt
+			}
+		}
+	}
+
+	option = { # Assign units to protect our industry as a matter of urgency.
+		name = nf_lns.8.b
+		ai_chance = {
+			base = 3
+		}
+		custom_effect_tooltip = lns_reduce_sabotage_tt
+		set_country_flag = lns_reduce_sabotage
+		add_stability = 0.1
+		swap_ideas = {
+			remove_idea = LNS_idea_foreign_player
+			add_idea = LNS_idea_caesars_hand
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				has_country_flag = lns_weak_revolt
+			}
+			modifier = {
+				factor = 400
+				has_country_flag = lns_strong_revolt
+			}
+		}
+	}
+
+	option = { # The Lawmen must be hallucinating. Surely?
+		name = nf_lns.8.c
+		ai_chance = {
+			base = 30
+		}
+		custom_effect_tooltip = lns_no_effect_tt
+		swap_ideas = {
+			remove_idea = LNS_idea_foreign_player
+			add_idea = LNS_idea_caesars_hand
+		}
+	}
+}
+
+country_event = { # Fighting on the Streets of Lone Star
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.9" }
+	id = nf_lns.9
+	title = nf_lns.9.t
+	desc = nf_lns.9.d
+	picture = GFX_event_lns_lone_star
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = nf_lns.10
+				days = 5
+				random = 24 # hours!
+			}
+		}
+	}
+
+	option = { # Divert all units. The uprising must be crushed.
+		name = nf_lns.9.a
+		add_stability = -0.1
+		ai_chance = {
+			base = 3
+		}
+		custom_effect_tooltip = lns_reduce_lone_star_spawn_tt
+		set_country_flag = lns_reduce_lone_star_spawn
+		add_manpower = -400
+
+	}
+
+	option = { # Assign units to protect our industry as a matter of urgency.
+		name = nf_lns.9.b
+		ai_chance = {
+			base = 1
+		}
+		add_stability = -0.1
+		custom_effect_tooltip = lns_reduce_minor_spawn_tt
+		set_country_flag = lns_reduce_minor_spawn
+		add_manpower = -300
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 400
+				has_country_flag = lns_weak_revolt
+			}
+		}
+	}
+
+	option = { # Empower the Lawmen
+		name = nf_lns.9.c
+		ai_chance = {
+			base = 2
+		}
+		add_stability = -0.1
+		custom_effect_tooltip = lns_increase_lawmen_spawn_tt
+		set_country_flag = lns_increase_lawmen_spawn
+		swap_ideas = {
+			remove_idea = LNS_idea_fatigued_lawmen
+			add_idea = LNS_idea_empowered_lawmen
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				has_country_flag = lns_weak_revolt
+			}
+			modifier = {
+				factor = 400
+				has_country_flag = lns_strong_revolt
+			}
+		}
+	}
+}
+
+country_event = { # The Uprising Spreads!
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.10" }
+	id = nf_lns.10
+	title = nf_lns.10.t
+	desc = nf_lns.10.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = LNS_beatdown
+			every_country = {
+					limit = {
+						OR = {
+							is_neighbor_of = LNS
+							is_neighbor_of = TBH
+							news_is_texas_tag = yes
+						}
+					}
+					news_event = { id = news_texas.1 hours = 6 random_hours = 3 }
+				}
+			LNS = {
+				start_civil_war = {
+					ideology = ruler
+					size = 0
+					states = { 926 }
+					keep_unit_leaders_trigger = { always = yes }
+				}
+				every_state = {
+					limit = {
+						is_core_of = LNS
+						owner = {
+							original_tag = LNS
+						}
+					}
+					LNS = {
+						set_state_controller = PREV
+					}
+				}
+			}
+			every_other_country = {
+				limit = {
+					original_tag = LNS
+				}
+				add_ideas = undesirables_law_raider
+				add_ideas = family_stipend
+				add_ideas = centralization_raider_medium
+				create_new_owb_country = yes
+				set_state_controller = 926
+				set_state_controller = 929
+				add_ideas = lns_mercenary_frontlines
+				set_country_flag = has_unique_manpower_law
+				load_focus_tree = {
+					tree = nf_lone_star
+					keep_completed = yes
+				}
+				event_target:LNS_warlord_hand_target = {
+					set_nationality = PREV
+				}
+				promote_character = LNS_warlord_hand
+				load_oob = lns_revolt_base
+				if = {
+					limit = {
+						NOT = {
+							LNS = {
+								has_country_flag = lns_reduce_lone_star_spawn
+							}
+						}
+					}
+					load_oob = lns_revolt_lone_star
+				}
+				if = {
+					limit = {
+						NOT = {
+							LNS = {
+								has_country_flag = lns_reduce_minor_spawn
+							}
+						}
+					}
+					load_oob = lns_revolt_minors
+				}
+				if = {
+					limit = {
+						NOT = {
+							LNS = {
+								has_country_flag = lns_reduce_uprising_leaders
+							}
+						}
+					}
+					event_target:LNS_centurion_sarrius_target = {
+						set_nationality = PREV
+						add_field_marshal_role = {
+							character = LNS_centurion_sarrius
+							traits = { perceptive_trait intelligent_trait }
+							skill = 2
+							attack_skill = 2
+							defense_skill = 2
+							planning_skill = 1
+							logistics_skill = 2
+						}
+						custom_effect_tooltip = LNS_centurion_sarrius_stats_tt
+					}
+					event_target:LNS_centurion_renatus_target = {
+						set_nationality = PREV
+						add_field_marshal_role = {
+							character = LNS_centurion_renatus
+							traits = { strong_trait lucky_trait }
+							skill = 1
+							attack_skill = 2
+							defense_skill = 1
+							planning_skill = 1
+							logistics_skill = 1
+						}
+						custom_effect_tooltip = LNS_centurion_renatus_stats_tt
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 800
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 400
+				}
+				add_equipment_to_stockpile = {
+					type = spec_ops_equipment
+					amount = 200
+				}
+			}
+			LNS = {
+				set_equipment_fraction = 0.8
+				division_template = {
+					name = "Lawmen"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 2 y = 0 }
+					}
+					is_locked = yes
+				}
+				921 = {
+					create_unit = {
+						division = "name = \"Lawmen Division\" division_template = \"Lawmen\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+						owner = LNS
+						prioritize_location = 11666
+					}
+					create_unit = {
+						division = "name = \"Lawmen Division\" division_template = \"Lawmen\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+						owner = LNS
+						prioritize_location = 11667
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = lns_increase_lawmen_spawn
+					}
+					921 = {
+						create_unit = {
+							division = "name = \"Empowered Lawmen\" division_template = \"Lawmen\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+							owner = LNS
+							prioritize_location = 11666
+						}
+						create_unit = {
+							division = "name = \"Empowered Lawmen\" division_template = \"Lawmen\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+							owner = LNS
+							prioritize_location = 11666
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Send word to the Brotherhood. We need help here.
+		name = nf_lns.10.a
+		ai_chance = {
+			base = 1
+		}
+		TBH = {
+			country_event = {
+				id = nf_tbh.25
+				days = 2
+			}
+		}
+		remove_ideas = LNS_idea_caesars_hand
+	}
+
+	option = { # Ave! True to Caesar...
+		name = nf_lns.10.b
+		ai_chance = {
+			base = 0
+		}
+		custom_effect_tooltip = lns_play_revolters_tt
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					original_tag = LNS
+					NOT = { tag = LNS }
+				}
+				change_tag_from = LNS
+			}
+		}
+		TBH = {
+			country_event = {
+				id = nf_tbh.25
+				days = 2
+			}
+		}
+		remove_ideas = LNS_idea_caesars_hand
+	}
+}
+
+country_event = { # The Old Order Triumphant
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.11" }
+	id = nf_lns.11
+	title = nf_lns.11.t
+	desc = nf_lns.11.d
+	picture = GFX_event_generic_ruins_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.11.a
+		add_stability = 0.1
+		add_ideas = {
+			LNS_idea_west_in_flames
+			LNS_idea_east_in_flames
+		}
+	}
+}
+
+country_event = { # A New Warlord In Town
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.12" }
+	id = nf_lns.12
+	title = nf_lns.12.t
+	desc = nf_lns.12.d
+	picture = GFX_event_generic_ruins_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.12.a
+		add_opinion_modifier = {
+			target = CES
+			modifier = hand_gang_true_to_caesar
+		}
+		add_opinion_modifier = {
+			target = LAC
+			modifier = hand_gang_true_to_caesar
+		}
+		add_stability = 0.15
+	}
+}
+
+country_event = { # The Lubbock Expedition Returns
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.13" }
+	id = nf_lns.13
+	title = nf_lns.13.t
+	desc = nf_lns.13.d
+	picture = GFX_event_generic_ruins_3
+
+	is_triggered_only = yes
+
+	option = { # Let them return
+		name = nf_lns.13.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 100
+				has_war = yes
+			}
+		}
+		add_ideas = LNS_idea_lubbock_expedition
+		give_military_access = LNS
+		event_target:LUB_cap_aaron_saunders_target = {
+			set_nationality = PREV
+		}
+		custom_effect_tooltip = lns_lubbock_exp_tt
+		hidden_effect = {
+			division_template = {
+				name = "Lone Star Expeditionaries"
+				regiments = {
+					spec_ops = { x = 0 y = 0 }
+					spec_ops = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+				}
+				support = {
+					recon_company = { x = 0 y = 0 }
+				}
+				is_locked = no
+				priority = 2
+			}
+			928 = {
+				create_unit = {
+					division = "name = \"Lamesa Garrison\" division_template = \"Lone Star Expeditionaries\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					owner = LUB
+				}
+				create_unit = {
+					division = "name = \"Odessa Observation Team\" division_template = \"Lone Star Expeditionaries\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					owner = LUB
+				}
+				create_unit = {
+					division = "name = \"I-20 Patrol\" division_template = \"Lone Star Expeditionaries\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					owner = LUB
+				}
+			}
+		}
+		LNS = { country_event = { id = nf_lns.14 days = 2 } }
+	}
+
+	option = { # Their precence is a worry. Refuse.
+		name = nf_lns.13.b
+		ai_chance = {
+			base = 1
+		}
+		LNS = { country_event = { id = nf_lns.15 days = 2 } }
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.14" }
+	id = nf_lns.14
+	title = nf_lns.14.t
+	desc = nf_lns.14.d
+	picture = GFX_event_generic_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.14.a
+		diplomatic_relation = {
+			country = LUB
+			relation = guarantee
+			active = yes
+		}
+		delete_unit_template_and_units = { division_template = "Lubbock Veterans" }
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.15" }
+	id = nf_lns.15
+	title = nf_lns.15.t
+	desc = nf_lns.15.d
+	picture = GFX_event_generic_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.15.t
+		set_division_template_lock = {
+			division_template = "Lubbock Veterans"
+			is_locked = no
+		}
+	}
+}
+
+country_event = { # Dreams of a Reformed Texas
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.16" }
+	id = nf_lns.16
+	title = nf_lns.16.t
+	desc = nf_lns.16.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.16.a
+	}
+}
+
+country_event = { # Integration of the I-20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.17" }
+	id = nf_lns.17
+	title = nf_lns.17.t
+	desc = nf_lns.17.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = { # Accept their demands
+		name = nf_lns.17.a
+		ai_chance = {
+			base = 5
+		}
+		custom_effect_tooltip = lub_switch_to_lns_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				LNS = {
+					change_tag_from = PREV
+				}
+			}
+			delete_unit_template_and_units = { division_template = "Lone Star Expeditionaries" }
+		}
+		LNS = {
+			country_event = { id = nf_lns.18 days = 2 }
+		}
+	}
+
+	option = { # Refuse!
+		name = nf_lns.17.b
+		ai_chance = {
+			base = 1
+		}
+		effect_tooltip = {
+			LNS = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		diplomatic_relation = {
+			country = LNS
+			relation = military_access
+			active = no
+		}
+		remove_ideas = LNS_idea_lubbock_expedition
+		effect_tooltip = {
+			retire_character = LUB_cap_aaron_saunders
+		}
+		delete_unit_template_and_units = { division_template = "Lone Star Expeditionaries" }
+		LNS = {
+			country_event = { id = nf_lns.19 days = 2 }
+		}
+	}
+}
+
+country_event = { # Lubbock Accepts
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.18" }
+	id = nf_lns.18
+	title = nf_lns.18.t
+	desc = nf_lns.18.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.18.a
+		annex_country = { target = LUB }
+		hidden_effect = {
+			diplomatic_relation = {
+				country = LUB
+				relation = guarantee
+				active = no
+			}
+			division_template = {
+				name = "Lubbock Veterans"
+				regiments = {
+					spec_ops = { x = 0 y = 0 }
+					spec_ops = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+				}
+				support = {
+					recon_company = { x = 0 y = 0 }
+				}
+				is_locked = no
+				priority = 2
+			}
+			921 = {
+				create_unit = {
+					division = "name = \"Lamesa Veterans\" division_template = \"Lubbock Veterans\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = LNS
+				}
+				create_unit = {
+					division = "name = \"Odessa Observation Veterans\" division_template = \"Lubbock Veterans\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = LNS
+				}
+				create_unit = {
+					division = "name = \"Lubbock I-20 Veterans\" division_template = \"Lubbock Veterans\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = LNS
+				}
+			}
+		}
+		event_target:LUB_cap_aaron_saunders_target = {
+			set_nationality = PREV
+		}
+		custom_effect_tooltip = lns_recall_lubbock_expedition_tt
+	}
+}
+
+country_event = { # Lubbock Refuses
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.19" }
+	id = nf_lns.19
+	title = nf_lns.19.t
+	desc = nf_lns.19.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.19.a
+		LUB = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		hidden_effect = {
+			diplomatic_relation = {
+				country = LUB
+				relation = guarantee
+				active = no
+			}
+			division_template = {
+				name = "Lubbock Veterans"
+				regiments = {
+					spec_ops = { x = 0 y = 0 }
+					spec_ops = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+				}
+				support = {
+					recon_company = { x = 0 y = 0 }
+				}
+				is_locked = no
+				priority = 2
+			}
+			921 = {
+				create_unit = {
+					division = "name = \"Lamesa Veterans\" division_template = \"Lubbock Veterans\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = LNS
+				}
+				create_unit = {
+					division = "name = \"Odessa Observation Veterans\" division_template = \"Lubbock Veterans\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = LNS
+				}
+				create_unit = {
+					division = "name = \"Lubbock I-20 Veterans\" division_template = \"Lubbock Veterans\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = LNS
+				}
+			}
+		}
+		event_target:LUB_cap_aaron_saunders_target = {
+			set_nationality = PREV
+		}
+		custom_effect_tooltip = lns_recall_lubbock_expedition_tt
+	}
+}
+
+country_event = { # The I-10 Gambit
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.20" }
+	id = nf_lns.20
+	title = nf_lns.20.t
+	desc = nf_lns.20.d
+	picture = GFX_event_generic_caravan
+
+	is_triggered_only = yes
+
+	option = { # Accept their offer.
+		name = nf_lns.20.a
+		ai_chance = {
+			base = 1 #This is the normal option, its risky not to accept!
+		}
+		add_ideas = LNS_idea_i10_controller_deal
+		LNS = { country_event = { id = nf_lns.21 days = 2 } }
+	}
+
+	option = { # Reject their blatant power grab!
+		name = nf_lns.20.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				has_completed_focus = shale_the_road_of_conquest #Reject specifically if Shale is about to conquer Texas
+			}
+		}
+		LNS = {
+			grant_wargoals_on_core_states_of_prev = yes
+			country_event = { id = nf_lns.22 days = 2 }
+		}
+	}
+}
+
+country_event = { # TBH Accepts
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.21" }
+	id = nf_lns.21
+	title = nf_lns.21.t
+	desc = nf_lns.21.d
+	picture = GFX_event_generic_desert_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.21.a
+		add_ideas = LNS_idea_i10_lns_deal
+	}
+}
+
+country_event = { # TBH Refuses
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.22" }
+	id = nf_lns.22
+	title = nf_lns.22.t
+	desc = nf_lns.22.d
+	picture = GFX_event_generic_desert_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.22.a
+		932 = {
+			owner = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Unity Awaits
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.23" }
+	id = nf_lns.23
+	title = nf_lns.23.t
+	desc = nf_lns.23.d
+	picture = GFX_event_generic_desert_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.23.a
+		add_stability = 0.05
+		custom_effect_tooltip = tex_upcoming_integration_from_lns_tt
+	}
+}
+
+country_event = { # The Texan Strongholds
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.24" }
+	id = nf_lns.24
+	title = nf_lns.24.t
+	desc = nf_lns.24.d
+	picture = GFX_event_CES_caesar
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.24.a
+		add_war_support = 0.1
+		add_ideas = legion_training
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.1
+		}
+	}
+}
+
+country_event = { # A Hostile Expedition
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.25" }
+	id = nf_lns.25
+	title = nf_lns.25.t
+	desc = nf_lns.25.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.25.a
+		ai_chance = {
+			factor = 3
+		}
+		if = {
+			limit = {
+				all_country_with_original_tag = {
+					original_tag_to_check = LNS
+					LUB = { is_subject_of = PREV }
+				}
+			}
+			every_country = {
+				limit = { original_tag = LNS }
+				end_puppet = LUB
+			}
+		}
+		if = {
+			limit = {
+				all_country_with_original_tag = {
+					original_tag_to_check = LNS
+					is_in_faction_with = LUB
+				}
+			}
+			leave_faction = yes
+		}
+		every_country = {
+			limit = { original_tag = LNS }
+			declare_war_on = {
+				target = PREV
+				type = annex_everything
+			}
+		}
+	}
+
+	option = {
+		name = nf_lns.25.b
+		trigger = {
+			all_country_with_original_tag = {
+				original_tag_to_check = LNS
+				OR = {
+					is_in_faction_with = LUB
+					LUB = { is_subject_of = PREV }
+				}
+			}
+		}
+		every_country = {
+			limit = { original_tag = LNS }
+			annex_country = {
+				target = PREV
+			}
+		}
+	}
+}
+
+country_event = { # A Friend Up North
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.26" }
+	id = nf_lns.26
+	title = nf_lns.26.t
+	desc = nf_lns.26.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	option = { # Accept their deal
+		name = nf_lns.26.a
+		ai_chance = {
+			base = 5
+		}
+		custom_effect_tooltip = lns_call_us_in_tt
+		custom_effect_tooltip = claim_edn_cores_tt
+		every_state = {
+			limit = {
+				OR = {
+					state = 936
+					state = 935
+					state = 678
+					state = 920
+				}
+			}
+			add_claim_by = IMO
+		}
+		every_country = {
+			limit = {
+				original_tag = LNS
+			}
+			custom_effect_tooltip = claim_sha_cores_tt
+			every_state = {
+				limit = {
+					OR = {
+						state = 932
+						state = 930
+						state = 934
+						state = 933
+					}
+				}
+				add_claim_by = PREV
+			}
+			IMO = {
+				random_owned_controlled_state = {
+					add_resource = {
+						type = metal
+						amount = 10
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_resources_amount = {
+						resource = metal
+						amount > 9
+					}
+				}
+				add_resource = {
+					type = metal
+					amount = -10
+				}
+			}
+			IMO = {
+				diplomatic_relation = {
+					country = PREV
+					relation = non_aggression_pact
+					active = yes
+				}
+			}
+			diplomatic_relation = {
+				country = IMO
+				relation = non_aggression_pact
+				active = yes
+			}
+			set_country_flag = imo_accepts_deal
+			country_event = { id = nf_lns.27 days = 3 }
+		}
+	}
+
+	option = { # Their words mean nothing
+		trigger = {
+			NOT = { is_subject_of = LNS }
+			NOT = { is_in_faction_with = LNS }
+		}
+		name = nf_lns.26.b
+		ai_chance = {
+			base = 2
+		}
+		every_country = {
+			limit = {
+				original_tag = LNS
+			}
+			country_event = { id = nf_lns.28 days = 3 }
+		}
+	}
+}
+
+country_event = { # IMO Accepts Our Deal
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.27" }
+	id = nf_lns.27
+	title = nf_lns.27.t
+	desc = nf_lns.27.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.27.a
+	}
+}
+
+country_event = { # IMO Refuses Our Deal
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.28" }
+	id = nf_lns.28
+	title = nf_lns.28.t
+	desc = nf_lns.28.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.28.a
+		custom_effect_tooltip = claim_sha_cores_tt
+		every_state = {
+			limit = {
+				OR = {
+					state = 936
+					state = 935
+					state = 678
+					state = 920
+				}
+			}
+			add_claim_by = ROOT
+		}
+	}
+}
+
+country_event = { # Finding out what happened to the Legion
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.28" }
+	id = nf_lns.29
+	title = nf_lns.29.t
+	desc = nf_lns.29.d
+	picture = GFX_event_ENC_legion_conquest
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_lns.29.a
+		custom_effect_tooltip = nf_lns_hand_chose_normal_tt
+		set_country_flag = LNS_hand_chose_normal
+		if = {
+			limit = {
+				5 = {
+					is_owned_by = LAC
+				}
+			}
+			LAC = {
+				change_tag_from = LNS
+				every_country = {
+					limit = {
+						original_tag = LNS
+					}
+					custom_effect_tooltip = ces_lns_legion_tt
+					every_unit_leader = {
+						set_nationality = LAC
+					}
+					every_navy_leader = {
+						set_nationality = LAC
+					}
+					every_owned_state = {
+						set_state_flag = remember_this_state
+						set_state_flag = do_not_exodus
+					}
+					ROOT = {
+						annex_country = {
+							target = LNS
+							transfer_troops = yes
+						}
+						every_owned_state = {
+							set_state_flag = remember_this_state
+							set_state_flag = do_not_exodus
+						}
+						ROOT = {
+							annex_country = {
+								target = LNS
+								transfer_troops = yes
+							}
+						}
+						every_state = {
+							limit = { has_state_flag = remember_this_state }
+							clr_state_flag = remember_this_state
+							clr_state_flag = do_not_exodus
+						}
+						every_state = {
+							limit = {
+								is_core_of = LNS
+							}
+							add_core_of = LAC
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				5 = {
+					is_owned_by = CES
+				}
+			}
+			CES = {
+				change_tag_from = LNS
+				every_country = {
+					limit = {
+						original_tag = LNS
+					}
+					custom_effect_tooltip = ces_lns_legion_tt
+					every_unit_leader = {
+						set_nationality = CES
+					}
+					every_navy_leader = {
+						set_nationality = CES
+					}
+					every_owned_state = {
+						set_state_flag = remember_this_state
+						set_state_flag = do_not_exodus
+					}
+					ROOT = {
+						annex_country = {
+							target = LNS
+							transfer_troops = yes
+						}
+						every_owned_state = {
+							set_state_flag = remember_this_state
+							set_state_flag = do_not_exodus
+						}
+						ROOT = {
+							annex_country = {
+								target = LNS
+								transfer_troops = yes
+							}
+						}
+						every_state = {
+							limit = { has_state_flag = remember_this_state }
+							clr_state_flag = remember_this_state
+							clr_state_flag = do_not_exodus
+						}
+						every_state = {
+							limit = {
+								is_core_of = LNS
+							}
+							add_core_of = CES
+						}
+					}
+				}
+			}
+		}
+
+	}
+	option = {
+		name = nf_lns.29.b
+		trigger = {
+			5 = {
+				OWNER = {
+					OR = {
+						original_tag = CES
+						original_tag = LAC
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = nf_lns_hand_chose_subject_tt
+		set_country_flag = LNS_hand_chose_subject
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				5 = {
+					is_owned_by = LAC
+				}
+			}
+			LAC = {
+				LNS = {
+					become_puppet = yes
+				}
+				set_autonomy = {
+					target = LNS
+					autonomy_state = autonomy_legion_vassal
+				}
+				hidden_effect = {
+					LNS = {
+						if = {
+							limit = { has_completed_focus = lns_go_us }
+							set_cosmetic_tag = LNS_cool		# Restores cosmetic tag
+							remove_country_leader_role = {
+								character = LNS_WARLORD_HAND_NAME
+								ideology = gang
+							}
+							add_country_leader_role = {
+								Character = LNS_WARLORD_HAND_NAME
+								Promote_leader = yes
+								Country_leader = {
+									desc = LNS_WARLORD_HAND_DESC
+									ideology = indifferent_despotism
+									expire = "3000.1.1.12"
+									traits = {
+										cruel_tyrant
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				5 = {
+					is_owned_by = CES
+				}
+			}
+			CES = {
+				LNS = {
+					become_puppet = yes
+				}
+				set_autonomy = {
+					target = LNS
+					autonomy_state = autonomy_legion_vassal
+				}
+				hidden_effect = {
+					LNS = {
+						if = {
+							limit = { has_completed_focus = lns_go_us }
+							set_cosmetic_tag = LNS_cool		# Restores cosmetic tag
+							remove_country_leader_role = {
+								character = LNS_WARLORD_HAND_NAME
+								ideology = gang
+							}
+							add_country_leader_role = {
+								Character = LNS_WARLORD_HAND_NAME
+								Promote_leader = yes
+								Country_leader = {
+									desc = LNS_WARLORD_HAND_DESC
+									ideology = indifferent_despotism
+									expire = "3000.1.1.12"
+									traits = {
+										cruel_tyrant
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+country_event = { # The 'Lone Star Legion'
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.30" }
+	id = nf_lns.30
+	title = nf_lns.30.t
+	desc = nf_lns.30.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	option = {	# Welcome
+		name = nf_lns.30.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				LNS = { has_country_flag = LNS_hand_chose_subject }
+			}
+		}
+	}
+
+	option = {	# Serve as our vassal
+		name = nf_lns.30.b
+		trigger = {
+			OR = {
+				NOT = { is_ai = yes }
+				LNS = { has_country_flag = LNS_hand_chose_subject }
+			}
+		}
+		LNS = {
+			become_puppet = yes
+		}
+		set_autonomy = {
+			target = LNS
+			autonomy_state = autonomy_legion_vassal
+		}
+		hidden_effect = {
+			LNS = {
+				if = {
+					limit = { has_completed_focus = lns_go_us }
+					set_cosmetic_tag = LNS_cool		# Restores cosmetic tag
+					remove_country_leader_role = {
+						character = LNS_WARLORD_HAND_NAME
+						ideology = gang
+					}
+					add_country_leader_role = {
+						Character = LNS_WARLORD_HAND_NAME
+						Promote_leader = yes
+						Country_leader = {
+							desc = LNS_WARLORD_HAND_DESC
+							ideology = indifferent_despotism
+							expire = "3000.1.1.12"
+							traits = {
+								cruel_tyrant
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {	# Nah, no thank you
+		name = nf_lns.30.c
+		LNS = { country_event = nf_lns.34 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { # No Legion in Red Sun
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.31" }
+	id = nf_lns.31
+	title = nf_lns.31.t
+	desc = nf_lns.31.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	option = { # We will take up the mantle!
+		name = nf_lns.31.a
+		set_cosmetic_tag = LNS_legion
+		ask_to_join_caesars_legion = yes
+		load_focus_tree = {
+			tree = cohort_focus_tree
+			keep_completed = yes
+		}
+		remove_country_leader_role = {
+			character = LNS_WARLORD_HAND_NAME
+			ideology = gang
+		}
+		add_country_leader_role = {
+			Character = LNS_WARLORD_HAND_NAME
+			Promote_leader = yes
+			Country_leader = {
+				desc = LNS_WARLORD_HAND_DESC
+				ideology = warlordship
+				expire = "3000.1.1.12"
+				traits = {
+					cruel_tyrant
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+		}
+	}
+
+	option = { # We should fall back to our raider ways...
+		name = nf_lns.31.b
+		LNS = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		TBH = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		TEX = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		set_country_flag = ai_prefers_to_fight_neighbors
+		every_state = {
+			tooltip = every_texan_state
+			limit = {
+				is_texan_state = yes
+			}
+			add_claim_by = LNS
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				CES = { NOT = { is_ai = yes } }
+			}
+		}
+	}
+}
+
+
+country_event = { #Santa Helps Hand
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.32" }
+	id = nf_lns.32
+	title = nf_lns.32.t
+	desc = nf_lns.32.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	option = { # Sure
+		name = nf_lns.32.a
+		LNS = { news_event = nf_lns.33}
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	option = { # Trust Them? never
+		name = nf_lns.32.b
+		add_tech_bonus = {
+			uses = 1
+			bonus = 0.6
+			category = robotics_tech_category
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+news_event = { #Santa Helps Hand
+	id = nf_lns.33
+	title = nf_lns.33.t
+	desc = nf_lns.33.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	option = { # Sure
+		name = nf_lns.33.a
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment_3
+			amount = 500
+			producer = USA
+		}
+		army_experience = 5
+	}
+}
+
+country_event = { #Legion refuses to let us join
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_lns.34" }
+	id = nf_lns.34
+	title = nf_lns.34.t
+	desc = nf_lns.34.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	option = { # In time we will prove them wrong
+		name = nf_lns.34.a
+		add_stability = -0.15
+		add_war_support = 0.1
+		LNS = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		TBH = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		TEX = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		set_country_flag = ai_prefers_to_fight_neighbors
+		every_state = {
+			tooltip = every_texan_state
+			limit = {
+				is_texan_state = yes
+			}
+			add_claim_by = LNS
+		}
+	}
+}

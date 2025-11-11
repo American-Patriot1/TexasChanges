@@ -1,0 +1,186 @@
+characters = {
+	TBH_edward_j_rusk = {
+		name = TBH_EDWARD_RUSK_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_TBH_edwardjrusk
+			}
+			army = {
+				large = GFX_Portrait_TBH_edwardjrusk
+			}
+		}
+		field_marshal = {
+			traits = {
+				strong_trait
+				perceptive_trait
+				charismatic_trait
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id = -1
+		}
+		country_leader = {
+			desc = TBH_EDWARD_RUSK_DESC
+			ideology = military_government
+			traits = {
+				popular_figurehead
+				stagnant_politician
+				military_background
+				stout_defender
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	TBH_steven_hunter = {
+		name = TBH_STEVEN_HUNTER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Brotherhood_Generic_1
+			}
+		}
+		country_leader = {
+			desc = TBH_STEVEN_HUNTER_DESC
+			ideology = peoples_militia
+			traits = {
+				political_workhorse
+				captain_of_industry
+			}
+			expire = "2288.1.1.12"
+			id = -1
+		}
+	}
+	TBH_benjamin_tyler = {
+		name = TBH_BENJAMIN_TYLER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Brotherhood_Generic_2
+				small = GFX_idea_brotherhood_Generic_2
+			}
+			army = {
+				large = GFX_Portrait_Brotherhood_Generic_2
+				small = GFX_idea_brotherhood_Generic_2
+			}
+		}
+		country_leader = {
+			desc = TBH_BENJAMIN_TYLER_DESC
+			ideology = militarist_technocracy_intellectuals
+			expire = "2289.1.1.12"
+			id = -1
+		}
+	}
+	TBH_abner_rodes = {
+		name = TBH_ABNER_RODES_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Brotherhood_Generic_4
+				small = GFX_idea_brotherhood_Generic_4
+			}
+			army = {
+				large = GFX_Portrait_Brotherhood_Generic_4
+				small = GFX_idea_brotherhood_Generic_4
+			}
+		}
+		country_leader = {
+			desc = TBH_ABNER_RODES_DESC
+			ideology = militarist_oligarchy
+			expire = "2290.1.1.12"
+			id = -1
+		}
+	}
+	TBH_TEX_congress = {
+		name = PROV_TEX_SENATE_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_TEX_provisional_senate
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_TEX_provisional_senate
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+	TBH_TEX_cho_bang = {
+		name = LNS_CHO_BANG_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LNS_cho_bang
+				#small =
+			}
+			army = {
+				large = GFX_Portrait_LNS_cho_bang
+				#small =
+			}
+		}
+	}
+	TBH_ledroc_walker = {
+		name = TBH_LEDROC_WALKER_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_TBH_ledroc_walker
+			}
+		}
+		corps_commander = {
+			traits = {
+				perceptive_trait
+				enduring_trait
+				charismatic_trait
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 5
+			legacy_id = -1
+		}
+	}
+	TBH_charles_biggins = {
+		name = TBH_CHARLES_BIGGINS_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_Brotherhood_Generic_1
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				intelligent_trait
+			}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	TBH_tresh_mcoi = {
+		name = TBH_TRESH_MCOI_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Brotherhood_Generic_2
+				small = GFX_idea_brotherhood_Generic_2
+			}
+			army = {
+				large = GFX_Portrait_Brotherhood_Generic_2
+				small = GFX_idea_brotherhood_Generic_2
+			}
+		}
+		corps_commander = {
+			traits = {
+				enduring_trait
+				intelligent_trait
+			}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+}

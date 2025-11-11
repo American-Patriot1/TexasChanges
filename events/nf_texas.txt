@@ -1,0 +1,1225 @@
+﻿add_namespace = nf_texas
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.1" }
+	id = nf_texas.1
+	title = nf_texas.1.t
+	desc = nf_texas.1.d
+	picture = GFX_event_lns_lone_star
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.1.a
+		add_political_power = 5
+	}
+}
+
+country_event = { #pick your leader, not through naked fight to death, unfortunately
+	id = nf_texas.3
+	title = nf_texas.3.t
+	desc = nf_texas.3.d
+	picture = GFX_event_sub_generic_airport_interior
+
+	is_triggered_only = yes
+
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event nf_texas.3"
+		hidden_effect = {
+			set_popularities = {
+				people = 75
+				ruler = 10
+				elites = 5
+				intellectuals = 10
+			}
+			set_party_name = {
+				ideology = people
+				long_name = TEX_people_party_long
+				name = TEX_people_party
+			}
+			set_party_name = {
+				ideology = ruler
+				long_name = TEX_ruler_party_long
+				name = TEX_ruler_party
+			}
+			set_party_name = {
+				ideology = elites
+				long_name = TEX_elites_party_long
+				name = TEX_elites_party
+			}
+			set_party_name = {
+				ideology = intellectuals
+				long_name = TEX_intellectuals_party_long
+				name = TEX_intellectuals_party
+			}
+			remove_country_leader_role = {
+				character = UOA_keats
+				ideology = town_hall_democracy
+			}
+			every_possible_country = {
+				limit = {
+					has_character = UOA_keats
+				}
+				random_character = {
+					limit = {
+						is_character = UOA_keats
+					}
+					set_nationality = ROOT
+				}
+			}
+			remove_country_leader_role = {
+				character = TBH_edward_j_rusk
+				ideology = military_government
+			}
+			every_possible_country = {
+				limit = {
+					has_character = TBH_edward_j_rusk
+				}
+				random_character = {
+					limit = {
+						is_character = TBH_edward_j_rusk
+					}
+					set_nationality = ROOT
+				}
+			}
+			remove_country_leader_role = {
+				character = LNS_cho_bang
+				ideology = town_hall_democracy
+			}
+			remove_country_leader_role = {
+				character = LNS_cho_bang
+				ideology = meritocracy
+			}
+			remove_country_leader_role = {
+				character = LNS_cho_bang
+				ideology = mercantile_elite
+			}
+			every_possible_country = {
+				limit = {
+					has_character = LNS_cho_bang
+				}
+				random_character = {
+					limit = {
+						is_character = LNS_cho_bang
+					}
+					set_nationality = ROOT
+				}
+			}
+			add_country_leader_role = {
+				Character = TBH_edward_j_rusk
+				Promote_leader = yes
+				Country_leader = {
+					desc = TBH_EDWARD_RUSK_DESC
+					ideology = military_junta
+					expire = "3000.1.1.12"
+					traits = {
+						popular_figurehead
+						stagnant_politician
+						military_background
+						stout_defender
+					}
+				}
+			}
+			add_country_leader_role = {
+				Character = UOA_keats
+				Promote_leader = yes
+				Country_leader = {
+					desc = UOA_KEATS_DESC
+					ideology = futurists
+					expire = "3000.1.1.12"
+					traits = {
+						popular_figurehead
+						mutant_politician
+						stout_defender
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = LNS
+				}
+				add_country_leader_role = {
+					Character = LNS_cho_bang
+					Promote_leader = yes
+					Country_leader = {
+						desc = LNS_CHO_BANG_DESC
+						ideology = federal_republic
+						expire = "3000.1.1.12"
+						traits = {
+							lns_captivating_speaker
+							economic_knowhow
+							radical_reformer
+							stout_defender
+						}
+					}
+				}
+			}
+			else = {
+				add_country_leader_role = {
+					Character = TBH_TEX_cho_bang
+					Promote_leader = yes
+					Country_leader = {
+						desc = LNS_CHO_BANG_DESC
+						ideology = industrial_oligarchy
+						expire = "3000.1.1.12"
+						traits = {
+							lns_captivating_speaker
+							economic_knowhow
+							radical_reformer
+							stout_defender
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_texas.3.a
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.3.a"
+		hidden_effect = {
+			country_event = nf_texas.301
+		}
+	}
+
+	option = {
+		name = nf_texas.3.b
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.3.b"
+		hidden_effect = {
+			country_event = nf_texas.302
+		}
+	}
+
+	option = {
+		name = nf_texas.3.c
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.3.c"
+		hidden_effect = {
+			country_event = nf_texas.303
+		}
+	}
+
+	option = {
+		name = nf_texas.3.e
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.3.c"
+		trigger = {
+			has_country_flag = tex_eden_integrated
+		}
+		hidden_effect = {
+			country_event = nf_texas.306
+		}
+	}
+	option = {
+		name = nf_texas.3.f
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.3.c"
+		trigger = {
+			has_country_flag = txs_todd_is_ready
+		}
+		if = {
+			limit = {
+				has_completed_focus = tex_the_flag
+			}
+			country_event = nf_texas.54
+		}
+		hidden_effect = {
+			country_event = nf_texas.305
+		}
+	}
+}
+
+country_event = { #cho bang
+	id = nf_texas.301
+	title = nf_texas.301.t
+	desc = nf_texas.301.d
+	picture = GFX_event_sub_generic_airport_interior
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event nf_texas.301"
+	}
+	option = {
+		name = nf_texas.301.a
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.301.a"
+		if = {
+			limit = {
+				original_tag = LNS
+			}
+			add_country_leader_role = {
+				Character = LNS_cho_bang
+				Promote_leader = yes
+				Country_leader = {
+					desc = LNS_CHO_BANG_DESC
+					ideology = federal_republic
+					expire = "3000.1.1.12"
+					traits = {
+						lns_captivating_speaker
+						economic_knowhow
+						radical_reformer
+						stout_defender
+					}
+				}
+			}
+		}
+		else = {
+			add_country_leader_role = {
+				Character = TBH_TEX_cho_bang
+				Promote_leader = yes
+				Country_leader = {
+					desc = LNS_CHO_BANG_DESC
+					ideology = federal_republic
+					expire = "3000.1.1.12"
+					traits = {
+						lns_captivating_speaker
+						economic_knowhow
+						radical_reformer
+						stout_defender
+					}
+				}
+			}
+		}
+	}
+}
+country_event = { #rusk
+	id = nf_texas.302
+	title = nf_texas.302.t
+	desc = nf_texas.302.d
+	picture = GFX_event_sub_generic_airport_interior
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event nf_texas.302"
+	}
+	option = {
+		name = nf_texas.302.a
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.302.a"
+		retire_country_leader = yes
+		add_country_leader_role = {
+			Character = TBH_edward_j_rusk
+			Promote_leader = yes
+			Country_leader = {
+				desc = TBH_EDWARD_RUSK_DESC
+				ideology = federal_republic
+				expire = "3000.1.1.12"
+				traits = {
+					popular_figurehead
+					stagnant_politician
+					military_background
+					stout_defender
+				}
+			}
+		}
+	}
+}
+country_event = { #keats
+	id = nf_texas.303
+	title = nf_texas.303.t
+	desc = nf_texas.303.d
+	picture = GFX_event_sub_generic_airport_interior
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event nf_texas.303"
+	}
+	option = {
+		name = nf_texas.303.a
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.303.a"
+		add_country_leader_role = {
+			Character = UOA_keats
+			Promote_leader = yes
+			Country_leader = {
+				desc = UOA_KEATS_DESC
+				ideology = federal_republic
+				expire = "3000.1.1.12"
+				traits = {
+					popular_figurehead
+					mutant_politician
+					stout_defender
+				}
+			}
+		}
+	}
+}
+country_event = { #todd
+	id = nf_texas.305
+	title = nf_texas.305.t
+	desc = nf_texas.305.d
+	picture = GFX_event_sub_generic_airport_interior
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event nf_texas.305"
+		hidden_effect = {
+			remove_country_leader_role = {
+				character = TAA_todd_howitzer
+				ideology = contractualism
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = TAA_todd_howitzer
+			}
+			random_character = {
+				limit = {
+					is_character = TAA_todd_howitzer
+				}
+				set_nationality = ROOT
+			}
+		}
+	}
+	option = {
+		name = nf_texas.305.a
+		log = "[GetDateText]: [Root.GetName]: event_option nf_texas.303.a"
+		set_politics = {
+			ruling_party = elites
+			elections_allowed = no
+		}
+		set_popularities = {
+			people = 10
+			ruler = 10
+			elites = 70
+			intellectuals = 10
+		}
+		add_country_leader_role = {
+			Character = UOA_keats
+			Promote_leader = yes
+			Country_leader = {
+				desc = UOA_KEATS_DESC
+				ideology = federal_republic
+				expire = "3000.1.1.12"
+				traits = {
+					popular_figurehead
+					mutant_politician
+					stout_defender
+				}
+			}
+		}
+		add_country_leader_role = {
+			Character = TAA_todd_howitzer
+			Promote_leader = yes
+			Country_leader = {
+				desc = RRG_TODD_HOWITZER_DESC
+				ideology = industrial_oligarchy
+				expire = "3000.1.1.12"
+				traits = {
+					popular_figurehead
+					war_industrialist
+				}
+			}
+		}
+	}
+}
+country_event = { #Scarlet
+    id = nf_texas.306
+    title = nf_texas.306.t
+    desc = nf_texas.306.d
+    picture = GFX_event_sub_generic_airport_interior
+    hidden = yes
+    is_triggered_only = yes
+    immediate = {
+        hidden_effect = {
+            remove_country_leader_role = {
+                character = EDN_scarlet
+                ideology = peoples_militia
+            }
+            remove_country_leader_role = {
+                character = EDN_scarlet
+                ideology = meritocracy
+            }
+            remove_country_leader_role = {
+                character = EDN_scarlet
+                ideology = survivalism
+            }
+            remove_country_leader_role = {
+                character = EDN_scarlet
+                ideology = benevolent_dictatorship
+            }
+        }
+        every_possible_country = {
+            limit = {
+                has_character = EDN_scarlet
+            }
+            random_character = {
+                limit = {
+                    is_character = EDN_scarlet
+                }
+                set_nationality = ROOT
+            }
+        }
+    }
+    option = {
+        name = nf_texas.306.a
+        add_country_leader_role = {
+            character = EDN_scarlet
+            promote_leader = yes
+            country_leader = {
+				desc = "EDN_SCARLET_DESC"
+                ideology = federal_republic
+                expire = "3000.1.1.12"
+                traits = {
+                    EDN_keeper_of_the_jungle
+                }
+            }
+        }
+    }
+}
+country_event = { # Commemorative Airforce, Confederate Airforce. Don't mess
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.4" }
+	id = nf_texas.4
+	title = nf_texas.4.t
+	desc = nf_texas.4.d
+	picture = GFX_event_tex_dont_mess
+
+	is_triggered_only = yes
+
+	option = { # Buff da airforce
+		name = nf_texas.4.a
+		swap_ideas = {
+			add_idea = tex_airforce_idea_4
+			remove_idea = tex_airforce_idea_3
+		}
+	}
+}
+
+country_event = { # Our Flag
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.5" }
+	id = nf_texas.5
+	title = nf_texas.5.t
+	desc = nf_texas.5.d
+	picture = GFX_event_sub_generic_ruins_2
+
+	is_triggered_only = yes
+
+	option = { # Keep the Burnet Flag
+		name = nf_texas.5.a
+	}
+
+	option = { # Use the Lone Star flag
+		name = nf_texas.5.b
+		hidden_effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = TEX_provisional
+				}
+				drop_cosmetic_tag = yes
+			}
+			set_cosmetic_tag = TEX_LNS
+		}
+	}
+
+	option = { # Reintroduce the old state flag
+		name = nf_texas.5.c
+		hidden_effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = TEX_provisional
+				}
+				drop_cosmetic_tag = yes
+			}
+			set_cosmetic_tag = TEX_stateflag
+		}
+	}
+
+	option = { # Use the Chilean Flag
+		name = nf_texas.5.e
+		hidden_effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = TEX_provisional
+				}
+				drop_cosmetic_tag = yes
+			}
+			set_cosmetic_tag = TEX_chile
+		}
+	}
+}
+
+country_event = { # Our Capital
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.6" }
+	id = nf_texas.6
+	title = nf_texas.6.t
+	desc = nf_texas.6.d
+	picture = GFX_event_sub_generic_ruins_4
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			OR = {
+				owns_state = 892
+				controls_state = 892
+			}
+		}
+		name = nf_texas.6.a
+		set_capital = { state = 892 } # Dallas
+	}
+
+	option = {
+		trigger = {
+			OR = {
+				owns_state = 880
+				controls_state = 880
+			}
+		}
+		name = nf_texas.6.b
+		set_capital = { state = 880 } # Houston
+	}
+
+	option = {
+		trigger = {
+			OR = {
+				owns_state = 921
+				controls_state = 921
+			}
+		}
+		name = nf_texas.6.c
+		set_capital = { state = 921 } # Lone Star
+	}
+
+	option = {
+		trigger = {
+			OR = {
+				owns_state = 915
+				controls_state = 915
+			}
+		}
+		name = nf_texas.6.e
+		set_capital = { state = 915 } # Austin
+	}
+
+	option = {
+		trigger = {
+			OR = {
+				owns_state = 936
+				controls_state = 936
+			}
+			has_country_flag = tex_eden_integrated
+		}
+		name = nf_texas.6.f
+		set_capital = { state = 936 } # Eden
+	}
+
+	option = {
+		trigger = {
+			OR = {
+				owns_state = 796
+				controls_state = 796
+			}
+			has_country_flag = txs_todd_is_ready
+		}
+		name = nf_texas.6.g
+		set_capital = { state = 796 } # T.A.A. Estate
+	}
+}
+
+
+country_event = { # Currency
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.10" }
+	id = nf_texas.10
+	title = nf_texas.10.t
+	desc = nf_texas.10.d
+	picture = GFX_event_sub_generic_container_bazaar
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.10.a
+	}
+	option = {
+		name = nf_texas.10.b
+		add_stability = -0.1
+		add_war_support = 0.05
+		set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+	}
+}
+country_event = { # Laws
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.11" }
+	id = nf_texas.11
+	title = nf_texas.11.t
+	desc = nf_texas.11.d
+	picture = GFX_event_sub_generic_container_bazaar
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.11.a
+		add_political_power = -25
+	}
+	option = {
+		name = nf_texas.11.b
+		add_stability = -0.05
+	}
+}
+
+country_event = { # TAA demanded
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.12" }
+	id = nf_texas.12
+	title = nf_texas.12.t
+	desc = nf_texas.12.d
+	picture = GFX_event_sub_generic_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.12.a
+		TEX = { news_event = nf_texas.13 }
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.2
+				has_completed_focus = rrg_dantes_inferno	# Significantly reduced chance of immediately resorting to war if Guerra is re-elected
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = rrg_texan_ties	# No chance if Guerra established Texan Ties
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = rrg_brotherhood_influence		# No chance if Rosado supported us
+			}
+		}
+	}
+	option = {
+		name = nf_texas.12.b
+		TEX = { country_event = nf_texas.14 }
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+news_event = { # Rio said no!
+	id = nf_texas.13
+	title = nf_texas.13.t
+	desc = nf_texas.13.d
+	picture = GFX_event_rrg_raiders
+	is_triggered_only = yes
+	option = {
+		name = nf_texas.13.a
+		TAA = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = CMC
+					tag = CHO
+					tag = CHR
+				}
+			}
+			country_event = nf_texas.15
+		}
+		set_country_flag = TEX_hostility_with_rio_flag
+	}
+}
+country_event = { # An Alliance of Equals?
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.14" }
+	id = nf_texas.14
+	title = nf_texas.14.t
+	desc = nf_texas.14.d
+	picture = GFX_event_sub_generic_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.14.a
+		RRG = { news_event = nf_texas.18 }
+		TAA = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = CMC
+					tag = CHO
+					tag = CHR
+				}
+			}
+			country_event = nf_texas.15
+		}
+		set_country_flag = TEX_hostility_with_rio_flag
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = nf_texas.14.b
+		RRG = { news_event = nf_texas.19 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				factor = 10
+				RRG = { is_ai = no }
+			}
+		}
+	}
+}
+
+country_event = { # Mad Dogs of Texas
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.15" }
+	id = nf_texas.15
+	title = nf_texas.15.t
+	desc = nf_texas.15.d
+	picture = GFX_event_sub_generic_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.15.a
+		TEX = { news_event = nf_texas.17 }
+		give_guarantee = RRG
+		RRG = { news_event = nf_texas.16 }
+
+	}
+	option = {
+		name = nf_texas.15.b
+	}
+}
+
+
+news_event = { # STronger Together
+	id = nf_texas.16
+	title = nf_texas.16.t
+	desc = nf_texas.16.d
+	picture = GFX_event_rrg_raiders
+	is_triggered_only = yes
+	option = {
+		name = nf_texas.16.a
+
+	}
+}
+
+
+news_event = { # Boo
+	id = nf_texas.17
+	title = nf_texas.17.t
+	desc = nf_texas.17.d
+	picture = GFX_event_rrg_raiders
+	is_triggered_only = yes
+	option = {
+		name = nf_texas.17.a
+
+	}
+}
+
+news_event = { # Texas are dicks
+	id = nf_texas.18
+	title = nf_texas.18.t
+	desc = nf_texas.18.d
+	picture = GFX_event_rrg_raiders
+	is_triggered_only = yes
+	option = {
+		name = nf_texas.18.a
+
+	}
+}
+news_event = { # Stronger Together
+	id = nf_texas.19
+	title = nf_texas.19.t
+	desc = nf_texas.19.d
+	picture = GFX_event_generic_desert_2
+	is_triggered_only = yes
+	option = {
+		name = nf_texas.19.a
+		create_or_join_texan_economic_union = yes
+		every_other_country = {
+			limit = {
+				is_rio_pact_member = yes
+			}
+			join_texan_economic_union = yes
+		}
+	}
+}
+
+### Constitution Demands Events
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.111" }
+	id = nf_texas.111
+	title = nf_texas.111.t
+	desc = nf_texas.111.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = {
+		days = 400
+	}
+	trigger = {
+		tag = TEX
+		has_country_flag = constitution_in_progress
+		is_in_array = {
+			array = constitution_subsection_data_array
+			value = 1
+		}
+	}
+
+	option = {
+		name = nf_texas.111.a
+		### Activate demand mission
+		activate_mission = constitution_mission_1
+		### add a slot
+		set_temp_variable = {
+			temp_constitution_article = 1
+		}
+		add_constitution_article = yes
+		set_temp_variable = { article_to_add_to = 1 }
+		set_temp_variable = { temp_constitution_subsection = 22 }
+		unlock_subsection_article_choice = yes
+		set_temp_variable = {
+			temp_constitution_article = 1
+		}
+		add_constitution_article = yes
+	}
+	option = {
+		name = nf_texas.111.b
+		every_owned_state = {
+			add_resistance = 7
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.112" }
+	id = nf_texas.112
+	title = nf_texas.112.t
+	desc = nf_texas.112.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = {
+		days = 400
+	}
+	trigger = {
+		tag = TEX
+		has_country_flag = constitution_in_progress
+		is_in_array = {
+			array = constitution_subsection_data_array
+			value = 1
+		}
+	}
+
+	option = {
+		name = nf_texas.112.a
+		### Activate demand mission
+		activate_mission = constitution_mission_2
+		### add a slot
+		set_temp_variable = {
+			temp_constitution_article = 1
+		}
+		add_constitution_article = yes
+		set_temp_variable = { article_to_add_to = 1 }
+		set_temp_variable = { temp_constitution_subsection = 24 }
+		unlock_subsection_article_choice = yes
+		set_temp_variable = { caps_to_add = -40 }
+		add_caps = yes
+	}
+	option = {
+		name = nf_texas.112.b
+		every_owned_state = {
+			add_resistance = 7
+			set_temp_variable = {
+				pop_add = 100
+			}
+			add_state_population_no_state_name = yes
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.113" }
+	id = nf_texas.113
+	title = nf_texas.113.t
+	desc = nf_texas.113.d
+	picture = GFX_report_event_generic_sign_treaty2
+	mean_time_to_happen = {
+		days = 400
+	}
+	trigger = {
+		tag = TEX
+		has_country_flag = constitution_in_progress
+		is_in_array = {
+			array = constitution_subsection_data_array
+			value = 5
+		}
+	}
+	option = {
+		name = nf_texas.113.a
+		### Activate demand mission
+		activate_mission = constitution_mission_3
+		activate_mission = constitution_mission_4
+		### add a slot
+		set_temp_variable = { article_to_add_to = 5 }
+		set_temp_variable = { temp_constitution_subsection = 41 }
+		unlock_subsection_article_choice = yes
+		set_temp_variable = {
+			temp_constitution_article = 5
+		}
+		add_constitution_article = yes
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.114" }
+	id = nf_texas.114
+	title = nf_texas.114.t
+	desc = nf_texas.114.d
+	picture = GFX_report_event_generic_sign_treaty2
+	mean_time_to_happen = {
+		days = 400
+	}
+	trigger = {
+		tag = TEX
+		has_country_flag = constitution_in_progress
+		is_in_array = {
+			array = constitution_subsection_data_array
+			value = 2
+		}
+		any_owned_state = {
+			is_core_of = HRO
+		}
+	}
+	option = {
+		name = nf_texas.114.a
+		### Activate demand mission
+		activate_mission = constitution_mission_5
+		### add a slot
+		set_temp_variable = { article_to_add_to = 2 }
+		set_temp_variable = { temp_constitution_subsection = 30 }
+		unlock_subsection_article_choice = yes
+		set_temp_variable = {
+			temp_constitution_article = 2
+		}
+		add_constitution_article = yes
+	}
+	option = {
+		name = nf_texas.114.b
+		every_owned_state = {
+			limit = {
+				is_core_of = HRO
+			}
+			add_resistance = 5
+		}
+		add_stability = -0.05
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.115" }
+	id = nf_texas.115
+	title = nf_texas.115.t
+	desc = nf_texas.115.d
+	picture = GFX_report_event_generic_sign_treaty2
+	mean_time_to_happen = {
+		days = 400
+	}
+	trigger = {
+		tag = TEX
+		has_country_flag = constitution_in_progress
+		is_in_array = {
+			array = constitution_subsection_data_array
+			value = 2
+		}
+	}
+	option = {
+		name = nf_texas.115.a
+			set_temp_variable = { article_to_add_to = 3 }
+			set_temp_variable = { temp_constitution_subsection = 36 }
+			unlock_subsection_article_choice = yes
+			set_temp_variable = { article_to_add_to = 3 }
+			set_temp_variable = { temp_constitution_subsection = 37 }
+			unlock_subsection_article_choice = yes
+			set_temp_variable = { article_to_add_to = 3 }
+			set_temp_variable = { temp_constitution_subsection = 38 }
+			unlock_subsection_article_choice = yes
+			set_temp_variable = {
+				temp_constitution_article = 3
+			}
+			add_constitution_article = yes
+			set_temp_variable = {
+				temp_constitution_article = 3
+			}
+			add_constitution_article = yes
+	}
+}
+
+
+### Formation Event
+country_event = { # Texas Forms
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.500" }
+	id = nf_texas.500
+	title = nf_texas.500.t
+	desc = nf_texas.500.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.500.a
+		form_texas_effect = yes
+		hidden_effect = {
+			play_song = owb_dev_team_yellow_rose_of_texas
+		}
+		add_timed_idea = {
+			idea = TEX_unification_idea
+			days = 1000
+		}
+		UOA = {
+			complete_national_focus = uoa_texan_integration_act
+		}
+	}
+}
+
+### Constitution Information Event
+country_event = { # Texas Forms
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.51" }
+	id = nf_texas.51
+	title = nf_texas.51.t
+	desc = nf_texas.51.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.51.a
+	}
+}
+
+#TAA stuff
+country_event = { #Todd
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.51" }
+	id = nf_texas.52
+	title = nf_texas.52.t
+	desc = nf_texas.52.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.52.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				LNS = {
+					has_country_flag = formed_texas
+				}
+			}
+			LNS = {
+				change_tag_from = ROOT
+			}
+			hidden_effect = {
+				transfer_units_fraction = {
+					target = LNS
+					size = 1.0
+					stockpile_ratio = 1.0
+					army_ratio = 1.0
+					navy_ratio = 1.0
+					air_ratio = 1.0
+				}
+			}
+			LNS = {
+				country_event = nf_texas.53
+			}
+		}
+		else_if = {
+			limit = {
+				TBH = {
+					has_country_flag = formed_texas
+				}
+			}
+			TBH = {
+				change_tag_from = ROOT
+			}
+			hidden_effect = {
+				transfer_units_fraction = {
+					target = TBH
+					size = 1.0
+					stockpile_ratio = 1.0
+					army_ratio = 1.0
+					navy_ratio = 1.0
+					air_ratio = 1.0
+				}
+			}
+			TBH = {
+				country_event = nf_texas.53
+			}
+		}
+	}
+	option = { #Option for players to refuse
+		name = nf_texas.52.b
+		add_political_power = 100
+		ai_chance = {
+			base = 0	    #Never pick this option.
+		}
+	}
+}
+country_event = { #Todd
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.51" }
+	id = nf_texas.53
+	title = nf_texas.53.t
+	desc = nf_texas.53.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_texas.53.a
+		annex_country = {
+			target = TAA
+			transfer_troops = no
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = TAA
+			}
+			add_core_of = ROOT
+		}
+		set_country_flag = txs_todd_is_ready
+	}
+}
+country_event = { #Todd wants his own flag
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_texas.5" }
+	id = nf_texas.54
+	title = nf_texas.54.t
+	desc = nf_texas.54.d
+	picture = GFX_event_sub_generic_ruins_2
+
+	is_triggered_only = yes
+
+	option = { #The one with the star!
+		name = nf_texas.54.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = TEX_provisional
+				}
+				drop_cosmetic_tag = yes
+			}
+			set_cosmetic_tag = TAA_Texas_Star
+		}
+	}
+
+	option = { #Company logo in the middle!
+		name = nf_texas.54.b
+		hidden_effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = TEX_provisional
+				}
+				drop_cosmetic_tag = yes
+			}
+			set_cosmetic_tag = TAA_Texas_Middle
+		}
+	}
+
+	option = { #Company logo on the left!
+		name = nf_texas.54.c
+		hidden_effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = TEX_provisional
+				}
+				drop_cosmetic_tag = yes
+			}
+			set_cosmetic_tag = TAA_Texas_Left
+		}
+	}
+}

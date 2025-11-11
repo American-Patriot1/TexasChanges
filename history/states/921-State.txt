@@ -1,0 +1,32 @@
+state={
+	id=921
+	name="STATE_921"
+	resources={
+		metal=13.000
+		energy=8.000
+		water=9.000
+		circuitry=2.000
+		composites=3.000
+		advanced=1.000
+	}
+	history={
+		owner = LNS
+		add_core_of = LNS
+		victory_points = {
+			11666 30
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 5
+		}
+
+	}
+	provinces={
+		11645 11648 11653 11654 11655 11659 11663 11666 11667 11669 11673 11675 11678 11744 
+	}
+	manpower=35000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

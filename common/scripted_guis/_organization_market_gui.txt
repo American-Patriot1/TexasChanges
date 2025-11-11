@@ -1,0 +1,155 @@
+scripted_gui = {
+	caps_market_window = {
+		context_type = player_context
+		window_name = "caps_market_window"
+		parent_window_name = "trade_ledger_window"
+		visible = {
+			always = yes
+			has_global_flag = caps_enabled_global_flag
+			NOT = { has_country_flag = caps_market_prevented }
+		}
+		effects = {
+		}
+		triggers = {
+		}
+
+	}
+	market_org_window = {
+		window_name = "market_org_window"
+		parent_window_name = "caps_market_window_instance"
+		context_type = player_context
+
+		visible = {
+			has_variable = market_var
+		}
+		properties = {
+			market_icon = {
+				image = "[GetMarketIcon]"
+			}
+		}
+		triggers = {
+			purchase_button_click_enabled = {
+				var:organization_selected_order_state = {
+					any_of = {
+						array = node_organizations
+						value = market_var
+					}
+					NOT = { has_state_flag = recent_node_trade }
+				}
+				set_temp_variable = { caps_diff = -500 }
+				caps_cost_trigger = yes
+			}
+		}
+		effects = {
+			cycle_button_click = {
+				if = {
+					limit = {
+						check_variable = { market_var = 1 }
+						check_variable = { selected_market_item < 6 }
+					}
+					add_to_variable = {
+						selected_market_item = 1
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { market_var = 2 }
+						check_variable = { selected_market_item < 5 }
+					}
+					add_to_variable = {
+						selected_market_item = 1
+					}
+				}
+				else = {
+					set_variable = { selected_market_item = 1 }
+				}
+			}
+			purchase_button_click = {
+				var:organization_selected_order_state = {
+					#set_variable = { selected_org_order = ROOT.market_var }
+					#set_variable = { selected_item_order = ROOT.selected_market_item }
+					ROOT = {
+						set_temp_variable = {
+							org_selector = ROOT.market_var
+						}
+						set_temp_variable = {
+							org_influence_amount = 5
+						}
+						organization_add_influence = yes
+					}
+					set_state_flag = {
+						flag = recent_node_trade
+						days = 40
+						value = 1
+					}
+				}
+				set_temp_variable = { caps_to_add = -500 }
+				add_caps = yes
+				meta_effect = {
+					text = {
+						add_equipment_to_stockpile = {
+							type = [EQ_NAME][EQ_NAME2]
+							amount = 400
+						}
+					}
+					EQ_NAME = "[GetMarketEquipment]"
+					EQ_NAME2 = "[GetMarketEquipment2]"
+				}
+				meta_effect = {
+					text = {
+						add_to_variable = {
+							variable = [AMOUNT_VAR_NAME]
+							value = -400
+						}
+					}
+					AMOUNT_VAR_NAME = "[GetMarketAmountString]"
+				}
+			}
+		}
+	}
+	# Decision category button to open the GUI
+	caps_market_decision_category_button_gui = {
+		context_type = decision_category
+
+		window_name = "caps_market_decision_category_button_ui"
+
+		visible = {
+			is_ai = no
+		}
+
+		effects = {
+			open_button_click = {
+				if = {
+					limit = {
+						has_variable = show_trade_ledger
+					}
+					clear_variable = show_trade_ledger
+				}
+				else = {
+					set_variable = { show_trade_ledger = 1 }
+					clear_array = temp_selected_org_inventory
+				}
+			}
+			# close_button_click = {
+			# 	clear_variable = show_trade_ledger
+			# 	clear_variable = selected_market_organization
+			# 	clear_array = temp_selected_org_inventory
+			# }
+		}
+
+		triggers = {
+			open_button_click_enabled = {
+				NOT = { has_variable = show_trade_ledger }
+			}
+			open_button_text_visible = {
+				NOT = { has_variable = show_trade_ledger }
+			}
+			open_button_overlay_visible = {
+				has_variable = show_trade_ledger
+			}
+			open_button_text_blocked_visible = {
+				has_variable = show_trade_ledger
+			}
+		}
+	}
+}

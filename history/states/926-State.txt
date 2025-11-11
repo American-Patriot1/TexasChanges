@@ -1,0 +1,28 @@
+state={
+	id=926
+	name="STATE_926"
+	resources={
+		metal=10.000
+		circuitry=4.000
+		water=4.000
+	}
+	history={
+		owner = LNS
+		add_core_of = LNS
+		victory_points = {
+			11700 10
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+		}
+
+	}
+	provinces={
+		1845 2967 11662 11665 11677 11684 11689 11692 11693 11694 11695 11700 11703 11704 11705 11706 11712 
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

@@ -1,0 +1,493 @@
+characters = {
+	LNS_cho_bang = {
+		name = LNS_CHO_BANG_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LNS_cho_bang
+				#small =
+			}
+			army = {
+				large = GFX_Portrait_LNS_cho_bang
+				#small =
+			}
+		}
+		country_leader = {
+			desc = LNS_CHO_BANG_DESC
+			ideology = town_hall_democracy
+			traits = {
+				lns_captivating_speaker
+				economic_knowhow
+				radical_reformer
+				stout_defender
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = LNS_CHO_BANG_DESC
+			ideology = meritocracy
+			traits = {
+				lns_captivating_speaker
+				economic_knowhow
+				radical_reformer
+				stout_defender
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = LNS_CHO_BANG_DESC
+			ideology = mercantile_elite
+			traits = {
+				lns_captivating_speaker
+				economic_knowhow
+				radical_reformer
+				stout_defender
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	LNS_warlord_hand = {
+		name = LNS_WARLORD_HAND_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LNS_warlord_hand
+				#small =
+			}
+			army = {
+				large = GFX_Portrait_LNS_warlord_hand
+				#small =
+			}
+		}
+		country_leader = {
+			desc = LNS_WARLORD_HAND_DESC
+			ideology = gang
+			traits = {
+				cruel_tyrant
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		corps_commander = {
+			visible = {
+				has_completed_focus = lns_warmongering_disposition
+			}
+			traits = {
+				strong_trait
+				agile_trait
+				desert_fox
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 1
+			legacy_id = 9214
+		}
+	}
+	LNS_col_lane_ward = {
+		name = LNS_col_lane_ward_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_LNS_lane_ward
+				#small =
+			}
+			civilian = {
+				large = GFX_Portrait_LNS_lane_ward
+				#small =
+			}
+		}
+		field_marshal = {
+			traits = {
+				perceptive_trait
+				intelligent_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			legacy_id = 9210
+		}
+	}
+	LNS_maj_mason_oliver = {
+		name = LNS_maj_mason_oliver_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_LNS_mason_oliver
+				#small =
+			}
+			civilian = {
+				large = GFX_Portrait_LNS_mason_oliver
+				#small =
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				lucky_trait
+				desert_fox
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = 9211
+		}
+	}
+	LNS_cpt_marvin_burch = {
+		name = LNS_cpt_marvin_burch_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_LNS_marvin_burch
+				#small =
+			}
+			civilian = {
+				large = GFX_Portrait_LNS_marvin_burch
+				#small =
+			}
+		}
+		corps_commander = {
+			traits = {
+				perceptive_trait
+				agile_trait
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = 9212
+		}
+	}
+	LNS_chak_conway = {
+		name = LNS_chak_conway_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_Ghoul_Generic_3
+				#small =
+			}
+			civilian = {
+				large = GFX_Portrait_Ghoul_Generic_3
+				#small =
+			}
+		}
+	}
+	LNS_centurion_sarrius = {
+		name = LNS_centurion_sarrius_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_generic_2
+				#small =
+			}
+			civilian = {
+				large = GFX_Portrait_CES_generic_2
+				#small =
+			}
+		}
+		#Gets field marshal later
+	}
+	LNS_centurion_renatus = {
+		name = LNS_centurion_renatus_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_generic_3
+				#small =
+			}
+			civilian = {
+				large = GFX_Portrait_CES_generic_3
+				#small =
+			}
+		}
+		#Gets field marshal later
+	}
+	LNS_cyamus_asina = {
+		name = LNS_cyamus_asina_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_generic_1
+				small = GFX_idea_CES_generic_1
+			}
+			civilian = {
+				large = GFX_Portrait_CES_generic_1
+				small = GFX_idea_CES_generic_1
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = LNS_cyamus_asina_army_chief
+			ledger = army
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_reach_out_to_the_old
+				}
+			}
+			traits = {
+				legion_tactician
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_eastern_hodge = {
+		name = LNS_eastern_hodge_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor34
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor34
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = LNS_eastern_hodge_high_command
+			ledger = army
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_victory_for_the_greater_good
+				}
+			}
+			visible = {
+				original_tag = LNS
+			}
+			traits = {
+				lns_cause_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_faustus_of_amarillo = {
+		name = LNS_faustus_of_amarillo_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor37
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor37
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = LNS_faustus_of_amarillo_high_command
+			ledger = army
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_victory_for_the_greater_good
+				}
+			}
+			visible = {
+				original_tag = LNS
+			}
+			traits = {
+				lns_old_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_ralph_murdok = {
+		name = LNS_ralph_murdok_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic5
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic5
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LNS_ralph_murdok_theorist
+			desc = LNS_ralph_murdok_theorist_desc
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_victory_of_the_greater_good
+				}
+			}
+			visible = {
+				original_tag = LNS
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_grand_army = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_wound_breeder = {
+		name = LNS_wound_breeder_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor7
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor7
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LNS_wound_breeder_theorist
+			desc = LNS_wound_breeder_theorist_desc
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_victory_for_the_greater_good
+				}
+			}
+			visible = {
+				original_tag = LNS
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_terror_tactics = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_marcus_fletcher = {
+		name = LNS_marcus_fletcher_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor13
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor13
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = LNS_marcus_fletcher_economic_advisor
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_use_unwilling_labour
+				}
+			}
+			traits = {
+				lns_slaver_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_arnold_gore = {
+		name = LNS_arnold_gore_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor13
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor13
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = LNS_arnold_gore_cultural_advisor
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_victory_for_the_greater_good
+				}
+			}
+			traits = {
+				lns_painter_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_r_hacius = {
+		name = LNS_r_hacius_name
+		portraits = {
+			civilian = {
+				small = GFX_idea_LNS_R_Hacius
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = LNS_r_hacius_cultural_advisor
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_victory_for_the_greater_good
+				}
+			}
+			traits = {
+				lns_burn_texas_down
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	LNS_TEX_congress = {
+		name = PROV_TEX_SENATE_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_TEX_provisional_senate
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_TEX_provisional_senate
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+}

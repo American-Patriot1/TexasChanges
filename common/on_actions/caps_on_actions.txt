@@ -1,0 +1,523 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_debug_toggle
+						option = ENABLED
+					}
+				}
+				set_global_flag = caps_debug_enabled_global_flag
+			}
+			if = {
+				limit = {
+					has_global_flag = caps_enabled_global_flag
+				}
+				### Set up some constants for ease of use
+				set_variable = { global.caps_income_period = 90 }
+				set_variable = { global.caps_unit_divisor = -26 } #Number of battalions (after some adjustments) divides by this for the caps expenses
+				set_variable = { global.caps_unit_exponential_divisor = 2500 } #Functionally, the number of battalions needed to double the flat expenses
+				1 = {
+					organization_stock_initalize = yes
+					organization_initialize = yes
+				}
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = caps_enabled_global_flag
+				}
+				scoped_sound_effect = "ui_items_bottlecaps_up_01"
+				set_temp_variable = { annexation_caps = FROM.caps_number_display }
+				divide_temp_variable = { annexation_caps = 2 }
+				clamp_temp_variable = { var = annexation_caps min = 0 max = 1000 }
+				round_temp_variable = annexation_caps
+				if = {
+					limit = {
+						has_global_flag = caps_debug_logs
+					}
+					log = "Annexing [FROM.GetName] caps for [?annexation_caps]"
+				}
+				set_temp_variable = { caps_to_add = annexation_caps }
+				add_caps = yes
+
+				if = {
+					limit = { has_global_flag = caps_debug_logs }
+					log = "[GetDateText]: [Root.GetName] Annexed [FROM.GetName] taking [?annexation_caps] caps"
+				}
+				###CHANGE TO UPDATE DAILY = 0
+				FROM = {
+					clear_variable = caps_base
+					clear_variable = caps_daily_modified
+					clear_variable = caps_number_display
+				}
+				#Remove taxes from puppets that were annexed somehow while overlord still existing
+				if = {
+					limit = {
+						FROM = {
+							is_subject = yes
+							has_country_flag = taxed_subject
+						}
+					}
+					set_temp_variable = { temp_expense_id = 3 }
+					set_temp_variable = { temp_expense_source = FROM }
+					set_temp_variable = { temp_expense_amount = 0 }
+					update_caps_expense = yes
+					FROM = {
+						set_temp_variable = { temp_income_id = 3 }
+						set_temp_variable = { temp_income_source = PREV }
+						set_temp_variable = { temp_income_amount = 0 }
+						update_caps_income = yes
+					}
+				}
+			}
+		}
+	}
+
+	### Update important node functions
+	###UPDATE FOR MULTIPLE ROUTES PER STATE
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = caps_enabled_global_flag
+					FROM.FROM = {
+						is_in_array = {
+							array = global.nodes_states
+							value = THIS.id
+						}
+					}
+				}
+				### Set state_node_disabled ASAP
+				FROM.FROM = {
+					set_state_flag = state_node_disabled
+				}
+				FROM.FROM = {
+					ROOT = {
+						set_temp_variable = { temp_income_source = PREV.id }
+						set_temp_variable = { temp_income_amount = 0 }
+						set_temp_variable = { temp_income_id = 2 }
+						update_caps_income = yes
+					}
+				}
+				### Destroy outgoing trade routes
+				#DISABLED. Something about this breaks trade routes. -Tedd
+				### Destroy incoming trade routes
+				#FROM.FROM = {
+				#	log = "From: [?THIS.GetName]"
+				#	for_each_scope_loop = {
+				#		array = trade_received_from
+				#		break=break3
+				#		log = "REMOVING FROM [?THIS.GetName]"
+				#		PREV.PREV = {
+				#			remove_PREV_route_between = yes
+				#			log = "REMOVING FROM sadasdas[?Prev.GetName]"
+				#		}
+				#	}
+				#}
+				#if = {
+				#	limit = {
+				#		FROM.FROM = {
+				#			check_variable = { trade_route_targets^num > 0 }
+				#		}
+				#	}
+				#	### Removing trade routes from old controller
+				#	FROM = {
+				#		subtract_from_variable = {
+				#			current_trade_routes = -1
+				#		}
+				#	}
+				#	### Add 10x new node value to caps pool as reward for getting node
+				#	### Destroy all old trade routes
+				#	FROM.FROM = {
+				#		remove_all_trade_routes_between = yes
+				#	}
+				#}
+				### Add conquering caps
+				if = {
+					limit = {
+						NOT = {
+							FROM.FROM = { has_state_flag = state_node_disabled }
+						}
+					}
+					ROOT = {
+						### Debugger
+						set_variable = { temp_delta_capture = caps_income }
+
+						set_temp_variable = {
+							caps_to_add = 0
+						}
+						FROM.FROM = {
+							add_to_temp_variable = {
+								caps_to_add = node_value
+							}
+						}
+						multiply_temp_variable = { caps_to_add = 10 }
+						add_caps = yes
+						FROM = {
+							multiply_temp_variable = { caps_to_add = -0.75 }
+							add_caps = yes
+						}
+					}
+				}
+				#### Remove from old array
+				FROM = {
+					remove_from_array = {
+						array = state_controlled_nodes
+						value = FROM.FROM.id
+					}
+				}
+				### Add to new countries' array. Add organizations to new country
+				ROOT = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = FROM.FROM.id
+					}
+				}
+				### Disabling node
+				FROM.FROM = {
+					if = {
+						limit = {
+							NOT = { has_state_flag = state_node_disabled }
+						}
+						### Copied code from disable_node adapted to this application
+						FROM = {
+							set_temp_variable = { temp_income_source = PREV.id }
+							set_temp_variable = { temp_income_amount = 0 }
+							set_temp_variable = { temp_income_id = 2 }
+							update_caps_income = yes
+						}
+						set_temp_variable = { duration_node_disabled = 90 }
+						ROOT = {
+							hidden_effect = {
+								activate_targeted_decision = {
+									decision = state_node_disabled_mission
+									target = PREV
+								}
+							}
+						}
+					}
+					### Refresh duration
+					else_if = {
+						limit = {
+							has_state_flag = state_node_disabled
+						}
+						set_temp_variable = { duration_node_disabled = 90 }
+						ROOT = {
+							hidden_effect = {
+								activate_targeted_decision = {
+									decision = state_node_disabled_mission
+									target = PREV
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							has_state_flag = main_node_@FROM
+						}
+					}
+					FROM = {
+						set_variable = {
+							var = global.main_node_fallen
+							value = FROM.FROM
+						}
+						country_event = {
+							id = node_events.2
+						}
+					}
+					FROM.FROM = {
+						clr_state_flag = main_node_@FROM
+						update_node_value = yes
+					}
+					FROM.FROM = {
+						clr_state_flag = main_node_@FROM
+					}
+				}
+			}
+		}
+	}
+	### Catch for civil war issues
+	###FROM is war target.
+	#Income Calculations
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = caps_enabled_global_flag
+					owns_state = 1
+				}
+				###MONTHLY
+				### UPDATE TO MATCH NEW ORGS
+				add_to_variable = { global.gun_runner_inventory = 900 }
+				add_to_variable = { global.taa_runner_inventory = 0 }
+				add_to_variable = { global.motorized_runner_inventory = 150 }
+				add_to_variable = { global.energy_runner_inventory = 130 }
+				add_to_variable = { global.melee_runner_inventory = 1200 }
+				add_to_variable = { global.advanced_runner_inventory = 200 }
+				add_to_variable = { global.follower_runner_inventory = 500 }
+				clamp_variable = {
+					var = global.taa_runner_inventory
+					max = 25000
+					min = 0
+				}
+				clamp_variable = {
+					var = global.gun_runner_inventory
+					max = 25000
+					min = 0
+				}
+				clamp_variable = {
+					var = global.motorized_runner_inventory
+					max = 25000
+					min = 0
+				}
+				clamp_variable = {
+					var = global.energy_runner_inventory
+					max = 25000
+					min = 0
+				}
+				clamp_variable = {
+					var = global.melee_runner_inventory
+					max = 25000
+					min = 0
+				}
+				clamp_variable = {
+					var = global.advanced_runner_inventory
+					max = 25000
+					min = 0
+				}
+				clamp_variable = {
+					var = global.follower_runner_inventory
+					max = 25000
+					min = 0
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = caps_ai_limiter_enabled
+				}
+				if = {
+					limit = {
+						AND = {
+							if = {
+								limit = {
+									has_country_flag = ignore_div_limiter_before_2280
+								}
+								date > 2280.1.1
+							}
+							check_variable = { caps_number_display < 300 }
+							NOT = { surrender_progress > 0.25 }
+
+							# Grab manpower Q estimation
+							set_temp_variable = { temp_manpower_q = amount_manpower_in_deployment_queue }
+							divide_temp_variable = { temp_manpower_q = 25 }
+							divide_temp_variable = { temp_manpower_q = global.CAPS_UNIT_DIVISOR?80 }
+
+							## Get net
+							set_temp_variable = { caps_net_temp = caps_net }
+							subtract_from_temp_variable = {
+								caps_net_temp = temp_manpower_q
+							}
+							##
+							check_variable = { caps_net_temp < 0 }
+
+						}
+					}
+					log = "[THIS.GetTag] limiter enabled temp income: [?temp_total_income]"
+				}
+				else = {
+					log = "[THIS.GetTag] limiter disabled temp_income: [?temp_total_income]"
+				}
+			}
+			#### Caps monthly gui tick
+			if = {
+				limit = {
+					owns_state = 1
+				}
+				add_to_variable = { global.monthly_gui_update_tick = 1 }
+				if = {
+					limit = {
+						has_global_flag = caps_debug_logs_enabled
+					}
+					add_to_variable = {
+						global.caps_debugger_time = 1
+					}
+					add_to_variable = { global.current_month_number = 1 }
+				}
+			}
+			### Puppet tax update
+			if = {
+				limit = {
+					is_ai = no
+					num_subjects > 0
+				}
+				for_each_scope_loop = {
+					array = subjects
+					set_temp_variable = { puppet_income = caps_income }
+					multiply_temp_variable = { puppet_income = -0.20 }
+					if = {
+						limit = {
+							NOT = { has_country_flag = notification_disable }
+							set_temp_variable = { temp_source_to_find = THIS.id }
+							PREV = { get_caps_income_from_source = yes }
+							check_variable = { puppet_income < temp_amount_from_source }
+						}
+						add_to_array = {
+							array = ROOT.country_icon_popup_array
+							value = 7
+						}
+						add_to_array = {
+							array = ROOT.country_icon_popup_array_target
+							value = THIS
+						}
+						add_to_array = {
+							array = ROOT.country_icon_popup_array_tertiary
+							value = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					is_ai = no
+					has_global_flag = caps_enabled_global_flag
+				}
+				for_each_scope_loop = {
+					array = state_controlled_nodes
+					#### Disabled notification
+					if = {
+						limit = {
+							has_state_flag = state_node_disabled
+							NOT = {
+								is_in_array = {
+									array = ROOT.country_icon_popup_array_target
+									value = THIS.id
+								}
+							}
+							NOT = { has_state_flag = notification_disable }
+						}
+						add_to_array = {
+							array = ROOT.country_icon_popup_array
+							value = 2
+						}
+						add_to_array = {
+							array = ROOT.country_icon_popup_array_target
+							value = THIS.id
+						}
+						add_to_array = {
+							array = ROOT.country_icon_popup_array_tertiary
+							value = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#ROOT is subject FROM is overlord
+	on_subject_annexed = {
+		effect = {
+			#Remove taxes from puppets that were annexed
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = taxed_subject
+					}
+				}
+				ROOT = {
+					caps_remove_tax_subject = yes
+				}
+			}
+		}
+	}
+
+	#ROOT is subject FROM is previous overlord
+	on_subject_free = {
+		effect = {
+			#Remove taxes from puppets that you freed as you can't tax what isn't yours
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = taxed_subject
+					}
+				}
+				ROOT = {
+					caps_remove_tax_subject = yes
+				}
+			}
+		}
+	}
+
+	#used when puppeting in a peace conference
+	#ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			#Remove taxes from puppets that were puppeted as they wouldn't be giving taxes yet
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = taxed_subject
+					}
+				}
+				ROOT = {
+					caps_remove_tax_subject = yes
+				}
+			}
+		}
+	}
+
+	#used when puppeting through the occupied territories menu during peace time (or when releasing from non-core but owned territory, f.e. Britain releasing Egypt)
+	#ROOT = nation being released, FROM = overlord
+	on_release_as_puppet = {
+		effect = {
+			#Remove taxes from puppets if they have them as you just made this puppet
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = taxed_subject
+					}
+				}
+				ROOT = {
+					caps_remove_tax_subject = yes
+				}
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			FROM = {
+				for_each_scope_loop = {
+					array = state_controlled_nodes
+					if = {
+						limit = {
+							THIS = {
+								has_state_flag = main_node_@OWNER
+							}
+						}
+						CONTROLLER = {
+							set_variable = {
+								var = global.main_node_fallen
+								value = THIS
+							}
+						}
+						THIS = {
+							clr_state_flag = main_node_@CONTROLLER
+							update_node_value = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+state={
+	id=893
+	name="STATE_893"
+	resources={
+		water=4.000
+	}
+
+	history={
+		owner = TBH
+		add_core_of = TBH
+		victory_points = {
+			11955 20
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			arms_factory = 3
+		}
+	}
+	provinces={
+		1704 11952 11955 11960 11962 11967 11985 12075 
+	}
+	manpower=30000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

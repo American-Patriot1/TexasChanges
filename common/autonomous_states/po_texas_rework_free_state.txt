@@ -1,0 +1,43 @@
+autonomy_state = {
+	id = autonomy_texas_changes_free_state
+	min_freedom_level = 0.8
+	manpower_influence = 0
+	rule = {
+		can_not_declare_war = no
+		can_decline_call_to_war = yes
+		units_deployed_to_overlord = no
+		
+	}
+	modifier = {
+		autonomy_manpower_share = 0
+		extra_trade_to_overlord_factor = 0.25
+		overlord_trade_cost_factor = -0.25
+		can_master_build_for_us = 1
+	}
+	ai_subject_wants_higher = {
+		factor = 0
+	}
+	ai_overlord_wants_lower = {
+		factor = 1
+	}
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+	allowed = {
+		OVERLORD = {
+			OR = {
+				original_tag = TBH
+				original_tag = LNS
+			}
+		}
+	}
+	allowed_levels_filter = {
+		autonomy_texas_changes_unincorporated_territory
+		autonomy_texas_changes_incorporated_territory
+		autonomy_texas_changes_protected_state
+		autonomy_texas_changes_free_state
+	}
+	can_take_level = {
+	}
+	can_lose_level = {}
+}

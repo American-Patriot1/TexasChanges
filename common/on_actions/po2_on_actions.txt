@@ -1,0 +1,222 @@
+on_actions = {
+	on_peaceconference_ended = {
+		effect = {
+			ROOT = {
+				if = {
+					limit = {
+						has_country_flag = PO2_wartime_admin
+					}
+					clr_country_flag = PO2_wartime_admin
+				}
+			}
+		}
+	}
+	on_subject_free = {
+		effect = {
+			FROM = {
+				if = {
+					limit = {
+						num_subjects < 5
+						has_idea = PO2_puppet_idea_three
+					}
+					remove_ideas = PO2_puppet_idea_three
+				}
+				if = {
+					limit = {
+						num_subjects < 3
+						has_idea = PO2_puppet_idea_two
+					}
+					remove_ideas = PO2_puppet_idea_three
+				}
+				if = {
+					limit = {
+						num_subjects < 1
+						has_idea = PO2_puppet_idea_one
+					}
+					remove_ideas = PO2_puppet_idea_one
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_other_country = {
+								is_major = yes
+								is_subject_of = FROM
+							}
+						}
+						has_idea = PO2_puppet_idea_large
+					}
+					remove_ideas = PO2_puppet_idea_large
+				}
+			}
+		}
+	}
+	on_subject_annexed = {
+		effect = {
+			FROM = {
+				if = {
+					limit = {
+						num_subjects < 5
+						has_idea = PO2_puppet_idea_three
+					}
+					remove_ideas = PO2_puppet_idea_three
+				}
+				if = {
+					limit = {
+						num_subjects < 3
+						has_idea = PO2_puppet_idea_two
+					}
+					remove_ideas = PO2_puppet_idea_three
+				}
+				if = {
+					limit = {
+						num_subjects < 1
+						has_idea = PO2_puppet_idea_one
+					}
+					remove_ideas = PO2_puppet_idea_one
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_other_country = {
+								is_major = yes
+								is_subject_of = FROM
+							}
+						}
+						has_idea = PO2_puppet_idea_large
+					}
+					remove_ideas = PO2_puppet_idea_large
+				}
+			}
+		}
+	}
+	#used when puppeting in a peace conference
+	#ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			FROM = {
+				if = {
+					limit = {
+						num_subjects > 0
+						num_subjects < 3
+					}
+					add_ideas = PO2_puppet_idea_one
+					if = {
+						limit = {
+							OR = {
+								has_idea = PO2_puppet_idea_two
+								has_idea = PO2_puppet_idea_three
+							}
+						}
+						remove_ideas = PO2_puppet_idea_two
+						remove_ideas = PO2_puppet_idea_three
+					}
+				}
+				if = {
+					limit = {
+						num_subjects > 2
+						num_subjects < 5
+					}
+					add_ideas = PO2_puppet_idea_two
+					if = {
+						limit = {
+							OR = {
+								has_idea = PO2_puppet_idea_one
+								has_idea = PO2_puppet_idea_three
+							}
+						}
+						remove_ideas = PO2_puppet_idea_one
+						remove_ideas = PO2_puppet_idea_three
+					}
+				}
+				if = {
+					limit = {
+						num_subjects > 4
+					}
+					add_ideas = PO2_puppet_idea_three
+					if = {
+						limit = {
+							OR = {
+								has_idea = PO2_puppet_idea_two
+								has_idea = PO2_puppet_idea_one
+							}
+						}
+						remove_ideas = PO2_puppet_idea_two
+						remove_ideas = PO2_puppet_idea_one
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							is_major = yes
+						}
+					}
+					add_ideas = PO2_puppet_idea_large
+				}
+			}
+		}
+	}
+	on_release_as_puppet = {
+		effect = {
+			FROM = {
+				if = {
+					limit = {
+						num_subjects > 0
+						num_subjects < 3
+					}
+					add_ideas = PO2_puppet_idea_one
+					if = {
+						limit = {
+							OR = {
+								has_idea = PO2_puppet_idea_two
+								has_idea = PO2_puppet_idea_three
+							}
+						}
+						remove_ideas = PO2_puppet_idea_two
+						remove_ideas = PO2_puppet_idea_three
+					}
+				}
+				if = {
+					limit = {
+						num_subjects > 2
+						num_subjects < 5
+					}
+					add_ideas = PO2_puppet_idea_two
+					if = {
+						limit = {
+							OR = {
+								has_idea = PO2_puppet_idea_one
+								has_idea = PO2_puppet_idea_three
+							}
+						}
+						remove_ideas = PO2_puppet_idea_one
+						remove_ideas = PO2_puppet_idea_three
+					}
+				}
+				if = {
+					limit = {
+						num_subjects > 4
+					}
+					add_ideas = PO2_puppet_idea_three
+					if = {
+						limit = {
+							OR = {
+								has_idea = PO2_puppet_idea_two
+								has_idea = PO2_puppet_idea_one
+							}
+						}
+						remove_ideas = PO2_puppet_idea_two
+						remove_ideas = PO2_puppet_idea_one
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							is_major = yes
+						}
+					}
+					add_ideas = PO2_puppet_idea_large
+				}
+			}
+		}
+	}
+}

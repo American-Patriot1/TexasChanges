@@ -1,0 +1,25 @@
+state={
+	id=930
+	name="STATE_930"
+	history = {
+		owner = SHA
+		add_core_of = SHA
+		victory_points = {
+			7748 10
+		}
+		victory_points = {
+			2282 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3 #Mostly enslaved humies, not a lot of muties living here
+		}
+	}
+	provinces={
+		2282 2848 2989 2993 3174 5699 5700 7748 11534 11608 11612 11631 11726 11730 11732 11738 11740 
+	}
+	manpower=17130
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

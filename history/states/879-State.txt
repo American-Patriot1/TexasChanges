@@ -1,0 +1,28 @@
+state={
+	id=879
+	name="STATE_879"
+	resources={
+		water=8.000
+	}
+	history = {
+		owner = HRO
+		add_core_of = HRO
+		victory_points = {
+			11805 20
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 1
+			11799 = { naval_base = 2 }
+		}
+	}
+	provinces={
+		11789 11797 11799 11805 11808 11814 11818 11821 11822 11827 11835 11836 11838 11839 11845 11851 11855 
+	}
+	manpower=15000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

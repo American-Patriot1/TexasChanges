@@ -1,0 +1,577 @@
+####Every Country
+organization_initialize = {
+	###Market Initalize
+	set_variable = { global.gun_runner_inventory = 2100 }
+	set_variable = { global.taa_runner_inventory = 2100 }
+	set_variable = { global.motorized_runner_inventory = 2100 }
+	set_variable = { global.energy_runner_inventory = 2100 }
+	set_variable = { global.melee_runner_inventory = 2100 }
+	set_variable = { global.advanced_runner_inventory = 400 }
+	253 = {
+		set_temp_variable = {
+			org_selector = 1
+		}
+		organization_add_to_node = yes
+		#set_temp_variable = {
+		#	org_selector = 6
+		#}
+		#organization_add_to_node = yes
+	}
+	520 = {
+		set_temp_variable = {
+			org_selector = 4
+		}
+		organization_add_to_node = yes
+	}
+	285 = {
+		set_temp_variable = {
+			org_selector = 2
+		}
+		organization_add_to_node = yes
+		set_temp_variable = {
+			org_selector = 3
+		}
+		organization_add_to_node = yes
+	}
+	921 = {
+		set_temp_variable = {
+			org_selector = 4
+		}
+		organization_add_to_node = yes
+	}
+	NEW = {
+		country_event = {
+			id = caps_organization_events.500
+			days = 100
+			random = 60
+		}
+	}
+	516 = {
+		set_temp_variable = {
+			org_selector = 2
+		}
+		organization_add_to_node = yes
+	}
+	1 = {
+		add_to_array = {
+			array = global.organizations_array
+			value = 1
+		}
+		add_to_array = {
+			array = global.organizations_array
+			value = 2
+		}
+		add_to_array = {
+			array = global.organizations_array
+			value = 3
+		}
+		add_to_array = {
+			array = global.organizations_array
+			value = 4
+		}
+		add_to_array = {
+			array = global.organizations_array
+			value = 5
+		}
+		#add_to_array = {
+		#	array = global.organizations_array
+		#	value = 6
+		#}
+	}
+}
+organization_country_initalize = {
+	### Current size is 7, based on number of orgs
+	resize_array = {
+		array = node_organizations_influence
+		value = 0
+		size = 7
+	}
+	add_to_array = {
+		array = selected_organization_filter_array
+		value = 0
+	}
+	### Go through node organization array for each owned node. If not in country array, add to country array
+	add_to_array = {
+		array = country_organizations
+		value = 1
+	}
+	add_to_array = {
+		array = country_organizations
+		value = 2
+	}
+	add_to_array = {
+		array = country_organizations
+		value = 3
+	}
+	add_to_array = {
+		array = country_organizations
+		value = 4
+	}
+	add_to_array = {
+		array = country_organizations
+		value = 5
+	}
+}
+pull_currently_selected_market_items = {
+	clear_array = temp_selected_org_inventory
+	meta_effect = {
+		text = {
+			for_each_loop = {
+				array = [ORG_INV_ARRAY]
+				add_to_array = {
+					array = temp_selected_org_inventory
+					value = v
+				}
+			}
+		}
+		ORG_INV_ARRAY = "global.organization_market_arary_[?selected_market_organization|0]"
+	}
+}
+organization_add_to_node = {
+	### Temporarily removed
+	# if = {
+	# 	limit = {
+	# 		is_in_array = {
+	# 			array = node_organizations
+	# 			value = org_selector
+	# 		}
+	# 	}
+	# 	set_temp_variable = { v = org_selector }
+	# 	custom_effect_tooltip = organization_add_already_present_tt
+	# }
+	# else = {
+	# 	add_to_array = {
+	# 		array = node_organizations
+	# 		value = org_selector
+	# 	}
+	# 	CONTROLLER = {
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = {
+	# 					org_selector = 5
+	# 				}
+	# 				NOT = {
+	# 					is_in_array = {
+	# 						array = country_organizations
+	# 						value = 5
+	# 					}
+	# 				}
+	# 			}
+	# 			#country_event = {
+	# 			#	id = caps_organization_events.151
+	# 			#	days = 30
+	# 			#	random = 50
+	# 			#}
+	# 		}
+	# 		add_to_array = {
+	# 			array = country_organizations
+	# 			value = org_selector
+	# 		}
+	# 		add_to_array = {
+	# 			array = country_icon_popup_array
+	# 			value = 6
+	# 		}
+	# 		add_to_array = {
+	# 			array = country_icon_popup_array_target
+	# 			value = PREV.id
+	# 		}
+	# 		add_to_array = {
+	# 			array = country_icon_popup_array_tertiary
+	# 			value = org_selector
+	# 		}
+	# 	}
+	# 	set_temp_variable = { v = org_selector }
+	# 	custom_effect_tooltip = organization_add_tt
+	# 	meta_effect = {
+	# 		text = {
+	# 			set_state_flag = {
+	# 				flag = [FLAG_NAME]
+	# 				days = 60
+	# 				value = 1
+	# 			}
+	# 		}
+	# 		FLAG_NAME = "organization_intialize_[?org_selector|0]"
+	# 	}
+	# }
+	# clear_variable = org_selector
+	####Set some state flags with a meta effect to generate a starting condition
+
+	### Temporary addition until orgs are re-added
+	CONTROLLER = {
+		set_temp_variable = { org_influence_amount = 25 }
+		organization_add_influence = yes
+		set_temp_variable = { caps_to_add = 25 }
+		add_caps = yes
+	}
+}
+
+###COUNTRY SCOPE
+### org_selector is organization index 1-5
+#### influence amount is influence
+organization_add_influence = {
+	add_to_variable = {
+		var = node_organizations_influence^org_selector
+		value = org_influence_amount
+	}
+	clamp_variable = {
+		var = node_organizations_influence^org_selector
+		max = 300
+		min = -100
+	}
+	clear_variable = org_selector
+	### Transfer org index to scripted localization
+	set_temp_variable = { selected_market_organization = org_selector }
+	custom_effect_tooltip = organization_add_influence_tt
+	####Set some state flags with a meta effect to generate a starting condition
+}
+
+organization_trade_spread_effect = {
+	set_temp_variable = { temp_percent_chance = random }
+	if = {
+		limit = {
+			check_variable = { node_organizations^num > 0 }
+			check_variable = { temp_percent_chance > 0.6 }
+		}
+		### Pseudo-random array index selector
+		set_temp_variable = { random_array_index = node_organizations^num }
+		multiply_temp_variable = { random_array_index = random }
+		round_temp_variable = random_array_index
+		### Set org selector to random array index
+		subtract_from_temp_variable = {
+			random_array_index = 1
+		}
+		clamp_temp_variable = {
+			var = random_array_index
+			min = 0
+		}
+		set_temp_variable = { org_selector = node_organizations^random_array_index }
+		#log = "[?random_array_index] random array index, [?node_organizations^num] number of entries"
+		if = {
+			limit = {
+				has_global_flag = routes_debug_logs
+			}
+			log = "[?temp_percent_chance] % chance for spread"
+			log = "[?org_selector] selected org index"
+		}
+		var:temp_target_target_to_add_to = {
+			if = {
+				limit = {
+					has_global_flag = routes_debug_logs
+				}
+				log = "[THIS.GetName] selected target scope. [PREV.GetName] selected origin scope"
+			}
+			organization_add_to_node = yes
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				has_global_flag = routes_debug_logs
+				NOT = { check_variable = { node_organizations^num = 0 } }
+			}
+			log = "[?temp_percent_chance] % chance for spread"
+			log = "RNG roll failed"
+		}
+	}
+}
+### Add items to arrays
+### First entry is the option's value in caps, second entry is the option's opinion requirement to be purchased
+### _organization_scripted_localization.txt will also need to be adjusted to change the contents of the inventories in the future
+### Please try to keep these relatively consistent with IC cost and research investment in the future. Support Company equipment can be higher than this due to requiring less for your army
+organization_stock_initalize = {
+	### Gun Runners
+		###Pipe Guns
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 15
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 0
+			}
+		### Ballistic 1
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 30
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 10
+			}
+		### Ballistic 2
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 48
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 40
+			}
+		### Ballistic 3
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 70
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 80
+			}
+		### Support Equipment
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 50
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 25
+			}
+		### M SAW
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 60
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 35
+			}
+		### LMG
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 90
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 70
+			}
+		### Anti-Tank Rifles
+			add_to_array = {
+				array = global.organization_market_arary_1
+				value = 75
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_1
+				value = 45
+			}
+	###Melee
+		###Melee 1
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 15
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 0
+			}
+		###Melee 2
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 30
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 30
+			}
+		###Melee 3
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 55
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 65
+			}
+		###Melee 4
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 70
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 100
+			}
+		### Dynamite
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 45
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 10
+			}
+		### Flamer
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 85
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 45
+			}
+		### Frag Grenade
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 80
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 45
+			}
+		### Incinerator
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 130
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 95
+			}
+		### Grenade Rifle
+			add_to_array = {
+				array = global.organization_market_arary_4
+				value = 120
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_4
+				value = 95
+			}
+	###Energy
+		###Muskets
+			add_to_array = {
+				array = global.organization_market_arary_3
+				value = 32
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_3
+				value = 25
+			}
+		### Laser Rifle
+			add_to_array = {
+				array = global.organization_market_arary_3
+				value = 54
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_3
+				value = 60
+			}
+		### Advanced Laser Rifle
+			add_to_array = {
+				array = global.organization_market_arary_3
+				value = 80
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_3
+				value = 90
+			}
+	###Advanced
+		### Ballistic 4
+		add_to_array = {
+			array = global.organization_market_arary_5
+			value = 65
+		}
+		add_to_array = {
+			array = global.organization_opinion_arary_5
+			value = 90
+		}
+		###Laser 4
+		add_to_array = {
+			array = global.organization_market_arary_5
+			value = 75
+		}
+		add_to_array = {
+			array = global.organization_opinion_arary_5
+			value = 95
+		}
+		###Minigun
+		add_to_array = {
+			array = global.organization_market_arary_5
+			value = 155
+		}
+		add_to_array = {
+			array = global.organization_opinion_arary_5
+			value = 160
+		}
+		###Telsa Cannon
+		add_to_array = {
+			array = global.organization_market_arary_5
+			value = 160
+		}
+		add_to_array = {
+			array = global.organization_opinion_arary_5
+			value = 160
+		}
+		###Heavy Incinerator
+		add_to_array = {
+			array = global.organization_market_arary_5
+			value = 135
+		}
+		add_to_array = {
+			array = global.organization_opinion_arary_5
+			value = 190
+		}
+		### Grenade Machine Gun
+		add_to_array = {
+			array = global.organization_market_arary_5
+			value = 140
+		}
+		add_to_array = {
+			array = global.organization_opinion_arary_5
+			value = 190
+		}
+	###Chop Shop
+		### Bike 1
+			add_to_array = {
+				array = global.organization_market_arary_2
+				value = 25
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_2
+				value = 0
+			}
+		### Light Motorized 1
+			add_to_array = {
+				array = global.organization_market_arary_2
+				value = 60
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_2
+				value = 45
+			}
+		### Light Motorized 2
+			add_to_array = {
+				array = global.organization_market_arary_2
+				value = 85
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_2
+				value = 80
+			}
+		### Heavy Motorized 1
+			add_to_array = {
+				array = global.organization_market_arary_2
+				value = 70
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_2
+				value = 45
+			}
+		### Heavy Motorized 2
+			add_to_array = {
+				array = global.organization_market_arary_2
+				value = 105
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_2
+				value = 80
+			}
+	### Followers
+		### Pipe Guns
+			add_to_array = {
+				array = global.organization_market_arary_6
+				value = 6969
+			}
+			add_to_array = {
+				array = global.organization_opinion_arary_6
+				value = 420
+			}
+	### End
+}

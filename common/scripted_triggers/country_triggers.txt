@@ -1,0 +1,865 @@
+# For Determining Nation Categories in Script
+# EX: National focuses, technologies etc.
+is_tribal_nation_allowed_block = {
+	OR = {
+		has_country_flag = is_tribal_nation
+		original_tag = BSU
+		original_tag = CIP
+		original_tag = CRZ
+		original_tag = CWB
+		original_tag = CYC
+		original_tag = DEA
+		original_tag = DIS
+		original_tag = HUA
+		original_tag = JIC
+		original_tag = KHA
+		original_tag = LON
+		original_tag = MLT
+		original_tag = NOE
+		original_tag = OLY
+		original_tag = PET
+		original_tag = PNT
+		original_tag = RAP
+		original_tag = RBT
+		original_tag = REC
+		original_tag = RMT
+		original_tag = SCA
+		original_tag = SOR
+		original_tag = SUN
+		original_tag = TAR
+		original_tag = TLO
+		original_tag = TOB
+		original_tag = TPL
+		original_tag = TSI
+		original_tag = TWI
+		original_tag = WAP
+		original_tag = WHT
+		original_tag = INR
+		original_tag = UMB
+		original_tag = SOK
+		original_tag = LAM
+		original_tag = PAC
+		original_tag = FOU
+		original_tag = MIN
+	}
+}
+
+is_tribal_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_tribal_nation_tt
+		has_country_flag = is_tribal_nation
+	}
+}
+
+is_not_tribal_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_tribal_nation_tt
+		is_tribal_nation = no
+	}
+}
+
+is_raider_nation_allowed_block = {
+	OR = {
+		has_country_flag = is_raider_nation
+		# Unique Trees
+		original_tag = EHT
+		original_tag = BCR
+		original_tag = BRK
+		original_tag = BLO
+		original_tag = BAD
+		original_tag = SIN
+		original_tag = WBH
+		original_tag = TOF
+		original_tag = TDN
+		original_tag = PLS
+		original_tag = PRO
+		original_tag = MDM
+		original_tag = GAM
+		tag = HWB
+
+		# Generic Trees
+		original_tag = ASS
+		original_tag = BAT
+		original_tag = BIG
+		original_tag = BLK
+		original_tag = BLP
+		original_tag = BRT
+		original_tag = BVC
+		original_tag = CAR
+		original_tag = CCW
+		original_tag = CHE
+		original_tag = CLJ
+		original_tag = DAM
+		original_tag = DED
+		original_tag = DMM
+		original_tag = DRY
+		original_tag = DSP
+		original_tag = EXE
+		original_tag = FAR
+		original_tag = FIE
+		original_tag = FRI
+		original_tag = GRA
+		original_tag = IRN
+		original_tag = JCK
+		original_tag = KAM
+		original_tag = MET
+		original_tag = MRA
+		original_tag = ORO
+		original_tag = PAP
+		original_tag = PER
+		original_tag = PMR
+		original_tag = REH
+		original_tag = RIP
+		original_tag = ROT
+		original_tag = RRR
+		original_tag = RHO
+		original_tag = SBR
+		original_tag = SCO
+		original_tag = SCR
+		original_tag = SKY
+		original_tag = SNO
+		original_tag = STM
+		original_tag = TCL
+		original_tag = THO
+		original_tag = TPA
+		original_tag = UNB
+		original_tag = VIP
+		original_tag = YKZ
+		original_tag = PAR
+		original_tag = JAC
+		original_tag = PAL
+	}
+}
+
+is_raider_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_raider_nation_tt
+		has_country_flag = is_raider_nation
+	}
+}
+
+is_not_raider_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_raider_nation_tt
+		is_raider_nation = no
+	}
+}
+
+is_warcraft_nation = {
+	OR = {
+		original_tag = KOT
+		original_tag = ORC
+		original_tag = BLG
+		has_country_flag = is_warcraft_nation
+	}
+}
+
+is_settler_nation_allowed_block = {
+	OR = {
+		has_country_flag = is_settler_nation
+		# Unique trees
+		original_tag = ANO
+		original_tag = ATE
+		original_tag = BAG
+		original_tag = BDT
+		original_tag = BGR
+		original_tag = BLC
+		original_tag = BTH
+		original_tag = CHO
+		original_tag = CHR
+		original_tag = CMC
+		original_tag = DES
+		original_tag = EAG
+		original_tag = EUR
+		original_tag = GDH
+		original_tag = HAM
+		original_tag = HAN
+		original_tag = HEA
+		original_tag = HGH
+		original_tag = LUM
+		original_tag = MDT
+		original_tag = MOT
+		original_tag = MUR
+		original_tag = NAV
+		original_tag = NEW
+		original_tag = NUN
+		original_tag = RES
+		original_tag = ROS
+		original_tag = ROB
+		original_tag = SHI
+		original_tag = SIE
+		original_tag = SLA
+		original_tag = SLN
+		original_tag = STC
+		original_tag = SUF
+		original_tag = SRG
+		original_tag = STR
+		original_tag = TAA
+		original_tag = TDT
+		original_tag = TLP
+		original_tag = TNK
+		original_tag = TRR
+		original_tag = TTM
+		original_tag = TVT
+		original_tag = TWO
+		original_tag = VSH
+		original_tag = VLS
+		original_tag = VLT
+		original_tag = VEG
+		original_tag = VTS
+		original_tag = YMP
+		original_tag = UCF
+		original_tag = RID
+		original_tag = MIC
+		original_tag = SHE
+		original_tag = LNS
+
+		# Generic trees
+		original_tag = ARB
+		original_tag = ARR
+		original_tag = ARZ
+		original_tag = ASF
+		original_tag = ATM
+		original_tag = ATT
+		original_tag = BAM
+		original_tag = BEL
+		original_tag = BIS
+		original_tag = BJS
+		original_tag = BON
+		original_tag = BOO
+		original_tag = BRA
+		original_tag = BRE
+		original_tag = BRI
+		original_tag = COW
+		original_tag = CBN
+		original_tag = CHC
+		original_tag = CLK
+		original_tag = COL
+		original_tag = COM
+		original_tag = CPK
+		original_tag = DLN
+		original_tag = DRA
+		original_tag = DRE
+		original_tag = DSL
+		original_tag = DUN
+		original_tag = EAS
+		original_tag = ECU
+		original_tag = EDA
+		original_tag = EDN
+		original_tag = ELB
+		original_tag = ENT
+		original_tag = FEN
+		original_tag = FLA
+		original_tag = FOR
+		original_tag = FRG
+		original_tag = FRN
+		original_tag = GIM
+		original_tag = GLC
+		original_tag = GLW
+		original_tag = GRH
+		original_tag = HAI
+		original_tag = HRO
+		original_tag = HST
+		original_tag = HVR
+		original_tag = HXL
+		original_tag = IRC
+		original_tag = KIN
+		original_tag = KLA
+		original_tag = LAP
+		original_tag = LGS
+		original_tag = LOI
+		original_tag = LOS
+		original_tag = LUB
+		original_tag = MES
+		original_tag = MJW
+		original_tag = MOS
+		original_tag = MRR
+		original_tag = MTC
+		original_tag = MTR
+		original_tag = NAT
+		original_tag = NEU
+		original_tag = NIT
+		original_tag = NMS
+		original_tag = NPC
+		original_tag = NVS
+		original_tag = NVT
+		original_tag = OST
+		original_tag = PAS
+		original_tag = PEC
+		original_tag = PHA
+		original_tag = PHR
+		original_tag = PLT
+		original_tag = PSH
+		original_tag = RAD
+		original_tag = RBD
+		original_tag = RIO
+		original_tag = ROL
+		original_tag = RSR
+		original_tag = RUB
+		original_tag = SAN
+		original_tag = SHO
+		original_tag = SIY
+		original_tag = SLE
+		original_tag = SSS
+		original_tag = STA
+		original_tag = STB
+		original_tag = STN
+		original_tag = SUF
+		original_tag = SYN
+		original_tag = TCA
+		original_tag = TER
+		original_tag = TIM
+		original_tag = TLL
+		original_tag = TLR
+		original_tag = TOC
+		original_tag = TON
+		original_tag = TPM
+		original_tag = TUB
+		original_tag = TVR
+		original_tag = TWO
+		original_tag = UIN
+		original_tag = VIC
+		original_tag = VSH
+		original_tag = WEN
+		original_tag = WHD
+		original_tag = WHI
+		original_tag = WNC
+		original_tag = WYR
+		original_tag = YAK
+		original_tag = WPG
+		original_tag = MXS
+		original_tag = FSC
+		original_tag = WCO
+		original_tag = TXC
+		original_tag = RIC
+		original_tag = MUC
+		original_tag = PNC
+		original_tag = MCO
+		original_tag = NWC
+
+		#Special Tags
+		original_tag = ODY
+		original_tag = NPE
+		original_tag = MXT
+		original_tag = DAG
+	}
+}
+
+is_settler_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_settler_nation_tt
+		has_country_flag = is_settler_nation
+	}
+}
+
+is_not_settler_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_settler_nation_tt
+		is_settler_nation = no
+	}
+}
+
+is_use_settler_centralization_allowed_block = { #Mostly major tags that aren't put into other allowed blocks cause they use unique advisors and laws.
+	OR = {
+		original_tag = NCR
+		original_tag = CES
+		original_tag = LAC
+		original_tag = NCN
+		original_tag = TBH
+		original_tag = RRG
+		original_tag = ITZ
+		original_tag = FFI
+		original_tag = CAF
+		original_tag = MCA
+	}
+}
+
+is_mormon_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_mormon_nation_tt
+		has_country_flag = is_mormon_nation
+	}
+}
+
+is_not_mormon_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_mormon_nation_tt
+		is_mormon_nation = no
+	}
+}
+
+is_psyker_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_psyker_nation_tt
+		has_country_flag = is_psyker_nation
+	}
+}
+
+is_not_psyker_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_psyker_nation_tt
+		is_psyker_nation = no
+	}
+}
+
+is_super_mutant_nation_allowed_block = {
+	OR = {
+		has_country_flag = is_super_mutant_nation
+		original_tag = CRH
+		original_tag = IMO
+		original_tag = JCT
+		original_tag = SHA
+		original_tag = TRL
+		original_tag = UOA
+		original_tag = UTO
+		original_tag = NEW
+		original_tag = VLT
+	}
+}
+
+is_super_mutant_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_super_mutant_nation_tt
+		has_country_flag = is_super_mutant_nation
+	}
+}
+
+is_not_super_mutant_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_super_mutant_nation_tt
+		is_super_mutant_nation = no
+	}
+}
+
+is_ghoul_nation_allowed_block = {
+	OR = {
+		has_country_flag = is_ghoul_nation
+		original_tag = BEL
+		original_tag = BLO
+		original_tag = CAF
+		original_tag = DSL
+		original_tag = GLC
+		original_tag = GLW
+		original_tag = HXL
+		original_tag = LOS
+		original_tag = LUM
+		original_tag = NOE
+		original_tag = RES
+		original_tag = SIN
+		original_tag = TLP
+		original_tag = TOC
+		original_tag = URA
+		original_tag = WHD
+	}
+}
+
+is_ghoul_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_ghoul_nation_tt
+		has_country_flag = is_ghoul_nation
+	}
+}
+
+is_not_ghoul_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_ghoul_nation_tt
+		is_ghoul_nation = no
+	}
+}
+
+is_brotherhood_nation_allowed_block = {
+	OR = {
+		original_tag = ACH
+		original_tag = BOS
+		original_tag = MOJ
+		original_tag = MXC
+		original_tag = RIO
+		original_tag = SOH
+		original_tag = TBH
+		original_tag = TLT
+		original_tag = WBH
+		original_tag = TCA
+		original_tag = GRD
+		original_tag = MNC
+	}
+}
+
+is_brotherhood_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_brotherhood_nation_tt
+		has_country_flag = is_brotherhood_nation
+	}
+}
+
+is_brotherhood_nation_proper_allowed_block = {
+	OR = {
+		original_tag = ACH
+		original_tag = BAP
+		original_tag = BGF
+		original_tag = BLS
+		original_tag = BMW
+		original_tag = BOS
+		original_tag = BSF
+		original_tag = GRD
+		original_tag = MNC
+		original_tag = MOJ
+		original_tag = MXC
+		original_tag = RIO
+		original_tag = SOH
+		original_tag = TCA
+	}
+}
+
+is_enclave_nation_proper_allowed_block = {
+	OR = {
+		original_tag = MCA
+	}
+}
+
+
+is_enclave_nation_proper = {
+	custom_trigger_tooltip = {
+		tooltip = is_enclave_nation_tt
+		has_country_flag = enclave_nation
+	}
+}
+
+is_brotherhood_nation_proper = {
+	custom_trigger_tooltip = {
+		tooltip = is_brotherhood_nation_tt
+		has_country_flag = is_brotherhood_nation_proper
+	}
+}
+
+is_not_brotherhood_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_brotherhood_nation_tt
+		is_brotherhood_nation = no
+	}
+}
+
+is_human_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_human_nation_tt
+		is_ghoul_nation = no
+		is_super_mutant_nation = no
+	}
+}
+
+is_not_human_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_human_nation_tt
+		is_human_nation = no
+	}
+}
+
+is_vault_tec_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_vault_tec_nation_tt
+		has_country_flag = is_vault_tec_nation
+	}
+}
+
+is_vault_tec_nation_allowed_block = {
+	OR = {
+		original_tag = ARR
+		original_tag = BOO
+		original_tag = CLK
+		original_tag = EXE
+		original_tag = TTM
+		original_tag = ROT
+		original_tag = TOC
+		original_tag = VLT
+		original_tag = VTS
+		original_tag = VLS
+		original_tag = EDA
+		original_tag = VSH
+	}
+}
+
+is_robot_nation_allowed_block = {
+	OR = {
+		original_tag = ARM
+		original_tag = BGR
+		original_tag = BRE
+		original_tag = FEN
+		original_tag = MAX
+		original_tag = MOC
+		original_tag = PSH
+		original_tag = RAD
+		original_tag = ROB
+		original_tag = TLA
+		original_tag = TNK
+		original_tag = ZAP
+	}
+}
+
+is_robotic_civilization = {
+	custom_trigger_tooltip = {
+		tooltip = is_robotic_civilization_tt
+		has_country_flag = is_robotic_nation
+	}
+}
+
+is_not_robotic_civilization = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_robotic_civilization_tt
+		is_robotic_civilization = no
+	}
+}
+
+is_blacklisted_followers_nation = {
+	has_country_flag = is_followers_black_listed_nation
+}
+
+is_coastal_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_coastal_nation_tt
+		any_owned_state = {
+			is_coastal = yes
+		}
+	}
+}
+
+is_not_coastal_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_coastal_nation_tt
+		is_coastal_nation = no
+	}
+}
+
+is_advanced_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_advanced_nation_tt
+		has_tech = scientific_civilization
+	}
+}
+
+is_not_advanced_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_advanced_nation_tt
+		is_advanced_nation = no
+	}
+}
+
+is_civilized_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_civilized_nation_tt
+		has_tech = settled_civilization
+	}
+}
+
+is_not_civilized_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_civilized_nation_tt
+		is_civilized_nation = no
+	}
+}
+
+is_ncr_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_ncr_nation_tt
+		has_country_flag = is_ncr_nation
+	}
+}
+
+is_not_ncr_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_ncr_nation_tt
+		is_ncr_nation = no
+	}
+}
+
+is_chinese_nation_allowed_block = {
+	OR = {
+		original_tag = HXL
+		original_tag = DSL
+		original_tag = SHI
+	}
+}
+
+is_chinese_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_chinese_nation_tt
+		has_country_flag = is_chinese_nation
+	}
+}
+
+is_car_nation = {
+	custom_trigger_tooltip = {
+		tooltip = is_chinese_nation_tt
+		is_in_array = {
+			array = global.car_nations_ids_array
+			value = THIS.id
+		}
+	}
+}
+
+# Nations that start with a unique economy law. This is REQUIRED for some triggers, please add your tag here if appropriate
+is_nation_with_unique_economy_law = {
+	OR = {
+		has_country_flag = has_unique_economic_laws # DO NOT expect this to work unless Paradox changes how country flags in history files are checked
+		original_tag = ACH
+		original_tag = BON
+		original_tag = BLC
+		original_tag = BOS
+		original_tag = BRA
+		original_tag = NCR
+		original_tag = RDS
+		original_tag = TNK
+		original_tag = LOI
+	}
+}
+
+# Nations that start with no generic manufacturers. This is REQUIRED for some triggers, please add your tag here if appropriate
+is_nation_with_no_generic_manufacturer = {
+	OR = {
+		has_country_flag = no_generic_manufacturer # DO NOT expect this to work unless Paradox changes how country flags in history files are checked
+		original_tag = ARM
+		original_tag = MAX
+		original_tag = MOC
+		original_tag = TLA
+		original_tag = TNK
+		original_tag = ZAP
+	}
+}
+
+### Tags that will care more about researching naval technologies
+
+is_naval_tag = {
+	OR = {
+		original_tag = BRK
+		original_tag = NCR
+		original_tag = CES
+		original_tag = SHI
+		original_tag = GDH
+		original_tag = RAP
+		original_tag = RRG
+		original_tag = ARM
+		original_tag = ITZ
+		original_tag = VIC
+		original_tag = MLT
+	}
+}
+
+### Checks if THIS is mutually neutral with PREV
+is_neutral_country = {
+	custom_trigger_tooltip = {
+		NOT = {
+			has_war_with = PREV
+			is_ally_with = PREV
+			# Combined into is_ally_with. Keeping this commented out for reference @Tran
+			# is_subject_of = PREV
+			# is_in_faction_with = PREV
+			has_military_access_to = PREV
+			gives_military_access_to = PREV
+			is_justifying_wargoal_against = PREV
+			has_wargoal_against = PREV
+			PREV = {
+				OR = {
+					is_justifying_wargoal_against = PREV
+					is_guaranteed_by = PREV
+					# Unnecessary due to above is_ally_with covering this check both ways. Keeping this commented out for reference @Tran
+					# is_subject_of = PREV
+					has_wargoal_against = PREV
+				}
+			}
+		}
+		tooltip = is_neutral_country_tt
+	}
+}
+
+is_dynamic_civil_war_tag = {
+	OR = {
+		# These are preassigned in history files using `reserve_dynamic_country = yes`
+		# This is primarily done for custom war names in `localisation/english/OWB_War_l_english.yml`
+		original_tag = D01	# MAL
+		original_tag = D02	# CAU
+		original_tag = D03	# LUC
+		original_tag = D04	# LAN
+		original_tag = D05	# AUR
+		original_tag = D06	# VLP
+		original_tag = D07	# THN
+		original_tag = D08	# WDN
+		original_tag = D09	# CRH
+		original_tag = D10	# BON
+		original_tag = D11	# RDS
+		original_tag = D12	# NVS
+		original_tag = D13	# NVT
+		original_tag = D14	# (MCA_enclave_chicago)
+		original_tag = D15	# (MCA_northern_commonwealth)
+
+		# After game start
+		original_tag = D16
+		original_tag = D17
+		original_tag = D18
+		original_tag = D19
+		original_tag = D20
+		original_tag = D21
+		original_tag = D22
+		original_tag = D23
+		original_tag = D24
+		original_tag = D25
+		original_tag = D26
+		original_tag = D27
+		original_tag = D28
+		original_tag = D29
+		original_tag = D30
+		original_tag = D31
+		original_tag = D32
+		original_tag = D33
+		original_tag = D34
+		original_tag = D35
+		original_tag = D36
+		original_tag = D37
+		original_tag = D38
+		original_tag = D39
+		original_tag = D40
+		original_tag = D41
+		original_tag = D42
+		original_tag = D43
+		original_tag = D44
+		original_tag = D45
+		original_tag = D46
+		original_tag = D47
+		original_tag = D48
+		original_tag = D49
+		original_tag = D50
+		original_tag = D51
+		original_tag = D52
+		original_tag = D53
+		original_tag = D54
+		original_tag = D55
+		original_tag = D56
+		original_tag = D57
+		original_tag = D58
+		original_tag = D59
+		original_tag = D60
+		original_tag = D61
+		original_tag = D62
+		original_tag = D63
+		original_tag = D64
+		original_tag = D65
+		original_tag = D66
+		original_tag = D67
+		original_tag = D68
+		original_tag = D69
+		original_tag = D70
+	}
+}
+
+is_possible_army_wages_disabled_tag = {
+	OR = {
+		has_country_flag = army_wages_disabled # DO NOT expect this to work unless Paradox changes how country flags in history files are checked
+		is_super_mutant_nation_allowed_block = yes
+		is_brotherhood_nation_allowed_block = yes
+		original_tag = LNS
+		original_tag = TEX
+		original_tag = MTM
+		original_tag = TLA
+		original_tag = UFO
+		original_tag = ZAP
+		original_tag = URA
+	}
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

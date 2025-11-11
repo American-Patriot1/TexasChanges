@@ -1,0 +1,22 @@
+state={
+	id=429
+	name="STATE_429"
+
+	history = {
+		owner = MES
+		add_core_of = MES
+		victory_points = {
+			2958 1
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	provinces={
+		835 2941 2942 2944 2945 2946 2947 2948 2951 2952 2958 3008 5402 5444 5511 5513 5595 5596 5597 5598 5694 5696 5698 7630 
+	}
+	manpower=429
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

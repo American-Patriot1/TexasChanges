@@ -1,0 +1,25 @@
+state={
+	id=731
+	name="STATE_731"
+	resources={
+		metal=3.000
+	}
+	history = {
+		owner = GAM
+		add_core_of = GAM
+		victory_points = {
+			16952 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+	}
+	provinces={
+		16794 16846 16863 16904 16923 16924 16930 16939 16943 16952 16953 
+	}
+	manpower=7400
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

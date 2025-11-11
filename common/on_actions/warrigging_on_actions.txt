@@ -1,0 +1,623 @@
+# Handles all the rigged Wars.
+
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = { # Navarro Free for All
+				limit = {
+					ROOT = {
+						OR = {
+							tag = NAT
+							tag = NVS
+							tag = NVT
+						}
+					}
+					FROM = {
+						OR = {
+							tag = NAT
+							tag = NVS
+							tag = NVT
+						}
+					}
+					NOT = {
+						has_global_flag = NAVARRO_BUFF_APPLIED
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = NAVARRO_OUTCOME
+							option = NCR
+						}
+					}
+					NAT = {
+						apply_war_buff_with_10_divisions = yes
+					}
+					set_global_flag = NAVARRO_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = NAVARRO_OUTCOME
+							option = SHI
+						}
+					}
+					NVS = {
+						apply_war_buff_with_10_divisions = yes
+					}
+					set_global_flag = NAVARRO_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = NAVARRO_OUTCOME
+							option = EUREKA
+						}
+					}
+					NVT = {
+						apply_war_buff_with_10_divisions = yes
+					}
+					set_global_flag = NAVARRO_BUFF_APPLIED
+				}
+			}
+			if = { # Rotpurgers vs Spokane
+				limit = {
+					ROOT = {
+						OR = {
+							tag = ROT
+							tag = TOC
+						}
+					}
+					FROM = {
+						OR = {
+							tag = ROT
+							tag = TOC
+						}
+					}
+					NOT = {
+						has_global_flag = SPOKANE_ROTPURGERS_WAR_BUFF_APPLIED
+					}
+				}
+				set_global_flag = SPOKANE_ROTPURGERS_WAR_BUFF_APPLIED
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = V100_OUTCOME
+							option = SPOKANE
+						}
+					}
+					TOC = {
+						apply_war_buff_with_10_divisions = yes
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = V100_OUTCOME
+							option = ROTPURGERS
+						}
+					}
+					ROT = {
+						apply_war_buff_with_10_divisions = yes
+					}
+				}
+			}
+			if = { # Warden Revolt
+				limit = {
+					ROOT = {
+						OR = {
+							tag = WDN
+							tag = HAN
+						}
+					}
+					FROM = {
+						OR = {
+							tag = WDN
+							tag = HAN
+						}
+					}
+					NOT = {
+						has_global_flag = WARDEN_REVOLT_BUFF_APPLIED
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = WDN_REVOLT_OUTCOME
+							option = WDN
+						}
+					}
+					WDN = {
+						apply_war_buff_with_15_divisions = yes
+					}
+					set_global_flag = WARDEN_REVOLT_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = WDN_REVOLT_OUTCOME
+							option = HAN
+						}
+					}
+					HAN = {
+						apply_war_buff_with_5_divisions = yes
+					}
+					set_global_flag = WARDEN_REVOLT_BUFF_APPLIED
+				}
+			}
+			if = { # Hand Warband Revolt
+				limit = {
+					ROOT = {
+						OR = {
+							tag = LNS
+							tag = HWB
+						}
+					}
+					FROM = {
+						OR = {
+							tag = HWB
+							tag = LNS
+						}
+					}
+					NOT = {
+						has_global_flag = HWB_REVOLT_BUFF_APPLIED
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = HWB_REVOLT_OUTCOME
+							option = HWB
+						}
+					}
+					HWB = {
+						apply_war_buff_with_15_divisions = yes
+					}
+					set_global_flag = HWB_REVOLT_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = HWB_REVOLT_OUTCOME
+							option = LNS
+						}
+					}
+					LNS = {
+						apply_war_buff_with_5_divisions = yes
+					}
+					set_global_flag = HWB_REVOLT_BUFF_APPLIED
+				}
+			}
+			if = { # Oklahoma Battle Royale
+				limit = {
+					ROOT = {
+						OR = {
+							tag = TLP
+							tag = CHC
+							tag = CMC
+							tag = CHR
+							tag = CHO
+						}
+					}
+					FROM = {
+						OR = {
+							tag = TLP
+							tag = CHC
+							tag = CMC
+							tag = CHR
+							tag = CHO
+						}
+					}
+					NOT = {
+						has_global_flag = OKLAHOMA_BUFF_APPLIED
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = OKLAHOMA_OUTCOME
+							option = TLP
+						}
+					}
+					TLP = {
+						apply_war_buff_with_20_divisions = yes
+					}
+					set_global_flag = OKLAHOMA_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = OKLAHOMA_OUTCOME
+							option = CHC
+						}
+					}
+					CHC = {
+						apply_war_buff_with_20_divisions = yes
+					}
+					set_global_flag = OKLAHOMA_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = OKLAHOMA_OUTCOME
+							option = GPF
+						}
+					}
+					CMC = {
+						apply_war_buff_with_20_divisions = yes
+					}
+					set_global_flag = OKLAHOMA_BUFF_APPLIED
+				}
+			}
+			if = { # Paullus Revolt
+				limit = {
+					ROOT = {
+						OR = {
+							tag = PLS
+							tag = RRG
+						}
+					}
+					FROM = {
+						OR = {
+							tag = PLS
+							tag = RRG
+						}
+					}
+					NOT = {
+						has_global_flag = PAULLUS_REVOLT_BUFF_APPLIED
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = PLS_REVOLT_OUTCOME
+							option = PLS
+						}
+					}
+					PLS = {
+						apply_war_buff_paullus = yes
+					}
+					set_global_flag = PAULLUS_REVOLT_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = PLS_REVOLT_OUTCOME
+							option = RRG
+						}
+					}
+					RRG = {
+						apply_war_buff_with_5_divisions = yes
+					}
+					set_global_flag = PAULLUS_REVOLT_BUFF_APPLIED
+				}
+			}
+			if = { # Northern Frontier War
+				limit = {
+					ROOT = {
+						OR = {
+							tag = COM
+							tag = BGR
+							tag = STC
+							tag = LOI
+						}
+					}
+					FROM = {
+						OR = {
+							tag = COM
+							tag = LOI
+							tag = STC
+							tag = BGR
+						}
+					}
+					NOT = {
+						has_global_flag = NORTHERN_FRONTIER_BUFF_APPLIED
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = NORTHERN_FRONTIER_OUTCOME
+							option = COM
+						}
+					}
+					COM = {
+						apply_war_buff_with_30_divisions = yes
+					}
+					set_global_flag = NORTHERN_FRONTIER_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = NORTHERN_FRONTIER_OUTCOME
+							option = BGR
+						}
+					}
+					BGR = {
+						apply_war_buff_with_20_divisions = yes
+					}
+					set_global_flag = NORTHERN_FRONTIER_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = NORTHERN_FRONTIER_OUTCOME
+							option = STC
+						}
+					}
+					STC = {
+						apply_war_buff_with_10_divisions = yes
+					}
+					set_global_flag = NORTHERN_FRONTIER_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = NORTHERN_FRONTIER_OUTCOME
+							option = LOI
+						}
+					}
+					LOI = {
+						apply_war_buff_with_30_divisions = yes
+					}
+					set_global_flag = NORTHERN_FRONTIER_BUFF_APPLIED
+				}
+			}
+			if = { # Alamo/Texas vs Santa Anna
+				limit = {
+					ROOT = {
+						OR = {
+							tag = ACH
+							tag = ARM
+						}
+					}
+					FROM = {
+						OR = {
+							tag = ACH
+							tag = ARM
+						}
+					}
+					NOT = {
+						has_global_flag = ALAMO_BUFF_APPLIED
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = ALAMO_SHAKEDOWN_OUTCOME
+							option = ARM
+						}
+					}
+					ARM = {
+						apply_war_buff_with_5_divisions = yes
+					}
+					set_global_flag = ALAMO_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = ALAMO_SHAKEDOWN_OUTCOME
+							option = ACH
+						}
+					}
+					ACH = {
+						apply_war_buff_with_20_divisions = yes
+					}
+					set_global_flag = ALAMO_BUFF_APPLIED
+				}
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = WDN
+							tag = HAN
+						}
+					}
+					FROM = {
+						OR = {
+							tag = WDN
+							tag = HAN
+						}
+					}
+				}
+				WDN = { remove_war_buff = yes }
+				HAN = { remove_war_buff = yes }
+			}
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = HWB
+							tag = LNS
+						}
+					}
+					FROM = {
+						OR = {
+							tag = HWB
+							tag = LNS
+						}
+					}
+				}
+				LNS = { remove_war_buff = yes }
+				HWB = { remove_war_buff = yes }
+			}
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = TOC
+							tag = ROT
+						}
+					}
+					FROM = {
+						OR = {
+							tag = TOC
+							tag = ROT
+						}
+					}
+				}
+				TOC = { remove_war_buff = yes }
+				ROT = { remove_war_buff = yes }
+			}
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = PLS
+							tag = RRG
+						}
+					}
+					FROM = {
+						OR = {
+							tag = PLS
+							tag = RRG
+						}
+					}
+				}
+				PLS = { remove_war_buff = yes }
+				RRG = { remove_war_buff = yes }
+			}
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = ACH
+							tag = ARM
+						}
+					}
+					FROM = {
+						OR = {
+							tag = ACH
+							tag = ARM
+						}
+					}
+				}
+				ARM = { remove_war_buff = yes }
+				ACH = { remove_war_buff = yes }
+			}
+			if = { #Northern Frontier | Pioneer Company
+				limit = {
+					ROOT = {
+						tag = COM
+					}
+					owns_state = 1125
+					owns_state = 1110
+					owns_state = 1149
+					has_global_flag = NORTHERN_FRONTIER_BUFF_APPLIED
+					NOT = {
+						has_global_flag = NORTHERN_FRONTIER_BUFF_REMOVED
+					}
+				}
+				COM = {
+					remove_war_buff = yes
+				}
+				set_global_flag = NORTHERN_FRONTIER_BUFF_REMOVED
+			}
+		}
+	}
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+                limit = {
+					OR = {
+						original_tag = STC
+						original_tag = LOI
+						original_tag = BGR
+						original_tag = COM
+					}
+					has_global_flag = NORTHERN_FRONTIER_BUFF_APPLIED
+					NOT = {
+						has_global_flag = NORTHERN_FRONTIER_BUFF_REMOVED
+					}
+					owns_state = 1125
+					owns_state = 1110
+					owns_state = 1149
+					owns_state = 1161
+                }
+				remove_war_buff = yes
+				set_global_flag = NORTHERN_FRONTIER_BUFF_REMOVED
+       		}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = { #Navarro | Fusang
+				limit = {
+					ROOT = {
+						tag = NVS
+					}
+					owns_state = 56
+					owns_state = 548
+				}
+				NVS = {
+					remove_war_buff = yes
+				}
+			}
+			else_if = { #Navarro | Free Folk
+				limit = {
+					ROOT = {
+						tag = NVT
+					}
+					owns_state = 56
+					owns_state = 216
+				}
+				NVT = {
+					remove_war_buff = yes
+				}
+			}
+			else_if = { #Navarro | Navarro Territories
+				limit = {
+					ROOT = {
+						tag = NAT
+					}
+					owns_state = 340
+					owns_state = 216
+				}
+				NAT = {
+					remove_war_buff = yes
+				}
+			}
+			if = { #Oklahoma | Last Patrol
+				limit = {
+					ROOT = {
+						tag = TLP
+					}
+					owns_state = 890
+					owns_state = 883
+				}
+				TLP = {
+					remove_war_buff = yes
+				}
+			}
+			else_if = { #Oklahoma | Chained Choir
+				limit = {
+					ROOT = {
+						tag = CHC
+					}
+					owns_state = 616
+					owns_state = 883
+				}
+				CHC = {
+					remove_war_buff = yes
+				}
+			}
+			else_if = { #Oklahoma | Great Plains Federation
+				limit = {
+					ROOT = {
+						tag = CMC
+					}
+					owns_state = 616
+					owns_state = 890
+				}
+				CMC = {
+					remove_war_buff = yes
+				}
+			}
+		}
+	}
+}

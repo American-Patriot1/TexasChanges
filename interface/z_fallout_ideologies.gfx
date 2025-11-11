@@ -1,0 +1,1139 @@
+spriteTypes = {
+	## GENERIC ##
+    spriteType = {
+		name = "GFX_ideology_people_group"
+		texturefile = "gfx/interface/ideologies/people_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/intellectuals_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_elites_group"
+		texturefile = "gfx/interface/ideologies/elites_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ruler_group"
+		texturefile = "gfx/interface/ideologies/ruler_group.dds"
+	}
+	## Countries ##
+	## DLN ##
+	spriteType = {
+		name = "GFX_ideology_DLN_people_group"
+		texturefile = "gfx/interface/ideologies/unique/DLN/DLN_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_DLN_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/DLN/DLN_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_DLN_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/DLN/DLN_ruler.dds"
+	}
+	## Marrow Drinkers ##
+	spriteType = {
+		name = "GFX_ideology_MDT_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/MDT/MDT_ruler.dds"
+	}
+	## Shi ##
+	spriteType = {
+		name = "GFX_ideology_SHI_people_group"
+		texturefile = "gfx/interface/ideologies/unique/SHI/SHI_people.dds"
+	}
+	## Think Tank ##
+	spriteType = {
+		name = "GFX_ideology_TNK_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/TNK/TNK_intellectuals.dds"
+	}
+	## Troll Warren ##
+	spriteType = {
+		name = "GFX_ideology_TRL_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/TRL/TRL_ruler.dds"
+	}
+	## Mirelurk Tribe ##
+	spriteType = {
+		name = "GFX_ideology_MLT_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/MLT/MLT_elites.dds"
+	}
+	## Dundurn, Stoon, Pleasantdale ##
+	spriteType = {
+		name = "GFX_ideology_DUN_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/DUN/rosewood_ideology.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_DUN_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/DUN/dundurn_ideology.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_PLT_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/PLT/pleasantdale_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_PLT_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/canada/CSIS.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STN_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/canada/langenburgian_knight.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STN_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/STN/dandies_ideology.dds"
+	}
+	## Vault 37
+	spriteType = {
+		name = "GFX_ideology_VTS_people_group"
+		texturefile = "gfx/interface/ideologies/unique/canada/langenburgian_knight.dds"
+	}
+	## Great Khans ##
+	spriteType = {
+		name = "GFX_ideology_KHA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/KHA/KHA_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_KHA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/KHA/KHA_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_KHA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/KHA/kha_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_KHA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/KHA/kha_elites.dds"
+	}
+	## BDT ##
+	spriteType = {
+		name = "GFX_ideology_BDT_people_group"
+		texturefile = "gfx/interface/ideologies/unique/BDT/BDT_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BDT_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/BDT/BDT_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BDT_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BDT_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/BDT/BDT_ruler.dds"
+	}
+
+	## NCR ##
+	spriteType = {
+		name = "GFX_ideology_NCR_people_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NCR_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NCR_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NCR_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_intellectuals.dds"
+	}
+	## MOT ##
+	spriteType = {
+		name = "GFX_ideology_MOT_people_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOT_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOT_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOT_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/NCR/ncr_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOT_kings_way"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_Kings_Way.dds"
+	}
+	## EHT ##
+	spriteType = {
+		name = "GFX_ideology_EHT_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/EHT/eht_ruler.dds"
+	}
+	## EDA ##
+	spriteType = {
+		name = "GFX_ideology_EDA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/EDA/eda_people.dds"
+	}
+	#NCN
+	spriteType = {
+		name = "GFX_ideology_NCN_people_group"
+		texturefile = "gfx/interface/ideologies/unique/NCN/ncn_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NCN_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/NCN/ncn_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NCN_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/NCN/ncn_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NCN_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/NCN/ncn_ruler.dds"
+	}
+	## Vegas & New Reno ##
+	spriteType = {
+		name = "GFX_ideology_NEW_people_group"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NEW_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NEW_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_NEW_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/NEW/NEW_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_VEG_people_group"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_VEG_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_VEG_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_VEG_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_VEG_kings_way"
+		texturefile = "gfx/interface/ideologies/unique/VEG/VEG_Kings_Way.dds"
+	}
+	## DES ##
+	spriteType = {
+		name = "GFX_ideology_DES_people_group"
+		texturefile = "gfx/interface/ideologies/unique/DES/DES_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_DES_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/DES/DES_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_DES_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/DES/DES_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_DES_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/DES/DES_ruler.dds"
+	}
+
+	## Group Ideologies ##
+	## Christians ##
+	#ASF
+	spriteType = {
+		name = "GFX_ideology_ASF_people_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ASF_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ASF_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ASF_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_ruler.dds"
+	}
+	#HEA
+	spriteType = {
+		name = "GFX_ideology_HEA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_HEA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_HEA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_HEA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_ruler.dds"
+	}
+	#MUR
+	spriteType = {
+		name = "GFX_ideology_MUR_people_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MUR_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MUR_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MUR_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_ruler.dds"
+	}
+	#ANO
+	spriteType = {
+		name = "GFX_ideology_ANO_people_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ANO_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ANO_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ANO_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_ruler.dds"
+	}
+	#HGH
+	spriteType = {
+		name = "GFX_ideology_HGH_people_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_HGH_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_HGH_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_HGH_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/christian/christian_ruler.dds"
+	}
+	#WHT
+
+	spriteType = {
+		name = "GFX_ideology_WHT_people_group"
+		texturefile = "gfx/interface/ideologies/unique/NCN/ncn_people.dds" #Done on purpose
+	}
+	spriteType = {
+		name = "GFX_ideology_WHT_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/WHT/wht_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_WHT_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/WHT/wht_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_WHT_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/WHT/wht_ruler.dds"
+	}
+	## Legion ##
+	#CES
+	spriteType = {
+		name = "GFX_ideology_CES_people_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CES_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CES_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CES_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_ruler.dds"
+	}
+	#LUL
+	spriteType = {
+		name = "GFX_ideology_LUL_people_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LUL_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LUL_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LUL_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_ruler.dds"
+	}
+	#LAC
+	spriteType = {
+		name = "GFX_ideology_LAC_people_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LAC_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LAC_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LAC_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_ruler.dds"
+	}
+	#BOM
+	spriteType = {
+		name = "GFX_ideology_BOM_people_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BOM_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BOM_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BOM_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/legion/legion_ruler.dds"
+	}
+
+	# TWO sun
+	spriteType = {
+		name = "GFX_ideology_TWO_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/TWO/two_ruler.dds"
+	}
+
+	##Brotherhood##
+	#BOS
+	spriteType = {
+		name = "GFX_ideology_BOS_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BOS_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BOS_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BOS_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	#SRG
+	spriteType = {
+		name = "GFX_ideology_SRG_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/SRG_People.dds"
+	}
+	#WBH
+	spriteType = {
+		name = "GFX_ideology_WBH_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_WBH_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_WBH_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_WBH_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	#MOJ
+	spriteType = {
+		name = "GFX_ideology_MOJ_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOJ_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOJ_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOJ_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	#MXC
+	spriteType = {
+		name = "GFX_ideology_MXC_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MXC_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MXC_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MXC_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	#MNC
+	spriteType = {
+		name = "GFX_ideology_MNC_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MNC_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MNC_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MNC_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	#SOH
+	spriteType = {
+		name = "GFX_ideology_SOH_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SOH_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SOH_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SOH_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	#ACH
+	spriteType = {
+		name = "GFX_ideology_ACH_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ACH_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ACH_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ACH_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	#RIO
+	spriteType = {
+		name = "GFX_ideology_RIO_people_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_RIO_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_RIO_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_RIO_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_ruler.dds"
+	}
+	##Artifical Intelligence##
+	#TLA
+	spriteType = {
+		name = "GFX_ideology_TLA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TLA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TLA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TLA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#MAX
+	spriteType = {
+		name = "GFX_ideology_MAX_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MAX_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MAX_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MAX_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#MOC
+	spriteType = {
+		name = "GFX_ideology_MOC_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOC_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOC_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MOC_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#ZAP
+	spriteType = {
+		name = "GFX_ideology_ZAP_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ZAP_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ZAP_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ZAP_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#ARM
+	spriteType = {
+		name = "GFX_ideology_ARM_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ARM_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ARM_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ARM_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#PSH: Protectron Security Hub
+	spriteType = {
+		name = "GFX_ideology_PSH_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_PSH_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_PSH_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_PSH_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#Robot City
+	spriteType = {
+		name = "GFX_ideology_ROB_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ROB_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ROB_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ROB_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#ODYSSEUS
+	spriteType = {
+		name = "GFX_ideology_ODY_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ODY_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ODY_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ODY_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_ruler.dds"
+	}
+	#HAN - WARDEN
+	spriteType = {
+		name = "GFX_ideology_HAN_people_group"
+		texturefile = "gfx/interface/ideologies/unique/artificial_intelligence/ai_people.dds"
+	}
+	#OST
+	spriteType = {
+		name = "GFX_ideology_OST_people_group"
+		texturefile = "gfx/interface/ideologies/unique/OST/OST_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_OST_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/OST/OST_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_OST_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/OST/OST_intellectuals.dds"
+    }
+	#PLS
+	spriteType = {
+		name = "GFX_ideology_PLS_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/PLS/Paulus_Warband.dds"
+	}
+	#TAA
+	spriteType = {
+		name = "GFX_ideology_TAA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/TAA/TAA_Contractualism.dds"
+	}
+	#TOC
+	spriteType = {
+		name = "GFX_ideology_TOC_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/TOC/wardens_ideology.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_VSH_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/TOC/wardens_ideology.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_PAS_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/TOC/wardens_ideology.dds"
+	}
+	#PAS
+	spriteType = {
+		name = "GFX_ideology_PAS_people_group"
+		texturefile = "gfx/interface/ideologies/unique/PAS/PAS_people.dds"
+	}
+	#TPA
+	spriteType = {
+		name = "GFX_ideology_TPA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/TPA/TPA_ruler.dds"
+	}
+	###BARONS###
+	spriteType = {
+		name = "GFX_ideology_RDS_people_group"
+		texturefile = "gfx/interface/ideologies/unique/RDS/rds_people.dds"
+	}
+	###SHI###
+	spriteType = {
+		name = "GFX_ideology_SHI_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/SHI/SHI_intellectuals.dds"
+	}
+	###COM###
+	spriteType = {
+		name = "GFX_ideology_COM_warlordship"
+		texturefile = "gfx/interface/ideologies/unique/COM/COM_warlordship.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_COM_constitutional_republic"
+		texturefile = "gfx/interface/ideologies/unique/COM/COM_constitutional_republic.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_COM_military_government"
+		texturefile = "gfx/interface/ideologies/unique/COM/COM_military_government.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_COM_revolutionary_democracy"
+		texturefile = "gfx/interface/ideologies/unique/COM/COM_revolutionary_democracy.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_COM_technocracy"
+		texturefile = "gfx/interface/ideologies/unique/COM/COM_technocracy.dds"
+	}
+	###CPL###
+	spriteType = {
+		name = "GFX_ideology_CPL_militarist_oligarchy"
+		texturefile = "gfx/interface/ideologies/unique/CPL/CPL_militarist_oligarchy.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CPL_conspiratory_oligarchy"
+		texturefile = "gfx/interface/ideologies/unique/CPL/CPL_conspiratory_oligarchy.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CPL_feudalism"
+		texturefile = "gfx/interface/ideologies/unique/CPL/CPL_feudalism.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CPL_survivalism"
+		texturefile = "gfx/interface/ideologies/unique/CPL/CPL_survivalism.dds"
+	}
+	###STC###
+	spriteType = {
+		name = "GFX_ideology_STC_conspiratory_oligarchy"
+		texturefile = "gfx/interface/ideologies/unique/STC/STC_conspiratory_oligarchy.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STC_ideocracy"
+		texturefile = "gfx/interface/ideologies/unique/STC/STC_ideocracy.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STC_militarist_oligarchy"
+		texturefile = "gfx/interface/ideologies/unique/STC/STC_militarist_oligarchy.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STC_peoples_militia"
+		texturefile = "gfx/interface/ideologies/unique/STC/STC_peoples_militia.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STC_survivalism"
+		texturefile = "gfx/interface/ideologies/unique/STC/STC_survivalism.dds"
+	}
+	###STA###
+	spriteType = {
+		name = "GFX_ideology_STA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/STA/STA_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/STA/STA_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/STA/STA_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_STA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/STA/STA_elites.dds"
+	}
+	###LAM###
+	spriteType = {
+		name = "GFX_ideology_LAM_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/LAM/LAM_lambda.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LAM_people_group"
+		texturefile = "gfx/interface/ideologies/unique/LAM/LAM_lambda.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LAM_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/LAM/LAM_lambda.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LAM_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/LAM/LAM_lambda.dds"
+    }
+	#####SUN#####
+	spriteType = {
+		name = "GFX_ideology_SUN_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/SUN/SUN_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SUN_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/SUN/SUN_intellectuals.dds"
+	}
+	#####Enclave#####
+	spriteType = {
+		name = "GFX_ideology_MCA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/enclave/enclave_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MCA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/enclave/enclave_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MCA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/enclave/enclave_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MCA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/enclave/enclave_elites.dds"
+	}
+	#####Eureka#####
+	spriteType = {
+		name = "GFX_ideology_EUR_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/EUR/eureka_enclave.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_EUR_people_group"
+		texturefile = "gfx/interface/ideologies/unique/EUR/EUR_People.dds"
+	}
+	#######MANITOBA#####
+	spriteType = {
+		name = "GFX_ideology_BRA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/BRA/BRA_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BRA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/BRA/BRA_elites.dds"
+	}
+
+	# #######METIS#####
+	# spriteType = {
+	# 	name = "GFX_ideology_MTC_intellectuals_group"
+	# 	texturefile = "gfx/interface/ideologies/unique/MTC/MTC_intellectuals.dds"
+	# }
+	# spriteType = {
+	# 	name = "GFX_ideology_MTC_elites_group"
+	# 	texturefile = "gfx/interface/ideologies/unique/MTC/MTC_elites.dds"
+	# }
+
+
+	######VERMILION#####
+	spriteType = {
+		name = "GFX_ideology_VER_people_group"
+		texturefile = "gfx/interface/ideologies/unique/VER/VER_people.dds"
+	}
+	#####IRON CONFEDERACY#####
+	spriteType = {
+		name = "GFX_ideology_IRC_people_group"
+		texturefile = "gfx/interface/ideologies/unique/IRC/IRC_people.dds"
+	}
+	#####CULT OF LIBERTY#####
+	spriteType = {
+		name = "GFX_ideology_HVR_people_group"
+		texturefile = "gfx/interface/ideologies/unique/HVR/cult_of_liberty.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_HVR_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_elites.dds"
+	}
+	#####MIDDLEMARK#####
+	spriteType = {
+		name = "GFX_ideology_MDM_people_group"
+		texturefile = "gfx/interface/ideologies/unique/MDM/MDM_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MDM_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/MDM/MDM_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MDM_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/MDM/MDM_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MDM_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/MDM/MDM_elites.dds"
+	}
+	#####RUMINATORS#####
+	spriteType = {
+		name = "GFX_ideology_BTH_people_group"
+		texturefile = "gfx/interface/ideologies/unique/BTH/BTH_ideology.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BTH_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/BTH/BTH_ideology.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BTH_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/brotherhood/brotherhood_intellectuals.dds"
+	}
+	#####MARSHALL REPUBLIC#####
+	spriteType = {
+		name = "GFX_ideology_MRR_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MRR_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MRR_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_MRR_people_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_people.dds"
+	}
+	#####SLAGS#####
+	spriteType = {
+		name = "GFX_ideology_SLA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SLA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SLA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SLA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/free_states/free_states_people.dds"
+	}
+	#####YELLOWSTONE PARK#####
+	spriteType = {
+		name = "GFX_ideology_ROS_people_group"
+		texturefile = "gfx/interface/ideologies/unique/ROS/ROS_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ROS_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/ROS/ROS_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_ROS_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/ROS/ROS_intellectuals.dds"
+	}
+	#######TEXAS CHANGES#######
+	##Texas Brotherhood##
+	spriteType = {
+		name = "GFX_ideology_TBH_peoples_militia"
+		texturefile = "gfx/interface/ideologies/unique/texas_bos/texas_bos_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TBH_militarist_technocracy_intellectuals"
+		texturefile = "gfx/interface/ideologies/unique/texas_bos/texas_bos_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TBH_militarist_oligarchy"
+		texturefile = "gfx/interface/ideologies/unique/texas_bos/texas_bos_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TBH_military_government"
+		texturefile = "gfx/interface/ideologies/unique/texas_bos/texas_bos_ruler.dds"
+	}
+	#TBH TEX#
+	spriteType = {
+		name = "GFX_ideology_TBH_federal_republic"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TBH_futurists"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TBH_industrial_oligarchy"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_TBH_military_junta"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_ruler.dds"
+	}
+	####Lone Star####
+	#LNS#
+	spriteType = {
+		name = "GFX_ideology_LNS_town_hall_democracy"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_meritocracy"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_mercantile_elite"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_indifferent_despotism"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_ruler.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_gang"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_hand.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_warlordship"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_legion.dds"
+	}
+	#LNS TEX#
+	spriteType = {
+		name = "GFX_ideology_LNS_federal_republic"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_futurists"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_industrial_oligarchy"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_LNS_military_junta"
+		texturefile = "gfx/interface/ideologies/unique/lone_star/lone_star_ruler.dds"
+	}
+	####Unity####
+	#UOA#
+	spriteType = {
+		name = "GFX_ideology_UOA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_UOA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_UOA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_UOA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_ruler.dds"
+	}
+	#SHA#
+	spriteType = {
+		name = "GFX_ideology_SHA_people_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SHA_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SHA_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_SHA_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_ruler.dds"
+	}
+	#IMO#
+	spriteType = {
+		name = "GFX_ideology_IMO_people_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_people.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_IMO_intellectuals_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_intellectuals.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_IMO_elites_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_elites.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_IMO_ruler_group"
+		texturefile = "gfx/interface/ideologies/unique/unity/unity_ruler.dds"
+	}
+}

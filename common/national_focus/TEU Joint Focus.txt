@@ -1,0 +1,846 @@
+###TEXAN ECONOMIC UNION JOINT FOCUS 6/18/24 -Slappy
+## Minor adjustments to Texan Dollar code by LimonenZitone and Wagoo- 3/22/24
+##Custom tooltips for most focuses to counteract broken tooltips from the joint focus system, I love how you cant select nations that dont have the joint for these sort of things
+	shared_focus = {
+		id = tex_two_nations_one_system
+		icon = GFX_goal_generic_BOS_focus_combined_operations
+		cost = 40
+		x = 6
+		y = 4
+		offset = {
+			x = 8
+			y = 4
+			trigger = {
+				has_focus_tree = nf_lone_star
+			}
+		}
+		available = {
+			if = {
+				limit = {
+					original_tag = TBH
+				}
+				has_completed_focus = tbh_nf_rhombus_legacy
+				LNS = {
+					has_completed_focus = lns_victory_of_the_greater_good
+				}
+			}
+			else = {
+				is_in_faction_with = TBH
+				has_completed_focus = lns_rekindle_economic_union
+			}
+		}
+		dynamic = yes
+		completion_reward = {
+			TBH = {
+				bos_remove_from_ledger = yes
+			}
+			set_temp_variable = { tep_to_add = 0.02 }
+			increase_tep_level = yes
+			hidden_effect = {
+				LNS = {
+					unlock_national_focus = tex_two_nations_one_system
+				}
+				TBH = {
+					unlock_national_focus = tex_two_nations_one_system
+				}
+			}
+		}
+		ai_will_do = {
+			base = 10
+			#modifier = {
+			#	factor = 0 #Doesn't seem to stop them
+			#	tag = TBH
+			#	NOT = {
+			#		has_global_flag = LNS_beatdown
+			#	}
+			#}
+		}
+	}
+	joint_focus = {
+		id = tex_develop_join_arms_production
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 40
+		x = -3
+		y = 1
+		relative_position_id = tex_two_nations_one_system
+		prerequisite = {
+			focus = tex_two_nations_one_system
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward = {
+			custom_effect_tooltip = tex_free_arms_factories_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					}
+				}
+			}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_announce_fiscal_reform
+		icon = GFX_goal_cap_and_cash
+		cost = 40
+		x = 0
+		y = 1
+		relative_position_id = tex_two_nations_one_system
+		prerequisite = {
+			focus = tex_two_nations_one_system
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			set_temp_variable = { tep_to_add = 0.03 }
+			increase_tep_level = yes
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_expand_inter_nation_inf
+		icon = GFX_goal_generic_infrastructure2
+		cost = 40
+		x = 3
+		y = 1
+		relative_position_id = tex_two_nations_one_system
+		prerequisite = {
+			focus = tex_two_nations_one_system
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_border_infrastructure_tt
+			set_temp_variable = { tep_to_add = 0.01 }
+			increase_tep_level = yes
+			hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 925
+						state = 922
+						state = 914
+					}
+					infrastructure < 9
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enlargen_tex_mission
+		icon = GFX_goal_BOS_victory_or_death
+		cost = 40
+		x = -1
+		y = 1
+		relative_position_id = tex_develop_join_arms_production
+		prerequisite = {
+			focus = tex_develop_join_arms_production
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+			original_tag = TBH
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_lns_gets_reward_tt
+			LNS = {
+				swap_ideas = {
+					remove_idea = LNS_idea_tbh_advisors
+					add_idea = LNS_idea_tbh_advisors_strong
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	# TBH buffs for lonestar
+	joint_focus = {
+		id = tex_enlargen_tex_mission_basic_drills
+		icon = GFX_goal_generic_BOS_focus_t45d_production
+		cost = 40
+		x = -1
+		y = 1
+		relative_position_id = tex_enlargen_tex_mission
+		prerequisite = {
+			focus = tex_enlargen_tex_mission
+		}
+		mutually_exclusive = {
+			focus = tex_enlargen_tex_mission_advanced_drills
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+			original_tag = TBH
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_lns_gets_reward_tt
+			LNS = {
+				swap_ideas = {
+					remove_idea = LNS_idea_tbh_advisors
+					add_idea = LNS_idea_tbh_advisors_strong_basic_drills
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enlargen_tex_mission_advanced_drills
+		icon = GFX_goal_generic_BOS_focus_t51b_production
+		cost = 40
+		x = 1
+		y = 1
+		relative_position_id = tex_enlargen_tex_mission
+		prerequisite = {
+			focus = tex_enlargen_tex_mission
+		}
+		dynamic = yes
+		mutually_exclusive = {
+			focus = tex_enlargen_tex_mission_basic_drills
+		}
+		available = {
+			tex_texan_abandonment_check = yes
+			original_tag = TBH
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_lns_gets_reward_tt
+			LNS = {
+				swap_ideas = {
+					remove_idea = LNS_idea_tbh_advisors
+					add_idea = LNS_idea_tbh_advisors_strong_advanced_drills
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enlargen_tex_mission_rangers_for_lonestar
+		icon = GFX_goal_BOS_tesla_cannon
+		cost = 40
+		x = 0
+		y = 2
+		relative_position_id = tex_enlargen_tex_mission
+		prerequisite = {
+			focus = tex_enlargen_tex_mission_advanced_drills
+			focus = tex_enlargen_tex_mission_basic_drills
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+			original_tag = TBH
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_lns_gets_reward_tt
+			LNS = {
+				add_ideas = tex_keepers_of_law
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_adopt_texan_dollar
+		icon = GFX_goal_LNS_texan_dollar
+		cost = 40
+		x = -1
+		y = 1
+		relative_position_id = tex_announce_fiscal_reform
+		prerequisite = {
+			focus = tex_announce_fiscal_reform
+		}
+		prerequisite = {
+			focus = tex_develop_join_arms_production
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_texdollar_unlocked_tt
+			effect_tooltip = {
+				add_ideas = currencytexdollar
+			}
+			hidden_effect = {
+				every_allied_country = {
+					set_country_flag = accept_texdollar
+					if = {
+						limit = {
+							has_idea = currencygenericcap
+						}
+						remove_ideas = currencygenericcap
+					}
+					else_if = {
+						limit = {
+							has_idea = currencybawlsguarana
+						}
+						remove_ideas = currencybawlsguarana
+					}
+					add_ideas = currencytexdollar
+				}
+				swap_ideas = {
+					remove_idea = currencygenericcap
+					add_idea = currencytexdollar
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_focus_on_new_research
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 40
+		x = 1
+		y = 1
+		relative_position_id = tex_announce_fiscal_reform
+		prerequisite = {
+			focus = tex_announce_fiscal_reform
+		}
+		prerequisite = {
+			focus = tex_expand_inter_nation_inf
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_every_teu_member_gets_reward_tt
+			effect_tooltip = {
+				add_tech_bonus = {
+					uses = 2
+					bonus = 0.6
+					category = industry
+					category = agriculture_tech
+				}
+			}
+			hidden_effect = {
+			every_country = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+				add_tech_bonus = {
+					uses = 2
+					bonus = 0.6
+					category = industry
+					category = agriculture_tech
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enlargen_lns_mission
+		icon = GFX_goal_BOS_generic_industrial
+		cost = 40
+		x = 1
+		y = 1
+		relative_position_id = tex_expand_inter_nation_inf
+		prerequisite = {
+			focus = tex_expand_inter_nation_inf
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+			original_tag = LNS
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_tbh_gets_reward_tt
+			TBH = {
+				swap_ideas = {
+					remove_idea = TBH_idea_lns_advisors
+					add_idea = TBH_idea_lns_advisors_strong
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enlargen_lns_mission_metal
+		icon = GFX_goal_generic_metal_focus
+		cost = 40
+		x = 1
+		y = 1
+		relative_position_id = tex_enlargen_lns_mission
+		prerequisite = {
+			focus = tex_enlargen_lns_mission
+		}
+		mutually_exclusive = {
+			focus = tex_enlargen_lns_mission_water
+		}
+		dynamic = yes
+		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			original_tag = LNS
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_tbh_gets_reward_tt
+			922 = {
+				add_resource = {
+					type = metal
+					amount = 12
+				}
+				add_resource = {
+					type = circuitry
+					amount = 6
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enlargen_lns_mission_water
+		icon = GFX_goal_water_generic
+		cost = 40
+		x = -1
+		y = 1
+		relative_position_id = tex_enlargen_lns_mission
+		prerequisite = {
+			focus = tex_enlargen_lns_mission
+		}
+		mutually_exclusive = {
+			focus = tex_enlargen_lns_mission_metal
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+			original_tag = LNS
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_tbh_gets_reward_tt
+			922 = {
+				add_resource = {
+					type = water
+					amount = 12
+				}
+				add_resource = {
+					type = energy
+					amount = 6
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enlargen_lns_mission_advanced
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 40
+		x = 0
+		y = 2
+		relative_position_id = tex_enlargen_lns_mission
+		prerequisite = {
+			focus = tex_enlargen_lns_mission_water
+			focus = tex_enlargen_lns_mission_metal
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+			original_tag = LNS
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_tbh_gets_reward_tt
+			922 = {
+				add_resource = {
+					type = composites
+					amount = 8
+				}
+				add_resource = {
+					type = advanced
+					amount = 4
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_restore_texas_uni
+		icon = GFX_goal_generic_cities_focus
+		cost = 40
+		x = 0
+		y = 2
+		relative_position_id = tex_announce_fiscal_reform
+		prerequisite = {
+			focus = tex_announce_fiscal_reform
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_every_teu_member_gets_reward_tt
+			effect_tooltip = {
+				add_research_slot = 1
+			}
+			hidden_effect = {
+			every_country = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+				add_research_slot = 1
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				LNS = { is_ai = no }
+				}
+			}
+	}
+	joint_focus = {
+		id = tex_form_central_bank
+		icon = GFX_goal_bottlecap
+		cost = 40
+		x = 0
+		y = 2
+		relative_position_id = tex_adopt_texan_dollar
+		prerequisite = {
+			focus = tex_restore_texas_uni
+		}
+		prerequisite = {
+			focus = tex_adopt_texan_dollar
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			set_temp_variable = { tep_to_add = 0.04 }
+			increase_tep_level = yes
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_share_tech_development
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 40
+		x = 0
+		y = 2
+		relative_position_id = tex_focus_on_new_research
+		prerequisite = {
+			focus = tex_restore_texas_uni
+		}
+		prerequisite = {
+			focus = tex_focus_on_new_research
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_every_teu_member_joins_research_pact_tt
+			hidden_effect = {
+			every_country = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+				add_to_tech_sharing_group = texan_economic_union_sharing
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_enhance_civilian_commerce
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 40
+		x = -1
+		y = 1
+		relative_position_id = tex_form_central_bank
+		prerequisite = {
+			focus = tex_form_central_bank
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_random_civs_tt
+			hidden_effect = {
+			if = {
+				limit = {
+					LNS = { has_dynamic_modifier = { modifier = texan_economic_union } }
+				}
+				LNS = {
+					random_owned_controlled_state = {
+						limit = {
+							is_valid_state_for_2_civilian_factories = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+						add_extra_state_shared_building_slots = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					TBH = { has_dynamic_modifier = { modifier = texan_economic_union } }
+				}
+				TBH = {
+					random_owned_controlled_state = {
+						limit = {
+							is_valid_state_for_2_civilian_factories = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_joint_resource_campaigns
+		icon = GFX_goal_generic_metal_focus
+		cost = 40
+		x = 0
+		y = 2
+		relative_position_id = tex_restore_texas_uni
+		prerequisite = {
+			focus = tex_restore_texas_uni
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_resource_campaigns_tt
+			hidden_effect = {
+			if = {
+				limit = {
+					LNS = { has_dynamic_modifier = { modifier = texan_economic_union } }
+				}
+				LNS = {
+					random_owned_controlled_state = {
+						add_resource = {
+							type = energy
+							amount = 8
+						}
+						add_resource = {
+							type = circuitry
+							amount = 5
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					TBH = { has_dynamic_modifier = { modifier = texan_economic_union } }
+				}
+				TBH = {
+					random_owned_controlled_state = {
+						add_resource = {
+							type = advanced
+							amount = 4
+						}
+						add_resource = {
+							type = composites
+							amount = 4
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_unified_doctrine_research
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 40
+		x = 1
+		y = 1
+		relative_position_id = tex_share_tech_development
+		prerequisite = {
+			focus = tex_share_tech_development
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = tex_every_teu_member_gets_reward_tt
+			effect_tooltip = {
+				add_tech_bonus = {
+					uses = 2
+					bonus = 1
+					category = cat_land_doctrine
+				}
+			}
+			hidden_effect = {
+			every_country = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+				add_tech_bonus = {
+					uses = 2
+					bonus = 1
+					category = cat_land_doctrine
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}
+	joint_focus = {
+		id = tex_union_economic_boom
+		icon = GFX_goal_generic_BoS_diplomatic_focus
+		cost = 40
+		x = 0
+		y = 1
+		relative_position_id = tex_joint_resource_campaigns
+
+		prerequisite = {
+			focus = tex_enhance_civilian_commerce
+		}
+		prerequisite = {
+			focus = tex_joint_resource_campaigns
+		}
+		prerequisite = {
+			focus = tex_unified_doctrine_research
+		}
+		dynamic = yes
+		available = {
+			tex_texan_abandonment_check = yes
+		}
+		completion_reward_joint_originator = {
+			custom_effect_tooltip = union_economic_boom_tt
+			hidden_effect = {
+				set_temp_variable = { caps_to_add = 200 }
+				add_caps = yes
+				set_temp_variable = { development_to_add = 1 }
+				add_development_to_node = yes
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 2
+				OR = {
+				LNS = { is_ai = no }
+				TBH = { is_ai = no }
+				}
+			}
+		}
+	}

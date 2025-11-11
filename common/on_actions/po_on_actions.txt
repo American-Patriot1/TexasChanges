@@ -1,0 +1,2157 @@
+on_actions = {
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = color_changed
+				}
+				clr_country_flag = color_changed
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						has_focus_tree = ncr_puppet_nf
+						has_focus_tree = ces_puppet_nf
+						has_focus_tree = trl_puppet_nf
+						has_focus_tree = vlt_puppet_nf
+						has_focus_tree = bos_puppet_nf
+						has_focus_tree = rrg_puppet_nf
+						has_focus_tree = khan_puppet_nf
+						has_focus_tree = lum_puppet_nf
+					}
+				}
+				if = {
+					limit = {
+						is_raider_nation = yes
+					}
+					load_focus_tree = raider_generic
+				}
+				else_if = {
+					limit = {
+						is_tribal_nation = yes
+					}
+					load_focus_tree = gentribal
+				}
+				else = {
+					load_focus_tree = settler_generic
+				}
+			}
+			if = {
+				limit = { # Country leader checks won't take loc keys, traits only used on puppet leaders checked so this works
+					OR = {
+						has_country_leader_with_trait = po_loyal_puppet
+						has_country_leader_with_trait = po_aggressive_puppet
+						has_country_leader_with_trait = po_defensive_puppet
+					}
+				}
+				kill_country_leader = yes
+			}
+
+			if = { #NCR 'Remnant' Ideas
+				limit = {
+					FROM = {
+						TAG = NCR
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ncr_puppet_shock
+					}
+					swap_ideas = {
+						add_idea = ncr_puppet_shock_trooper_remnant
+						remove_idea = ncr_puppet_shock
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ncr_puppet_raider_duty
+					}
+					swap_ideas = {
+						add_idea = ncr_puppet_raider_duty_remnant
+						remove_idea = ncr_puppet_raider_duty
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ncr_puppet_idea_tribal_expanding
+					}
+					swap_ideas = {
+						add_idea = ncr_puppet_idea_tribal_expansion_remnant
+						remove_idea = ncr_puppet_idea_tribal_expanding
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ncr_puppet_idea_encouragement
+					}
+					swap_ideas = {
+						add_idea = ncr_puppet_idea_encouragement_remnant
+						remove_idea = ncr_puppet_idea_encouragement
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ncr_puppet_idea_highwaymen_experts
+					}
+					swap_ideas = {
+						add_idea = ncr_puppet_idea_highwaymen_experts_remnant
+						remove_idea = ncr_puppet_idea_highwaymen_experts
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ncr_puppet_idea_ncr_draft_2
+					}
+					swap_ideas = {
+						add_idea = ncr_puppet_idea_ncr_draft_2_remnant
+						remove_idea = ncr_puppet_idea_ncr_draft_2
+					}
+				}
+			}
+		}
+	}
+	on_puppet = {
+		effect = {
+			ROOT = {
+				add_opinion_modifier = {
+					target = FROM
+					modifier = po_recently_puppeted
+				}
+				add_opinion_modifier = {
+					target = FROM
+					modifier = po_recently_puppeted_trade
+				}
+				add_opinion_modifier = {
+					target = FROM
+					modifier = po_puppeted_us
+				}
+				reverse_add_opinion_modifier = {
+					target = FROM
+					modifier = po_opinion_of_puppet
+				}
+				if = {
+					limit = {
+						NOT = {
+							original_tag = NEW
+							original_tag = VEG
+							original_tag = BOS
+							original_tag = MOJ
+							original_tag = VLT
+							original_tag = NCN
+							original_tag = FFI
+							original_tag = TLA
+							original_tag = CAF
+							original_tag = RRG
+							original_tag = ARM
+							original_tag = ATE
+							original_tag = ITZ
+							original_tag = ZAP
+							original_tag = MAX
+							original_tag = MOC
+							original_tag = TAA
+							original_tag = LAC
+							original_tag = HAN
+							original_tag = TTM
+							original_tag = NAV
+							original_tag = LNS
+							original_tag = SHA
+							original_tag = IMO
+							original_tag = UOA
+							original_tag = CHO
+							original_tag = CMC
+							original_tag = CHR
+							original_tag = TLP
+							original_tag = TBH
+							original_tag = MXC
+						}
+					}
+					if = {
+						limit = {
+							is_subject_of = NCR
+						}
+						load_focus_tree = ncr_puppet_nf
+						NCR = {
+							set_autonomy = {
+								target = ROOT
+								autonomy_state = autonomy_unincorporated_territory
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								is_subject_of = CES
+								is_subject_of = LAC
+							}
+						}
+						load_focus_tree = ces_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = TRL
+						}
+						load_focus_tree = trl_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = KHA
+						}
+						load_focus_tree = khan_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = LUM
+						}
+						load_focus_tree = lum_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = VLT
+						}
+						load_focus_tree = vlt_puppet_nf
+					}
+					else_if = {
+						limit = {
+							OR = {
+								is_subject_of = BOS
+								is_subject_of = MOJ
+								is_subject_of = TBH
+								is_subject_of = MXC
+								is_subject_of = ACH
+								is_subject_of = GRD
+							}
+						}
+						load_focus_tree = bos_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = RRG
+						}
+						load_focus_tree = rrg_puppet_nf
+					}
+					else_if = {
+						limit = {
+							OVERLORD = {
+								has_country_flag = enclave_nation
+							}
+						}
+						load_focus_tree = enclave_puppet_tree
+					}
+					else = {}
+				}
+			#NCR puppet stuff
+				if = {
+					limit = {
+						is_subject_of = NCR
+					}
+					create_country_leader = {
+						name = NCR_PUPPET_LEADER_NAME
+						desc = NCR_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_NCR
+						expire = "3000.1.1"
+						ideology = constitutional_republic
+						traits = { po_loyal_puppet }
+					}
+					if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_NCR
+						set_country_flag = color_changed
+					}
+					else_if = { # Redding Tag Alias
+						limit = {
+							TAG = RDS
+						}
+						set_cosmetic_tag = RDS_NCR
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ARR
+								TAG = BLK
+								TAG = BOS
+								TAG = BSU
+								TAG = EAS
+								TAG = EUR
+								TAG = FLA
+								TAG = HUA
+								TAG = JIC
+								TAG = MES
+								TAG = MOJ
+								TAG = MRA
+								TAG = MXS
+								TAG = PHR
+								TAG = RAP
+								TAG = RSR
+								TAG = SCR
+								TAG = SHI
+								TAG = SUF
+								TAG = TSI
+								TAG = VEG
+								TAG = VLT
+								TAG = WAP
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_NCR
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#BOS puppet stuff
+				else_if = {
+					limit = {
+						OR = {
+							is_subject_of = BOS
+							is_subject_of = MOJ
+							is_subject_of = TBH
+							is_subject_of = MXC
+							is_subject_of = ACH
+							is_subject_of = GRD
+						}
+						NOT = {
+							tag = EDA
+						}
+					}
+					create_country_leader = {
+						name = BOS_PUPPET_LEADER_NAME
+						desc = BOS_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_BOS
+						expire = "3000.1.1"
+						ideology = ideocracy
+						traits = { po_defensive_puppet }
+					}
+					if = {
+						limit = {
+							is_subject_of = MOJ
+							OR = {
+								TAG = CES
+								TAG = EAS
+								TAG = FIE
+								TAG = MRA
+								TAG = NCR
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_MOJ
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+					else_if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_BOS
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ARM
+								TAG = ARR
+								TAG = ASF
+								TAG = BAG
+								TAG = BRT
+								TAG = BLC
+								TAG = CES
+								TAG = CLJ
+								TAG = DRY
+								TAG = EAS
+								TAG = EDA
+								TAG = EXE
+								TAG = FOR
+								TAG = GLW
+								TAG = HAN
+								TAG = INR
+								TAG = IRN
+								TAG = LAC
+								TAG = LUM
+								TAG = MES
+								TAG = NAV
+								TAG = NCR
+								TAG = ORO
+								TAG = PER
+								TAG = CIP
+								TAG = RES
+								TAG = ROB
+								TAG = SCO
+								TAG = SHI
+								TAG = SUF
+								TAG = SUN
+								TAG = TOB
+								TAG = TTM
+								TAG = UMB
+								TAG = VLS
+								TAG = WDN
+								TAG = WHD
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_BOS
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#Legion puppet stuff
+				else_if = {
+					limit = {
+						OR = {
+							is_subject_of = CES
+							is_subject_of = LAC
+						}
+					}
+					if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = CES_PUPPET_LEADER_NAME
+							desc = CES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_CES
+							expire = "3000.1.1"
+							ideology = militarist_oligarchy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = CES_PUPPET_LEADER_NAME
+							desc = CES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_CES
+							expire = "3000.1.1"
+							ideology = oligarchy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = CES_PUPPET_LEADER_NAME
+							desc = CES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_CES
+							expire = "3000.1.1"
+							ideology = technocracy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					if = {
+						limit = {
+							has_cosmetic_tag = cascadia
+						}
+						set_cosmetic_tag = CASCADIA_CES
+						set_country_flag = color_changed
+					}
+					else_if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_CES
+						set_country_flag = color_changed
+					}
+					else_if = { # Redding Tag Alias
+						limit = {
+							TAG = RDS
+						}
+						set_cosmetic_tag = RDS_CES
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ANO
+								TAG = ARR
+								TAG = BDT
+								TAG = CLK
+								TAG = CRZ
+								TAG = DEA
+								TAG = DES
+								TAG = DIS
+								TAG = EAS
+								TAG = EHT
+								TAG = FOR
+								TAG = GDH
+								TAG = HAM
+								TAG = HEA
+								TAG = HGH
+								TAG = IRN
+								TAG = KLA
+								TAG = LGS
+								TAG = LON
+								TAG = MDT
+								TAG = MOJ
+								TAG = MOS
+								TAG = MOT
+								TAG = NAV
+								TAG = NCN
+								TAG = NCR
+								TAG = NEW
+								TAG = PMR
+								TAG = RBT
+								TAG = SCO
+								TAG = SKY
+								TAG = SLA
+								TAG = SOR
+								TAG = TAR
+								TAG = TCA
+								TAG = TDT
+								TAG = TIM
+								TAG = TOC
+								TAG = TON
+								TAG = TRL
+								TAG = VEG
+								TAG = VLT
+								TAG = WBH
+								TAG = WHD
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_CES
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+					if = {
+						limit = { TAG = MOT }
+						MOT = {
+							set_capital = {
+								state = 417
+							}
+							load_focus_tree = ces_puppet_nf
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = benevolent_dictatorship
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = theodemocracy
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = militarist_technocracy
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = technocracy
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+						}
+					}
+				}
+			#NCN puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = NCN
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = CRZ
+								TAG = DEA
+								TAG = EHT
+								TAG = HGH
+								TAG = IRE
+								TAG = LON
+								TAG = MUR
+								TAG = SOR
+								TAG = TAR
+								TAG = UIN
+								TAG = WHT
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_NCN
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#HEA puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = HEA
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = IRE
+								TAG = LON
+								TAG = MUR
+								TAG = PHA
+								TAG = TOC
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_HEA
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#TRL puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = TRL
+					}
+					if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = TRL_PUPPET_LEADER_NAME
+							desc = TRL_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_TRL
+							expire = "3000.1.1"
+							ideology = tribal_council
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = TRL_PUPPET_LEADER_NAME
+							desc = TRL_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_TRL
+							expire = "3000.1.1"
+							ideology = tribalism
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = TRL_PUPPET_LEADER_NAME
+							desc = TRL_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_TRL
+							expire = "3000.1.1"
+							ideology = ideocracy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BDT
+								TAG = CHE
+								TAG = KLA
+								TAG = MDT
+								TAG = MLT
+								TAG = RBT
+								TAG = WBH
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_TRL
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#VLT puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = VLT
+					}
+					if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = commune
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = militarist_technocracy
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = ideocracy
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = benevolent_dictatorship
+							traits = { po_loyal_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ARR
+								TAG = BOO
+								TAG = CYC
+								TAG = FIE
+								TAG = JAC
+								TAG = MOD
+								TAG = NCN
+								TAG = NEW
+								TAG = PAL
+								TAG = RIP
+								TAG = SHO
+								TAG = SLA
+								TAG = SLN
+								TAG = VEG
+								TAG = VIP
+								TAG = YKZ
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_VLT
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#VEG puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = VEG
+					}
+					if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = VEG_PUPPET_LEADER_NAME
+							desc = VEG_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VEG
+							expire = "3000.1.1"
+							ideology = unlimited_democracy
+							traits = { po_defensive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = VEG_PUPPET_LEADER_NAME
+							desc = VEG_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VEG
+							expire = "3000.1.1"
+							ideology = militarist_oligarchy
+							traits = { po_defensive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = VEG_PUPPET_LEADER_NAME
+							desc = VEG_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VEG
+							expire = "3000.1.1"
+							ideology = benevolent_dictatorship
+							traits = { po_defensive_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = FIE
+								TAG = GKH
+								TAG = MOJ
+								TAG = MOS
+								TAG = MRA
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_VEG
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#WBH puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = WBH
+					}
+					create_country_leader = {
+						name = WBH_PUPPET_LEADER_NAME
+						desc = WBH_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_WBH
+						expire = "3000.1.1"
+						ideology = militarist_technocracy
+						traits = { po_defensive_puppet }
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BEL
+								TAG = RBT
+								TAG = TCA
+								TAG = TRL
+								TAG = YAK
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_WBH
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#BRK Puppet Stuff
+				else_if = {
+					limit = {
+						is_subject_of = BRK
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BEL
+								TAG = DRE
+								TAG = HAI
+								TAG = KAM
+								TAG = PMR
+								TAG = TOC
+								TAG = VIC
+								TAG = WBH
+								TAG = WHI
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_BRK
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#DES puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = DES
+					}
+					if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = DES_PUPPET_LEADER_NAME
+							desc = DES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_DES
+							expire = "3000.1.1"
+							ideology = benevolent_dictatorship
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = DES_PUPPET_LEADER_NAME
+							desc = DES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_DES
+							expire = "3000.1.1"
+							ideology = peoples_militia
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = DES_PUPPET_LEADER_NAME
+							desc = DES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_DES
+							expire = "3000.1.1"
+							ideology = technocracy
+							traits = { po_loyal_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = GRA
+								TAG = RIP
+								TAG = SKY
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_DES
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#Enclave puppet stuff
+				else_if = {
+					limit = {
+						OVERLORD = {
+							has_country_flag = enclave_nation
+						}
+					}
+					create_country_leader = {
+						name = ENC_PUPPET_LEADER_NAME
+						desc = ENC_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_ENC
+						expire = "3000.1.1"
+						ideology = militarist_oligarchy
+						traits = { po_loyal_puppet }
+					}
+					if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_ENC
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ARR
+								TAG = BOS
+								TAG = CHE
+								TAG = CYC
+								TAG = EAS
+								TAG = KLA
+								TAG = NCR
+								TAG = NEW
+								TAG = PAL
+								TAG = SHO
+								TAG = UMB
+								TAG = VLT
+								TAG = YKZ
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_ENC
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#ATE puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = ATE
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ARM
+								TAG = BLO
+								TAG = CAF
+								TAG = FFI
+								TAG = GRH
+								TAG = ITZ
+								TAG = PET
+								TAG = RRG
+								TAG = SIN
+								TAG = TDT
+								TAG = TVR
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_ATE
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#ARM puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = ARM
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ATE
+								TAG = BLO
+								TAG = FFI
+								TAG = ITZ
+								TAG = PET
+								TAG = RRG
+								TAG = SIN
+								TAG = TVR
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_ARM
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#RRG puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = RRG
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ARM
+								TAG = LGS
+								TAG = PEC
+								TAG = RBD
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_RRG
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#FFI puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = FFI
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BLO
+								TAG = GDH
+								TAG = SIN
+								TAG = TDT
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_FFI
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			}
+		}
+	}
+	on_release_as_puppet = {
+		effect = {
+			ROOT = {
+				add_opinion_modifier = {
+					target = FROM
+					modifier = po_recently_puppeted
+				}
+				add_opinion_modifier = {
+					target = FROM
+					modifier = po_recently_puppeted_trade
+				}
+				add_opinion_modifier = {
+					target = FROM
+					modifier = po_puppeted_us
+				}
+				reverse_add_opinion_modifier = {
+					target = FROM
+					modifier = po_opinion_of_puppet
+				}
+				if = {
+					limit = {
+						NOT = {
+							original_tag = NEW
+							original_tag = VEG
+							original_tag = BOS
+							original_tag = MOJ
+							original_tag = VLT
+							original_tag = NCN
+							original_tag = FFI
+							original_tag = TLA
+							original_tag = CAF
+							original_tag = RRG
+							original_tag = ARM
+							original_tag = ATE
+							original_tag = ITZ
+							original_tag = ZAP
+							original_tag = MAX
+							original_tag = MOC
+							original_tag = TAA
+							original_tag = LAC
+							original_tag = HAN
+							original_tag = TTM
+							original_tag = NAV
+							original_tag = LNS
+							original_tag = SHA
+							original_tag = IMO
+							original_tag = UOA
+							original_tag = CHO
+							original_tag = CMC
+							original_tag = CHR
+							original_tag = TLP
+							original_tag = TBH
+							original_tag = MXC
+						}
+					}
+					if = {
+						limit = {
+							is_subject_of = NCR
+						}
+						load_focus_tree = ncr_puppet_nf
+					}
+					else_if = {
+						limit = {
+							OR = {
+								is_subject_of = CES
+								is_subject_of = LAC
+							}
+						}
+						load_focus_tree = ces_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = TRL
+						}
+						load_focus_tree = trl_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = KHA
+						}
+						load_focus_tree = khan_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = LUM
+						}
+						load_focus_tree = lum_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = VLT
+						}
+						load_focus_tree = vlt_puppet_nf
+					}
+					else_if = {
+						limit = {
+							OR = {
+								is_subject_of = BOS
+								is_subject_of = MOJ
+								is_subject_of = TBH
+								is_subject_of = MXC
+								is_subject_of = ACH
+								is_subject_of = GRD
+							}
+						}
+						load_focus_tree = bos_puppet_nf
+					}
+					else_if = {
+						limit = {
+							is_subject_of = RRG
+						}
+						load_focus_tree = rrg_puppet_nf
+					}
+					else_if = {
+						limit = {
+							OVERLORD = {
+								has_country_flag = enclave_nation
+							}
+						}
+						load_focus_tree = enclave_puppet_tree
+					}
+					else = {}
+				}
+			#NCR puppet stuff
+				if = {
+					limit = {
+						is_subject_of = NCR
+					}
+					create_country_leader = {
+						name = NCR_PUPPET_LEADER_NAME
+						desc = NCR_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_NCR
+						expire = "3000.1.1"
+						ideology = constitutional_republic
+						traits = { po_loyal_puppet }
+					}
+					if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_NCR
+						set_country_flag = color_changed
+					}
+					else_if = { # Redding Tag Alias
+						limit = {
+							TAG = RDS
+						}
+						set_cosmetic_tag = RDS_NCR
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ARR
+								TAG = BLK
+								TAG = BOS
+								TAG = BSU
+								TAG = EAS
+								TAG = EUR
+								TAG = FLA
+								TAG = HUA
+								TAG = JIC
+								TAG = MES
+								TAG = MOJ
+								TAG = MRA
+								TAG = MXS
+								TAG = PHR
+								TAG = RAP
+								TAG = RSR
+								TAG = SCR
+								TAG = SHI
+								TAG = SUF
+								TAG = TSI
+								TAG = VEG
+								TAG = VLT
+								TAG = WAP
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_NCR
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#BOS puppet stuff
+				else_if = {
+					limit = {
+						OR = {
+							is_subject_of = BOS
+							is_subject_of = MOJ
+							is_subject_of = TBH
+							is_subject_of = MXC
+							is_subject_of = ACH
+							is_subject_of = GRD
+						}
+						NOT = {
+							tag = EDA
+						}
+					}
+					create_country_leader = {
+						name = BOS_PUPPET_LEADER_NAME
+						desc = BOS_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_BOS
+						expire = "3000.1.1"
+						ideology = ideocracy
+						traits = { po_defensive_puppet }
+					}
+					if = {
+						limit = {
+							is_subject_of = MOJ
+							OR = {
+								TAG = CES
+								TAG = EAS
+								TAG = FIE
+								TAG = MRA
+								TAG = NCR
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_MOJ
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+					else_if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_BOS
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ARM
+								TAG = ARR
+								TAG = ASF
+								TAG = BAG
+								TAG = BLC
+								TAG = BRT
+								TAG = CES
+								TAG = CLJ
+								TAG = DRY
+								TAG = EAS
+								TAG = EDA
+								TAG = EXE
+								TAG = FOR
+								TAG = GLW
+								TAG = HAN
+								TAG = INR
+								TAG = IRN
+								TAG = LAC
+								TAG = LUM
+								TAG = MES
+								TAG = NAV
+								TAG = NCR
+								TAG = ORO
+								TAG = PER
+								TAG = CIP
+								TAG = RES
+								TAG = ROB
+								TAG = SCO
+								TAG = SHI
+								TAG = SUF
+								TAG = SUN
+								TAG = TOB
+								TAG = TTM
+								TAG = UMB
+								TAG = VLS
+								TAG = WDN
+								TAG = WHD
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_BOS
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#Legion puppet stuff
+				else_if = {
+					limit = {
+						OR = {
+							is_subject_of = CES
+							is_subject_of = LAC
+						}
+					}
+					if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = CES_PUPPET_LEADER_NAME
+							desc = CES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_CES
+							expire = "3000.1.1"
+							ideology = militarist_oligarchy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = CES_PUPPET_LEADER_NAME
+							desc = CES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_CES
+							expire = "3000.1.1"
+							ideology = oligarchy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = CES_PUPPET_LEADER_NAME
+							desc = CES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_CES
+							expire = "3000.1.1"
+							ideology = technocracy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					if = {
+						limit = {
+							has_cosmetic_tag = cascadia
+						}
+						set_cosmetic_tag = CASCADIA_CES
+						set_country_flag = color_changed
+					}
+					else_if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_CES
+						set_country_flag = color_changed
+					}
+					else_if = { # Redding Tag Alias
+						limit = {
+							TAG = RDS
+						}
+						set_cosmetic_tag = RDS_CES
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ANO
+								TAG = ARR
+								TAG = BDT
+								TAG = CLK
+								TAG = CRZ
+								TAG = DEA
+								TAG = DES
+								TAG = DIS
+								TAG = EAS
+								TAG = EHT
+								TAG = FOR
+								TAG = GDH
+								TAG = HAM
+								TAG = HEA
+								TAG = HGH
+								TAG = IRN
+								TAG = KLA
+								TAG = LGS
+								TAG = LON
+								TAG = MDT
+								TAG = MOJ
+								TAG = MOS
+								TAG = MOT
+								TAG = NAV
+								TAG = NCN
+								TAG = NCR
+								TAG = NEW
+								TAG = PMR
+								TAG = RBT
+								TAG = SCO
+								TAG = SKY
+								TAG = SLA
+								TAG = SOR
+								TAG = TAR
+								TAG = TCA
+								TAG = TDT
+								TAG = TIM
+								TAG = TOC
+								TAG = TON
+								TAG = TRL
+								TAG = VEG
+								TAG = VLT
+								TAG = WBH
+								TAG = WHD
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_CES
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+					if = {
+						limit = { TAG = MOT }
+						MOT = {
+							set_capital = {
+								state = 417
+							}
+							load_focus_tree = ces_puppet_nf
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = benevolent_dictatorship
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = theodemocracy
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = militarist_technocracy
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+							add_country_leader_role = {
+								character = MOT_fantasticus
+								promote_leader = yes
+								country_leader = {
+									ideology = technocracy
+									desc = MOT_FANTASTICUS_DESC
+									traits = {
+									}
+									expire = "3000.01.01.01"
+								}
+							}
+						}
+					}
+				}
+			#NCN puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = NCN
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = CRZ
+								TAG = DEA
+								TAG = EHT
+								TAG = HGH
+								TAG = IRE
+								TAG = LON
+								TAG = MUR
+								TAG = SOR
+								TAG = TAR
+								TAG = UIN
+								TAG = WHT
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_NCN
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#HEA puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = HEA
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = IRE
+								TAG = LON
+								TAG = MUR
+								TAG = PHA
+								TAG = TOC
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_HEA
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#TRL puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = TRL
+					}
+					if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = TRL_PUPPET_LEADER_NAME
+							desc = TRL_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_TRL
+							expire = "3000.1.1"
+							ideology = tribal_council
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = TRL_PUPPET_LEADER_NAME
+							desc = TRL_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_TRL
+							expire = "3000.1.1"
+							ideology = tribalism
+							traits = { po_aggressive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = TRL_PUPPET_LEADER_NAME
+							desc = TRL_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_TRL
+							expire = "3000.1.1"
+							ideology = ideocracy
+							traits = { po_aggressive_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BDT
+								TAG = CHE
+								TAG = KLA
+								TAG = MDT
+								TAG = MLT
+								TAG = RBT
+								TAG = WBH
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_TRL
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#VLT puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = VLT
+					}
+					if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = commune
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = militarist_technocracy
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = ideocracy
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = VLT_PUPPET_LEADER_NAME
+							desc = VLT_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VLT
+							expire = "3000.1.1"
+							ideology = benevolent_dictatorship
+							traits = { po_loyal_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ARR
+								TAG = BOO
+								TAG = CYC
+								TAG = FIE
+								TAG = JAC
+								TAG = MOD
+								TAG = NCN
+								TAG = NEW
+								TAG = PAL
+								TAG = RIP
+								TAG = SHO
+								TAG = SLA
+								TAG = SLN
+								TAG = VEG
+								TAG = VIP
+								TAG = YKZ
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_VLT
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#VEG puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = VEG
+					}
+					if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = VEG_PUPPET_LEADER_NAME
+							desc = VEG_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VEG
+							expire = "3000.1.1"
+							ideology = unlimited_democracy
+							traits = { po_defensive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = elites
+						}
+						create_country_leader = {
+							name = VEG_PUPPET_LEADER_NAME
+							desc = VEG_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VEG
+							expire = "3000.1.1"
+							ideology = militarist_oligarchy
+							traits = { po_defensive_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = VEG_PUPPET_LEADER_NAME
+							desc = VEG_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_VEG
+							expire = "3000.1.1"
+							ideology = benevolent_dictatorship
+							traits = { po_defensive_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = FIE
+								TAG = GKH
+								TAG = MOJ
+								TAG = MOS
+								TAG = MRA
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_VEG
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#WBH puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = WBH
+					}
+					create_country_leader = {
+						name = WBH_PUPPET_LEADER_NAME
+						desc = WBH_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_WBH
+						expire = "3000.1.1"
+						ideology = militarist_technocracy
+						traits = { po_defensive_puppet }
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BEL
+								TAG = RBT
+								TAG = TCA
+								TAG = TRL
+								TAG = YAK
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_WBH
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#BRK Puppet Stuff
+				else_if = {
+					limit = {
+						is_subject_of = BRK
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BEL
+								TAG = DRE
+								TAG = HAI
+								TAG = KAM
+								TAG = PMR
+								TAG = TOC
+								TAG = VIC
+								TAG = WBH
+								TAG = WHI
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_BRK
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#DES puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = DES
+					}
+					if = {
+						limit = {
+							has_government = ruler
+						}
+						create_country_leader = {
+							name = DES_PUPPET_LEADER_NAME
+							desc = DES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_DES
+							expire = "3000.1.1"
+							ideology = benevolent_dictatorship
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = people
+						}
+						create_country_leader = {
+							name = DES_PUPPET_LEADER_NAME
+							desc = DES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_DES
+							expire = "3000.1.1"
+							ideology = peoples_militia
+							traits = { po_loyal_puppet }
+						}
+					}
+					else_if = {
+						limit = {
+							has_government = intellectuals
+						}
+						create_country_leader = {
+							name = DES_PUPPET_LEADER_NAME
+							desc = DES_PUPPET_LEADER_DESC
+							picture = GFX_Portrait_Puppet_Leader_DES
+							expire = "3000.1.1"
+							ideology = technocracy
+							traits = { po_loyal_puppet }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = GRA
+								TAG = RIP
+								TAG = SKY
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_DES
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#Enclave puppet stuff
+				else_if = {
+					limit = {
+						OVERLORD = {
+							has_country_flag = enclave_nation
+						}
+					}
+					create_country_leader = {
+						name = ENC_PUPPET_LEADER_NAME
+						desc = ENC_PUPPET_LEADER_DESC
+						picture = GFX_Portrait_Puppet_Leader_ENC
+						expire = "3000.1.1"
+						ideology = militarist_oligarchy
+						traits = { po_loyal_puppet }
+					}
+					if = { # Boneyard Tag Alias
+						limit = {
+							TAG = BON
+						}
+						set_cosmetic_tag = BON_ENC
+						set_country_flag = color_changed
+					}
+					else_if = {
+						limit = {
+							OR = {
+								TAG = ARR
+								TAG = BOS
+								TAG = CHE
+								TAG = CYC
+								TAG = EAS
+								TAG = KLA
+								TAG = NCR
+								TAG = NEW
+								TAG = PAL
+								TAG = SHO
+								TAG = UMB
+								TAG = VLT
+								TAG = YKZ
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_ENC
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#ATE puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = ATE
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ARM
+								TAG = BLO
+								TAG = CAF
+								TAG = FFI
+								TAG = GRH
+								TAG = ITZ
+								TAG = PET
+								TAG = RRG
+								TAG = SIN
+								TAG = TDT
+								TAG = TVR
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_ATE
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#ARM puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = ARM
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ATE
+								TAG = BLO
+								TAG = FFI
+								TAG = ITZ
+								TAG = PET
+								TAG = RRG
+								TAG = SIN
+								TAG = TVR
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_ARM
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#RRG puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = RRG
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = ARM
+								TAG = LGS
+								TAG = PEC
+								TAG = RBD
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_RRG
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			#FFI puppet stuff
+				else_if = {
+					limit = {
+						is_subject_of = FFI
+					}
+					if = {
+						limit = {
+							OR = {
+								TAG = BLO
+								TAG = GDH
+								TAG = SIN
+								TAG = TDT
+							}
+						}
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TAG]_FFI
+							}
+							TAG = "[THIS.GetTag]"
+						}
+						set_country_flag = color_changed
+					}
+				}
+			}
+		}
+	}
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_puppet = yes
+				}
+				OVERLORD = {
+					add_opinion_modifier = {
+						target = PREV
+						modifier = po_opinion_of_puppet
+					}
+				}
+			}
+		}
+	}
+}

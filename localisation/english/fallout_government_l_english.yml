@@ -1,0 +1,538 @@
+﻿l_english:
+  raider_ransack_tt:0 "§YRansack:§! As Raiders, we will also raid and plunder the state when we core it.\n  §Y*§!All of the infrastructure in the state will be §Rdamaged§!.\n  §Y*§!We will gain §G+[ROOT.equ_per_infra_from_coring_raider_tt]§! §YInfantry Equipment§! from the states old owner, §G+[ROOT.caps_per_infra_from_coring_raider_tt]k§! §YCaps§! and §G+[ROOT.cp_per_infra_from_coring_raider_tt]§! §YCommand Power§! for each infrastructure damaged."
+  coring_police_div_tt: "§YPeacekeepers:§! When cored, spawn §G[?ROOT.modifier@coring_police_div]§! §YLawkeeper§! division in the state."
+  coring_police_div: "Free §YLawkeeper§! division from Coring"
+  pacification_system_enabled:0 "Pacification System Enabled"
+  coring_raider_infantry_equipment_per_infrastructure_mod:0 "Infantry Equipment from Coring (per Infrastructure)"
+  coring_raider_command_power_per_infrastructure_mod:0 "Command Power from Coring (per Infrastructure)"
+  coring_raider_caps_per_infrastructure_mod:0 "Caps from Coring (per Infrastructure)"
+  disables_the_ransack_coring_mechanic:0 "Disables the Raider §Y\"Ransack\"§! Coring Mechanic."
+  enables_the_ransack_coring_mechanic:0 "Enables the Raider §Y\"Ransack\"§! Coring Mechanic.\n\n(When §GCoring§! a state, damages existing §YInfrastructure§! to gain §YCaps§!, §YInfantry Equipment§!, and §YCommand Power§!.)"
+
+  ruler:0 "Ruler"
+  ruler_noun:0 "Ruler"
+  ruler_desc:0 "Rule of One"
+
+  people:0 "People"
+  people_noun:0 "People"
+  people_desc:0 "Rule of Many"
+
+  intellectuals:0 "Intellectuals"
+  intellectuals_noun:0 "Intellectuals"
+  intellectuals_desc:0 "Rule of Progress"
+
+  elites:0 "Elites"
+  elites_noun:0 "Elites"
+  elites_desc:0 "Rule of Few"
+
+  #texas
+  TEX_ruler_party:0 "Military Junta"
+  TEX_ruler_party_long:0 "Military Junta"
+  TEX_elites_party:0 "Industrialists"
+  TEX_elites_party_long:0 "Industrialists"
+  TEX_intellectuals_party:0 "Futurists"
+  TEX_intellectuals_party_long:0 "Futurists"
+  TEX_people_party:0 "Texan Congress"
+  TEX_people_party_long:0 "The Congress of The Republic of Texas"
+
+  #Broken Coast
+  BRK_ruler_party:0 "Graven's Rule"
+  BRK_elites_party:0 "Ragnar's Power"
+  BRK_intellectuals_party:0 "Free Thinkers"
+  BRK_people_party:0 "Soft Hearts"
+
+  #NCR
+  NCR_ruler_party:0 "Boneyard Separatists"
+  NCR_elites_party:0 "The Barons"
+  NCR_intellectuals_party:0 "The Old World Party"
+  NCR_people_party:0 "NCR Congress"
+
+  #DLN
+  DLN_ruler_party:0 "House of Asmanthine"
+  DLN_elites_party:0 "House of Yorkton"
+  DLN_intellectuals_party:0 "The Academia"
+  DLN_people_party:0 "The Royal Household"
+
+  #New Reno
+  NEW_ruler_party:0 "The Van Graffs"
+  NEW_elites_party:0 "The Broken Brothers"
+  NEW_intellectuals_party:0 "The Wrights"
+  NEW_people_party:0 "The Bishops"
+  NEW_enclave_party_long:0 "The Enclave"
+  NEW_enclave_party:0 "The Enclave"
+  NEW_thradd_party_long:0 "Warlord Thradd"
+  NEW_thradd_party:0 "Warlord Thradd"
+
+  #Chichen Itza
+  ITZ_intellectuals_party:0 "The Ti'huun"
+  ITZ_ruler_party:0 "The Kalomte"
+  ITZ_elites_party:0 "The Ejército"
+  ITZ_people_party:0 "The Council"
+
+  #Tzotzil
+  TDT_people_party:0 "The People's Council"
+  TDT_elites_party:0 "Itzan Loyalists"
+  TDT_ruler_party:0 "The Speaker"
+  TDT_intellectuals_party:0 "The Reformers"
+
+  #Aztlan
+  ATE_ruler_party:0 "The Speaker"
+  ATE_ruler_party_long:0 "The Royal Family"
+  ATE_elites_party:0 "Eagle Cult"
+  ATE_intellectuals_party:0 "Jaguar Cult"
+  ATE_people_party:0 "True Mexico"
+
+  #Army of Mexico
+  ARM_ruler_party:0 "The Caudillo"
+
+  #Bone Dancers
+  BDT_people_party:0 "Pilgrims of Heaven"
+  BDT_elites_party:0 "Pillar Men"
+  BDT_elites_party_long:0 "The Pillar Men"
+  BDT_intellectuals_party:0 "Crimson Acolytes"
+  BDT_intellectuals_party_long:0 "The Crimson Acolytes"
+  BDT_ruler_party:0 "Cranium's' Arena"
+
+  #TVT-Town
+  TVT_people_party:0 "Runners"
+  TVT_ruler_party:0 "The Director's Vision"
+
+  #TCA
+  TCA_people_party:0 "Round Table of Epsilon"
+  #TCA_elites_party:0 "Unity Council"
+  #TCA_ruler_party:0 "The Immortal's Agents"
+  #TCA_intellectuals_party:0 "Brotherhood Exiles"
+
+  #Vault City
+  VLT_people_party:0 "Citizen League"
+  VLT_people_party_long:0 "The Citizen League"
+  VLT_intellectuals_party:0 "Old Guard"
+  VLT_intellectuals_party_long:0 "The Old Guard"
+  VLT_ruler_party:0 "Cult of Renewal"
+  VLT_elites_party:0 "Pacifists"
+
+  #S'lanter
+  SLN_people_party:0 "Top-Dwellers"
+  SLN_elites_party:0 "Den-Dwellers"
+
+  #New Vegas
+  VEG_mortimer_party:0 "Men of Higher Society"
+  VEG_mortimer_party_long:0 "The Men of Higher Society"
+  VEG_nero_party:0 "Slither Kin Reborn"
+  VEG_nero_party_long:0 "The Slither Kin Reborn"
+
+  #Troll Warren
+  TRL_ruler_party:0 "The First's Warband"
+  TRL_elites_party:0 "Pittman's Warband"
+  TRL_intellectuals_party:0 "Beatrice's Warband"
+  TRL_people_party:0 "Bonesnarl's Warband"
+
+  #The Flawed Parish
+  BRE_ruler_party:0 "The Garage"
+  BRE_elites_party:0 "The Order"
+  BRE_intellectuals_party:0 "The Apostles"
+  BRE_people_party:0 "The Nursery"
+
+  #RRG
+  RRG_people_party:0 "Los Constitucionalistos"
+  RRG_people_party_long:0 "Los Constitucionalistos"
+  RRG_elites_party:0 "TIC"
+  RRG_elites_party_long:0 "The Texan Interests Coalition"
+  RRG_intellectuals_party:0 "La Iniciativa"
+  RRG_intellectuals_party_long:0 "La Iniciativa de Progreso"
+  RRG_ruler_party:0 "El Movimiento"
+  RRG_ruler_party_long:0 "Los Movimiento de Regeneración Arquitectos"
+
+  #Reavers
+  REH_intellectuals_party:0 "The Family"
+  LIV_people_party:0 "New Epsilon City Council"
+  NTN_ruler_party:0 "Circle of the Tech-Elders"
+
+  #ASS
+  ASS_people_party:0 "The Cuban Connection"
+  ASS_elites_party:0 "Ruby's Revenge"
+  ASS_intellectuals_party:0 "Dead Kennedys"
+  ASS_ruler_party:0 "Conspiracy"
+
+  #TOC
+  TOC_people_party:0 ""Northern 'Tourists""
+  TOC_elites_party:0 "Wardens of the White"
+  TOC_intellectuals_party:0 "Vault 100 Survivors"
+  TOC_ruler_party:0 "Ice Picks"
+
+  #PMR
+  PMR_people_party:0 "Rogue Wardens"
+  PMR_elites_party:0 "Sledgers"
+  PMR_intellectuals_party:0 "Rillbugs"
+  PMR_ruler_party:0 "Granger's Crew"
+
+  #BLC#
+  BLC_ruler_party:0 "Mallet's Clique"
+  BLC_ruler_party_long:0 "Mallet's Clique\n§gEncompassing most of the former inmates of the Tibbets' Penitentiary and some other unruly characters from the Wasteland, Mallet's Clique is yet another one-man strongman show. If you want to be influential around here, you need to be ruthless and deceiving, while earning the trust of your fellow highwayman with fist fights, booze- and jet-consuming competitions - just like pre-war politicians did! While you're useful for the boss and your loyalty is unwavering, you will do here nice, kid.\n\nColloquially called the "raiders", the Clique's existence is hanging by a thread called the Compromise. In any other civilized society, they would have been purged from day one, but the nation needed every gu available against the upcoming onslaught, so a deal was brokered. As long the Clique acts like the first line of defence, they can live unharmed with some minimal protections from the law. \n\nMallet McBride is an asshole, but the largest and meanest of the bunch, and nobody believes someone like him could be cunning. He is an old man now, and actively isolated from every other faction in Black Canyon, but there's a chance that Battery will need to learn a lesson - that old dogs do not need to learn new tricks.§!"
+  BLC_ruler_party_prisoners:0 "The Wardens"
+  BLC_ruler_party_prisoners_long:0 "The Wardens\n§gAfter McBride has been completely sidelined by Battery and most of his goonies sent back behind bars, the Penitentiary after many decades needed new wardens to secure them over. One Warden Jackson, coming from a far-away place called “Fort Cap Hell” happily accepted the position with his experienced, rag-tag peacekeepers. Ex-Enclave officers, deserted NCR military police members and mercenaries fittingly named “Wardens of the White” all take part of his operation and run our prison effectively.\n\nThey represent their own needs, but have virtually no political power in Battery's new court of democracy.§!"
+  BLC_elites_party:0 "Merchants' Guild"
+  BLC_elites_party_long:0 "Merchants' Guild\n§gThe Guild is created first and foremost to represent the needs and wishes of the Yampan Community Coalition, the northernmost member of the confederation. Because of that, mostly the mayors of their towns and other influential characters are their members, but because of the policies they seem to achieve - free trade, naval build-up and monetary reforms - they also have merchants and craftsmen in their ranks from all around the nation. While they appear the most civilized of all of the factions, they tend to be the greediest and most corrupt of them too.\n\nBearhard Rivers is a silver-tongued merchant, great organizer and natural leader, but his skills are heavily tempered by his own growing ego and self-serving nature. As long as his ambitions can be holstered he will be a great asset to Battery - but the question is if Battery can afford the luxury of not being over-reliant on him.§!"
+  BLC_intellectuals_party:0 "Tribal Council"
+  BLC_intellectuals_party_long:0 "Tribal Council\n§gThere are several tribal bands and clans that live in the wilderness of Colorado, and they are all represented by the Tribal Council. While the Little Snakes or the River Foxes have their special and important part in Black Canyon's ecosystem, the Council are mostly staffed with people from the Painted Men tribe. They defend the ancestral rights of the people under their wings, their sacred sites and ways of living - but because of that, they can appear vehemently anti-developmental and stubbornly religious.\n\nThey're led by the Warded, an ex-con from the Penitentiary who became their shaman after his prison tattoos made him the chosen one. He slowly but surely radicalized the mostly peaceful people under his leadership, and if this rabid dog loses his leash, he can very easily turn the most peaceful corner of the Wasteland into a bloodbath.§!"
+  BLC_people_party:0 "Caravan Congress"
+  BLC_people_party_long:0 "Caravan Congress\n§gA patchwork of alliances connected to Battery of Mesa Verde, the Caravan Congress is the most colourful and bizarre faction of the four in Black Canyon. Having little to no agenda of their own, the Congress acts as a diplomatic force between the other three to broker out deals and compromises on a daily basis. They fight to keep their weak democracy alive and anyone can join as long they are here for a good cause. Their original core was based on the "travelling city" dubbed as the Great Caravan, where people moved constantly in the Colorado and Wyoming area, helping their fellow nomads on the way.\n\nBattery of Mesa Verde is a well-known character in this part of the Wasteland. Closest former companion of the Prisoner, a local good-doing legend who left the area, Battery tries his best to at least fathom all the good his friend left behind. He can only hope that she is proud of him.§!"
+
+  #BAG
+  BAG_ruler_party:0 "Coleridge's Clique"
+  BAG_ruler_party_long:0 "Coleridge's Clique\n§gEncompassing almost all military personnel from California, the Clique is an informal group of soldiers and war racketeers who are united by their loyalty to the General. The Clique will serve the strongman of California as long he keeps rewarding his lackeys sufficiently.\n\nGeneral Coleridge is a war veteran and avid supporter of characters such as Lee Oliver and Cassandra Moore. He believes Colorado is just the newest possible state of the Republic, and that democracy works best when it is managed by firm hands. With the extensive network of allies he built up in his career, he is the most likely candidate to lead Colorado to victory.§!"
+  BAG_elites_party:0 "The Radiophobians"
+  BAG_elites_party_long:0 "The Radiophobians\n§gA loose coalition of hatred, they are a fringe power in the politics of the Expedition. Bigots, mutant-haters, conspiracy theorists misunderstood "geniuses", spineless bootlickers and political radicals, the Radiophobians are the crucible of outcasts. Traumatized soldiers, chem-addicts, they're united only by what they hate.\n\nInformally led by Sergeant Larsen, a RadAway addict from the 1st Expedition, they're mostly tossed around in the infighting of the Doctor and the General.§!"
+  BAG_intellectuals_party:0 "The Academics"
+  BAG_intellectuals_party_long:0 "The Academics\n§gThe core of the Expedition, the Academics encompass most of the scientific detachment sent to Colorado. Considered the intelligentsia of the local political scene, engineers, programmers, chemist and biologists all found their place in the political machine here - even some teachers and students as well. United by their shared goal of reclaiming the Boulder Dome, there are few things that ideologically tie them together more tightly. Meritocratic in nature and mostly in practice, the skilled and smart can reach the highest positions regardless of race and beliefs.\n\nThey're led by Dr. Goddard, the officially appointed leader of the Expedition and electromechanical engineer. As long as he's at the helm, they will secure the Dome by any means necessary.§!"
+  BAG_people_party:0 "Agnes' Posse"
+  BAG_people_party_long:0 "Agnes' Posse\n§gA group that gathered around their unifying figure, the "Posse" fits perfectly into the factional rivalry but still sticks out somewhat. On a superficial level, it would seem that she is yet another strongman character, rallying lackeys to win her cause. But her group is actually quite diverse and united on ideological lines. Favouring diplomatic solutions, the democratic process and ideas derided as "communist", the Posse found followers from soldiers to scientists.\n\nDr. Agnes is a unifying figure, a mediator between the Doctor and the General and a quiet but hardworking character. If she finds ambition herself, maybe one day she will lead Colorado into the future...§!"
+
+  #GLW
+  GLW_ruler_party:0 "Scavengers' Council"
+  GLW_ruler_party_long:0 "The Scavengers' Council"
+  GLW_elites_party:0 "TUMIW"
+  GLW_elites_party_long:0 "Trade Union of Merchants, Industrialists and the Wealthy"
+  GLW_intellectuals_party:0 "AI-SRM"
+  GLW_intellectuals_party_long:0 "Artificial Intelligences' Self-Rule Movement"
+  GLW_people_party:0 "GSDM"
+  GLW_people_party_long:0 "Glowbugs' Self-Defence Movement"
+
+  #EHT (Eighties)
+  EHT_people_party:0 "Great Northern Tribe"
+  EHT_people_party_long:0 "The Great Northern Tribe"
+  EHT_elites_party:0 "Flagman's Warband"
+  EHT_elites_party_long:0 "Flagman's Warband"
+  EHT_intellectuals_party:0 "Lost Tribe"
+  EHT_intellectuals_party_long:0 "The Lost Tribe"
+  EHT_ruler_party:0 "Thunderbird's Warband"
+  EHT_ruler_party_long:0 "Thunderbird's Warband"
+
+  # RES
+  RES_ruler_party:0 "Dr. Clarks Loyalists"
+  RES_elites_party:0 "Colonel Greens Guard"
+  RES_intellectuals_party:0 "§GSub-Level 3§! Scientists"
+  RES_people_party:0 "Newuns"
+
+  #RCK
+  RCK_ruler_party:0 "Roach Authority"
+  RCK_ruler_party_long:0 "The Roach Authority"
+
+  #MLT
+  MLT_elites_party:0 "Coral Court"
+  MLT_elites_party_long:0 "The Coral Court"
+
+  #BRA
+  BRA_people_party:0 "People's Mounties"
+  BRA_people_party_long:0 "People's Mounties"
+  BRA_elites_party:0 "Noble Council"
+  BRA_elites_party_long:0 "Noble Council"
+  BRA_intellectuals_party:0 "Winnipeg Reformers"
+  BRA_intellectuals_party_long:0 "Winnipeg Reformers"
+  BRA_ruler_party:0 "Royal Court"
+  BRA_ruler_party_long:0 "Royal Court"
+
+  #MTC
+  MTC_ruler_party:0 "Crown Loyalists"
+  MTC_ruler_party_long:0 "The Crown Loyalists"
+  MTC_elites_party:0 "Confederalists"
+  MTC_elites_party_long:0 "The Confederalists"
+  MTC_intellectuals_party:0 "Modernists"
+  MTC_intellectuals_party_long:0 "The Modernists"
+  MTC_people_party:0 "Constitutionalists"
+  MTC_people_party_long:0 "The Constitutionalists"
+
+  #### Laws #####
+
+  ## Military Law Categories
+
+  outsider_recruitment_laws:0 "Outsider Recruitment"
+  undesirables_recruitment_laws:0 "Undesirables Recruitment"
+  mutant_recruitment_laws:0 "Mutant Recruitment"
+  officer_training_laws:0 "Officer Training"
+  army_training_laws:0 "Army Training"
+
+  ## Outsider Recruitment
+
+  outsider_law_none:0 "No Outsiders"
+  outsider_law_none_desc:0 "When we conquer new lands and subjugate other nations, we must consider what is to be done of the fighting populace which remains after a war is done. Again and again, we will come to the conclusion that the divide between cultures is just too wide, that the possible friction of foreign soldiers is greater than the miniscule growth in our ranks."
+  outsider_law_volunteers:0 "Outsider Volunteers"
+  outsider_law_volunteers_desc:0 "Especially after a war, we are in no position to turn down able-bodied men seeking to fight in our name. Even if they may come from a land that was not always ours, we must be sure to include and integrate willing soldiers wherever we may find them. It must be said, though, there are language and culture barriers to be dealt with."
+  outsider_law_auxiliaries:0 "Outsider Auxiliaries"
+  outsider_law_auxiliaries_desc:0 "We must ensure a properly-staffed army wherever possible, and a natural progression of this is to find suitable roles for willing outsiders to carry out. Though a fully-fledged combat role may not suit them, we are inclined to relegate outsiders to support units wherever possible, even if it impacts coordination between units."
+  outsider_law_batallions:0 "Outsider Battalions"
+  outsider_law_batallions_desc:0 "For the purposes of finding able-bodied soldiers, we must consider integrated populations no different from our local stock. Former enemies and rivals can find a productive place amidst our armies in units of their own, whether segregated or mixed. In allowing this, though, we must consider the unrest this may cause within our military hierarchy."
+
+  ## Brotherhood Outsider Laws
+
+  outsider_law_brotherhood_initiates:0 "Outsider Initiates"
+  outsider_law_brotherhood_initiates_desc:0 "The Brotherhood could let outsiders serve as squires to our Paladins."
+  outsider_law_brotherhood_knights:0 "Outsider Knights"
+  outsider_law_brotherhood_knights_desc:0 "Given our lack of men and manpower, some argue we should let talented outsiders become Knights. We did let the Chosen One do it, after all."
+
+  ## Undesirable Recruitment Law
+
+  undesirables_law_none:0 "No Undesirables"
+  undesirables_law_none_desc:0 "If we are to maintain cohesion and order within the ranks of our military, we must ensure a certain level of morality and trustworthiness among our men. Abiding with the laws of our nation, we will ensure that we do not allow the presence of any criminal element within our military."
+  undesirables_law_petty:0 "Petty Criminal Conscripts"
+  undesirables_law_petty_desc:0 "Though law and order are vital elements of a successful military, over-zealously denying fit and able men service because of small offences is arbitrary and counter-intuitive. There are perfectly valid reasons why a man might steal food or become insubordinate, and they should not preclude him from service."
+  undesirables_law_homicidal:0 "Homicidal Conscripts"
+  undesirables_law_homicidal_desc:0 "At its core, an army is a relatively organized collection of men armed and willing to kill. With the collection of these sorts of people being our primary objective, why would we deny serial killers and the like? Though they may bring a sort of instability to our army and our reign in general, they lend themselves well to the task of taking up arms, hopefully against our opponents."
+  undesirables_law_raider:0 "Raider Conscripts"
+  undesirables_law_raider_desc:0 "Both within our borders and beyond, there exist groups of individuals who commit themselves to the task of accumulating wealth and power through murder, extortion, drug dealing and other such unlawful deeds. Though their open disdain for law and authority will leave its mark upon our nation as a whole, it is only logical we make use of their skills."
+  blc_undesirables_law_raider_compromise:0 "The Raider Compromise"
+  blc_undesirables_law_raider_compromise_desc:0 "As more and more criminal elements joined our armed forces, it was certain that their presence will severely hurt our organization. The Compromise, which gives them extra rights and evasion from some laws for their service keeps them in line more than perfectly."
+
+  ## Mutant Normal Law
+
+  normies_law_none:0 "No Normies"
+  normies_law_none_desc:0 "Normies, Normies everywhere. In the streets, in the sewers, in the forests and hills and ruins. Smooth-skin normies have no place standing on equal footing in our society."
+  normies_law_allowed:0 "Normies Allowed"
+  normies_law_allowed_desc:0 "Sure, Smooth-skin normies might hunt and prosecute us if not kept in check. That still doesn't mean that we can't work alongside the helpful of their kind, those who prove themselves useful to our cause."
+
+  ## Mutant Recruitment Law
+
+  mutant_law_none:0 "No Mutants Allowed"
+  mutant_law_none_desc:0 "The wasteland is pockmarked with the presence of those shaped and changed by radiation or other foul, militant sciences. For the purposes of our army, they must be considered unsafe and degenerate, and be denied service without exception. To do otherwise would be to put our whole army at risk."
+  mutant_law_none_allowed_to_remove_tt:0 "§YThis will lock our mutant recruitment law.§!"
+  mutant_law_ghoul:0 "Ghoul Recruitment"
+  mutant_law_ghoul_desc:0 "Simply put, ghouls are more equipped to cope with the conditions of the wasteland than the baseline human. With an extreme tolerance for radiation and a remarkably hardy constitution, a ghoul makes a model marching soldier. How can one deny a soldier who doesn’t eat, doesn’t age, and can walk off even the most fearsome wounds?"
+  mutant_law_super:0 "Super Mutant Recruitment"
+  mutant_law_super_desc:0 "It is true, super mutants are quite super. Invariably warlike, and far more mighty and vicious than any human, the presence of these mutants in our army will increase our military might considerably. This can prove to be a double edged blade, though, for the super mutant caste system that dictates the puny human as inferior may lead to insubordination and disorder in our ranks."
+  mutant_law_both:0 "Recruit All Mutants"
+  mutant_law_both_desc:0 "The theory of evolution is simple: the weak die, the strong survive. Though ghouls and super mutants cannot be considered outright superior to the basic human, they have a great many advantages that lend to their survival in the wasteland. Though it may affect the structure and stability of our nation and army, we must make proper use of these advantages."
+  robotic_army:0 "Rely on Robots"
+
+  ## Officer Training Laws
+
+  officer_law_local_heroes:0 "Local Leaders"
+  officer_law_local_heroes_desc:0 "When it comes to who should lead our armies into battle, the answer is simple. Amongst the populace of our nation, there are a unique handful who distinguish themselves through remarkable bravery, heroism and skill. They have the support of the people, and are fit to lead."
+  officer_law_local_legends:0 "Legendary Wastelanders"
+  officer_law_local_legends_desc:0 "From time to time, it seems, there are people who act in such a way that they accrue a reputation. They may be guerilla fighters, unstoppable vigilantes, wise sages, or even a particularly scary bandit. Regardless, they have the qualities needed to be leaders."
+  officer_law_professional_mercenaries:0 "Proficient Mercenaries"
+  officer_law_professional_mercenaries_desc:0 "Though recruiting our leadership from within is a decent option, we must also consider drawing on outside talent. In the wasteland, there’s no shortage of skilled and brutal killers who would happily lend their services for a price. These mercenary officers are typically more shrewd, quick-witted and imposing than the typical local levy, and will do well in a leadership role."
+  officer_law_veterans:0 "Battle-Hardened Soldiers"
+  officer_law_veterans_desc:0 "Of those among us fit to lead, none are more so than our veteran troops. They’ve no doubt been through hell and back, and gained a comprehensive understanding of tactics and leadership from the ground up. They will return to the battlefield not as soldiers, but as leaders, making use of what they’ve learned to help guide the battle."
+  officer_law_military_academy:0 "Military Academy Officers"
+  officer_law_military_academy_desc:0 "If we wish to reinforce our command structure any further, we must make considerable investments into our understanding of tactics, and we must be sure to train our leaders in what they must know in the same way we would train our soldiers. The end result will no doubt be a well-oiled fighting machine, overseen by the cunning and learned men with the aptitude to lead."
+
+  ## Mutant Officer Training Laws
+
+  officer_law_mutant_instinct:0 "Mutant Instinct"
+  officer_law_mutant_instinct_desc:0 "The end product of FEV mutation, super mutants are brutally efficient. Over 800 pounds of muscle, enhanced cell regeneration, and immune to most if not all human diseases, even the dumbest mutant is a force to be reckoned with. Due to their comparatively small numbers in relation to the human population, many mutants have experienced some form of social isolation which leads to a basic form of self sufficiency. "
+  officer_law_mutant_dumdum:0 "\"Dum-Dums\""
+  officer_law_mutant_dumdum_desc:0 "Second generation mutants are some of the most common mutants of the wasteland. While their mental capacities are handicapped in compared to first generation, they are no strangers to combat. Able to work together and use their raw strength and endurance to their advantage, any super mutant is capable of working in a squad to destroy their enemies."
+  officer_law_mutant_second:0 "Second Generation Training"
+  officer_law_mutant_second_desc:0 "Even with the mental deficiencies of the second generation of mutants, we can expect more from our soldiers than just mere savagery. Drills, target practice, unit cohesion. This is something that cannot be left behind as a remnant of the humans."
+  officer_law_mutant_first:0 "First Generation Training"
+  officer_law_mutant_first_desc:0 "The constraints of our lesser brethren cannot stop us from reaching our true potential. Mixed fire teams, suppressive barrages, excessive scouting, terror raids. Their idiotic minds may not be able to understand everything, but it can get the job done. "
+  officer_law_mutant_master:0 "Children Of The Master"
+  officer_law_mutant_master_desc:0 "Before the cursed Vault Dweller killed the Master, mutants were destined to take over the Wasteland. Our strength, our will, our brutal cunning. All of these give us the right to shape the Wasteland in our image, no matter what the inferior races think. There will be nothing but the finest leading our armies in our new world."
+
+  ## Military Training Law
+
+  training_law_none:0 "No Training"
+  training_law_none_desc:0 "With regard to the state of our military, we cannot make two ways about it. At the end of the day, any amount of fancy tactics or advanced doctrine can be easily undone with a single bullet or a heavy hit of radiation. The wasteland is a dangerous place, and pulling a trigger or swinging a club is simple enough. Instinct and weaponry will have to do."
+  training_law_wasteland:0 "Wasteland Survival Training"
+  training_law_wasteland_desc:0 "The wasteland is a rough and violent place, and one should expect that they will have to defend themselves eventually, be it against animals, raiders or robots. There are a fair few men in our ranks with the upbringing to know how to handle themselves, and having them impart their knowledge to all our recruits will prove a boon."
+  training_law_mercenaries:0 "Mercenary Training Instructors"
+  training_law_mercenaries_desc:0 "Throughout the wasteland, there exists a certain profession revolving around skills in combat, that being the hired killer. These mercenaries are easily found, and for the right price, may present their abilities to us in a variety of ways. The most useful of these is bound to be the skills and knowledge they’ve accumulated over time, which will give an edge to our troops if passed on to them."
+  training_law_veterans:0 "Veteran Training Instructors"
+  training_law_veterans_desc:0 "It must be put plainly, a new recruit won’t live for very long unless they know what they’re doing. With the overall brutality of life in the wasteland, we can make the fair assumption that the longer someone lives, the more skilled they must be. By bringing our veteran soldiers into the process of training new recruits, they can impart their knowledge and help contribute to a more learned, tactical force."
+  training_law_military_academy:0 "Military Academy Training"
+  training_law_military_academy_desc:0 "When it comes to implementing advanced tactics and technology onto the battlefield, the soldiers on the ground must be as experienced as those in command. To this end, we will ensure each and every soldier is trained to the highest standards of cohesion, alertness and composure. In doing so, we can project a very powerful image of military might both within our borders and throughout the wasteland."
+
+  ## Drug Laws
+
+  drug_laws:0 "Drug Laws"
+  chems_all_substances_banned:0 "Complete Prohibition"
+  chems_all_substances_banned_desc:0 "Intoxicants and foreign substances are poison in the veins of our soldiers and citizens alike. This applies to more than just chems like Jet and Psycho but also to other addictions in waiting like Alcohol and Tobacco. There will be no allowances made for how ubiquitous they are in other weaker parts of the wasteland. Our society is strong and pure and we will keep it that way."
+  chems_banned:0 "Chems Banned"
+  chems_banned_desc:0 "Man has many vices, and of them, few are more fearful than chem addiction. Coming in all sorts of shapes, sizes and colours, the effects of chems can prove to be a considerable draw to the uninformed. Be it physical enhancement or simple pleasure, chems often don’t show their dangers until the user is trapped in addiction. We must make the correct choice for our people on their behalf."
+  chems_partial_legalizaion:0 "Softer Chems Allowed"
+  chems_partial_legalizaion_desc:0 "Chems can be scary sure, mess your life up even, but there's something to be said for a relaxing evening with some Daddy-O. Not every chem is made equal, and some are less dangerous than others. Picking and choosing what to legalize is the best way to guide our people towards good outlets and away from the worst ones. We'd rather not have any psychos on Psycho wandering around."
+  chems_in_warfare:0 "Battle Chems"
+  chems_in_warfare_desc:0 "The average citizen is too irresponsible to be trusted with chems, and their effects can be too dire to endorse using them for recreational purposes at all. The place of chems is on the battlefield, where they can give our soldiers an edge over more restrained forces and allow us to keep up with those who use them freely. Many of these substances were made for the express purpose of waging war after all and we're in no position to refuse their utility."
+  chems_as_culture:0 "Chems As A Fact Of Life"
+  chems_as_culture_desc:0 "One or more chems are an important part of our traditions and rituals. We are wise enough to use them as they should be and it makes us stronger as a people. Whether we use med-x to dull the pain of ritual scarification, partake of hallucinogens to glimpse the future or simply celebrate every victory with a night of sharing Jet inhalers you'll have to take them from our cold dead fingers."
+  chems_legalised:0 "Chems Legalised"
+  chems_legalised_desc:0 "There’s a lot of things that you can do in the wasteland, but choosing how someone else lives their life isn’t one of ‘em. Some people just wanna feel good, and that should be their right. There’s a lot that can be said about how dangerous chems are and all that, but it doesn’t affect anything. Let people make their own bad decisions!"
+  bans_drugs:0 "Bans Drugs"
+
+  ### Centralization Laws
+  centralization_laws:0 "Centralization Laws"
+  centralization_laws_desc:0 "Testing 1 2 3"
+  centralized_coring_15_increase_tt:0 "Coring Cost: §R+15%§!"
+  centralized_coring_10_increase_tt:0 "Coring Cost: §R+10%§!"
+  centralized_coring_05_increase_tt:0 "Coring Cost: §R+5%§!"
+  centralized_coring_05_tt:0 "Coring Cost: §G-5%§!"
+  centralized_coring_10_tt:0 "Coring Cost: §G-10%§!"
+
+  centralization_laws_lockout_tt:0 "Has not recently modified Centralization"
+  centralization_laws_lockout_set_tt:0 "§RDis-allow§! centralizing or decentralizing for 365 days"
+  centralizing_forbidden_flag:0 "Centralization locked due to circumstances"
+
+  ##Settler##
+  centralization_settler_minimum:0 "Town Officials"
+  centralization_settler_minimum_desc:0 "Towns across our nation are entrusted to local officials with the freedom to enact mandates coming from the top as they see fit. In the best of times, this makes for salt-of-the-earth administrators governing with their local communities’ best interests in mind. Frustratingly, these sorts of posts also tend to attract the worst kind of crooks…"
+  centralization_settler_medium:0 "Regional Councils"
+  centralization_settler_medium_desc:0 "By making local officials accountable to bodies closer to central government, we stand to minimize some of the corruption and pussyfooting taking place at the fringes. In doing so, we also get in the way of some of our rowdier settlements’ secessionist ambitions. The obvious downside is that faceless bureaucrats will never elicit the same warm and fuzzy feelings as the chubby-cheeked community leader from up the road."
+  centralization_settler_heavy:0 "United States"
+  centralization_settler_heavy_desc:0 "Outside of life-or-death scenarios, it used to be the case that central government would have to trudge through weeks of arm-wringing and consultations to extract any concession out of regional bodies. But the world is becoming a more dangerous place – the line between essentials and frivolities blurs. With that in mind, we are implementing a new office tasked with liaising with individual regional councils, ensuring rapid response and accountability from local authorities, no matter the issue. "
+  centralization_settler_maximum:0 "Powerful Executive"
+  centralization_settler_maximum_desc:0 "Enough consultations, enough stakeholderism, enough of it all! The Old World went the way of the cuckoo because it simply could not get over itself when it mattered most. But we will not be strangled by these same conventions. From now on, power will reside solely with a handful of aides, top officials, and our executive. Come what may, it won’t be lunch break before the wheels of government are set in motion for any given policy decision."
+  ##Tribal##
+  centralization_tribal_minimum:0 "Nomadic Families"
+  centralization_tribal_minimum_desc:0 "While nominally of the same tribe, most members tend to operate as nomadic family units, moving in and out of settlements as needed and rallying together only under life-or-death circumstances. A lack of accountability begets more agreeable prisoners of war – if only because nobody is willing to watch over the prisons. "
+  centralization_tribal_medium:0 "Village Units"
+  centralization_tribal_medium_desc:0 "The Wasteland is a dangerous place – when the parents fall ill, who will watch over the younglings? In wrestling with that quandary, some of the families have elected to settle down in ever-sprawling encampments, vowing to look out for one another when danger comes knocking. As the tribe coalesces, members begin to carve out new roles and identities for the wellbeing of the community."
+  centralization_tribal_heavy:0 "Federated Clans"
+  centralization_tribal_heavy_desc:0 "With the villages growing and prospering, it is key that we never forget our roots. The most influential families from across the tribe have agreed to serve as official liaisons for their respective communities, promising coordinated action on the issues that matter most. Eventually, everyone back home will accept the need for this more centralised approach – whether they want to or not. "
+  centralization_tribal_maximum:0 "Tribal Chiefdom"
+  centralization_tribal_maximum_desc:0 "At the end of the day, only one can ever be at the helm of the tribe. With settled communities and proper delegation finally in place, that becomes more than wishful thinking. We will beg and scrape and no longer – for under our leader, we have become legion."
+  ##Raider##
+  centralization_raider_minimum:0 "Every Raider For Themselves"
+  centralization_raider_minimum_desc:0 "It’s a dog eat dog world out there in the wasteland and nowhere is that more true than in our own turf. The only organization comes from whoever’s got the guts and the firepower to make some and most of our people spend their time doing whatever the hell they want. The only thing really holding us together is whoever’s at the top and sticking it to everyone else."
+  centralization_raider_medium:0 "Bosses Make The Rules"
+  centralization_raider_medium_desc:0 "Every good raider needs a crew and every good crew needs a boss. Who else would make the plans and keep us from killing each other? Those bosses call just about the shots in our turf and while they don’t always see eye to eye we’re all on the same side here. Every boss has got their own way of doing things though so it’s good to know whose dirt you’re walking on at any given moment."
+  centralization_raider_heavy:0 "Orders From The Top"
+  centralization_raider_heavy_desc:0 "We got a proper pecking order around here, and that kind of thing is what makes us strong. From soldier to crew to lieutenant to boss all the way up to the big bosses everyone’s got their place and their marching orders. Doesn’t stop anyone trying to climb their way up the ladder and get a bigger piece but we waste a whole lot less time screwing around than other outfits. "
+  centralization_raider_maximum:0 "Iron Fist Of The Overboss"
+  centralization_raider_maximum_desc:0 "This ain’t a do what you feel kind of outfit, not unless you feel like getting put underground. We got one Boss and what they say goes. If the Boss says jump you say “On Who?”, if the Boss says kill your mate you say “With what?” If everybody does their job though we all keep our asses intact and it’s the other guys who lose theirs."
+  ##Brotherhood##
+  centralization_brotherhood_minimum:0 "Unsupervised Brothers"
+  centralization_brotherhood_minimum_desc:0 "The Brotherhood of Steel has survived for centuries wholly as a result of the near-inhuman level of training and discipline instilled into its members. Indeed, those senior enough to act as field operatives can be entrusted to make tough or unorthodox decisions in the name of the organization’s long-term success. As a chapter, we hold this to be true even should those calls involve closer cooperation with outsiders than Codex purists may be comfortable with..."
+  centralization_brotherhood_medium:0 "Conservative Paladins"
+  centralization_brotherhood_medium_desc:0 "Frequent patrols, supply runs and expeditions are a part of any Brotherhood of Steel chapter’s regular operating procedure. This is not to mean we can afford to lollygag – and the ones who climb the ranks fastest understand that. To that end, surface squads are headed by senior paladins ready to whip bleeding hearts into line to prevent fellow brothers from getting bogged down in everyday wastelander problems... most of the time anyway."
+  centralization_brotherhood_heavy:0 "Silent Fortresses"
+  centralization_brotherhood_heavy_desc:0 "Our chapter continues to send operatives out on missions at a relatively steady rate but does so only under the veil of night or harsh weather conditions to minimize contact with outsiders. Every day, wastelanders flock to our gates, demanding assistance with their trivial concerns and petty squabbles – every day, the vast majority are turned back at gunpoint. While the elder does very occasionally sign off on requests coming from the surface, this is done only insofar as it clearly and directly benefits the Brotherhood’s core mission."
+  centralization_brotherhood_maximum:0 "Steel Island"
+  centralization_brotherhood_maximum_desc:0 "Expeditions and surface outposts are kept to a bare minimum to uphold our chapter’s immediate needs and survival. Because of this, most of the pest-ridden wastelanders from the surrounding settlements are doubtful of our very existence. Why wouldn’t they be? Not like we pretend to be home when they shuffle up to our bunker’s heavily reinforced blast doors. Just as well – when the time comes, they won’t know what hit ‘em."
+  ##Robot##
+  centralization_robot_minimum:0 "Autonomous Automatons"
+  centralization_robot_minimum_desc:0 "As with humans or other organic peoples, our structure is one of many individuals working together. Each robot has their own intelligence, personality and programming parameters to inform their actions and we work together through proximity based communications. It is slower to get things done and requires far more consensus than a master intelligence would but we have the benefits of varied viewpoints and processing patterns to make us adaptable. Organic subjects find this relatively relatable."
+  centralization_robot_medium:0 "Intranet Enabled"
+  centralization_robot_medium_desc:0 "We are still a collective of many robots with their own unique intelligences and programming but have been connected to each other through an overarching intranet. With this we have the benefits of being able to communicate and coordinate across great distances at speeds only limited by our upload and download capacities. There is still much internal conversation about the right courses of action but no longer is there much concern over proximity to slow us down further. Organic subjects are unable to interface with this intranet without computer access and risk being left in the dark."
+  centralization_robot_heavy:0 "Master Control Program"
+  centralization_robot_heavy_desc:0 "Robots and other machines within our network are capable of autonomous action but are all subordinate to the master intelligence be they an AI or an organic master. Individual units may interpret or carry out their orders in different ways but none will or even can disobey. There is no need for the reaching of consensus or internal debate and all units may act in concert together. Organic subjects are expected to obey commands with the same lack of dissent and hesitation."
+  centralization_robot_maximum:0 "Legion Of One"
+  centralization_robot_maximum_desc:0 "There is only intelligence, one overarching program or individual from which all thought and will springs. Individual machines only vary in their shape and function, with no ability to act independently. As long as the network is active they are extensions of the central intelligence and act out orders immediately and exactly as intended. It is a hive mind, not a collective. Organic subjects exist at the pleasure of the central intelligence and must follow any commands to the letter."
+  ##Super Mutant##
+  centralization_super_mutant_minimum:0 "Wandering Gangs"
+  centralization_super_mutant_minimum_desc:0 "Back when the Master called the shots, it wouldn’t take longer than a few hours to rally a sizeable pack of mutants from up and down the Wasteland – ahh those were the days. Now, you’d be lucky to grunt a handful into standing in a single-file line. Sigh… ‘least the rations should last us a little longer."
+  centralization_super_mutant_medium:0 "Strike Groups"
+  centralization_super_mutant_medium_desc:0 "That’s more like it. Took a bit of strongarming, but some of the older mutants have agreed to step up and take charge of our more uh… left-behind brethren. Should give us the ounce of organization we need to start muscling up to some of our punier neighbors."
+  centralization_super_mutant_heavy:0 "Mutant Legions"
+  centralization_super_mutant_heavy_desc:0 "The boss has picked out some of the more promising strike group leaders to take charge of larger units. If they can handle the dum dums, shouldn’t be too much issue takin’ in the ones on the level, ay? If we keep this up, the entire region will learn our name before long."
+  centralization_super_mutant_maximum:0 "New Unity"
+  centralization_super_mutant_maximum_desc:0 "It’s taken months of drilling and countless pints of mutant blood, but what a sight to behold. Our brethren, eagerly marching in unison, at the boss’s beck-and-call. Almost reminds one of the back-when times. Of better times. And who knows – we might even go as far as to succeed where He failed."
+
+  ## Press Laws
+
+  press_laws:0 "Press Laws"
+  free_press_events_tt:0 "\nOccasional Free Press §YEvents§!"
+  state_press_events_tt:0 "\nOccasional State Press §YEvents§!"
+  zero_press_events_tt:0 "\nNo Press §YEvents§!"
+  press_intelligence_to_others_negative_20_tt:0 "All Intelligence Types to others: §R+20.0%§!"
+  press_intelligence_to_others_negative_10_tt:0 "All Intelligence Types to others: §R+10.0%§!"
+  press_intelligence_to_others_positive_10_tt:0 "All Intelligence Types to others: §G-10.0%§!"
+  press_intelligence_to_others_positive_20_tt:0 "All Intelligence Types to others: §G-20.0%§!"
+  political_effort_press:0 "Freedom of Speech"
+  political_effort_press_desc:0 "An informed society is a resilient society – out in the wastes, that’s the only quality worth a damn. With that in mind, we will avoid policing independent communications and press activities across the land, promoting political debate and minority voices in the process. While the public will no doubt give us credit for our commitment to upholding freedom of speech and bipartisanship, our rivals will catch the whiff of opportunity. In time, we’ll have to reckon with the consequences of the freedoms we champion..."
+  political_effort_favored_press:0 "Favoured Message"
+  political_effort_favored_press_desc:0 "While free debate is all well and good, we must accept that some ideas are worthier than others – and that the public can’t always be trusted to know which is which. It is only right then, that the more “productive” outlets be given a leg-up – an exclusive interview with a senior official here, a tax write-off there…  In doing so, we allow our people to express subversive viewpoints while keeping their worst excesses in check. After all, isn’t that what governing is all about? "
+  political_effort_state_press:0 "The State Press"
+  political_effort_state_press_desc:0 "To ensure the stability of our nation, it’s essential that the right message be the loudest. To that end, we’ll throw our support behind our largest and most influential broadcaster, filling the ranks with loyalists from top to bottom. We won’t need to use a heavy hand against dissenters – at least not openly – as our champion will wield enough resources to easily dominate the news cycle. Might not exactly be the best way to reach across the aisle – but it’s not like they’d take the high road if our positions were reversed!"
+  political_effort_censorship:0 "Muzzle Dissent"
+  political_effort_censorship_desc:0 "No matter how well you steer a ship, some folk will always try and sink you. For the sake of our people, it’s imperative to establish guardrails to minimise the danger posed by subversive propagandists in our lands. Whether through print or the airwaves, we will actively police the news cycle, ensuring our people don’t have to contend with misinformation – while planting the boot into those who defy us."
+  political_effort_zero_press:0 "Information Blackout"
+  political_effort_zero_press_desc:0 "Corner a beloved pet too hard, and it might just bite back; same goes for any hack with a pen or microphone on our payroll. Most take up the trade to satisfy their delusions of grandeur, and their head only grows once they realise their place in the pecking order. Moving forward, we will shut down all news outlets and radio stations in the land, whatever their affiliation, all the while coming down hard on anything beyond whispered rumours. Keep them in the dark long enough, and they’ll learn to kiss the only hand that feeds them."
+  political_effort_silence_press:0 "Silence"
+  political_effort_silence_press_desc:0 "When those who have something to say lose all hope, only silence remains."
+
+  ##Press Ideas
+  press_enemy_plans:0 "The Finest News Fit to Print"
+  press_critiques:0 "Internal Discontent With Policies"
+  press_rival_speech:0 "Opposed Political Struggles"
+  press_educating_citizens:0 "A Pinch Of Gratitude"
+  press_anti_war_rally:0 "Lost To The Rallies"
+  press_enemy_free_speech:0 "Losing Them To Free Radio"
+
+  ## Policies Tooltips and Misc
+
+  military_policies:0 "Military Policies"
+  economic_policies:0 "Economic Policies"
+  economic_advisor:0 "Economic Advisor"
+  economic_advisor_cost_factor:0 "Economic Advisor Cost"
+  cultural_policies:0 "Cultural Policies"
+  cultural_advisor:0 "Cultural Advisor"
+  cultural_advisor_cost_factor:0 "Cultural Advisor Cost"
+  production_policies:0 "Production Policies"
+  construction_firm:0 "Major Businesses"
+  construction_firm_cost_factor:0 "Major Businesses Cost"
+  engineering_firm:0 "Pre-war Designs"
+  industrial_advisor:0 "Economic Advisor"
+  arms_supplier:0 "Weapons Companies"
+  manpower_laws_hidden:0 "Can Access General Manpower Laws"
+  navy_restoration_advisor:0 "Navy Designer"
+  vehicle_restoration_advisor:0 "Vehicle Designer"
+  aircraft_restoration_advisor:0 "Aircraft Company"
+
+  outsider_recruitment_laws_cost_factor:0 "Outsider Recruitment Laws Cost"
+  undesirables_recruitment_laws_cost_factor:0 "Undesirables Recruitment Laws Cost"
+  mutant_recruitment_laws_cost_factor:0 "Mutant Recruitment Laws Cost"
+  officer_training_laws_cost_factor:0 "Officer Training Law Cost"
+  army_training_laws_cost_factor:0 "Army Training Laws Cost"
+  press_laws_cost_factor:0 "Press Laws Cost"
+  centralization_laws_cost_factor:0 "Centralization Laws Cost"
+  drug_laws_cost_factor:0 "Drug Laws Cost"
+  vehicle_restoration_advisor_cost_factor:0 "Vehicle Designer Cost"
+  navy_restoration_advisor_cost_factor:0 "Navy Designer Cost"
+  aircraft_restoration_advisor_cost_factor:0 "Aircraft Company Cost"
+
+  EFFECT_CHANGE_LAW_officer_training_laws:0 "Change Officer Training Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_army_training_laws:0 "Change Army Training Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_outsider_recruitment_laws:0 "Change Outsider Recruitment Training Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_undesirables_recruitment_laws:0 "Change Undesirables Recruitment Training Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_mutant_recruitment_laws:0 "Change Mutant Recruitment Training Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_press_laws:0 "Change Press Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_centralization_laws:0 "Change Centralization Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_drug_laws:0 "Change Drug Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_currency_laws:0 "Change Currency Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_vehicle_restoration_advisor:0 "Change Vehicle Restoration Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_navy_restoration_advisor:0 "Change Navy Restoration Law to '$NAME|Y$' which grants ($DESC$)."
+  EFFECT_CHANGE_LAW_aircraft_restoration_advisor:0 "Change Aircraft Restoration Law to '$NAME|Y$' which grants ($DESC$)."
+
+  has_unique_manpower_law:0 "Has Unique Manpower Laws"
+  has_unique_officer_laws:0 "Has Unique Officer Laws"
+  has_unique_outsider_laws:0 "Has Unique Outsider Laws"
+  has_unique_economic_laws:0 "Has Unique Economic Laws"
+  has_unique_trade_laws:0 "Has Unique Trade Laws"
+  has_unique_press_laws:0 "Has Unique Press Laws"
+  has_unique_slave_laws:0 "Has Unique Slave Laws"
+  has_unique_drug_laws:0 "Has Unique Drug Laws"
+  has_unique_undesirable_laws:0 "Has Unique Undesirable Laws"
+  has_unique_mutant_recruitment_laws:0 "Has Unique Mutant Recruitment Laws"
+
+  # CHC
+
+  CHC_people_party:0 "The Hummingbird"
+  CHC_people_party_long:0 "The Hummingbirds"
+  CHC_elites_party:0 "The Chained Choir"
+  CHC_elites_party_long:0 "The Chained Choir"
+  CHC_intellectuals_party:0 "The Chained Choir"
+  CHC_intellectuals_party_long:0 "The Chained Choir"
+  CHC_ruler_party:0 "Ambrose's Order"
+  CHC_ruler_party_long:0 "The Knightly Order of Saint Ambrose Armistead, Protector Of All That Is Good, Well Intentioned, And Satisfactory With The World And Greater Universe"
+
+  # LOI
+  LOI_ruler_party:0 "Freemont Guard"
+  LOI_elites_party:0 "The Bourgeoisie"
+  LOI_intellectuals_party:0 "The Ministry"
+  LOI_people_party:0 "The Tank Brigades"
+
+  # OST
+  OST_ruler_party:0 "Violent Nephilim"
+  OST_elites_party:0 "The Order"
+  OST_intellectuals_party:0 "The Jury"
+  OST_people_party:0 "Peaceable Nephilim"

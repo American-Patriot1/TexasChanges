@@ -1,0 +1,29 @@
+state={
+	id=882
+	name="STATE_882"
+	resources={
+		water=5.000
+		energy=8.000
+		metal=9.000
+	}
+	history={
+		owner = HRO
+		add_core_of = HRO
+		victory_points = {
+			11801 15
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+		}
+
+	}
+	provinces={
+		11762 11763 11768 11769 11778 11779 11785 11791 11801 11803 11817 11820 11833 11834 
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

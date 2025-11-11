@@ -1,0 +1,263 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_flag_ARZ_texticon"
+		texturefile = "gfx/texticons/flag_arz.dds"
+		legacy_lazy_load = no
+	}
+
+	# Aztlan
+	spriteType = {
+		name = "GFX_flag_ATS_texticon"
+		texturefile = "gfx/flags/small/ATS.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_MOJ_texticon"
+		texturefile = "gfx/flags/small/MOJ.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_MOT_texticon"
+		texturefile = "gfx/flags/small/MOT.tga"
+		legacy_lazy_load = no
+	}
+
+	# Kingdom of Manitoba
+	spriteType = {
+		name = "GFX_flag_BRA_texticon"
+		texturefile = "gfx/flags/small/BRA.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_mountie_texticon"
+		texturefile = "gfx/flags/small/BRA_Hounds.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_flag_NCR_texticon"
+		texturefile = "gfx/flags/small/NCR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_NEV_texticon"
+		texturefile = "gfx/texticons/flag_nev.dds"
+		legacy_lazy_load = no
+	}
+
+	# Synthetic Dawn Maya Flag
+	spriteType = {
+		name = "GFX_flag_MAYA_texticon"
+		texturefile = "gfx/flags/small/MAYA.tga"
+		legacy_lazy_load = no
+	}
+
+	# Vault City flags
+	# Added so we can reference them in game rules before they're actually applied
+	spriteType = {
+		name = "GFX_flag_VLT_elites_texticon"
+		texturefile = "gfx/texticons/flag_vlt_elites.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_VLT_intellectuals_texticon"
+		texturefile = "gfx/texticons/flag_vlt_intellectuals.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_VLT_people_texticon"
+		texturefile = "gfx/texticons/flag_vlt_people.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_VLT_ruler_texticon"
+		texturefile = "gfx/texticons/flag_vlt_ruler.dds"
+		legacy_lazy_load = no
+	}
+
+	# Montana Chapter flags
+	# Added so we can reference them in game rules before they're actually applied
+	spriteType = {
+		name = "GFX_flag_MNC_patrocolus_texticon"
+		texturefile = "gfx/flags/small/MNC.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_MNC_swords_of_hayman_texticon"
+		texturefile = "gfx/flags/small/SOH_tenebris_bellator.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_MNC_sisters_of_steel_texticon"
+		texturefile = "gfx/flags/small/MNC_sororibus_ferro.tga"
+		legacy_lazy_load = no
+	}
+
+	# Metis Congress flags
+	# Added so we can reference them in game rules before they're actually applied
+	spriteType = {
+		name = "GFX_flag_MTC_texticon"
+		texturefile = "gfx/flags/small/MTC.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_MTC_congress_texticon"
+		texturefile = "gfx/flags/small/MTC_CONGRESS_OF_PEOPLES.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_MTC_confederalist_texticon"
+		texturefile = "gfx/flags/small/MTC_RED_RIVER.tga"
+		legacy_lazy_load = no
+	}
+
+	# Shi flags
+	# Added so we can reference them in game rules before they're actually applied
+	spriteType = {
+		name = "GFX_flag_SHI_independent_texticon"
+		texturefile = "gfx/flags/small/SHI.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_SHI_bos_texticon"
+		texturefile = "gfx/flags/small/SHI_BOS.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_SHI_ncr_texticon"
+		texturefile = "gfx/flags/small/SHI_NCR.tga"
+		legacy_lazy_load = no
+	}
+
+	# Strathcommune flags
+	spriteType = {
+		name = "GFX_flag_STC_teresee_texticon"
+		texturefile = "gfx/flags/small/STC_cadets.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_STC_thao_texticon"
+		texturefile = "gfx/flags/small/CPL_FED.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_STC_sorel_texticon"
+		texturefile = "gfx/flags/small/STC_novemberists.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_STC_black_flag_texticon"
+		texturefile = "gfx/flags/small/CPL_ANC.tga"
+		legacy_lazy_load = no
+	}
+
+	# Eureka flags
+	# Added so we can reference them in game rules before they're actually applied
+	spriteType = {
+		name = "GFX_flag_EUR_ncr_territories_texticon"
+		texturefile = "gfx/flags/small/EUR_NCR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_EUR_hubologists_texticon"
+		texturefile = "gfx/flags/small/EUR_hubologists.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_EUR_granite_texticon"
+		texturefile = "gfx/flags/small/EUR_granite.tga"
+		legacy_lazy_load = no
+	}
+
+	# New Reno flags
+	# Added so we can reference them in game rules before they're actually applied
+	spriteType = {
+		name = "GFX_flag_NEW_thradd_texticon"
+		texturefile = "gfx/flags/small/NEW_BROKEN.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_NEW_van_graffs_texticon"
+		texturefile = "gfx/flags/small/NEW_van_graffs.tga"
+		legacy_lazy_load = no
+	}
+
+	# Rotpurgers flags
+	# Added so we can reference them in game rules before they're actually applied
+	spriteType = {
+		name = "GFX_flag_ROT_infinity_knights_texticon"
+		texturefile = "gfx/flags/small/ROT_samson.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_ROT_grand_inquisition_texticon"
+		texturefile = "gfx/flags/small/ROT_inquisition.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_ROT_wishmaidens_texticon"
+		texturefile = "gfx/flags/small/ROT_wishmaidens.tga"
+		legacy_lazy_load = no
+	}
+
+	# Thunderbird flag
+	# Added so we can reference it in achievements before it's're actually applied
+	spriteType = {
+		name = "GFX_flag_THN_texticon"
+		texturefile = "gfx/flags/small/EHT_THN.tga"
+		legacy_lazy_load = no
+	}
+
+	# Hand Warband and Texas Tyranny flags
+	# Added so we can reference it in achievements before it's're actually applied
+	spriteType = {
+		name = "GFX_flag_LNS_ruler_texticon"
+		texturefile = "gfx/flags/small/LNS_ruler.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_LNS_legion_texticon"
+		texturefile = "gfx/flags/small/LNS_legion.tga"
+		legacy_lazy_load = no
+	}
+
+	# Vegas flag
+	spriteType = {
+		name = "GFX_flag_VEG_elites_texticon"
+		texturefile = "gfx/flags/small/VEG_elites.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_VEG_intellectuals_texticon"
+		texturefile = "gfx/flags/small/VEG_intellectuals.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_VEG_people_texticon"
+		texturefile = "gfx/flags/small/VEG_people.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_VEG_ruler_texticon"
+		texturefile = "gfx/flags/small/VEG_ruler.tga"
+		legacy_lazy_load = no
+	}
+
+	# Caesar's Legion
+	spriteType = {
+		name = "GFX_flag_BOM_flag_texticon"
+		texturefile = "gfx/flags/small/BOM.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_CES_flag_texticon"
+		texturefile = "gfx/flags/small/CES.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_flag_CES_hades_texticon"
+		texturefile = "gfx/flags/small/CES_caius_legion.tga"
+		legacy_lazy_load = no
+	}
+}
+# vim: set ft=pdx tw=79 :

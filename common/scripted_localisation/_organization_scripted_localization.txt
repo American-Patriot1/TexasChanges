@@ -1,0 +1,1874 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+###Calcualte per battalion in division designer. Depricated
+
+###Market GUI
+###Pulls opinion for selected market
+defined_text = {
+	name = "GetMarketOpinion"
+	text = {
+		trigger = {
+			set_temp_variable = {
+				var = selected_org_amount
+				value = node_organizations_influence^market_var
+			}
+		}
+		localization_key = "market_opinion_tt"
+	}
+}
+defined_text = {
+	name = "GetMarketAmountString"
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = "global.taa_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			NOT = {
+				OR = {
+					has_idea = currencytexdollar
+					TAG = RRG
+				}
+			}
+		}
+		localization_key = "global.gun_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 2 }
+		}
+		localization_key = "global.motorized_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 3 }
+		}
+		localization_key = "global.energy_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 4 }
+		}
+		localization_key = "global.melee_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 5 }
+		}
+		localization_key = "global.advanced_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 6 }
+		}
+		localization_key = "global.energy_runner_inventory"
+	}
+}
+defined_text = {
+	name = "CalculateSellPrice"
+	text = {
+		trigger = {
+			set_temp_variable = { org_selector = selected_market_organization }
+			calculate_deal_percentage = yes
+			set_temp_variable = { temp_sell_price = v }
+			#set_temp_variable = { caps_to_add = v }
+			multiply_temp_variable = { temp_sell_price = 0.3 }
+			multiply_temp_variable = { temp_sell_price = temp_org_bonus }
+			meta_trigger = {
+				text = {
+					set_temp_variable = {
+						var = current_inventory_org
+						value = [AMOUNT_VAR_NAME]
+					}
+				}
+				AMOUNT_VAR_NAME = "[GetMarketAmountString]"
+			}
+			### Divide to find % of 15000
+			divide_temp_variable = { current_inventory_org = 15000 }
+			set_temp_variable = { inventory_reduction = 1 }
+			subtract_from_temp_variable = { inventory_reduction = current_inventory_org }
+			### Add base of 10%
+			clamp_temp_variable = {
+				var = inventory_reduction
+				min = 0.1
+				max = 1.0
+			}
+			### Add multiplier
+			multiply_temp_variable = { temp_sell_price = inventory_reduction }
+		}
+		localization_key = "sell_price_amount"
+	}
+}
+defined_text = {
+	name = "CalculateBuyPrice"
+	text = {
+		trigger = {
+			set_temp_variable = { org_selector = selected_market_organization }
+			set_temp_variable = { temp_buy_price = v }
+			calculate_deal_percentage = yes
+			multiply_temp_variable = { temp_buy_price = temp_org_discount }
+		}
+		localization_key = "buy_price_amount"
+	}
+}
+defined_text = {
+	name = "CalculateDiscountPercentage"
+	text = {
+		trigger = {
+			set_temp_variable = { org_selector = selected_market_organization }
+			calculate_deal_percentage = yes
+			set_temp_variable = { temp_discount = 1 }
+			subtract_from_temp_variable = {
+				var = temp_discount
+				value = temp_org_discount
+			}
+		}
+		localization_key = "buy_percentage_amount"
+	}
+}
+defined_text = {
+	name = "CalculateSellPercentage"
+	text = {
+		trigger = {
+			set_temp_variable = { org_selector = selected_market_organization }
+			#set_temp_variable = { caps_to_add = v }
+			multiply_temp_variable = { temp_price_reduction = 0.3 }
+			subtract_from_temp_variable = { temp_org_bonus = 1 }
+			meta_trigger = {
+				text = {
+					set_temp_variable = {
+						var = current_inventory_org
+						value = [AMOUNT_VAR_NAME]
+					}
+				}
+				AMOUNT_VAR_NAME = "[GetMarketAmountString]"
+			}
+			### Divide to find % of 15000
+			divide_temp_variable = { current_inventory_org = 15000 }
+			set_temp_variable = { inventory_reduction = 1 }
+			subtract_from_temp_variable = { inventory_reduction = current_inventory_org }
+			### Add base of 10%
+			clamp_temp_variable = {
+				var = inventory_reduction
+				min = 0.1
+				max = 1.0
+			}
+			### Add multiplier
+		}
+		localization_key = "sell_percentage_amount"
+	}
+}
+defined_text = {
+	name = "GetMinimumOpinion"
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = {
+					set_temp_variable = { minimum_opinion_temp_var = [OPINION_ARRAY_NAME]^i }
+				}
+				OPINION_ARRAY_NAME = "global.organization_opinion_arary_[?selected_market_organization|0]"
+			}
+		}
+		localization_key = "opinion_amount_tt"
+	}
+}
+###Pulls name for selected market
+defined_text = {
+	name = "GetOrganizationName"
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+		}
+		localization_key = "gun_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 2 }
+		}
+		localization_key = "motorized_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 3 }
+		}
+		localization_key = "energy_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 4 }
+		}
+		localization_key = "melee_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 5 }
+		}
+		localization_key = "advanced_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 6 }
+		}
+		localization_key = "follower_runner_name_tt"
+	}
+	text = {
+		trigger = {}
+		localization_key = "Broken"
+	}
+}
+defined_text = {
+	name = "GetOrganizationNameTT"
+	text = {
+		trigger = {
+			check_variable = { v = 0 }
+		}
+		localization_key = "Select Organization"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 1 }
+		}
+		localization_key = "gun_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 2 }
+		}
+		localization_key = "motorized_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+		}
+		localization_key = "energy_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 4 }
+		}
+		localization_key = "melee_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 5 }
+		}
+		localization_key = "advanced_runner_name_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 6 }
+		}
+		localization_key = "follower_runner_name_tt"
+	}
+	text = {
+		trigger = {}
+		localization_key = "Broken"
+	}
+}
+###Pulls inventory for selected market
+defined_text = {
+	name = "GetMarketInventory"
+	text = {
+		trigger = {
+			check_variable = { ROOT.selected_market_organization = 1 }
+		}
+		localization_key = "gun_runner_market_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { ROOT.selected_market_organization = 2 }
+		}
+		localization_key = "motorized_runner_market_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { ROOT.selected_market_organization = 3 }
+		}
+		localization_key = "energy_runner_market_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { ROOT.selected_market_organization = 4 }
+		}
+		localization_key = "melee_runner_market_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { ROOT.selected_market_organization = 5 }
+		}
+		localization_key = "advanced_runner_market_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { ROOT.selected_market_organization = 6 }
+		}
+		localization_key = "followers_runner_market_tt"
+	}
+	text = {
+		trigger = {}
+		localization_key = "Broken"
+	}
+}
+###Finds the proper equipment type for the meta effect
+defined_text = {
+	name = "GetMarketEquipment"
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+		}
+		localization_key = "[GetGunRunnerEquipment]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 2 }
+		}
+		localization_key = "[GetMotorizedRunnerEquipment]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 3 }
+		}
+		localization_key = "[GetEnergyRunnerEquipment]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 4 }
+		}
+		localization_key = "[GetMeleeRunnerEquipment]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 5 }
+		}
+		localization_key = "[GetAdvancedRunnerEquipment]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 6 }
+		}
+		localization_key = "[GetFollowersRunnerEquipment]"
+	}
+}
+###Finds the proper equipment type for the meta effect
+###Second set to get around 1.15 change to meta/scripted loc
+defined_text = {
+	name = "GetMarketEquipment2"
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+		}
+		localization_key = "[GetGunRunnerEquipment2]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 2 }
+		}
+		localization_key = "[GetMotorizedRunnerEquipment2]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 3 }
+		}
+		localization_key = "[GetEnergyRunnerEquipment2]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 4 }
+		}
+		localization_key = "[GetMeleeRunnerEquipment2]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 5 }
+		}
+		localization_key = "[GetAdvancedRunnerEquipment2]"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 6 }
+		}
+		localization_key = "[GetFollowersRunnerEquipment2]"
+	}
+}
+###Pulls icon for selected market
+defined_text = {
+	name = "GetMarketButton"
+	text = {
+		trigger = {
+			check_variable = { v = 1 }
+		}
+		localization_key = "GFX_market_gun_runner"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 2 }
+		}
+		localization_key = "GFX_market_motorized_runner"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+		}
+		localization_key = "GFX_market_slave_runner"
+	}
+}
+defined_text = {
+	name = "GetMarketIcon"
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+		}
+		localization_key = "gun_runner_market_icon"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 2 }
+		}
+		localization_key = "motorized_runner_market_icon"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 3 }
+		}
+		localization_key = "energy_runner_market_icon"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 4 }
+		}
+		localization_key = "melee_runner_market_icon"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 5 }
+		}
+		localization_key = "advanced_runner_market_icon"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 6 }
+		}
+		localization_key = "followers_runner_market_icon"
+	}
+}
+defined_text = {
+	name = "GetMarketAmount"
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = "taa_runner_amount_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			NOT = {
+				OR = {
+					has_idea = currencytexdollar
+					TAG = RRG
+				}
+			}
+		}
+		localization_key = "gun_runner_amount_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 2 }
+		}
+		localization_key = "motorized_runner_amount_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 3 }
+		}
+		localization_key = "energy_runner_amount_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 4 }
+		}
+		localization_key = "melee_runner_amount_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 5 }
+		}
+		localization_key = "advanced_runner_amount_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 6 }
+		}
+		localization_key = "followers_runner_amount_tt"
+	}
+}
+defined_text = {
+	name = "GetMarketAmountString"
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = "global.taa_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			NOT = {
+				OR = {
+					has_idea = currencytexdollar
+					TAG = RRG
+				}
+			}
+		}
+		localization_key = "global.gun_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 2 }
+		}
+		localization_key = "global.motorized_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 3 }
+		}
+		localization_key = "global.energy_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 4 }
+		}
+		localization_key = "global.melee_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 5 }
+		}
+		localization_key = "global.advanced_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 6 }
+		}
+		localization_key = "global.follower_runner_inventory"
+	}
+}
+defined_text = {
+	name = "GetOrgOpinion"
+	text = {
+		trigger = {
+			set_temp_variable = { org_selector = v }
+			get_minimum_organization_opinion = yes
+			set_temp_variable = { current_org_opinion_temp = current_minimum_organization_opinion }
+		}
+		localization_key = "org_opinion_string"
+	}
+}
+defined_text = {
+	name = "GetOrgAvailability"
+	text = {
+		trigger = {
+			set_temp_variable = { org_selector = v }
+			organization_is_available_for_transaction = yes
+		}
+		localization_key = "org_available"
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { org_selector = v }
+			NOT = { organization_is_available_for_transaction = yes }
+		}
+		localization_key = "org_unavailable"
+	}
+}
+defined_text = {
+	name = "GetSelectedOrgOpinion"
+	text = {
+		trigger = {
+			ROOT = {
+				set_temp_variable = { org_selector = selected_market_organization }
+				get_minimum_organization_opinion = yes
+				set_temp_variable = { current_org_opinion_temp = current_minimum_organization_opinion }
+			}
+		}
+		localization_key = "org_opinion_string"
+	}
+}
+###Pulls correct loc string for selected equipment
+defined_text = {
+	name = "GetGunRunnerInventory"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "gun_runner_equip_1"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "gun_runner_equip_2"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "gun_runner_equip_3"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "gun_runner_equip_4"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "gun_runner_equip_5"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "gun_runner_equip_6"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = "gun_runner_equip_7"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = "gun_runner_equip_8"
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetGunRunnerEquipment"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = GunRunnerPipeKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = GunRunnerBasicKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = GunRunnerCommonKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = GunRunnerAdvancedKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = GunRunnerSupportKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = GunRunnerFireteamKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = GunRunnerMachineKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = GunRunnerATKey1
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetGunRunnerEquipment2"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = GunRunnerPipeKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = GunRunnerBasicKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = GunRunnerCommonKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = GunRunnerAdvancedKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = GunRunnerSupportKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = GunRunnerFireteamKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = GunRunnerMachineKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = GunRunnerATKey2
+	}
+}
+###Pulls correct icon for selected market
+defined_text = {
+	name = "GetGunRunnerMarketIcon"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "GFX_standard_weaponry_tech_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "GFX_ballistic_weaponry_tech_1_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "GFX_ballistic_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "GFX_ballistic_weaponry_tech_3_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "GFX_support_weaponry_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "GFX_fireteam_weaponry_tech_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = "GFX_ballistic_fireteam_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = "GFX_anti_tank_equipment_tech_1_medium"
+	}
+}
+###VAN GRAFF - ENERGY
+###Pulls correct loc string for selected equipment
+defined_text = {
+	name = "GetEnergyRunnerInventory"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "energy_runner_equip_1"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "energy_runner_equip_2"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "energy_runner_equip_3"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "energy_runner_equip_4"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "energy_runner_equip_5"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "energy_runner_equip_6"
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetEnergyRunnerEquipment"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = EnergyRunnerBasicKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = EnergyRunnerCommonKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = EnergyRunnerAdvancedKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = EnergyRunnerFireteamKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = EnergyRunnerGatlingKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = EnergyRunnerSupportKey1
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetEnergyRunnerEquipment2"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = EnergyRunnerBasicKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = EnergyRunnerCommonKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = EnergyRunnerAdvancedKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = EnergyRunnerFireteamKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = EnergyRunnerGatlingKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = EnergyRunnerSupportKey2
+	}
+}
+###Pulls correct icon for selected market
+defined_text = {
+	name = "GetEnergyRunnerMarketIcon"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "GFX_energy_weaponry_tech_1_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "GFX_energy_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "GFX_energy_weaponry_tech_3_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "GFX_energy_fireteam_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "GFX_energy_fireteam_weaponry_tech_3_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "GFX_support_weaponry_medium"
+	}
+}
+###MOTORIZED
+###Pulls correct loc string for selected equipment
+defined_text = {
+	name = "GetMotorizedRunnerInventory"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "bike_equipment_1_short"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "light_motorized_equipment_1_short"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "light_motorized_equipment_2_short"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "heavy_motorized_equipment_1_short"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "heavy_motorized_equipment_2_short"
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetMotorizedRunnerEquipment"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = MotorizedRunnerBikeKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = MotorizedRunnerMotorcycleKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = MotorizedRunnerWasteMotorcycleKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = MotorizedRunnerTruckKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = MotorizedRunnerSalveTruckKey1
+	}
+}
+
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetMotorizedRunnerEquipment2"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = MotorizedRunnerBikeKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = MotorizedRunnerMotorcycleKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = MotorizedRunnerWasteMotorcycleKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = MotorizedRunnerTruckKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = MotorizedRunnerSalveTruckKey2
+	}
+}
+###Pulls correct icon for selected market
+defined_text = {
+	name = "GetMotorizedRunnerMarketIcon"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "GFX_bike_tech_1_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "GFX_light_motorized_equipment_vehicle_tech_1_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "GFX_light_motorized_equipment_vehicle_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "GFX_heavy_motorized_equipment_vehicle_tech_1_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "GFX_heavy_motorized_equipment_vehicle_tech_2_medium"
+	}
+}
+
+###Peter's Pokers - Melee
+###Pulls correct loc string for selected equipment
+defined_text = {
+	name = "GetMeleeRunnerInventory"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "melee_runner_equip_1"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "melee_runner_equip_2"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "melee_runner_equip_3"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "melee_runner_equip_4"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "melee_runner_equip_5"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "melee_runner_equip_6"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = "melee_runner_equip_7"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = "melee_runner_equip_8"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 8 }
+		}
+		localization_key = "melee_runner_equip_9"
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetMeleeRunnerEquipment"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = MeleeRunnerBasicKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = MeleeRunnerSlashingKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = MeleeRunnerHeavyKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = MeleeRunnerPoweredKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = MeleeRunnerDynamiteKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = MeleeRunnerFlameKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = MeleeRunnerGrenadeKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = MeleeRunnerIncinKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 8 }
+		}
+		localization_key = MeleeRunnerGrenadeRifleKey1
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetMeleeRunnerEquipment2"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = MeleeRunnerBasicKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = MeleeRunnerSlashingKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = MeleeRunnerHeavyKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = MeleeRunnerPoweredKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = MeleeRunnerDynamiteKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = MeleeRunnerFlameKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = MeleeRunnerGrenadeKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = MeleeRunnerIncinKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 8 }
+		}
+		localization_key = MeleeRunnerGrenadeRifleKey2
+	}
+}
+###Pulls correct icon for selected market
+defined_text = {
+	name = "GetMeleeRunnerMarketIcon"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "GFX_melee_weaponry_tech_1_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "GFX_melee_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "GFX_melee_weaponry_tech_3_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "GFX_melee_weaponry_tech_4_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "GFX_demolitions_weaponry_tech_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "GFX_flamer_demolitions_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = "GFX_explosive_demolitions_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 7 }
+		}
+		localization_key = "GFX_flamer_demolitions_weaponry_tech_3_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 8 }
+		}
+		localization_key = "GFX_explosive_demolitions_weaponry_tech_3_medium"
+	}
+}
+
+###Advanced Traders
+###Pulls correct loc string for selected equipment
+defined_text = {
+	name = "GetAdvancedRunnerInventory"
+	### Balistic 4
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "ballistic_equipment_4"
+	}
+	### Energy 4
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "energy_equipment_4"
+	}
+	### Minigun
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "ballistic_fireteam_equipment_4"
+	}
+	### Tesla Cannon
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "energy_fireteam_equipment_4"
+	}
+	### Heavy Incinerator
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "flamer_demolitions_equipment_4"
+	}
+	### Grenade Machine Gun
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "explosive_demolitions_equipment_4"
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetAdvancedRunnerEquipment"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = AdvancedRunnerEliteKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = AdvancedRunnerPulseKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = AdvancedRunnerMinigunKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = AdvancedRunnerTeslaKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = AdvancedRunnerIncinKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = AdvancedRunnerGrenadeKey1
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetAdvancedRunnerEquipment2"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = AdvancedRunnerEliteKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = AdvancedRunnerPulseKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = AdvancedRunnerMinigunKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = AdvancedRunnerTeslaKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = AdvancedRunnerIncinKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = AdvancedRunnerGrenadeKey2
+	}
+}
+###Pulls correct icon for selected market
+defined_text = {
+	name = "GetAdvancedRunnerMarketIcon"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "GFX_ballistic_weaponry_tech_4_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "GFX_energy_weaponry_tech_4_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "GFX_ballistic_fireteam_weaponry_tech_4_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "GFX_energy_fireteam_weaponry_tech_4_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "GFX_flamer_demolitions_weaponry_tech_4_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "GFX_explosive_demolitions_weaponry_tech_4_medium"
+	}
+}
+
+### Followers
+###Pulls correct loc string for selected equipment
+defined_text = {
+	name = "GetFollowersRunnerInventory"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "followers_runner_equip_1"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "followers_runner_equip_2"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "followers_runner_equip_3"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "followers_runner_equip_4"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "followers_runner_equip_5"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "followers_runner_equip_6"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = "followers_runner_equip_7"
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetFollowersRunnerEquipment"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = FollowersRunnerPipeKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = FollowersRunnerBasicKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = FollowersRunnerCommonKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = FollowersRunnerAdvancedKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = FollowersRunnerSupportKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = FollowersRunnerFireteamKey1
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = FollowersRunnerMachineKey1
+	}
+}
+###Pulls equipment name for meta effect
+defined_text = {
+	name = "GetFollowersRunnerEquipment2"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = FollowersRunnerPipeKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = FollowersRunnerBasicKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = FollowersRunnerCommonKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = FollowersRunnerAdvancedKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = FollowersRunnerSupportKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = FollowersRunnerFireteamKey2
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = FollowersRunnerMachineKey2
+	}
+}
+###Pulls correct icon for selected market
+defined_text = {
+	name = "GetFollowersRunnerMarketIcon"
+	text = {
+		trigger = {
+			check_variable = { i = 0 }
+		}
+		localization_key = "GFX_standard_weaponry_tech_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 1 }
+		}
+		localization_key = "GFX_ballistic_weaponry_tech_1_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 2 }
+		}
+		localization_key = "GFX_ballistic_weaponry_tech_2_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 3 }
+		}
+		localization_key = "GFX_ballistic_weaponry_tech_3_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 4 }
+		}
+		localization_key = "GFX_support_weaponry_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 5 }
+		}
+		localization_key = "GFX_fireteam_weaponry_tech_medium"
+	}
+	text = {
+		trigger = {
+			check_variable = { i = 6 }
+		}
+		localization_key = "GFX_ballistic_fireteam_weaponry_tech_2_medium"
+	}
+}
+
+defined_text = {
+	name = "GetGunRunnerName"
+	text = {
+		trigger = {
+			has_country_flag = is_canadian_nation
+		}
+		localization_key = org_hawkmoon_name
+	}
+	text = {
+		trigger = {
+			NOT = {TAG = RRG}
+			OR = {
+				has_country_flag = is_north_mexican_nation
+				has_country_flag = is_south_mexican_nation
+			}
+		}
+		localization_key = org_gente_arms_name
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = org_texas_ballistic_name
+	}
+	text = {
+		localization_key = org_gun_runners_name
+	}
+}
+
+defined_text = {
+	name = "GetMotorizedRunnerName"
+	text = {
+		trigger = {
+			has_country_flag = is_canadian_nation
+		}
+		localization_key = org_battleford_motorshop_name
+	}
+	text = {
+		trigger = {
+			NOT = {TAG = RRG}
+			OR = {
+				has_country_flag = is_north_mexican_nation
+				has_country_flag = is_south_mexican_nation
+			}
+		}
+		localization_key = org_nas_garages_name
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = org_texas_vehical_name
+	}
+	text = {
+		localization_key = org_chop_shop_name
+	}
+}
+
+defined_text = {
+	name = "GetEnergyRunnerName"
+	text = {
+		trigger = {
+			has_country_flag = is_canadian_nation
+		}
+		localization_key = org_warden_remnants_name
+	}
+	text = {
+		trigger = {
+			NOT = {TAG = RRG}
+			OR = {
+				has_country_flag = is_north_mexican_nation
+				has_country_flag = is_south_mexican_nation
+			}
+		}
+		localization_key = org_lady_lasers_name
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = org_texas_laser_name
+	}
+	text = {
+		localization_key = org_van_graffs_name
+	}
+}
+
+defined_text = {
+	name = "GetMeleeRunnerName"
+	text = {
+		trigger = {
+			has_country_flag = is_canadian_nation
+		}
+		localization_key = org_middlemark_surplus_name
+	}
+	text = {
+		trigger = {
+			NOT = {TAG = RRG}
+			OR = {
+				has_country_flag = is_north_mexican_nation
+				has_country_flag = is_south_mexican_nation
+			}
+		}
+		localization_key = org_velasquez_choppers_name
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = org_texas_melee_name
+	}
+	text = {
+		localization_key = org_butcher_petes_name
+	}
+}
+
+defined_text = {
+	name = "GetAdvancedRunnerName"
+	text = {
+		trigger = {
+			has_country_flag = is_canadian_nation
+			not = { original_tag = BEL }
+		}
+		localization_key = org_yorkton_arms_name
+	}
+	text = {
+		trigger = {
+			NOT = {TAG = RRG}
+			OR = {
+				has_country_flag = is_north_mexican_nation
+				has_country_flag = is_south_mexican_nation
+			}
+		}
+		localization_key = org_xiuhcoatl_name
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = org_texas_advanced_name
+	}
+	text = {
+		localization_key = org_vancouver_mavens_name
+	}
+}

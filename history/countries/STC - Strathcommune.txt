@@ -1,0 +1,132 @@
+﻿capital = 1110
+oob = "STC_2275"
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	unit_training_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+	basic_industry_tech = 1
+	generalized_industry_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+	bike_tech_1 = 1
+	stripped_pa_tech = 1
+	support_weaponry = 1
+	fireteam_weaponry_tech = 1
+	anti_tank_equipment_tech_1 = 1
+	anti_tank_tech_1 = 1
+	grand_army = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		#waterproof_sealing_tech = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+	}
+}
+
+set_stability = 0.5
+set_war_support = 0.6
+set_convoys = 180
+set_research_slots = 4
+set_country_flag = is_settler_nation
+set_country_flag = is_canadian_nation
+set_country_flag = is_canadian_peoples_front_nation
+set_country_flag = has_unique_trade_laws
+set_country_flag = has_unique_manpower_law
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 5
+	elites = 70
+	intellectuals = 5
+	ruler = 20
+}
+
+recruit_character = STC_amy_teresee
+recruit_character = STC_antoine_sorel
+recruit_character = STC_black_collective
+recruit_character = STC_colonel_thao
+recruit_character = STC_general_one
+recruit_character = STC_general_two
+recruit_character = STC_general_three
+recruit_character = STC_guardsmen_cloutier
+recruit_character = STC_guardsmen_bergeron
+add_ideas = {
+	strath_china_ideology
+	stc_five_year_plan
+	communist_autarky
+}
+
+add_equipment_to_stockpile = {
+	type = ballistic_equipment_1
+	amount = 1000
+	producer = STC
+}
+
+add_equipment_to_stockpile = {
+	type = anti_tank_equipment_1
+	amount = 300
+	producer = STC
+}

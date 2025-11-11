@@ -1,0 +1,36 @@
+state={
+	id=915
+	name="STATE_915"
+	resources={
+		metal=11.000
+		energy=5.000
+		water=7.000
+		circuitry=2.000
+		composites=3.000
+		advanced=4.000
+	}
+
+	history = {
+		owner = UOA
+		add_core_of = UOA
+		victory_points = {
+			11499 25
+		}
+		victory_points = {
+			11548 5
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 4
+			industrial_complex = 4
+			air_base = 1
+		}
+	}
+	provinces={
+		805 812 11499 11500 11503 11512 11515 11518 11520 11525 11526 11537 11538 11541 11548 
+	}
+	manpower=29915
+	buildings_max_level_factor=1.000
+	state_category=prewar_megacity
+	local_supplies=0.000
+}
