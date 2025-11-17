@@ -12,6 +12,7 @@ country_event = {
 	option = {
 		name = nf_texas.1.a
 		add_political_power = 5
+		country_event = nf_texas.5
 	}
 }
 

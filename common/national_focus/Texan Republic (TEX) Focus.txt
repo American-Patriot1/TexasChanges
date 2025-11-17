@@ -39,8 +39,8 @@ focus_tree = {
 		id = tex_taking_stock
 		icon = GFX_goal_Texas_reformation
 		cost = 7
-		x = 15
-		y = 1
+		x = 19
+		y = 0
 		completion_reward = {
 			country_event = nf_texas.1
 		}
@@ -50,57 +50,69 @@ focus_tree = {
 		id = tex_matters_of_the_state
 		icon = GFX_goal_generic_texas1
 		cost = 15
-		x = 2
+		x = 0
 		y = 1
-		relative_position_id = tex_taking_stock
+		relative_position_id = tex_proper_this_time
 		prerequisite = {
-			focus = tex_taking_stock
+			focus = tex_proper_this_time
 		}
 		completion_reward = {
 			country_event = nf_texas.3
 		}
 	}
-	focus = {
-		# Flag choice
-		id = tex_the_flag
-		icon = GFX_goal_generic_texas2
-		cost = 15
-		x = -2
-		y = 1
-		relative_position_id = tex_taking_stock
-		prerequisite = {
-			focus = tex_taking_stock
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = txs_todd_is_ready
-					}
-				}
-				country_event = nf_texas.5
-			}
-			else = {
-				country_event = nf_texas.54
-			}
-		}
-	}
+	# focus = {
+	# 	# Flag choice
+	# 	id = tex_the_flag
+	# 	icon = GFX_goal_generic_texas2
+	# 	cost = 15
+	# 	x = 60
+	# 	y = 0
+	# 	completion_reward = {
+	# 		if = {
+	# 			limit = {
+	# 				NOT = {
+	# 					has_country_flag = txs_todd_is_ready
+	# 				}
+	# 			}
+	# 			country_event = nf_texas.5
+	# 		}
+	# 		else = {
+	# 			country_event = nf_texas.54
+	# 		}
+	# 	}
+	# }
 	focus = {
 		# Texas Budget
 		id = texas_budget
 		icon = GFX_goal_LNS_texan_dollar
 		cost = 15
-		x = 0
+		x = -2
 		y = 1
-		relative_position_id = tex_taking_stock
+		relative_position_id = texas_foundations_of_government
 		prerequisite = {
-			focus = tex_taking_stock
+			focus = texas_foundations_of_government
 		}
 		completion_reward = {
 			country_event = nf_texas.10
 			custom_effect_tooltip = texas_budget_tt
 			### Article 4
-
+			set_temp_variable = {
+				temp_constitution_article = 4
+			}
+			add_constitution_article = yes
+			set_temp_variable = {
+				temp_constitution_article = 4
+			}
+			add_constitution_article = yes
+			set_temp_variable = { article_to_add_to = 4 }
+			set_temp_variable = { temp_constitution_subsection = 36 }
+			unlock_subsection_article_choice = yes
+			set_temp_variable = { article_to_add_to = 4 }
+			set_temp_variable = { temp_constitution_subsection = 37 }
+			unlock_subsection_article_choice = yes
+			set_temp_variable = { article_to_add_to = 4 }
+			set_temp_variable = { temp_constitution_subsection = 38 }
+			unlock_subsection_article_choice = yes
 		}
 	}
 	focus = {
@@ -109,16 +121,10 @@ focus_tree = {
 		icon = GFX_goal_generic_scyscrapers_prewar
 		cost = 15
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = tex_taking_stock
 		prerequisite = {
-			focus = tex_matters_of_the_state
-		}
-		prerequisite = {
-			focus = texas_budget
-		}
-		prerequisite = {
-			focus = tex_the_flag
+			focus = tex_taking_stock
 		}
 		completion_reward = {
 			country_event = nf_texas.6
@@ -129,11 +135,10 @@ focus_tree = {
 		id = tex_form_the_tbr
 		icon = GFX_goal_generic_workshop
 		cost = 15
-		x = 5
-		y = 1
-		relative_position_id = tex_the_capital
-		prerequisite = {
-			focus = tex_the_capital
+		x = 10
+		y = 0
+		available = {
+			has_completed_focus = tex_proper_this_time
 		}
 		completion_reward = {
 			add_political_power = 25
@@ -144,7 +149,7 @@ focus_tree = {
 		icon = GFX_goal_generic_handy_fuel
 		cost = 30
 		x = -2
-		y = 2
+		y = 1
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_form_the_tbr
@@ -170,7 +175,7 @@ focus_tree = {
 		icon = GFX_goal_energy
 		cost = 30
 		x = -2
-		y = 4
+		y = 3
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_annex_car
@@ -187,7 +192,7 @@ focus_tree = {
 		icon = GFX_goal_generic_satellite
 		cost = 30
 		x = -1
-		y = 1
+		y = 2
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_form_the_tbr
@@ -213,7 +218,7 @@ focus_tree = {
 		icon = GFX_goal_generic_bomb_space_station
 		cost = 30
 		x = -1
-		y = 3
+		y = 4
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_secure_mission_control
@@ -227,7 +232,7 @@ focus_tree = {
 		icon = GFX_goal_generic_machete
 		cost = 30
 		x = 1
-		y = 1
+		y = 2
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_form_the_tbr
@@ -314,7 +319,7 @@ focus_tree = {
 		icon = GFX_goal_generic_boat_boat
 		cost = 30
 		x = 2
-		y = 2
+		y = 1
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_form_the_tbr
@@ -340,7 +345,7 @@ focus_tree = {
 		icon = GFX_goal_generic_boat
 		cost = 30
 		x = 2
-		y = 4
+		y = 3
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_seize_lousiana_harbor
@@ -354,7 +359,7 @@ focus_tree = {
 		icon = GFX_goal_generic_infrastructure
 		cost = 30
 		x = 1
-		y = 3
+		y = 4
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_clear_the_way
@@ -368,7 +373,7 @@ focus_tree = {
 		icon = GFX_goal_generic_laser_ins_rifle_1
 		cost = 45
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_form_the_tbr
@@ -394,7 +399,7 @@ focus_tree = {
 		icon = GFX_goal_generic_radio
 		cost = 45
 		x = 0
-		y = 4
+		y = 3
 		relative_position_id = tex_form_the_tbr
 		prerequisite = {
 			focus = tex_take_the_tubeheads
@@ -403,30 +408,233 @@ focus_tree = {
 			custom_effect_tooltip = raddev
 		}
 	}
-	## Presidents choice, and the following focuses
 	focus = {
-		id = tex_executive_matters
-		icon = GFX_goal_generic_texas1
-		cost = 30
-		x = 23
-		y = 1
-		relative_position_id = tex_the_capital
+		id = tex_research
+		icon = GFX_goal_uoa_texas
+		cost = 15
+		x = 0
+		y = 2
+		relative_position_id = tex_texas_calling
 		prerequisite = {
-			focus = tex_the_capital
+			focus = tex_rebuild_the_fields
+			focus = tex_refurbish_satellites
+			focus = tex_texas_calling
+			focus = tex_build_the_trans_texan_line
+			focus = tex_begin_shipping_in_gulf
 		}
 		completion_reward = {
-			add_political_power = 50
 		}
 	}
+	focus = {
+		id = tex_research_vehicles
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 2
+		relative_position_id = tex_research
+		available = {
+			OR = {
+				has_tech = fuel_booster_vehicle_tech
+				has_tech = extra_gunports_vehicle_tech
+				has_tech = extra_plating_vehicle_tech
+			}
+		}
+		prerequisite = {
+			focus = tex_research
+		}
+		completion_reward = {
+			set_technology = {
+				heavy_motorized_equipment_vehicle_tech_3 = 1
+			}
+		}
+	}
+	focus = {
+		id = tex_research_tank
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 2
+		relative_position_id = tex_research
+		available = {
+			has_tech = turret_vehicle_tech
+		}
+		prerequisite = {
+			focus = tex_research
+		}
+		completion_reward = {
+			set_technology = {
+				tank_equipment_vehicle_tech_3 = 1
+			}
+		}
+	}
+	focus = {
+		id = tex_research_gauss
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 3
+		y = 2
+		relative_position_id = tex_research
+		available = {
+			OR = {
+				has_tech = energy_weaponry_tech_3
+				has_tech = ballistic_weaponry_tech_3
+			}
+		}
+		prerequisite = {
+			focus = tex_research
+		}
+		completion_reward = {
+			set_technology = {
+				gauss_unlock_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = tex_research_industry
+		icon = GFX_goal_uoa_texas
+		cost = 60
+		x = 0
+		y = 1
+		relative_position_id = tex_research
+		prerequisite = {
+			focus = tex_research
+		}
+		completion_reward = {
+			set_technology = {
+				tools_tech_level_scientific = 1
+			}
+			set_technology = {
+				electronics_tech_level_scientific = 1
+			}
+			set_technology = {
+				habitation_tech_level_scientific = 1
+			}
+			set_technology = {
+				exploitation_tech_level_scientific = 1
+			}
+		}
+	}
+	focus = {
+		id = tex_research_artillery 
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = tex_research
+		available = {
+		}
+		prerequisite = {
+			focus = tex_research
+		}
+		completion_reward = {
+			#TO DO buff
+			set_technology = {
+				railway_gun_tech_3 = 1
+			}
+		}
+	}
+	focus = {
+		id = tex_research_power_armor 
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -3
+		y = 2
+		relative_position_id = tex_research
+		available = {
+			has_tech = scav_pa_tech
+		}
+		prerequisite = {
+			focus = tex_research
+		}
+		completion_reward = {
+			set_technology = {
+				advanced_servo_tech = 1
+			}
+			set_technology = {
+				c_t45d_pa_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = tex_research_air 
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = tex_research
+		available = {
+			OR = {
+				has_tech = cas_defence_tech
+				has_tech = cas_offence_tech
+			}
+			has_tech = aerodynamics_tech_3
+		}
+		prerequisite = {
+			focus = tex_research
+		}
+		completion_reward = {
+			set_technology = {
+				aerodynamics_tech_4 = 1
+			}
+			set_technology = {
+				cas_bomber_tech_3 = 1
+			}
+			set_technology = {
+				cargo_plane_tech_1 = 1
+			}
+			set_technology = {
+				air_cabane_struts_tech = 1
+			}
+			set_technology = {
+				air_drop_tank_tech = 1
+			}
+			set_technology = {
+				cargo_plane_tech_2 = 1
+			}
+			set_technology = {
+				air_refuling_tech = 1
+			}
+			set_technology = {
+				cargo_plane_tech_3 = 1
+			}
+			if = {
+				limit = { has_tech = fighter_engine_tech }
+				set_technology = {
+					fighter_tech_3 = 1
+				}
+			}
+			if = {
+				limit = { has_tech = strat_bomber_tech_2 }
+				set_technology = {
+					strat_bomber_tech_3 = 1
+				}
+			}
+		}
+	}
+	# ## Presidents choice, and the following focuses
+	# focus = {
+	# 	id = tex_executive_matters
+	# 	icon = GFX_goal_generic_texas1
+	# 	cost = 30
+	# 	x = 2
+	# 	y = 0
+	# 	# relative_position_id = tex_matters_of_the_state
+	# 	# prerequisite = {
+	# 	# 	focus = tex_the_capital
+	# 	# }
+	# 	completion_reward = {
+	# 		add_political_power = 50
+	# 	}
+	# }
 	focus = {
 		id = tex_cho_bang_plan
 		icon = GFX_goal_TBH_ChosPlan
 		cost = 45
-		x = -6
+		x = 6
 		y = 1
-		relative_position_id = tex_executive_matters
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_executive_matters
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			if = {
@@ -443,12 +651,12 @@ focus_tree = {
 				}
 			}
 		}
-		mutually_exclusive = {
-			focus = tex_scarlets_plan
-			focus = tex_edward_j_rusk_plan
-			focus = tex_keats_plan
-			focus = tex_todd_plan
-		}
+		# mutually_exclusive = {
+		# 	focus = tex_scarlets_plan
+		# 	focus = tex_edward_j_rusk_plan
+		# 	focus = tex_keats_plan
+		# 	# focus = tex_todd_plan
+		# }
 		completion_reward = {
 			add_political_power = 25
 			set_temp_variable = { caps_to_add = 300 }
@@ -770,23 +978,23 @@ focus_tree = {
 		id = tex_edward_j_rusk_plan
 		icon = GFX_goal_TBH_RuskPlan
 		cost = 30
-		x = -12
+		x = 12
 		y = 1
-		relative_position_id = tex_executive_matters
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_executive_matters
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			has_country_leader = {
 				character = TBH_edward_j_rusk
 			}
 		}
-		mutually_exclusive = {
-			focus = tex_scarlets_plan
-			focus = tex_cho_bang_plan
-			focus = tex_keats_plan
-			focus = tex_todd_plan
-		}
+		# mutually_exclusive = {
+		# 	focus = tex_scarlets_plan
+		# 	focus = tex_cho_bang_plan
+		# 	focus = tex_keats_plan
+		# 	# focus = tex_todd_plan
+		# }
 		completion_reward = {
 			add_political_power = 25
 			add_manpower = 500
@@ -1099,23 +1307,23 @@ focus_tree = {
 		id = tex_keats_plan
 		icon = GFX_goal_TBH_KeatsPlan
 		cost = 30
-		x = 0
+		x = -12
 		y = 1
-		relative_position_id = tex_executive_matters
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_executive_matters
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			has_country_leader = {
 				character = UOA_keats
 			}
 		}
-		mutually_exclusive = {
-			focus = tex_scarlets_plan
-			focus = tex_cho_bang_plan
-			focus = tex_edward_j_rusk_plan
-			focus = tex_todd_plan
-		}
+		# mutually_exclusive = {
+		# 	focus = tex_scarlets_plan
+		# 	focus = tex_cho_bang_plan
+		# 	focus = tex_edward_j_rusk_plan
+		# 	# focus = tex_todd_plan
+		# }
 		completion_reward = {
 			add_political_power = 25
 			set_technology = {
@@ -1418,23 +1626,23 @@ focus_tree = {
 		id = tex_scarlets_plan
 		icon = GFX_goal_edn_look_inwards
 		cost = 30
-		x = 6
+		x = -6
 		y = 1
-		relative_position_id = tex_executive_matters
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_executive_matters
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			has_country_leader = {
 				character = EDN_scarlet
 			}
 		}
-		mutually_exclusive = {
-			focus = tex_keats_plan
-			focus = tex_cho_bang_plan
-			focus = tex_edward_j_rusk_plan
-			focus = tex_todd_plan
-		}
+		# mutually_exclusive = {
+		# 	focus = tex_keats_plan
+		# 	focus = tex_cho_bang_plan
+		# 	focus = tex_edward_j_rusk_plan
+		# 	# focus = tex_todd_plan
+		# }
 		completion_reward = {
 			army_experience = 25
 			set_technology = {
@@ -1736,23 +1944,23 @@ focus_tree = {
 		id = tex_todd_plan
 		icon = GFX_goal_TAA_Saint_Tod
 		cost = 30
-		x = 18
-		y = 0
-		relative_position_id = tex_cho_bang_plan
-		prerequisite = {
-			focus = tex_executive_matters
-		}
+		x = 10
+		y = 8
+		# relative_position_id = tex_cho_bang_plan
+		# prerequisite = {
+		# 	focus = tex_executive_matters
+		# }
 		available = {
 			has_country_leader = {
 				character = TAA_todd_howitzer
 			}
 		}
-		mutually_exclusive = {
-			focus = tex_cho_bang_plan
-			focus = tex_edward_j_rusk_plan
-			focus = tex_keats_plan
-			focus = tex_scarlets_plan
-		}
+		# mutually_exclusive = {
+		# 	focus = tex_cho_bang_plan
+		# 	focus = tex_edward_j_rusk_plan
+		# 	focus = tex_keats_plan
+		# 	focus = tex_scarlets_plan
+		# }
 		completion_reward = {
 			add_ideas = TAA_the_master_gunsmiths
 			add_war_support = -0.05
@@ -2045,18 +2253,333 @@ focus_tree = {
 	}
 }
 	focus = {
+		id = tex_congress_0
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = tex_matters_of_the_state
+		prerequisite = {
+			focus = tex_matters_of_the_state
+		}
+		available = {
+			has_country_leader = {
+				character = UOA_keats
+			}
+		}
+		# mutually_exclusive = {
+		# 	focus = tex_scarlets_plan
+		# 	focus = tex_cho_bang_plan
+		# 	focus = tex_edward_j_rusk_plan
+		# 	# focus = tex_todd_plan
+		# }
+		completion_reward = {
+			add_political_power = 25
+			set_technology = {
+				super_mutant_aux_infantry_tech = 1
+			}
+			add_war_support = 0.05
+			add_stability = 0.025
+		}
+	}
+	focus = {
+		id = tex_congress_1
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = tex_congress_0
+		prerequisite = {
+			focus = tex_congress_0
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			LOS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CBN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			LUB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PEC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+			if = {
+				limit = {
+					LOS = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				LOS = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					CBN = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				CBN = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					LUB = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				LUB = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					PEC = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+					is_ai = no
+				}
+				PEC = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = tex_congress_2
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = tex_congress_0
+		prerequisite = {
+			focus = tex_congress_0
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DSP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ASS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			if = {
+				limit = {
+					GAM = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				GAM = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					DSP = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				DSP = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						ASS = {
+							ROOT = {
+								NOT = { country_owns_all_core_land_of_prev = yes }
+							}
+						}
+						NOT = { ASS = { is_in_faction_with = TEX } }
+					}
+				}
+				ASS = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = tex_congress_3
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = tex_congress_0
+		prerequisite = {
+			focus = tex_congress_0
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			TLL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CWB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			if = {
+				limit = {
+					TLL = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				TLL = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					CWB = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				CWB = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = tex_congress_4
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = tex_congress_1
+		prerequisite = {
+			focus = tex_congress_2
+			focus = tex_congress_1
+			focus = tex_congress_3
+		}
+		available = {
+			BAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DSP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TPM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					EXE = {
+						ROOT = {
+							NOT = { country_owns_all_core_land_of_prev = yes }
+						}
+					}
+				}
+				EXE = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			IF = {
+			limit = {
+			TPM = {
+			exists = yes
+			}
+		}
+			TPM = {
+			country_event = nf_tlt.1
+			}
+		}
+			else_IF = {
+			TLT = {
+				add_state_core = 870
+				add_state_core = 876
+				add_state_core = 875
+				add_state_core = 874
+				add_state_core = 873
+				add_state_core = 871
+				add_state_core = 872
+				add_state_core = 1216
+				add_state_core = 1162
+				add_state_core = 731
+				add_state_core = 1158
+				add_state_core = 1159
+			}
+			release_puppet = TLT
+			TLT = {
+				inherit_technology = TBH
+			}
+			add_stability = 0.1
+		}
+	}
+}
+	focus = {
 		id = tex_coring_1
 		icon = GFX_goal_generic_texas2
 		cost = 45
-		x = -6
-		y = 4
-		relative_position_id = tex_executive_matters
+		x = -9
+		y = 1
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_market_expansion
-			focus = tex_freedom_expansion
-			focus = tex_mutant_democracy
-			focus = tex_a_free_and_prosperous_people
-			focus = tex_todds_triumph
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			TUB = {
@@ -2092,14 +2615,10 @@ focus_tree = {
 		icon = GFX_goal_generic_texas2
 		cost = 45
 		x = 3
-		y = 4
-		relative_position_id = tex_executive_matters
+		y = 1
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_market_expansion
-			focus = tex_freedom_expansion
-			focus = tex_mutant_democracy
-			focus = tex_a_free_and_prosperous_people
-			focus = tex_todds_triumph
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			UOA = {
@@ -2139,14 +2658,10 @@ focus_tree = {
 		icon = GFX_goal_generic_texas1
 		cost = 45
 		x = -3
-		y = 4
-		relative_position_id = tex_executive_matters
+		y = 1
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_market_expansion
-			focus = tex_freedom_expansion
-			focus = tex_mutant_democracy
-			focus = tex_a_free_and_prosperous_people
-			focus = tex_todds_triumph
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			CBN = {
@@ -2187,15 +2702,11 @@ focus_tree = {
 		id = tex_coring_4
 		icon = GFX_goal_generic_texas1
 		cost = 45
-		x = 6
-		y = 4
-		relative_position_id = tex_executive_matters
+		x = 9
+		y = 1
+		relative_position_id = tex_matters_of_the_state
 		prerequisite = {
-			focus = tex_market_expansion
-			focus = tex_freedom_expansion
-			focus = tex_mutant_democracy
-			focus = tex_a_free_and_prosperous_people
-			focus = tex_todds_triumph
+			focus = tex_matters_of_the_state
 		}
 		available = {
 			TLL = {
@@ -2224,26 +2735,17 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = tex_annex_TAA
+		id = tex_rio_grande
 		icon = GFX_goal_generic_enslave_taa
 		cost = 30
-		x = 0
+		x = 3
 		y = 1
-		relative_position_id = tex_mutant_democracy
+		relative_position_id = tex_manifest_destiny
 		prerequisite = {
-			focus = tex_market_expansion
-			focus = tex_freedom_expansion
-			focus = tex_mutant_democracy
-			focus = tex_a_free_and_prosperous_people
-			focus = tex_todds_triumph
+			focus = tex_manifest_destiny
 		}
 		available = {
 			ai_has_no_other_wars_or_wargoals = yes
-		}
-		bypass = {
-			TAA = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
 		}
 		completion_reward = {
 			if = {
@@ -2271,124 +2773,288 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = tex_the_last_piece
-		icon = GFX_goal_TBH_The_Last_Piece
+		id = tex_oklahoma
+		icon = GFX_goal_uoa_texas
 		cost = 30
-		x = 0
+		x = 1
 		y = 1
-		relative_position_id = tex_annex_TAA
+		relative_position_id = tex_manifest_destiny
 		prerequisite = {
-			focus = tex_annex_TAA
+			focus = tex_manifest_destiny
 		}
 		available = {
 			ai_has_no_other_wars_or_wargoals = yes
 		}
-		bypass = {
-			SUF = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			BSU = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			PAR = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
 		completion_reward = {
-			if = {
-				limit = {
-					SUF = {
-						ROOT = {
-							NOT = { country_owns_all_core_land_of_prev = yes }
-						}
-					}
-				}
-				SUF = {
-					ROOT = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-			if = {
-				limit = {
-					BSU = {
-						ROOT = {
-							NOT = { country_owns_all_core_land_of_prev = yes }
-						}
-					}
-				}
-				BSU = {
-					ROOT = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-			if = {
-				limit = {
-					PAR = {
-						ROOT = {
-							NOT = { country_owns_all_core_land_of_prev = yes }
-						}
-					}
-				}
-				PAR = {
-					ROOT = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
 		}
 	}
 	focus = {
-		id = tex_united_once_more_almost
-		icon = GFX_goal_TBH_United_Almost
+		id = tex_black_canyon
+		icon = GFX_goal_uoa_texas
 		cost = 30
-		x = 0
+		x = -1
 		y = 1
-		relative_position_id = tex_the_last_piece
+		relative_position_id = tex_manifest_destiny
 		prerequisite = {
-			focus = tex_the_last_piece
+			focus = tex_manifest_destiny
 		}
 		available = {
-			SUF = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			SUN = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			PAR = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
+			ai_has_no_other_wars_or_wargoals = yes
 		}
 		completion_reward = {
-			SUF = {
-				ROOT = {
-					core_all_core_states_of_prev = yes
-				}
-			}
-			SUN = {
-				ROOT = {
-					core_all_core_states_of_prev = yes
-				}
-			}
-			PAR = {
-				ROOT = {
-					core_all_core_states_of_prev = yes
-				}
-			}
 		}
 	}
+	focus = {
+		id = tex_colorado
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = tex_pecos
+		prerequisite = {
+			focus = tex_pecos
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_mexico
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = tex_rio_grande
+		prerequisite = {
+			focus = tex_rio_grande
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_legion
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -3
+		y = 1
+		relative_position_id = tex_manifest_destiny
+		prerequisite = {
+			focus = tex_manifest_destiny
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_ncr
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = tex_legion
+		prerequisite = {
+			focus = tex_legion
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_utah
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_legion
+		prerequisite = {
+			focus = tex_legion
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_nevada
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_ncr
+		prerequisite = {
+			focus = tex_ncr
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_pecos
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_rio_grande
+		prerequisite = {
+			focus = tex_rio_grande
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_our_fate
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 0
+		y = 4
+		relative_position_id = tex_manifest_destiny
+		prerequisite = {
+			focus = tex_nevada
+			focus = tex_utah
+			focus = tex_black_canyon
+			focus = tex_oklahoma
+			focus = tex_mexico
+			focus = tex_colorado
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+		}
+	}
+	# focus = {
+	# 	id = tex_the_last_piece
+	# 	icon = GFX_goal_TBH_The_Last_Piece
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 2
+	# 	relative_position_id = tex_manifest_destiny
+	# 	prerequisite = {
+	# 		focus = tex_manifest_destiny
+	# 	}
+	# 	available = {
+	# 		ai_has_no_other_wars_or_wargoals = yes
+	# 	}
+	# 	bypass = {
+	# 		SUF = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 		}
+	# 		BSU = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 		}
+	# 		PAR = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 		}
+	# 	}
+	# 	completion_reward = {
+	# 		if = {
+	# 			limit = {
+	# 				SUF = {
+	# 					ROOT = {
+	# 						NOT = { country_owns_all_core_land_of_prev = yes }
+	# 					}
+	# 				}
+	# 			}
+	# 			SUF = {
+	# 				ROOT = {
+	# 					grant_wargoals_on_core_states_of_prev = yes
+	# 				}
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				BSU = {
+	# 					ROOT = {
+	# 						NOT = { country_owns_all_core_land_of_prev = yes }
+	# 					}
+	# 				}
+	# 			}
+	# 			BSU = {
+	# 				ROOT = {
+	# 					grant_wargoals_on_core_states_of_prev = yes
+	# 				}
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				PAR = {
+	# 					ROOT = {
+	# 						NOT = { country_owns_all_core_land_of_prev = yes }
+	# 					}
+	# 				}
+	# 			}
+	# 			PAR = {
+	# 				ROOT = {
+	# 					grant_wargoals_on_core_states_of_prev = yes
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# focus = {
+	# 	id = tex_united_once_more_almost
+	# 	icon = GFX_goal_TBH_United_Almost
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = tex_the_last_piece
+	# 	prerequisite = {
+	# 		focus = tex_the_last_piece
+	# 	}
+	# 	available = {
+	# 		SUF = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 		}
+	# 		SUN = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 		}
+	# 		PAR = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 		}
+	# 	}
+	# 	completion_reward = {
+	# 		SUF = {
+	# 			ROOT = {
+	# 				core_all_core_states_of_prev = yes
+	# 			}
+	# 		}
+	# 		SUN = {
+	# 			ROOT = {
+	# 				core_all_core_states_of_prev = yes
+	# 			}
+	# 		}
+	# 		PAR = {
+	# 			ROOT = {
+	# 				core_all_core_states_of_prev = yes
+	# 			}
+	# 		}
+	# 	}
+	# }
 
 	## Matters of War ##
 	focus = {
 		id = tex_matters_of_war
 		icon = GFX_goal_revolver
 		cost = 30
-		x = -13
-		y = 1
-		relative_position_id = tex_the_capital
-		prerequisite = {
-			focus = tex_the_capital
+		x = 29
+		y = 0
+		available = {
+			has_completed_focus = tex_proper_this_time
 		}
 		completion_reward = {
 			add_political_power = 25
@@ -2398,11 +3064,11 @@ focus_tree = {
 		}
 	}
 	### DOD
-	focus = {
+	focus = { #unique manpower laws needed
 		id = tex_form_dod
 		icon = GFX_goal_NCR_Big_Jims_Army
 		cost = 30
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = tex_matters_of_war
 		prerequisite = {
@@ -2414,11 +3080,11 @@ focus_tree = {
 		}
 	}
 	### Spy
-	focus = {
+	focus = { #rename texas beureu of intelligence
 		id = tex_form_spy_agency
-		icon = GFX_goal_NCR_Big_Jims_Army
+		icon = GFX_goal_uoa_texas
 		cost = 30
-		x = 1
+		x = 3
 		y = 1
 		relative_position_id = tex_matters_of_war
 		prerequisite = {
@@ -2446,7 +3112,7 @@ focus_tree = {
 		}
 	}
 	### Emergency Industry
-	focus = {
+	focus = { #remove when at peace | TO DO
 		id = tex_emergency_industry_act
 		icon = GFX_goal_generic_workshop
 		cost = 15
@@ -2464,23 +3130,87 @@ focus_tree = {
 			add_war_support = 0.05
 			add_offsite_building = {
 				type = arms_factory
-				level = 4
+				level = 15
 			}
 		}
 	}
-	### Deputy
-	focus = {
-		id = tex_the_deputy_model
-		icon = GFX_goal_TBH_rusk
-		cost = 30
-		x = -1
+	#army_branch
+	focus = { #TO DO
+		id = tex_army_branch
+		icon = GFX_goal_uoa_texas
+		cost = 7
+		x = 0
 		y = 1
 		relative_position_id = tex_form_dod
 		prerequisite = {
 			focus = tex_form_dod
 		}
-		mutually_exclusive = {
-			focus = tex_the_mercenary_model
+		completion_reward = {
+		}
+	}
+	focus = { #TO DO
+		id = tex_reorganize_army_1
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = tex_army_branch
+		prerequisite = {
+			focus = tex_army_branch
+		}
+		completion_reward = {
+		}
+	}
+	focus = { #TO DO
+		id = tex_reorganize_army_2
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = tex_reorganize_army_1
+		prerequisite = {
+			focus = tex_reorganize_army_1
+		}
+		completion_reward = {
+		}
+	}
+	focus = { #TO DO
+		id = tex_reorganize_army_3
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_reorganize_army_2
+		prerequisite = {
+			focus = tex_reorganize_army_2
+		}
+		completion_reward = {
+		}
+	}
+	focus = { #TO DO
+		id = tex_texas_bos_fate
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_reorganize_army_1
+		prerequisite = {
+			focus = tex_reorganize_army_1
+			focus = tex_conscription_1
+		}
+		completion_reward = {
+		}
+	}
+	### conscription
+	focus = {
+		id = tex_conscription_1
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_army_branch
+		prerequisite = {
+			focus = tex_army_branch
 		}
 		completion_reward = {
 			set_country_flag = has_unique_manpower_law
@@ -2490,14 +3220,14 @@ focus_tree = {
 	}
 	### Upgrade Law 1
 	focus = {
-		id = tex_upgrade_conscription_1
-		icon = GFX_goal_generic_land_doctrines_focus
+		id = tex_conscription_2
+		icon = GFX_goal_uoa_texas
 		cost = 30
-		x = -1
+		x = 1
 		y = 1
-		relative_position_id = tex_the_deputy_model
+		relative_position_id = tex_conscription_1
 		prerequisite = {
-			focus = tex_the_deputy_model
+			focus = tex_conscription_1
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2508,14 +3238,14 @@ focus_tree = {
 	}
 	### Upgrade Law 2
 	focus = {
-		id = tex_upgrade_conscription_2
-		icon = GFX_goal_generic_focus_magazine_aat_sniper
+		id = tex_conscription_3
+		icon = GFX_goal_uoa_texas
 		cost = 30
-		x = 0
+		x = -1
 		y = 1
-		relative_position_id = tex_upgrade_conscription_1
+		relative_position_id = tex_conscription_2
 		prerequisite = {
-			focus = tex_upgrade_conscription_1
+			focus = tex_conscription_2
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2524,37 +3254,16 @@ focus_tree = {
 			}
 		}
 	}
-	### LNS
-	focus = {
-		id = tex_the_mercenary_model
-		icon = GFX_goal_LNS_texan_dollar
-		cost = 45
-		x = 1
-		y = 1
-		relative_position_id = tex_form_dod
-		prerequisite = {
-			focus = tex_form_dod
-		}
-		mutually_exclusive = {
-			focus = tex_the_deputy_model
-		}
-		completion_reward = {
-			set_country_flag = has_unique_manpower_law
-			custom_effect_tooltip = tex_the_merc_model_tt
-			add_ideas = lns_mercenary_frontlines
-		}
-	}
 	### Manifest Destiny
 	focus = {
 		id = tex_manifest_destiny
 		icon = GFX_goal_Texas_reformation
 		cost = 30
-		x = 1
-		y = 3
-		relative_position_id = tex_form_dod
+		x = 0
+		y = 2
+		relative_position_id = tex_texas_bos_fate
 		prerequisite = {
-			focus = tex_the_mercenary_model
-			focus = tex_the_deputy_model
+			focus = tex_texas_bos_fate
 		}
 		completion_reward = {
 			hidden_effect = {
@@ -2585,15 +3294,29 @@ focus_tree = {
 		}
 	}
 	### Aireo Plains
+	#air branch
+	focus = { #TO DO
+		id = tex_air_branch
+		icon = GFX_goal_uoa_texas
+		cost = 7
+		x = 2
+		y = 1
+		relative_position_id = tex_form_dod
+		prerequisite = {
+			focus = tex_form_dod
+		}
+		completion_reward = {
+		}
+	}
 	focus = {
 		id = tex_airforce_academy
 		icon = GFX_goal_generic_vehicle_plane
-		cost = 45
-		x = 3
+		cost = 30
+		x = 1
 		y = 1
-		relative_position_id = tex_matters_of_war
+		relative_position_id = tex_air_branch
 		prerequisite = {
-			focus = tex_matters_of_war
+			focus = tex_air_branch
 		}
 		completion_reward = {
 			add_ideas = tex_airforce_idea_1
@@ -2602,8 +3325,8 @@ focus_tree = {
 	focus = {
 		id = tex_national_flight_shows
 		icon = GFX_goal_generic_airplane
-		cost = 45
-		x = 0
+		cost = 30
+		x = 1
 		y = 1
 		relative_position_id = tex_airforce_academy
 		prerequisite = {
@@ -2619,8 +3342,8 @@ focus_tree = {
 	focus = {
 		id = tex_commemorative_airforce
 		icon = GFX_goal_generic_air_doctrines_focus
-		cost = 45
-		x = 0
+		cost = 30
+		x = -1
 		y = 1
 		relative_position_id = tex_national_flight_shows
 		prerequisite = {
@@ -2636,12 +3359,88 @@ focus_tree = {
 	focus = {
 		id = tex_dont_mess_airforce
 		icon = GFX_goal_generic_jet_bomber
-		cost = 45
-		x = 0
+		cost = 30
+		x = -1
 		y = 1
 		relative_position_id = tex_commemorative_airforce
 		prerequisite = {
 			focus = tex_commemorative_airforce
+		}
+		completion_reward = {
+			country_event = nf_texas.4
+		}
+	}
+	#navy branch
+	focus = { #TO DO
+		id = tex_navy_branch_0
+		icon = GFX_goal_uoa_texas
+		cost = 7
+		x = -2
+		y = 1
+		relative_position_id = tex_form_dod
+		prerequisite = {
+			focus = tex_form_dod
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = tex_navy_branch_1
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = tex_navy_branch_0
+		prerequisite = {
+			focus = tex_navy_branch_0
+		}
+		completion_reward = {
+			add_ideas = tex_airforce_idea_1
+		}
+	}
+	focus = {
+		id = tex_navy_branch_2
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = tex_navy_branch_1
+		prerequisite = {
+			focus = tex_navy_branch_1
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = tex_airforce_idea_2
+				remove_idea = tex_airforce_idea_1
+			}
+		}
+	}
+	focus = {
+		id = tex_navy_branch_3
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_navy_branch_2
+		prerequisite = {
+			focus = tex_navy_branch_2
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = tex_airforce_idea_3
+				remove_idea = tex_airforce_idea_2
+			}
+		}
+	}
+	focus = {
+		id = tex_navy_branch_4
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = tex_navy_branch_3
+		prerequisite = {
+			focus = tex_navy_branch_3
 		}
 		completion_reward = {
 			country_event = nf_texas.4
@@ -2706,33 +3505,33 @@ focus_tree = {
 	#### Wargoal Foci ####
 
 	### Constitution
-	focus = {
-		id = texas_constitution
-		icon = GFX_goal_constitution_focus
-		cost = 15
-		x = -4
-		y = 1
-		relative_position_id = tex_the_capital
-		prerequisite = {
-			focus = tex_the_capital
-		}
-		completion_reward = {
-			add_political_power = 25
-			set_country_flag = constitution_in_progress
-			unlock_texas_constitution = yes
-			country_event = nf_texas.51
-		}
-	}
+	# focus = {
+	# 	id = texas_constitution
+	# 	icon = GFX_goal_constitution_focus
+	# 	cost = 15
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = tex_taking_stock
+	# 	prerequisite = {
+	# 		focus = tex_taking_stock
+	# 	}
+	# 	completion_reward = {
+	# 		add_political_power = 25
+	# 		set_country_flag = constitution_in_progress
+	# 		unlock_texas_constitution = yes
+	# 		country_event = nf_texas.51
+	# 	}
+	# }
 	### Government Foundations
 	focus = {
 		id = texas_foundations_of_government
 		icon = GFX_goal_RRG_radio_broadcast
 		cost = 15
-		x = -2
+		x = -1
 		y = 1
-		relative_position_id = texas_constitution
+		relative_position_id = texas_constitutional_convention
 		prerequisite = {
-			focus = texas_constitution
+			focus = texas_constitutional_convention
 			focus = texas_bill_of_rights
 		}
 		available = {
@@ -2785,7 +3584,7 @@ focus_tree = {
 		id = texas_judiciary
 		icon = GFX_goal_generic_new_sheriff_in_town
 		cost = 15
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = texas_legislature
 		prerequisite = {
@@ -2808,7 +3607,7 @@ focus_tree = {
 		id = texas_execuative
 		icon = GFX_goal_generic_pet_rock
 		cost = 15
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = texas_legislature
 		prerequisite = {
@@ -2861,11 +3660,11 @@ focus_tree = {
 		id = texas_bill_of_rights
 		icon = GFX_goal_ATE_declaration
 		cost = 15
-		x = 2
+		x = 1
 		y = 1
-		relative_position_id = texas_constitution
+		relative_position_id = texas_constitutional_convention
 		prerequisite = {
-			focus = texas_constitution
+			focus = texas_constitutional_convention
 		}
 		available = {
 			#has_completed_focus = texas_foundations_of_government
@@ -3004,9 +3803,9 @@ focus_tree = {
 		cost = 15
 		x = 0
 		y = 1
-		relative_position_id = texas_constitution
+		relative_position_id = tex_the_capital
 		prerequisite = {
-			focus = texas_constitution
+			focus = tex_the_capital
 		}
 		bypass = {
 			has_country_flag = constitution_signed
@@ -3015,6 +3814,10 @@ focus_tree = {
 			has_completed_focus = texas_foundations_of_government
 		}
 		completion_reward = {
+			add_political_power = 25
+			set_country_flag = constitution_in_progress
+			unlock_texas_constitution = yes
+			country_event = nf_texas.51
 			set_temp_variable = {
 				temp_constitution_article = 1
 			}
@@ -3032,51 +3835,52 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = texas_constitutional_convention_extentions
-		icon = GFX_goal_CAF_treaty
-		cost = 15
-		x = 0
-		y = 1
-		relative_position_id = texas_constitutional_convention
-		prerequisite = {
-			focus = texas_constitutional_convention
-		}
-		available = {
-			#has_completed_focus = texas_foundations_of_government
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				temp_constitution_article = 4
-			}
-			add_constitution_article = yes
-			set_temp_variable = {
-				temp_constitution_article = 4
-			}
-			add_constitution_article = yes
-			set_temp_variable = { article_to_add_to = 4 }
-			set_temp_variable = { temp_constitution_subsection = 36 }
-			unlock_subsection_article_choice = yes
-			set_temp_variable = { article_to_add_to = 4 }
-			set_temp_variable = { temp_constitution_subsection = 37 }
-			unlock_subsection_article_choice = yes
-			set_temp_variable = { article_to_add_to = 4 }
-			set_temp_variable = { temp_constitution_subsection = 38 }
-			unlock_subsection_article_choice = yes
-		}
-	}
-	focus = {
+	# focus = {
+	# 	id = texas_constitutional_convention_extentions
+	# 	icon = GFX_goal_CAF_treaty
+	# 	cost = 15
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = texas_constitutional_convention
+	# 	prerequisite = {
+	# 		focus = texas_constitutional_convention
+	# 	}
+	# 	available = {
+	# 		#has_completed_focus = texas_foundations_of_government
+	# 	}
+	# 	bypass = {
+	# 		has_country_flag = constitution_signed
+	# 	}
+	# 	completion_reward = {
+	# 		set_temp_variable = {
+	# 			temp_constitution_article = 4
+	# 		}
+	# 		add_constitution_article = yes
+	# 		set_temp_variable = {
+	# 			temp_constitution_article = 4
+	# 		}
+	# 		add_constitution_article = yes
+	# 		set_temp_variable = { article_to_add_to = 4 }
+	# 		set_temp_variable = { temp_constitution_subsection = 36 }
+	# 		unlock_subsection_article_choice = yes
+	# 		set_temp_variable = { article_to_add_to = 4 }
+	# 		set_temp_variable = { temp_constitution_subsection = 37 }
+	# 		unlock_subsection_article_choice = yes
+	# 		set_temp_variable = { article_to_add_to = 4 }
+	# 		set_temp_variable = { temp_constitution_subsection = 38 }
+	# 		unlock_subsection_article_choice = yes
+	# 	}
+	# }
+	focus = { # matter of suffrage
 		id = texas_elongated_deliberations
 		icon = GFX_goal_bobble_head_speech
 		cost = 15
-		x = 0
-		y = 2
-		relative_position_id = texas_constitutional_convention_extentions
+		x = 2
+		y = 1
+		relative_position_id = texas_primary_powers
 		prerequisite = {
-			focus = texas_constitutional_convention_extentions
+			focus = texas_primary_powers
+			focus = texas_ban_slavery
 		}
 		bypass = {
 			has_country_flag = constitution_signed
@@ -3099,7 +3903,7 @@ focus_tree = {
 		icon = GFX_goal_constitution_signed_focus
 		cost = 15
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = texas_elongated_deliberations
 		prerequisite = {
 			focus = texas_elongated_deliberations
@@ -3128,12 +3932,9 @@ focus_tree = {
 		id = tex_proper_this_time
 		icon = GFX_goal_generic_texas2
 		cost = 30
-		x = 13
+		x = 0
 		y = 1
 		relative_position_id = texas_constitution_signed
-		prerequisite = {
-			focus = tex_united_once_more_almost
-		}
 		prerequisite = {
 			focus = texas_constitution_signed
 		}
@@ -3192,6 +3993,26 @@ focus_tree = {
 			hidden_effect = {
 				play_song = owb_dev_team_yellow_rose_of_texas
 			}
+		}
+	}
+	focus = {
+		id = tex_lone_star_republic
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = tex_congress_4
+		prerequisite = {
+			focus = tex_congress_4
+			focus = tex_mutant_democracy
+			focus = tex_a_free_and_prosperous_people
+			focus = tex_market_expansion
+			focus = tex_freedom_expansion
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
 		}
 	}
 }
