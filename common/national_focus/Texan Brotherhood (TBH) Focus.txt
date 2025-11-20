@@ -1196,7 +1196,7 @@ focus_tree = {
 		id = tbh_nf_listening_posts
 		icon = GFX_goal_generic_thing
 		cost = 30
-		x = 12
+		x = 10
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -1777,12 +1777,13 @@ focus_tree = {
 		icon = GFX_goal_TBH_approach_patrolmen
 		cost = 30
 		x = -1
-		y = 2
+		y = 1
 
-		relative_position_id = tbh_nf_consolidate_conquests
+		relative_position_id = tbh_nf_houston
 
 		prerequisite = {
-			focus = tbh_nf_consolidate_conquests
+			focus = tbh_nf_lincoln
+			focus = tbh_nf_houston
 		}
 
 		available = {
@@ -1800,11 +1801,11 @@ focus_tree = {
 
 		bypass = {
 			OR = {
-			NOT = { country_exists  = TPM }
-			TPM = {	all_core_land_owned_by_prev_sphere = yes }
-			has_country_flag = tbh_accepted_offer
+				NOT = { country_exists  = TPM }
+				TPM = {	all_core_land_owned_by_prev_sphere = yes }
+				has_country_flag = tbh_accepted_offer
+			}
 		}
-	}
 		will_lead_to_war_with = TPM
 		completion_reward = {
 			if = {
@@ -1939,6 +1940,9 @@ focus_tree = {
 		prerequisite = {
 			focus = tex_union_economic_boom
 		}
+		prerequisite = {
+			focus = tbh_nf_austin_in_union
+		}
 		ai_will_do = {
 			factor = 100
 		}
@@ -2001,7 +2005,7 @@ focus_tree = {
 		id = tbh_nf_broken_apart
 		icon = GFX_goal_TBH_two_coins
 		cost = 40
-		x = 5
+		x = -5
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2299,7 +2303,7 @@ focus_tree = {
 		id = tbh_nf_our_fatman
 		icon = GFX_goal_generic_nuka_break_nuke
 		cost = 40
-		x = -4
+		x = 5
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2330,7 +2334,7 @@ focus_tree = {
 		id = tbh_nf_things_that_go_boom
 		icon = GFX_goal_generic_grenade_launcher
 		cost = 40
-		x = -1
+		x = -2
 		y = 1
 
 		relative_position_id = tbh_nf_our_fatman
@@ -2375,7 +2379,7 @@ focus_tree = {
 		id = tbh_nf_things_that_spit_lead
 		icon = GFX_goal_generic_minigun
 		cost = 40
-		x = 1
+		x = 2
 		y = 1
 
 		relative_position_id = tbh_nf_our_fatman
@@ -2784,71 +2788,102 @@ focus_tree = {
 		}
 	}
 	#TEXAS CHANGES
-	focus = {
+	focus = { #HRO
 		id = tbh_nf_houston
 		icon = GFX_goal_TBH_conscription_1
 		cost = 30
 		x = 1
-		y = 2
-
-		relative_position_id = tbh_nf_consolidate_conquests
-
+		y = 1
+		relative_position_id = tbh_nf_austin_in_union
 		prerequisite = {
+			focus = tbh_nf_austin_in_union
 			focus = tbh_nf_consolidate_conquests
 		}
-
+		will_lead_to_war_with = HRO
 		available = {
 			country_exists = HRO
 			NOT = { country_exists = ACH }
+			ai_has_no_other_wars_or_wargoals = yes
 		}
-
 		bypass = {
 			NOT = { country_exists = HRO }
 		}
-
 		completion_reward = {
-			
+			HRO = {
+				country_event = nf_tbh.101
+			}
 		}
 	}
-	focus = {
+	# focus = { #TLP
+	# 	id = tbh_nf_last_patrol
+	# 	icon = GFX_goal_TBH_conscription_1
+	# 	cost = 30
+	# 	x = 2
+	# 	y = 0
+	# 	relative_position_id = tbh_nf_houston
+	# 	prerequisite = {
+	# 		focus = tbh_nf_consolidate_conquests
+	# 	}
+	# 	will_lead_to_war_with = TLP
+	# 	available = {
+	# 		TLP = { is_neighbor_of = TBH }
+	# 		ai_has_no_other_wars_or_wargoals = yes
+	# 	}
+	# 	bypass = {
+	# 		NOT = { country_exists = TLP }
+	# 	}
+	# 	completion_reward = {
+	# 		TLP = {
+	# 			country_event = nf_tbh.107
+	# 		}
+	# 	}
+	# }
+	focus = { #BAM
 		id = tbh_nf_bayou
 		icon = GFX_goal_TBH_conscription_1
 		cost = 30
-		x = 2
+		x = 0
 		y = 1
-
-		relative_position_id = tbh_nf_consolidate_conquests
-
+		relative_position_id = tbh_nf_approach_the_patrolmen
+		will_lead_to_war_with = BAM
 		prerequisite = {
-			focus = tbh_nf_consolidate_conquests
+			focus = tbh_nf_approach_the_patrolmen
 		}
-
 		available = {
 			country_exists = BAM
 			NOT = { country_exists = TPM }
+			ai_has_no_other_wars_or_wargoals = yes
 		}
-
 		bypass = {
 			NOT = { country_exists = BAM }
 		}
-
 		completion_reward = {
-			
+			BAM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
 		}
 	}
-	focus = {
+	focus = { #LINCOLN
 		id = tbh_nf_lincoln
 		icon = GFX_goal_TBH_conscription_1
 		cost = 30
 		x = -2
-		y = 1
-
-		relative_position_id = tbh_nf_consolidate_conquests
-
+		y = 0
+		relative_position_id = tbh_nf_houston
 		prerequisite = {
+			focus = tbh_nf_austin_in_union
 			focus = tbh_nf_consolidate_conquests
 		}
-
+		if = {
+			limit = { CBN = { exists = yes } }
+			will_lead_to_war_with = CBN
+		}
+		if = {
+			limit = { LOS = { exists = yes } }
+			will_lead_to_war_with = LOS
+		}
 		available = {
 			any_country = {
 				has_cosmetic_tag = LIN_lincoln_league
@@ -2858,30 +2893,71 @@ focus_tree = {
 				}
 			}
 			NOT = { country_exists = SHA }
+			ai_has_no_other_wars_or_wargoals = yes
 		}
-
 		bypass = {
 			AND = {
 				NOT = { country_exists = LOS }
 				NOT = { country_exists = CBN }
 			}
 		}
+		completion_reward = {
+			if = {
+				limit = { CBN = { exists = yes } }
+				CBN = {
+					country_event = nf_tbh.104
+				}
+			}
+			if = {
+				limit = { LOS = { exists = yes } }
+				LOS = {
+					country_event = nf_tbh.104
+				}
+			}
+		}
+	}
+	focus = { #austin is at war
+		id = tbh_nf_austin_at_war
+		icon = GFX_goal_TBH_conscription_1
+		cost = 15
+		x = 17
+		y = 1
+
+		relative_position_id = tbh_nf_rhombus_legacy
+		prerequisite = {
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = complete_when_unity_war
+				always = no
+			}
+		}
+		bypass = {
+			country_exists = UOA
+			NOT = { country_exists = IMO }
+			NOT = { country_exists = SHA }
+			NOT = { country_exists = EDN }
+			NOT = { country_exists = CBN }
+			NOT = { country_exists = LOS }
+		}
 
 		completion_reward = {
 			
 		}
 	}
-	focus = {
+	focus = { #SUPPORT AUSTIN
 		id = tbh_nf_austin_support
 		icon = GFX_goal_TBH_conscription_1
-		cost = 30
+		cost = 15
 		x = 0
-		y = 1
+		y = 2
 
-		relative_position_id = tbh_nf_consolidate_conquests
+		relative_position_id = tbh_nf_austin_at_war
 
 		prerequisite = {
-			focus = tbh_nf_consolidate_conquests
+			focus = tbh_nf_austin_at_war
 		}
 
 		available = {
@@ -2896,21 +2972,26 @@ focus_tree = {
 			NOT = { country_exists = IMO }
 			NOT = { country_exists = SHA }
 			NOT = { country_exists = EDN }
+			NOT = { country_exists = CBN }
+			NOT = { country_exists = LOS }
 		}
 
 		completion_reward = {
 			
 		}
 	}
-	focus = {
+	focus = { #AUSTIN IS LOST
 		id = tbh_nf_austin_lost
 		icon = GFX_goal_TBH_conscription_1
-		cost = 30
-		x = 0
+		cost = 15
+		x = -1
 		y = 2
 
 		relative_position_id = tbh_nf_austin_support
 
+		mutually_exclusive = {
+			focus = tbh_nf_austin_won
+		}
 		prerequisite = {
 			focus = tbh_nf_austin_support
 		}
@@ -2932,6 +3013,7 @@ focus_tree = {
 				}
 			}
 			NOT = { country_exists = UOA }
+			ai_has_no_other_wars_or_wargoals = yes
 		}
 
 		bypass = {
@@ -2943,6 +3025,49 @@ focus_tree = {
 			}
 		}
 
+		completion_reward = {
+			
+		}
+	}
+	focus = { #AUSTIN WON
+		id = tbh_nf_austin_won
+		icon = GFX_goal_TBH_conscription_1
+		cost = 15
+		x = 1
+		y = 2
+
+		relative_position_id = tbh_nf_austin_support
+
+		mutually_exclusive = {
+			focus = tbh_nf_austin_lost
+		}
+		prerequisite = {
+			focus = tbh_nf_austin_support
+		}
+
+		available = {
+			country_exists = UOA
+		}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = { #austin in the union
+		id = tbh_nf_austin_in_union
+		icon = GFX_goal_TBH_conscription_1
+		cost = 15
+		x = 1
+		y = 2
+
+		relative_position_id = tbh_nf_austin_lost
+		prerequisite = {
+			focus = tbh_nf_austin_lost
+			focus = tbh_nf_austin_won
+		}
+		available = {
+			country_exists = UOA
+		}
 		completion_reward = {
 			
 		}
