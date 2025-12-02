@@ -287,7 +287,7 @@ country_event = { # Assasin City. Send event to Tubeheads, chance to forge deal 
 	title = nf_tbh.7.t
 	desc = nf_tbh.7.d
 	is_triggered_only = yes
-	fire_only_once = yes
+	# fire_only_once = yes
 	picture = GFX_event_car_2
 
 
@@ -295,7 +295,7 @@ country_event = { # Assasin City. Send event to Tubeheads, chance to forge deal 
 		name = nf_tbh.7.a
 		ASS = { country_event = { id = nf_tbh.71 } }
 		ai_chance = {
-			base = 80
+			base = 95
 		}
 	}
 
@@ -307,7 +307,7 @@ country_event = { # Assasin City. Send event to Tubeheads, chance to forge deal 
 			}
 		}
 		ai_chance = {
-			base = 20
+			base = 5
 		}
 	}
 }
@@ -326,14 +326,14 @@ country_event = { # Event Assasin city deal, from tubeheads
 		name = nf_tbh.71.a
 		TBH = { country_event = { id = nf_tbh.72 } }
 		ai_chance = {
-			base = 90
+			base = 95
 		}
 	}
 	option = { # Deny
 		name = nf_tbh.71.b
 		TBH = { country_event = { id = nf_tbh.73 } }
 		ai_chance = {
-			base = 10
+			base = 5
 		}
 	}
 }
@@ -1093,7 +1093,6 @@ country_event = { # ach Demands Richmond
 			TLP = {
 				join_texan_economic_union = yes
 				add_ideas = {
-					tbh_tithe
 					tbh_advisors
 				}
 			}
@@ -1115,6 +1114,148 @@ country_event = { # ach Demands Richmond
 		option = {
 			name = nf_tbh.109.a
 			TLP = {
+				TBH = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			ai_chance = {
+				base = 25
+			}
+		}
+	}
+#eden chain
+	country_event = { # Event eden
+		immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.110" }
+		id = nf_tbh.110
+		title = nf_tbh.110.t
+		desc = nf_tbh.110.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_event_car_2
+
+
+		option = { # Accept
+			name = nf_tbh.110.a
+			TBH = { country_event = { id = nf_tbh.111 } }
+			ai_chance = {
+				base = 80
+			}
+		}
+		option = { # Deny
+			name = nf_tbh.110.b
+			TBH = { country_event = { id = nf_tbh.112 } }
+			ai_chance = {
+				base = 20
+			}
+		}
+	}
+	country_event = { # eden chooses alliance
+		immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.111" }
+		id = nf_tbh.111
+		title = nf_tbh.111.t
+		desc = nf_tbh.111.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_event_car_2
+
+
+		option = {
+			name = nf_tbh.111.a
+			EDN = {
+				join_texan_economic_union = yes
+				add_ideas = {
+					tbh_advisors
+				}
+			}
+			ai_chance = {
+				base = 25
+			}
+		}
+	}
+	country_event = { # eden choses war
+		immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.112" }
+		id = nf_tbh.112
+		title = nf_tbh.112.t
+		desc = nf_tbh.112.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_event_car_2
+
+
+		option = {
+			name = nf_tbh.112.a
+			EDN = {
+				TBH = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			ai_chance = {
+				base = 25
+			}
+		}
+	}
+#last lodge chain
+	country_event = { # Event last lodge
+		immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.113" }
+		id = nf_tbh.113
+		title = nf_tbh.113.t
+		desc = nf_tbh.113.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_event_car_2
+
+
+		option = { # Accept
+			name = nf_tbh.113.a
+			TBH = { country_event = { id = nf_tbh.114 } }
+			ai_chance = {
+				base = 80
+			}
+		}
+		option = { # Deny
+			name = nf_tbh.113.b
+			TBH = { country_event = { id = nf_tbh.115 } }
+			ai_chance = {
+				base = 20
+			}
+		}
+	}
+	country_event = { # last lodge chooses alliance
+		immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.114" }
+		id = nf_tbh.114
+		title = nf_tbh.114.t
+		desc = nf_tbh.114.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_event_car_2
+
+
+		option = {
+			name = nf_tbh.114.a
+			TLL = {
+				join_texan_economic_union = yes
+				add_ideas = {
+					tbh_advisors
+				}
+			}
+			ai_chance = {
+				base = 25
+			}
+		}
+	}
+	country_event = { # last lodge choses war
+		immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.115" }
+		id = nf_tbh.115
+		title = nf_tbh.115.t
+		desc = nf_tbh.115.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_event_car_2
+
+
+		option = {
+			name = nf_tbh.115.a
+			TLL = {
 				TBH = {
 					grant_wargoals_on_core_states_of_prev = yes
 				}

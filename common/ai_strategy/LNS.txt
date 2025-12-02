@@ -1,0 +1,34 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+LNS_support_UOA = {
+	allowed = { original_tag = LNS }
+	enable = {
+		has_war = no
+		UOA = {
+			has_war = yes
+			is_in_faction_with = LNS
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = support
+		id = UOA
+		value = 200
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = UOA
+		value = 200
+	}
+}

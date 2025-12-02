@@ -1,0 +1,502 @@
+ideas = { #So I have no idea where they keep the "Legacy of Enforcement" idea, because i couldnt find a TPM idea file, so its just not getting added here, if I find it it'll be put at the very bottom
+	country = {
+		tpm_frequently_raided = {
+			picture = ncn_sneering_imperialist
+			removal_cost = -1
+			modifier = {
+			war_support_factor = 0.05
+			stability_factor = -0.1
+			army_org_factor = -0.15
+			army_morale_factor = 0.1
+			}
+		}
+		tpm_rest_stop = {
+			picture = prc_low_popular_support3
+			removal_cost = -1
+			modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			monthly_population = 0.15
+			}
+		}
+		tpm_history = {
+			picture = generic_raids
+			removal_cost = -1
+			modifier = {
+			army_core_defence_factor = 0.1
+			production_speed_buildings_factor = 0.1
+			industrial_capacity_factory = 0.05
+			}
+		}
+		tpm_legendary_lawman = {
+			picture = generic_atom
+			removal_cost = -1
+			modifier = {
+			army_org_factor = 0.1
+			breakthrough_factor = 0.05
+			experience_loss_factor = +0.15
+			}
+		}
+		tpm_mild_corruption = {
+			picture = VEG_Wealthy_Clientele
+			removal_cost = -1
+			modifier = {
+			consumer_goods_factor = +0.05
+			war_support_factor = -0.05
+			stability_factor = 0.1
+			caps_node_trade_modifier  = -0.1
+			}
+		}
+		tpm_bad_corruption = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+			consumer_goods_factor = +0.075
+			caps_node_trade_modifier  = -0.15
+			war_support_factor = -0.1
+			stability_factor = -0.05
+			caps_flat_income_modifier = 15
+			}
+		}
+		tpm_all_corrupted = {
+			picture = chinese_manpower_law_4
+			removal_cost = -1
+			modifier = {
+			consumer_goods_factor = +0.1
+			caps_node_trade_modifier  = -0.2
+			war_support_factor = -0.15
+			stability_factor = -0.15
+			army_org_factor = -0.1
+			army_attack_factor = 0.15
+			army_defence_factor = 0.1
+			}
+		}
+		tpm_louisiana_deputies = {
+			picture = DES_ranger_star_medal
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_police_infantry_attack_factor = 0.1
+				modifier_army_sub_unit_police_infantry_defence_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = -0.1
+			}
+		}
+		tpm_lament = {
+			picture = generic_badass
+			removal_cost = -1
+			modifier = {
+			modifier_army_sub_unit_police_infantry_attack_factor = 0.05
+			modifier_army_sub_unit_police_infantry_defence_factor = 0.05
+			stability_factor = -0.15
+			war_support_factor = 0.05
+			autonomy_gain = 0.2
+			}
+		}
+		tpm_next_generations = {
+			picture = generic_reserve_divisions
+			removal_cost = -1
+			modifier = {
+			conscription = 0.02
+			conscription_factor = -0.1
+			mobilization_speed = 0.15
+			}
+		}
+		tpm_civility = {
+			picture = recruitment_pistol
+			removal_cost = -1
+			modifier = {
+			production_factory_efficiency_gain_factor = 0.1
+			exodus_nomadicity = -0.05
+			army_core_defence_factor = 0.05
+			}
+		}
+		tpm_something_bigger = {
+			picture = generic_flexible_foreign_policy2
+			removal_cost = -1
+			modifier = {
+			army_org_factor = 0.05
+			conscription_factor = 0.05
+			production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		tpm_boys_come_first = {
+			picture = vault_dwellers
+			removal_cost = -1
+			modifier = {
+			weekly_manpower = 2
+			training_time_army_factor = -0.1
+			conscription_factor = 0.1
+			political_power_gain = -0.1
+			}
+		}
+		tpm_overlooked_agression = {
+			picture = ncn_sneering_imperialist
+			removal_cost = -1
+			modifier = {
+			army_org_factor = -0.05
+			army_attack_factor = 0.05
+			army_defence_factor = -0.05
+			breakthrough_factor = 0.05
+			}
+		}
+		tpm_overlooked_bribery = {
+			picture = VEG_Good_Business
+			removal_cost = -1
+			modifier = {
+			caps_flat_income_modifier = 10
+			local_resources_factor = 0.1
+			production_factory_max_efficiency_factor = -0.1
+			}
+		}
+		tpm_callahan_stand = {
+			picture = generic_military_draft
+			removal_cost = -1
+			modifier = {
+			research_speed_factor = 0.05
+			army_org_factor = 0.1
+			}
+		}
+		tpm_lawman_army = {
+			picture = recruitment_cowboy
+			removal_cost = -1
+			modifier = {
+			modifier_army_sub_unit_police_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_police_infantry_defence_factor = 0.1
+			army_org_factor = 0.15
+			}
+		}
+		tpm_motorized_research = {
+			picture = cult_of_nas
+			removal_cost = -1
+			modifier = {
+			motorized_attack_factor = 0.05
+			motorized_defence_factor = 0.05
+			org_loss_when_moving = -0.05
+			}
+			research_bonus = {
+				vehicle_tech_category = 0.15
+				}
+		equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		tpm_rangers_example = {
+			picture = DES_ranger_fire
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_power_armour_attack_factor = 0.05
+				modifier_army_sub_unit_power_armour_speed_factor = 0.05
+				modifier_army_sub_unit_power_armour_defence_factor = 0.05
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.05
+				modifier_army_sub_unit_spec_ops_defence_factor = 0.05
+				modifier_army_sub_unit_spec_ops_speed_factor = 0.05
+			}
+		equipment_bonus = {
+				spec_ops_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			power_armor_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		research_bonus = {
+		power_armor_tech_category = 0.1
+		spec_force_equipment_tech_category = 0.1
+				}
+		}
+		tpm_tried_to_be_nice = {
+			picture = HEA_idea_divided_leadership
+			removal_cost = -1
+			targeted_modifier = { tag = TBH attack_bonus_against = 0.1 }
+			targeted_modifier = { tag = TBH defense_bonus_against = 0.1 }
+		}
+		tpm_independence_assured = {
+			picture = HEA_idea_air_knight
+			removal_cost = -1
+			modifier = {
+			army_org_factor = 0.1
+			army_defence_factor = 0.1
+			}
+		}
+		tpm_louisiana_loyalty = {
+			picture = pantheon_land
+			removal_cost = -1
+			modifier = {
+			justify_war_goal_time = 0.50
+			stability_weekly = 0.005
+			}
+		}
+		tpm_deputy_alliance = {
+			picture = LAP_border_patrol
+			removal_cost = -1
+			modifier = {
+			non_core_manpower = 0.05
+			resistance_target = 0.1
+			compliance_gain = 0.02
+			}
+		}
+		tpm_lawmans_laws = {
+			picture = generic_illiteracy
+			removal_cost = -1
+			modifier = {
+			stability_factor = 0.15
+			caps_node_trade_modifier = -0.1
+			exodus_nomadicity = -0.05
+			monthly_population = 0.15
+			production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		tpm_louisianas_laws = {
+			picture = HEA_idea_precursers
+			removal_cost = -1
+			modifier = {
+			stability_factor = 0.1
+			caps_node_trade_modifier = 0.1
+			exodus_nomadicity = -0.1
+			production_speed_buildings_factor = 0.05
+			production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		tpm_unions_laws = {
+			picture = rrg_texas2
+			removal_cost = -1
+			modifier = {
+			stability_factor = 0.05
+			caps_node_trade_modifier = 0.15
+			exodus_nomadicity = -0.15
+			industrial_capacity_factory = 0.15
+			production_factory_max_efficiency_factor = 0.15
+			}
+		}
+		tpm_texan_handshake = {
+			picture = cmc_criminal_underground_organized
+			removal_cost = -1
+			modifier = {
+			experience_gain_army = 0.15
+			political_power_gain = 0.15
+			}
+		}
+		tpm_statehood_question = {
+			picture = pantheon_tar
+			removal_cost = -1
+			modifier = {
+			army_org_factor = 0.1
+			justify_war_goal_time = -0.25
+			}
+		}
+		tpm_rocky_training_montage = {
+			picture = generic_military_draft
+			removal_cost = -1
+			modifier = {
+			caps_node_trade_modifier = 0.1
+			planning_speed = 0.075
+			}
+		}
+		tpm_rocky_training_montage2 = {
+			picture = generic_military_draft
+			removal_cost = -1
+			modifier = {
+			caps_node_trade_modifier = 0.2
+			planning_speed = 0.15
+			}
+		}
+		tpm_ghoul_mechanics = {
+			picture = ghoul_recruitment
+			removal_cost = -1
+			modifier = {
+			modifier_army_sub_unit_motorized_speed_factor = 0.1
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					reliability = 0.05
+					instant = yes
+					}
+				}
+			}
+		tpm_gulf_pirates = {
+			picture = brk_master_of_sea
+			removal_cost = -1
+			modifier = {
+			own_operative_detection_chance_factor = -0.25
+			operative_slot = 1
+			}
+		}
+		tpm_no_generals_for_you_ed_boy = {
+			picture = itz_idea_icdeb
+			removal_cost = -1
+			modifier = {
+			custom_modifier_tooltip = tpm_no_generals_for_you_ed_boy_tt
+			command_power_gain = -0.2
+			hidden_modifier = {
+			promote_cost_factor = 999.9
+			military_leader_cost_factor = 999.9
+				}
+			}
+		}
+		tpm_no_generals_for_you_ed_boy_alt = {
+			picture = itz_idea_icdeb
+			removal_cost = -1
+			modifier = {
+			custom_modifier_tooltip = tpm_no_generals_for_you_ed_boy_tt
+			command_power_gain = -0.15
+			army_core_attack_factor = 0.05
+			army_core_defence_factor = 0.05
+			org_loss_at_low_org_factor = -0.1
+			hidden_modifier = {
+			promote_cost_factor = 999.9
+			military_leader_cost_factor = 999.9
+				}
+			}
+		}
+		tpm_overabundance_of_fusion_cores = {
+			picture = TIM_patch_energy
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = 16
+				fuel_gain_factor = 0.1
+			}
+		}
+		tpm_overabundance_of_fusion_cores_alt = {
+			picture = TIM_patch_energy
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = 8
+				fuel_gain_factor = 0.1
+			}
+		}
+		tpm_making_sure_the_phones_work = {
+			picture = civilian_economy
+			removal_cost = -1
+			modifier = {
+				command_power_gain = 0.15
+				war_support_weekly = 0.002
+			}
+		}
+		tpm_great_minds_think_alike = {
+			picture = pre-war_industry
+			removal_cost = -1
+			modifier = {
+				exodus_nomadicity = -0.1
+				monthly_population = 0.1
+			}
+		}
+		tpm_secrets_of_the_lost = {
+			picture = generic_teddy
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				caps_flat_income_modifier = 5
+			}
+		}
+		tpm_friends_from_brahmin_county = {
+			picture = brahmin_baron
+			removal_cost = -1
+			modifier = {
+				caps_income_modifier = 0.15
+				trade_opinion_factor = 0.05
+				faction_trade_opinion_factor = 0.2
+			}
+		}
+		tpm_tubeheads_shipments = {
+			picture = generic_morale_bonus
+			removal_cost = -1
+			modifier = {
+				country_resource_circuitry = 4
+				country_resource_composites = 4
+				country_resource_advanced = 4
+			}
+			research_bonus = {
+				electronics = 0.1
+			}
+		}
+		tpm_rolling_around_at_the_speed_of_sound = {
+			picture = two_cars
+			removal_cost = -1
+			modifier = {
+				army_attack_speed_factor = 0.1
+				army_speed_factor = 0.05
+				dig_in_speed_factor = -0.05
+			}
+		}
+		tpm_let_them_cook = {
+			picture = generic_food_good
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.1
+				country_resource_water = 5
+			}
+		}
+		tpm_strapped = {
+			#picture =
+			removal_cost = -1
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				org_loss_at_low_org_factor = -0.1
+			}
+		}
+		tpm_diversification_of_the_army = {
+			picture = han_a_citizens_duty
+			removal_cost = -1
+			research_bonus = {
+				infantry_tech_category = 0.1
+				vehicle_tech_category = 0.1
+				cnc_robot_tech_category = 0.1
+			}
+		}
+		tpm_do_we_really_need_these_cnc_bots = {
+			picture = generic_control_robots
+			removal_cost = -1
+			equipment_bonus = {
+				cnc_robot_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = -0.05
+					armor_value = 0.1
+				}
+			}
+		}
+		tpm_do_we_really_need_these_cnc_bots_alt = {
+			picture = generic_control_robots
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_category_cnc_robots_attack_factor = 0.1
+				modifier_army_sub_unit_category_cnc_robots_defence_factor = 0.1
+			}
+			equipment_bonus = {
+				cnc_robot_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+					armor_value = 0.15
+				}
+			}
+		}
+		tpm_sullivan = {
+			picture = bra_gunn_cat
+			removal_cost = -1
+			modifier = {
+			stability_factor = 0.01
+				}
+			}
+		tpm_sullivan_cat = {
+			picture = TPM_sullivan_IV
+			removal_cost = -1
+			modifier = {
+			stability_factor = 0.01
+				}
+			}
+		tpm_sullivan_dog = {
+			picture = TIM_patch_dog_care
+			removal_cost = -1
+			modifier = {
+			war_support_factor = 0.01
+			}
+		}
+	}
+}

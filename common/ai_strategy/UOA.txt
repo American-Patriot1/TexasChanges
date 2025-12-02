@@ -1,0 +1,39 @@
+UOA_please_build_armies = {
+	allowed = {
+		original_tag = UOA
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 2000
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "SHA"
+		value = 1000
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "IMO"
+		value = 1000
+	}
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 100
+	}
+	ai_strategy = {
+		type = build_army
+		id = special_mutants
+		value = 100
+	}
+	ai_strategy = {
+		type = build_army
+		id = motorized
+		value = 100
+	}
+}

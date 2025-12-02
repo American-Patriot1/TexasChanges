@@ -1,0 +1,682 @@
+increase_tep_level = {
+	hidden_effect = {
+		add_to_variable = { tep_positive = tep_to_add }
+		subtract_from_variable = { tep_negative = tep_to_add }
+		every_other_country = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = texan_economic_union
+				}
+			}
+			set_variable = { tep_positive = PREV.tep_positive }
+			set_variable = { tep_negative = PREV.tep_negative }
+		}
+		force_update_dynamic_modifier = yes
+	}
+	custom_effect_tooltip = add_tep_tt
+}
+decrease_tep_level = {
+	hidden_effect = {
+		subtract_from_variable = { tep_positive = tep_to_add }
+		add_to_variable = { tep_negative = tep_to_add }
+		every_other_country = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = texan_economic_union
+				}
+			}
+			set_variable = { tep_positive = PREV.tep_positive }
+			set_variable = { tep_negative = PREV.tep_negative }
+		}
+		force_update_dynamic_modifier = yes
+	}
+	custom_effect_tooltip = subtract_tep_tt
+}
+manage_tbh_ideas = {
+	hidden_effect = {
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						TBH = { has_idea = tbh_military_heritage_aademo }
+						NOT = { has_idea = tbh_keepers_of_law }
+					}
+					AND = {
+						TBH = { has_idea = tbh_military_heritage_aafire }
+						NOT = { has_idea = tbh_keepers_of_law }
+					}
+					AND = {
+						TBH = { has_idea = tbh_military_heritage_bbfire }
+						NOT = { has_idea = tbh_keepers_of_law }
+					}
+					AND = {
+						TBH = { has_idea = tbh_military_heritage_bbdemo }
+						NOT = { has_idea = tbh_keepers_of_law }
+					}
+				}
+			}
+			add_ideas = tex_military_heritage
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						TBH = { has_idea = tbh_keepers_of_law }
+						NOT = { has_idea = tbh_keepers_of_law }
+					}
+					AND = {
+						TBH = { has_idea = tbh_keepers_of_law_2 }
+						NOT = { has_idea = tbh_keepers_of_law_2 }
+					}
+				}
+			}
+			add_ideas = tex_keepers_of_law
+		}
+		if = {
+			limit = {
+				TBH = { has_idea = tbh_keepers_of_law_3 }
+				NOT = { has_idea = tbh_keepers_of_law_3 }
+			}
+			add_ideas = tex_keepers_of_law_2
+		}
+		if = {
+			limit = {
+				TBH = { has_idea = tbh_davy_crocket_adventures }
+				NOT = { has_idea = tbh_davy_crocket_adventures }
+			}
+			add_ideas = tbh_davy_crocket_adventures
+		}
+	}
+	custom_effect_tooltip = tbh_idea_transfer_tt
+}
+manage_lns_ideas = {
+	hidden_effect = {
+		if = {
+			limit = {
+				LNS = { has_idea = LNS_idea_controllers_of_the_I20 }
+				NOT = { has_idea = LNS_idea_controllers_of_the_I20 }
+			}
+			add_ideas = LNS_idea_controllers_of_the_I20
+		}
+		if = {
+			limit = {
+				LNS = { has_idea = LNS_idea_i10_lns_deal }
+				NOT = { has_idea = LNS_idea_i10_lns_deal }
+			}
+			add_ideas = LNS_idea_i10_lns_deal
+		}
+		if = {
+			limit = {
+				LNS = { has_idea = LNS_idea_controllers_of_the_I10 }
+				NOT = { has_idea = LNS_idea_controllers_of_the_I10 }
+			}
+			add_ideas = LNS_idea_controllers_of_the_I10
+		}
+		if = {
+			limit = {
+				LNS = { has_idea = LNS_stars_in_our_eyes }
+				NOT = { has_idea = LNS_stars_in_our_eyes }
+			}
+			add_ideas = LNS_stars_in_our_eyes
+		}
+	}
+	custom_effect_tooltip = lns_idea_transfer_tt
+}
+
+form_texas_effect = {
+	custom_effect_tooltip = tex_formation_focus_sp_tt
+	hidden_effect = {
+		set_global_flag = texas_formed
+		set_cosmetic_tag = TEX_provisional
+		TBH_edward_j_rusk = {
+			add_country_leader_role = {
+				character = TBH_edward_j_rusk
+				country_leader = {
+					desc = TBH_EDWARD_RUSK_DESC
+					ideology = constitutional_republic
+					traits = {
+						popular_figurehead
+						stagnant_politician
+						military_background
+						stout_defender
+					}
+					expire = "3000.01.01.01"
+					id = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = TBH
+				}
+			}
+			add_country_leader_role = {
+				character = TBH_TEX_congress
+				promote_leader = yes
+				country_leader = {
+					desc = PROV_TEX_SENATE_DESC
+					ideology = town_hall_democracy
+					expire = "3000.01.01.01"
+					id = -1
+				}
+			}
+		}
+		else = {
+			add_country_leader_role = {
+				character = LNS_TEX_congress
+				promote_leader = yes
+				country_leader = {
+					desc = PROV_TEX_SENATE_DESC
+					ideology = town_hall_democracy
+					expire = "3000.01.01.01"
+					id = -1
+				}
+			}
+		}
+		# Carthage removed from this list for now, if you want to revert this let me know, its a pretty sizeable buff - Aelfred
+		#if = {
+		#	limit = {
+		#		TBH = {
+		#			has_dynamic_modifier = {
+		#				modifier = texan_economic_union
+		#			}
+		#		}
+		#		CAR = { is_subject_of = TBH }
+		#	}
+		#	CAR = {
+		#		every_unit_leader = {
+		#			set_nationality = TEX
+		#		}
+		#		every_navy_leader = {
+		#			set_nationality = TEX
+		#		}
+		#		every_owned_state = {
+		#			limit = {
+		#				is_core_of = PREV
+		#			}
+		#			set_state_flag = do_not_exodus
+		#			add_core_of = TEX
+		#		}
+		#		transfer_navy = { target = TEX }
+		#	}
+		#	set_temp_variable = {
+		#		caps_to_add_to_tex_car = CAR.caps_number_display
+		#	}
+		#	TEX = {
+		#		annex_country = {
+		#			target = CAR
+		#			transfer_troops = yes
+		#		}
+		#		add_to_variable = {
+		#			caps_number_display = caps_to_add_to_tex_car
+		#		}
+		#	}
+		#}
+		# HOUSTON
+		if = {
+			limit = {
+				TBH = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+			}
+			HRO = {
+				every_unit_leader = {
+					set_nationality = TEX
+				}
+				every_navy_leader = {
+					set_nationality = TEX
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = TEX
+				}
+				transfer_navy = { target = TEX }
+			}
+			set_temp_variable = {
+				caps_to_add_to_tex_HRO = HRO.caps_number_display
+			}
+			TEX = {
+				annex_country = {
+					target = HRO
+					transfer_troops = yes
+				}
+				add_to_variable = {
+					caps_number_display = caps_to_add_to_tex_HRO
+				}
+			}
+		}
+		# LOS
+		if = {
+			limit = {
+				TBH = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+			}
+			LOS = {
+				every_unit_leader = {
+					set_nationality = TEX
+				}
+				every_navy_leader = {
+					set_nationality = TEX
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = TEX
+				}
+				transfer_navy = { target = TEX }
+			}
+			set_temp_variable = {
+				caps_to_add_to_tex_LOS = LOS.caps_number_display
+			}
+			TEX = {
+				annex_country = {
+					target = LOS
+					transfer_troops = yes
+				}
+				add_to_variable = {
+					caps_number_display = caps_to_add_to_tex_LOS
+				}
+			}
+		}
+		# Carbon
+		if = {
+			limit = {
+				TBH = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+			}
+			CBN = {
+				every_unit_leader = {
+					set_nationality = TEX
+				}
+				every_navy_leader = {
+					set_nationality = TEX
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = TEX
+				}
+				transfer_navy = { target = TEX }
+			}
+			set_temp_variable = {
+				caps_to_add_to_tex_CBN = CBN.caps_number_display
+			}
+			TEX = {
+				annex_country = {
+					target = CBN
+					transfer_troops = yes
+				}
+				add_to_variable = {
+					caps_number_display = caps_to_add_to_tex_CBN
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					TUB = { is_subject_of = TBH }
+					TUB = { is_in_faction_with = TEX }
+				}
+			}
+			TUB = {
+				every_unit_leader = {
+					set_nationality = TEX
+				}
+				every_navy_leader = {
+					set_nationality = TEX
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = TEX
+				}
+				transfer_navy = { target = TEX }
+			}
+			set_temp_variable = {
+				caps_to_add_to_tex_tub = TUB.caps_number_display
+			}
+			TEX = {
+				annex_country = {
+					target = TUB
+					transfer_troops = yes
+				}
+				add_to_variable = {
+					caps_number_display = caps_to_add_to_tex_tub
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					is_subject_of = TBH
+					is_subject_of = LNS
+				}
+				NOT = {
+					OVERLORD = {
+						has_cosmetic_tag = TEX_provisional
+					}
+				}
+			}
+			TEX = {
+				PREV = {
+					become_puppet = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = LNS
+				}
+			}
+			set_temp_variable = {
+				caps_to_add_to_tex_tbh = TBH.caps_number_display
+			}
+			set_temp_variable = {
+				pp_of_tbh = TBH.political_power
+			}
+			set_temp_variable = {
+				cells_of_tbh = TBH.fuel_k
+			}
+			multiply_temp_variable = {
+				cells_of_tbh = 1000
+			}
+			if = {
+				limit = {
+					TBH = {
+						has_dynamic_modifier = {
+							modifier = texan_economic_union
+						}
+					}
+				}
+				TBH = {
+					transfer_navy = { target = TEX }
+				}
+				TBH = {
+					every_unit_leader = {
+						set_nationality = TEX
+					}
+					every_navy_leader = {
+						set_nationality = TEX
+					}
+					send_equipment_fraction = {
+						target = TEX
+						value = 1
+					}
+				}
+				TBH = {
+					if = {
+						limit = {
+							NOT = { is_ai = yes }
+							TEX = { is_ai = yes }
+						}
+						TEX = { change_tag_from = PREV }
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = TBH
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = TEX
+				}
+				manage_tbh_ideas = yes
+				TBH = {
+					PREV = {
+						copy_tech_from_prev = yes
+					}
+				}
+				annex_country = {
+					target = TBH
+					transfer_troops = yes
+				}
+			}
+			add_to_variable = {
+				caps_number_display = caps_to_add_to_tex_tbh
+			}
+			add_political_power = pp_of_tbh
+			add_fuel = cells_of_tbh
+		}
+		else = {
+			set_temp_variable = {
+				caps_to_add_to_tex_lns = LNS.caps_number_display
+			}
+			set_temp_variable = {
+				pp_of_lns = LNS.political_power
+			}
+			set_temp_variable = {
+				cells_of_lns = LNS.fuel_k
+			}
+			multiply_temp_variable = {
+				cells_of_lns = 1000
+			}
+			if = {
+				limit = {
+					LNS = {
+						has_dynamic_modifier = {
+							modifier = texan_economic_union
+						}
+					}
+				}
+				LNS = {
+					transfer_navy = { target = TEX }
+				}
+				LNS = {
+					every_unit_leader = {
+						set_nationality = TEX
+					}
+					every_navy_leader = {
+						set_nationality = TEX
+					}
+					send_equipment_fraction = {
+						target = TEX
+						value = 1
+					}
+				}
+				LNS = {
+					if = {
+						limit = {
+							NOT = { is_ai = yes }
+							TEX = { is_ai = yes }
+						}
+						TEX = { change_tag_from = PREV }
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = LNS
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = TEX
+				}
+				manage_lns_ideas = yes
+				LNS = {
+					PREV = {
+						copy_tech_from_prev = yes
+					}
+				}
+				annex_country = {
+					target = LNS
+					transfer_troops = yes
+				}
+			}
+			add_to_variable = {
+				caps_number_display = caps_to_add_to_tex_lns
+			}
+			add_political_power = pp_of_lns
+			add_fuel = cells_of_lns
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = dont_give_settler_generic_political_advisors }
+			}
+			set_country_flag = dont_give_settler_generic_political_advisors
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = dont_give_settler_generic_high_command }
+			}
+			set_country_flag = dont_give_settler_generic_high_command
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = dont_give_settler_generic_theorists }
+			}
+			set_country_flag = dont_give_settler_generic_theorists
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = dont_give_settler_generic_chiefs }
+			}
+			set_country_flag = dont_give_settler_generic_chiefs
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = no_generic_advisor }
+			}
+			set_country_flag = no_generic_advisor
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = no_generic_chief }
+			}
+			set_country_flag = no_generic_chief
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = no_generic_political_advisors }
+			}
+			set_country_flag = no_generic_political_advisors
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = no_generic_high_command }
+			}
+			set_country_flag = no_generic_high_command
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = no_generic_theorists }
+			}
+			set_country_flag = no_generic_theorists
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = default_slave_laws_banned }
+			}
+			set_country_flag = default_slave_laws_banned
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = is_brotherhood_nation }
+			}
+			set_country_flag = is_brotherhood_nation
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = currencytexdollar }
+			}
+			add_ideas = currencytexdollar
+		}
+		if = {
+			limit = {
+				amount_research_slots < 5
+			}
+			set_research_slots = 5
+		}
+		if = {
+			limit = {
+				ASS = { is_in_faction_with = TEX }
+			}
+			ASS = {
+				every_unit_leader = {
+					set_nationality = TEX
+				}
+				every_navy_leader = {
+					set_nationality = TEX
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = TEX
+				}
+				transfer_navy = { target = TEX }
+			}
+			set_temp_variable = {
+				caps_to_add_to_tex_ass = ASS.caps_number_display
+			}
+			TEX = {
+				annex_country = {
+					target = ASS
+					transfer_troops = yes
+				}
+				add_to_variable = {
+					caps_number_display = caps_to_add_to_tex_ass
+				}
+			}
+		}
+		if = {
+			limit = {
+				TAA = { is_in_faction_with = ROOT }
+			}
+			TAA = {
+				country_event = nf_texas.52
+			}
+		}
+		set_politics = { ruling_party = people elections_allowed = no }
+		set_popularities = {
+			people = 68
+			elites = 7
+			intellectuals = 3
+			ruler = 22
+		}
+		load_focus_tree = nf_texan_republic
+		every_state = {
+			limit = {
+				is_core_of = TEX
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		if = {
+			limit = {
+				has_idea = brotherhood_wages_law
+			}
+			remove_ideas = brotherhood_wages_law
+			add_ideas = standard_military
+		}
+		if = {
+			limit = {
+				has_country_flag = army_wages_disabled
+			}
+			clr_country_flag = army_wages_disabled # NOTE: Don't copy this elsewhere without ensuring your tag is accounted for in triggers for the laws @Tran
+		}
+		if = {
+			limit = {
+				has_country_flag = has_unique_army_wage_law
+			}
+			clr_country_flag = has_unique_army_wage_law	# NOTE: Flag's direct effects are disabled for CPU cost. Kept it here in case that changes @Tran
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+}

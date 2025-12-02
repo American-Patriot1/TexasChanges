@@ -1,0 +1,713 @@
+##############################
+#        TBoS Ideas          #
+#  Scripted by Happy + Garn  #
+##############################
+
+ideas = {
+	country = {
+		# Texan Economic Union sub-clauses
+		TBH_idea_lns_advisors = {
+			picture = generic_BOS_idea_combined_operations
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			research_bonus = {
+				industry = 0.05
+			}
+		}
+		TBH_idea_lns_advisors_strong = {
+			picture = generic_BOS_idea_combined_operations
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+			}
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.05
+			}
+		}
+		tbh_new_recruits = {
+			picture = generic_military_draft
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.1
+				army_org_Factor = -0.02
+			}
+		}
+		tbh_keepers_of_law = {   #missing icon
+			picture = tbh_law_1
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.05
+				military_leader_cost_factor = -0.2
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_keepers_of_law_2 = {    #missing icon
+			picture = tbh_law_2
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.05
+				military_leader_cost_factor = -0.3
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				resistance_target = -0.05
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_keepers_of_law_3 = {    #missing icon
+			picture = tbh_law_3
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.05
+				military_leader_cost_factor = -0.4
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				resistance_target = -0.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_ach_condemmed = {
+			picture = spineless
+			allowed = {
+				country_exists = ACH
+			}
+			targeted_modifier = { tag = ACH attack_bonus_against = 0.3 }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_ach_tolerated = {
+			picture = generic_military_draft
+			allowed = {
+				country_exists = ACH
+			}
+			targeted_modifier = { tag = ACH attack_bonus_against = -0.3 }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_paladins_start = {
+			picture = generic_military_draft
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				max_command_power = 25
+				command_power_gain_mult = 0.25
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_balanced = {
+			picture = generic_military_draft
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				conscription = 0.02
+				mobilization_speed = 0.2
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_elites = {
+			picture = generic_military_draft
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.25
+				acclimatization_hot_climate_gain_factor = 0.25
+				#special_forces_cap = 0.05
+				special_forces_min = 40
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_texas_rangers = {
+			picture = generic_military_draft
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				military_leader_cost_factor = -0.1
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_victorious_heroes = {
+			picture = brotherhood_drill_sergeants
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				send_volunteer_size = 5
+				send_volunteers_tension = -0.4
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_mourning_survivors = {
+			picture = knights_of_certainty
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.01
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_torn_leadership = {
+			picture = tbh_ach_split
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				military_leader_cost_factor = 2
+				army_org_factor = -0.3
+				stability_factor = -0.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_military_heritage = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.05
+			}
+			modifier = {
+				consumer_goods_expected_value = 0.05
+				research_speed_factor = -0.2
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_military_heritage_a = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.05
+			}
+			modifier = {
+				army_org_factor = 0.1
+				consumer_goods_expected_value = 0.07
+				research_speed_factor = -0.2
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_military_heritage_aa = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.15
+			}
+			modifier = {
+				army_org_factor = 0.1
+				army_morale_factor = 0.15
+				consumer_goods_expected_value = 0.09
+				research_speed_factor = -0.2
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_military_heritage_b = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				consumer_goods_expected_value = 0.07
+				research_speed_factor = -0.15
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_military_heritage_bb = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				support_tech_category = 0.08
+				infantry_tech_category = 0.08
+				vehicle_tech_category = 0.08
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				consumer_goods_expected_value = 0.09
+				research_speed_factor = -0.1
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_military_heritage_bbfire = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				support_tech_category = 0.08
+				infantry_tech_category = 0.08
+				vehicle_tech_category = 0.08
+				support_fireteam_tech_category = 0.15
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				consumer_goods_expected_value = 0.1
+				research_speed_factor = -0.1
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			equipment_bonus = {
+				fireteam_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_military_heritage_bbdemo = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				support_tech_category = 0.08
+				infantry_tech_category = 0.08
+				vehicle_tech_category = 0.08
+				support_demolitions_tech_category = 0.15
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				consumer_goods_expected_value = 0.1
+				research_speed_factor = -0.1
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			equipment_bonus = {
+				demolitions_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_military_heritage_aademo = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				support_demolitions_tech_category = 0.15
+				cat_land_doctrine = 0.15
+			}
+			modifier = {
+				army_org_factor = 0.1
+				army_morale_factor = 0.15
+				consumer_goods_expected_value = 0.1
+				research_speed_factor = -0.2
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			equipment_bonus = {
+				demolitions_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_military_heritage_aafire = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				support_fireteam_tech_category = 0.15
+				cat_land_doctrine = 0.15
+			}
+			modifier = {
+				army_org_factor = 0.1
+				army_morale_factor = 0.15
+				consumer_goods_expected_value = 0.1
+				research_speed_factor = -0.2
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			equipment_bonus = {
+				fireteam_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_davy_crocket_adventures = {
+			picture = generic_military_draft
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_army = 0.05
+				no_supply_grace = 48
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_the_long_road = {
+			picture = generic_political_crisis
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_army_factor = -0.2
+				army_org_factor = -0.15
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_the_hard_road = {
+			picture = generic_political_crisis
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_army_factor = -1
+				army_org_factor = -0.3
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_consolidated_conquests = {
+			picture = tbh_yellow_rose
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				resistance_damage_to_garrison = -0.25
+				compliance_gain = 0.02
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_tithe = {
+			picture = great_protectors
+			allowed = {
+				always = yes
+			}
+			available = {
+				NOT = { original_tag =  TBH }
+				country_exists = TBH
+			}
+			targeted_modifier = {
+				tag = TBH
+				cic_to_target_factor = 0.2
+				mic_to_target_factor = 0.2
+				extra_trade_to_target_factor = 0.2
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_advisors = {
+			picture = great_protectors
+			allowed = {
+				always = yes
+			}
+			available = {
+			}
+			modifier = {
+				resistance_damage_to_garrison = -0.2
+				army_speed_factor = 0.05
+				army_org_Factor = 0.05
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+		tbh_brotherhood_aid = {
+			picture = great_protectors
+			allowed = {
+				always = yes
+			}
+			available = {
+			}
+			modifier = {
+				army_org_Factor = 0.05
+				planning_Speed = 0.1
+				max_planning_factor = 0.05
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_tex_patriots = {
+			picture = generic_toy_soldier
+			allowed = {
+				always = yes
+			}
+			available = {
+			}
+			modifier = {
+				weekly_manpower = 30
+				mobilization_speed = 0.25
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_lns_refugees = {
+			picture = generic_raids2
+			allowed = {
+				always = yes
+			}
+			available = {
+				TBH = { is_in_faction_with  = LNS }
+			}
+			modifier = {
+				caps_flat_income_modifier = 5
+			}
+			targeted_modifier = { tag = LNS attack_bonus_against = 0.1 }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_will_come_for_us = {
+			picture = tbh_universal_deputization
+			allowed = {
+				always = yes
+			}
+			available = {
+				country_exists = TBH
+				LNS = { has_government = ruler }
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.15
+			}
+			targeted_modifier = { tag = TBH attack_bonus_against = 0.1 }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		#TEXAS CHANGES
+		tbh_highwaymen = {
+			picture = generic_train
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				vehicle_tech_category = 0.1
+			}
+			modifier = {
+				army_speed_factor = 0.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_military_heritage_bbtank = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				support_tech_category = 0.08
+				infantry_tech_category = 0.08
+				vehicle_tech_category = 0.08
+				tank_tech_category = 0.1
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				consumer_goods_expected_value = 0.1
+				research_speed_factor = -0.1
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			equipment_bonus = {
+				tank_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tbh_military_heritage_aatank = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.15
+				tank_tech_category = 0.1
+			}
+			modifier = {
+				army_org_factor = 0.1
+				army_morale_factor = 0.15
+				consumer_goods_expected_value = 0.1
+				research_speed_factor = -0.2
+				naval_doctrine_cost_factor = 0.15
+				air_doctrine_cost_factor = 0.15
+			}
+			equipment_bonus = {
+				tank_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+		}
+	}
+}

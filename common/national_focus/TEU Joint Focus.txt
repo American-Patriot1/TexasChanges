@@ -5,10 +5,10 @@
 		id = tex_two_nations_one_system
 		icon = GFX_goal_generic_BOS_focus_combined_operations
 		cost = 40
-		x = 6
+		x = 5
 		y = 4
 		offset = {
-			x = 8
+			x = 9
 			y = 4
 			trigger = {
 				has_focus_tree = nf_lone_star
@@ -60,7 +60,7 @@
 		id = tex_develop_join_arms_production
 		icon = GFX_goal_generic_ammo_boxes_focus
 		cost = 40
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = tex_two_nations_one_system
 		prerequisite = {
@@ -128,7 +128,7 @@
 		id = tex_expand_inter_nation_inf
 		icon = GFX_goal_generic_infrastructure2
 		cost = 40
-		x = 3
+		x = 2
 		y = 1
 		relative_position_id = tex_two_nations_one_system
 		prerequisite = {

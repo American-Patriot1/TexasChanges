@@ -112,8 +112,8 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_development_1
 		icon = GFX_goal_generic_sledgehammers
-		cost = 40
-		x = -1
+		cost = 30
+		x = -2
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -169,14 +169,14 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_development_2
 		icon = GFX_goal_generic_slums_focus
-		cost = 40
-		x = 1
+		cost = 30
+		x = 0
 		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_development_1
 
 		prerequisite = {
-			focus = tbh_nf_rhombus_legacy
+			focus = tbh_nf_development_1
 		}
 
 		completion_reward = {
@@ -226,9 +226,9 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_doctrinal_thought
 		icon = GFX_goal_generic_helm_army_2
-		cost = 40
-		x = 0
-		y = 2
+		cost = 30
+		x = 2
+		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
 
@@ -264,21 +264,14 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_doctrinal_thought_2
 		icon = GFX_goal_generic_books
-		cost = 40
+		cost = 30
 		x = 0
-		y = 3
+		y = 1
 
 		relative_position_id = tbh_nf_doctrinal_thought
 
 		prerequisite = {
-			focus = tbh_nf_roots_new_recruits
-			focus = tbh_nf_shores_new_vehicles
-			focus = tbh_nf_roots_new_weapons
-			focus = tbh_nf_shores_new_tactics
-		}
-
-		available = {
-			has_completed_focus = tbh_nf_doctrinal_thought
+			focus = tbh_nf_doctrinal_thought
 		}
 
 		completion_reward = {
@@ -316,7 +309,7 @@ focus_tree = {
 		id = tbh_nf_our_path_roots
 		icon = GFX_goal_TBH_rusk
 		cost = 30
-		x = -2
+		x = -4
 		y = 3
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -408,7 +401,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_our_path_roots_2
 		icon = GFX_goal_TBH_rusk
-		cost = 60
+		cost = 30
 		x = 0
 		y = 2
 
@@ -440,7 +433,7 @@ focus_tree = {
 		id = tbh_nf_our_path_new_shores
 		icon = GFX_goal_BOS_victory_or_death
 		cost = 30
-		x = 2
+		x = 4
 		y = 3
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -536,7 +529,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_our_path_new_shores_2
 		icon = GFX_goal_generic_BOS_focus_combined_operations
-		cost = 60
+		cost = 30
 		x = 0
 		y = 2
 
@@ -569,9 +562,9 @@ focus_tree = {
 		icon = GFX_goal_generic_lever_action
 		cost = 30
 		x = 0
-		y = 5
+		y = 7
 
-		relative_position_id = tbh_nf_doctrinal_thought
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
 			focus = tbh_nf_our_path_new_shores_2
@@ -638,7 +631,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_development_3
 		icon = GFX_goal_generic_workshop
-		cost = 40
+		cost = 30
 		x = 1
 		y = 1
 
@@ -695,7 +688,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_development_4
 		icon = GFX_goal_generic_megaloader
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 
@@ -754,7 +747,7 @@ focus_tree = {
 		id = tbh_nf_we_have_been_betrayed
 		icon = GFX_goal_MOJ_technology_raids
 		cost = 30
-		x = -17
+		x = -18
 		y = 1
 		prerequisite = {
 			focus = tbh_nf_rhombus_legacy
@@ -785,7 +778,7 @@ focus_tree = {
 		id = tbh_nf_to_hell_with_texas
 		icon = GFX_goal_MOJ_gun_runner_caravan_raids
 		cost = 30
-		x = 1
+		x = -1
 		y = 1
 
 		relative_position_id = tbh_nf_we_have_been_betrayed
@@ -831,7 +824,7 @@ focus_tree = {
 		id = tbh_nf_steady_as_she_goes_texas
 		icon = GFX_goal_generic_texas1
 		cost = 30
-		x = -1
+		x = 1
 		y = 1
 
 		relative_position_id = tbh_nf_we_have_been_betrayed
@@ -865,7 +858,7 @@ focus_tree = {
 		icon = GFX_goal_generic_power_armour_t51
 		cost = 30
 		x = 0
-		y = 3
+		y = 2
 
 		relative_position_id = tbh_nf_we_have_been_betrayed
 
@@ -891,13 +884,13 @@ focus_tree = {
 		id = tbh_nf_fortress_brotherhood
 		icon = GFX_goal_generic_bunkers_focus
 		cost = 30
-		x = 1
+		x = 4
 		y = 1
 
-		relative_position_id = tbh_nf_our_future
+		relative_position_id = tbh_nf_broken_apart
 
 		prerequisite = {
-			focus = tbh_nf_our_future
+			focus = tbh_nf_broken_apart
 		}
 
 		available = {
@@ -922,8 +915,8 @@ focus_tree = {
 		id = tbh_nf_fortress_texas
 		icon = GFX_goal_generic_mountain_fortress
 		cost = 30
-		x = -1
-		y = 1
+		x = 0
+		y = 2
 
 		relative_position_id = tbh_nf_our_future
 
@@ -968,19 +961,19 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_texas_our_dreams_and_hopes
 		icon = GFX_goal_generic_texas2
-		cost = 40
-		x = -1
-		y = 6
+		cost = 30
+		x = 0
+		y = 2
 
-		relative_position_id = tbh_nf_we_have_been_betrayed
+		relative_position_id = tbh_nf_fortress_texas
 
 		prerequisite = {
 			focus = tbh_nf_fortress_texas
 		}
 
-		mutually_exclusive = {
-			focus = tbh_nf_texas_old_world_blues
-		}
+		# mutually_exclusive = {
+		# 	focus = tbh_nf_texas_old_world_blues
+		# }
 
 		completion_reward = {
 			if = {
@@ -1002,10 +995,10 @@ focus_tree = {
 		id = tbh_nf_texas_old_world_blues
 		icon = GFX_goal_MOJ_paladin_thought
 		cost = 40
-		x = 1
-		y = 6
+		x = 0
+		y = 1
 
-		relative_position_id = tbh_nf_we_have_been_betrayed
+		relative_position_id = tbh_nf_fortress_brotherhood
 
 		prerequisite = {
 			focus = tbh_nf_fortress_brotherhood
@@ -1015,9 +1008,9 @@ focus_tree = {
 			NOT = { LNS = { has_government = people } }
 		}
 
-		mutually_exclusive = {
-			focus = tbh_nf_texas_our_dreams_and_hopes
-		}
+		# mutually_exclusive = {
+		# 	focus = tbh_nf_texas_our_dreams_and_hopes
+		# }
 
 		completion_reward = {
 			if = {
@@ -1045,14 +1038,54 @@ focus_tree = {
 	}
 
 	# LNS restauration
-	focus = {
-		id = tbh_nf_lonestar_exodus
-		icon = GFX_goal_generic_infrastructure2
-		cost = 40
-		x = 1
-		y = 1
+	# focus = {
+	# 	id = tbh_nf_lonestar_exodus
+	# 	icon = GFX_goal_generic_infrastructure2
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = tbh_nf_texas_our_dreams_and_hopes
 
-		relative_position_id = tbh_nf_texas_our_dreams_and_hopes
+	# 	prerequisite = {
+	# 		focus = tbh_nf_texas_our_dreams_and_hopes
+	# 	}
+
+	# 	# prerequisite = {
+	# 	# 	focus = tbh_nf_protector_of_texas
+	# 	# }
+
+	# 	# prerequisite = {
+	# 	# 	focus = tbh_nf_consolidate_conquests
+	# 	# }
+
+	# 	# available = {
+	# 	# 	NOT = { has_idea = tbh_torn_leadership }
+	# 	# }
+
+	# 	completion_reward = {
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes entered"
+	# 		}
+	# 		add_timed_idea = {
+	# 			idea = tbh_lns_refugees
+	# 			days = 360
+	# 		}
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
+	# 		}
+	# 	}
+	# }
+
+	focus = {
+		id = tbh_nf_lonestar_reconquest
+		icon = GFX_goal_LNS_rising_star
+		cost = 40
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_protector_of_texas
 
 		prerequisite = {
 			focus = tbh_nf_texas_our_dreams_and_hopes
@@ -1060,43 +1093,6 @@ focus_tree = {
 
 		prerequisite = {
 			focus = tbh_nf_protector_of_texas
-		}
-
-		prerequisite = {
-			focus = tbh_nf_consolidate_conquests
-		}
-
-		available = {
-			NOT = { has_idea = tbh_torn_leadership }
-		}
-
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes entered"
-			}
-			add_timed_idea = {
-				idea = tbh_lns_refugees
-				days = 360
-			}
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
-			}
-		}
-	}
-
-	focus = {
-		id = tbh_nf_lonestar_reconquest
-		icon = GFX_goal_LNS_rising_star
-		cost = 40
-		x = 0
-		y = 1
-
-		relative_position_id = tbh_nf_lonestar_exodus
-
-		prerequisite = {
-			focus = tbh_nf_lonestar_exodus
 		}
 		bypass = {
 			LNS = {
@@ -1126,7 +1122,7 @@ focus_tree = {
 		icon = GFX_goal_LNS_Victory_Lone
 		cost = 40
 		x = 0
-		y = 1
+		y = 2
 
 		relative_position_id = tbh_nf_lonestar_reconquest
 
@@ -1196,7 +1192,7 @@ focus_tree = {
 		id = tbh_nf_listening_posts
 		icon = GFX_goal_generic_thing
 		cost = 30
-		x = 10
+		x = 11
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -1264,17 +1260,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes
 		icon = GFX_KHA_focus_army_1
-		cost = 30
-		x = -4
-		y = 2
+		cost = 15
+		x = -1
+		y = 6
 
-		relative_position_id = tbh_nf_listening_posts
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_listening_posts
-		}
-
-		available = {
+			focus = tbh_nf_our_path_roots_2
+			focus = tbh_nf_our_path_new_shores_2
 		}
 
 		completion_reward = {
@@ -1282,7 +1276,23 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes entered"
 			}
-			army_experience = 35
+			army_experience = 75
+			893 = {
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes exited"
@@ -1296,17 +1306,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes_2
 		icon = GFX_goal_NCR_Infantry_Drills
-		cost = 45
-		x = -2
-		y = 1
+		cost = 15
+		x = -3
+		y = 6
 
-		relative_position_id = tbh_nf_listening_posts
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_listening_posts
-		}
-
-		available = {
+			focus = tbh_nf_our_path_roots_2
+			focus = tbh_nf_our_path_new_shores_2
 		}
 
 		completion_reward = {
@@ -1315,6 +1323,22 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_2 entered"
 			}
 			army_experience = 75
+			893 = {
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_2 exited"
@@ -1332,17 +1356,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes_3
 		icon = GFX_goal_NCR_Infantry_Drills
-		cost = 45
-		x = 2
-		y = 1
+		cost = 15
+		x = 3
+		y = 6
 
-		relative_position_id = tbh_nf_listening_posts
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_listening_posts
-		}
-
-		available = {
+			focus = tbh_nf_our_path_roots_2
+			focus = tbh_nf_our_path_new_shores_2
 		}
 
 		completion_reward = {
@@ -1351,6 +1373,22 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_3 entered"
 			}
 			army_experience = 75
+			893 = {
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_3 exited"
@@ -1368,17 +1406,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes_4
 		icon = GFX_KHA_focus_army_1
-		cost = 30
-		x = 4
-		y = 2
+		cost = 15
+		x = 1
+		y = 6
 
-		relative_position_id = tbh_nf_listening_posts
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_listening_posts
-		}
-
-		available = {
+			focus = tbh_nf_our_path_roots_2
+			focus = tbh_nf_our_path_new_shores_2
 		}
 
 		completion_reward = {
@@ -1386,7 +1422,23 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_4 entered"
 			}
-			army_experience = 35
+			army_experience = 75
+			893 = {
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = arms_factory level = 1 } }
+				}
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_national_excersizes_4 exited"
@@ -1411,9 +1463,6 @@ focus_tree = {
 			focus = tbh_nf_listening_posts
 		}
 
-		available = {
-		}
-
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1427,9 +1476,43 @@ focus_tree = {
 		}
 	}
 
+	# focus = {
+	# 	id = tbh_nf_a_mutually_benefitial_deal
+	# 	icon = GFX_goal_generic_radio
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 1
+
+	# 	relative_position_id = tbh_nf_mister_entertainment
+
+	# 	prerequisite = {
+	# 		focus = tbh_nf_mister_entertainment
+	# 	}
+
+	# 	bypass = {
+	# 		NOT = { country_exists  = TUB }
+	# 	}
+
+	# 	available = {
+	# 	}
+
+	# 	completion_reward = {
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+	# 		}
+	# 		add_stability = 0.05
+	# 		add_war_support = 0.1
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+	# 		}
+	# 	}
+	# }
+
 	focus = {
-		id = tbh_nf_a_mutually_benefitial_deal
-		icon = GFX_goal_generic_radio
+		id = tbh_nf_assasin_city_rumble
+		icon = GFX_goal_TBH_assasinate_assasains
 		cost = 30
 		x = 0
 		y = 1
@@ -1440,59 +1523,29 @@ focus_tree = {
 			focus = tbh_nf_mister_entertainment
 		}
 
-		bypass = {
-			NOT = { country_exists  = TUB }
-		}
-
 		available = {
-		}
-
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			OR = {
+				LNS = { has_government = people }
+				has_completed_focus = tbh_nf_the_alamo_was_right
 			}
-			add_stability = 0.05
-			add_war_support = 0.1
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
-			}
-		}
-	}
-
-	focus = {
-		id = tbh_nf_assasin_city_rumble
-		icon = GFX_goal_TBH_assasinate_assasains
-		cost = 30
-		x = 0
-		y = 1
-
-		relative_position_id = tbh_nf_a_mutually_benefitial_deal
-
-		prerequisite = {
-			focus = tbh_nf_a_mutually_benefitial_deal
-		}
-
-		available = {
 			ai_has_no_other_wars_or_wargoals = yes
 		}
 		will_lead_to_war_with = ASS
 		completion_reward = {
 			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
-			}
-			if = {
-				limit = { TUB = { is_subject_of = TBH } }
-				TUB = { country_event = { id = nf_tbh.7 } }
-			}
-			else = {
-				ASS = {
-					ROOT = {
-						grant_wargoals_on_core_states_of_prev = yes
+				limit = { LNS = { has_completed_focus = lns_victory_of_the_greater_good } }
+				country_event = { id = nf_tbh.7 }
+				else = {
+					ASS = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1504,135 +1557,133 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = tbh_nf_of_gators_and_maws
-		icon = GFX_goal_TBH_gatormaws
-		cost = 30
-		x = 2
-		y = 1
+	# focus = {
+	# 	id = tbh_nf_of_gators_and_maws
+	# 	icon = GFX_goal_TBH_gatormaws
+	# 	cost = 30
+	# 	x = 2
+	# 	y = 1
+	# 	relative_position_id = tbh_nf_mister_entertainment
+	# 	prerequisite = {
+	# 		focus = tbh_nf_mister_entertainment
+	# 	}
 
-		relative_position_id = tbh_nf_a_mutually_benefitial_deal
+	# 	available = {
+	# 		has_completed_focus = tbh_nf_the_question_of_carthage
+	# 		ai_has_no_other_wars_or_wargoals = yes
+	# 	}
+	# 	bypass = {
+	# 		OR = {
+	# 			TPM = {
+	# 				GAM = {
+	# 				all_core_land_owned_by_prev_sphere = yes
+	# 				}
+	# 			}
+	# 		GAM = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 				}
+	# 		}
+	# 	}
+	# 	will_lead_to_war_with = GAM
+	# 	completion_reward = {
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+	# 		}
+	# 		GAM = {
+	# 			ROOT = {
+	# 				grant_wargoals_on_core_states_of_prev = yes
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+	# 		}
+	# 	}
 
-		prerequisite = {
-			focus = tbh_nf_a_mutually_benefitial_deal
-		}
+	# 	ai_will_do = {
+	# 		base = 2
+	# 		modifier = {
+	# 			factor = 0
+	# 			NOT = { has_completed_focus = tbh_nf_desperado_no_more }
+	# 		}
+	# 	}
+	# }
 
-		available = {
-			has_completed_focus = tbh_nf_the_question_of_carthage
-			ai_has_no_other_wars_or_wargoals = yes
-		}
-		bypass = {
-			OR = {
-				TPM = {
-					GAM = {
-					all_core_land_owned_by_prev_sphere = yes
-					}
-				}
-			GAM = {
-				all_core_land_owned_by_prev_sphere = yes
-					}
-			}
-		}
-		will_lead_to_war_with = GAM
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
-			}
-			GAM = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev = yes
-				}
-			}
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
-			}
-		}
+	# focus = {
+	# 	id = tbh_nf_taming_the_jungle
+	# 	icon = GFX_goal_TBH_taming_the_jungle
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 1
 
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 0
-				NOT = { has_completed_focus = tbh_nf_desperado_no_more }
-			}
-		}
-	}
+	# 	relative_position_id = tbh_nf_of_gators_and_maws
 
-	focus = {
-		id = tbh_nf_taming_the_jungle
-		icon = GFX_goal_TBH_taming_the_jungle
-		cost = 30
-		x = 0
-		y = 1
+	# 	prerequisite = {
+	# 		focus = tbh_nf_of_gators_and_maws
+	# 	}
 
-		relative_position_id = tbh_nf_of_gators_and_maws
+	# 	available = {
+	# 		GAM = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 		}
+	# 	}
 
-		prerequisite = {
-			focus = tbh_nf_of_gators_and_maws
-		}
+	# 	bypass = {
+	# 		TPM = {
+	# 			GAM = {
+	# 			all_core_land_owned_by_prev_sphere = yes
+	# 			}
+	# 		}
+	# 	}
 
-		available = {
-			GAM = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-
-		bypass = {
-			TPM = {
-				GAM = {
-				all_core_land_owned_by_prev_sphere = yes
-				}
-			}
-		}
-
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
-			}
-			#every_state = {
-			#	limit = {
-			#		is_core_of = GAM
-			#	}
-			#	add_core_of = ROOT
-			#}
-			add_resource = {
-				type = metal
-				amount = 8
-				state = 874
-			}
-			add_resource = {
-				type = water
-				amount = 8
-				state = 874
-			}
-			add_resource = {
-				type = energy
-				amount = 4
-				state = 874
-			}
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
-			}
-		}
-		ai_will_do = {
-			factor = 1.5
-		}
-	}
+	# 	completion_reward = {
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+	# 		}
+	# 		#every_state = {
+	# 		#	limit = {
+	# 		#		is_core_of = GAM
+	# 		#	}
+	# 		#	add_core_of = ROOT
+	# 		#}
+	# 		add_resource = {
+	# 			type = metal
+	# 			amount = 8
+	# 			state = 874
+	# 		}
+	# 		add_resource = {
+	# 			type = water
+	# 			amount = 8
+	# 			state = 874
+	# 		}
+	# 		add_resource = {
+	# 			type = energy
+	# 			amount = 4
+	# 			state = 874
+	# 		}
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+	# 		}
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 1.5
+	# 	}
+	# }
 
 	focus = {
 		id = tbh_nf_desperado_no_more
 		icon = GFX_goal_TBH_desperados_no_more
 		cost = 30
-		x = -2
+		x = -1
 		y = 1
 
-		relative_position_id = tbh_nf_a_mutually_benefitial_deal
+		relative_position_id = tbh_nf_assasin_city_rumble
 
 		prerequisite = {
-			focus = tbh_nf_a_mutually_benefitial_deal
+			focus = tbh_nf_assasin_city_rumble
 		}
 
 		available = {
@@ -1674,7 +1725,7 @@ focus_tree = {
 		id = tbh_nf_desperado_for_law
 		icon = GFX_goal_TBH_desperados_for_law
 		cost = 30
-		x = 0
+		x = -1
 		y = 1
 
 		relative_position_id = tbh_nf_desperado_no_more
@@ -1694,12 +1745,24 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
 			}
-			#every_state = {
-			#	limit = {
-			#		is_core_of = DSP
-			#	}
-			#	add_core_of = ROOT
-			#}
+			if = {
+				limit = { LNS = { has_completed_focus = lns_victory_of_the_greater_good } }
+				every_state = {
+					limit = {
+						is_core_of = DSP
+						is_owned_by = TBH
+					}
+					transfer_state_to = ASS
+				}
+				871 = {
+					add_claim_by = ASS
+					add_core_of = ASS
+				}
+				872 = {
+					add_claim_by = ASS
+					add_core_of = ASS
+				}
+			}
 			add_resource = {
 				type = metal
 				amount = 8
@@ -1715,6 +1778,7 @@ focus_tree = {
 				amount = 4
 				state = 871
 			}
+			add_ideas = tbh_highwaymen
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
@@ -1732,10 +1796,13 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		relative_position_id = tbh_nf_a_mutually_benefitial_deal
+		relative_position_id = tbh_nf_assasin_city_rumble
 
 		prerequisite = {
-			focus = tbh_nf_a_mutually_benefitial_deal
+			focus = tbh_nf_houston
+		}
+		prerequisite = {
+			focus = tbh_nf_desperado_no_more
 		}
 
 		available = {
@@ -1776,32 +1843,38 @@ focus_tree = {
 		id = tbh_nf_approach_the_patrolmen
 		icon = GFX_goal_TBH_approach_patrolmen
 		cost = 30
-		x = -1
-		y = 1
-
-		relative_position_id = tbh_nf_houston
-
+		x = 3
+		y = 2
+		relative_position_id = tbh_nf_mister_entertainment
 		prerequisite = {
-			focus = tbh_nf_lincoln
-			focus = tbh_nf_houston
+			focus = tbh_nf_mister_entertainment
 		}
 
 		available = {
-			ai_has_no_other_wars_or_wargoals = yes
-			TPM = {
-				OR = {
-					people < 0.10
-					ruler > 0.60
-					NOT = {
-						has_government = people
+			OR = {
+				LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+				has_completed_focus = tbh_nf_the_alamo_was_right
+			}
+			OR = {
+				has_completed_focus = tbh_nf_the_question_of_carthage
+				AND = {
+					TPM = {
+						GAM = {	all_core_land_owned_by_prev_sphere = yes }
 					}
+					has_completed_focus = tbh_nf_desperado_for_law
+				}
+				AND = {
+					GAM = {
+						TPM = {	all_core_land_owned_by_prev_sphere = yes }
+					}
+					has_completed_focus = tbh_nf_desperado_for_law
 				}
 			}
+			ai_has_no_other_wars_or_wargoals = yes
 		}
 
 		bypass = {
 			OR = {
-				NOT = { country_exists  = TPM }
 				TPM = {	all_core_land_owned_by_prev_sphere = yes }
 				has_country_flag = tbh_accepted_offer
 			}
@@ -1809,24 +1882,15 @@ focus_tree = {
 		will_lead_to_war_with = TPM
 		completion_reward = {
 			if = {
-				limit = {
-				OR = {
-				TBH = {
-					has_country_flag = tbh_denied_offer
-				}
+				limit = { NOT = { country_exists = TPM } }
 				TPM = {
-					has_country_flag = tpm_WAR_WAR_WAR
-					}
-				}
-			}
-			TPM = {
 					ROOT = {
 						grant_wargoals_on_core_states_of_prev = yes
 					}
 				}
-			}
-			else = {
-				country_event = { id = nf_tbh.9 }
+				else = {
+					country_event = { id = nf_tbh.9 }
+				}
 			}
 		}
 		ai_will_do = {
@@ -1840,24 +1904,25 @@ focus_tree = {
 		icon = GFX_goal_TBH_flag_gear
 		cost = 30
 		x = 0
-		y = 2
+		y = 1
 
-		relative_position_id = tbh_nf_the_question_of_carthage
-
+		relative_position_id = tbh_nf_secure_carthage
+		
 		prerequisite = {
-			focus = tbh_nf_desperado_for_law
+			focus = tbh_nf_secure_carthage
 		}
 		prerequisite = {
-			focus = tbh_nf_taming_the_jungle
+			focus = tbh_nf_secure_north
 		}
 		prerequisite = {
-			focus = tbh_nf_the_question_of_carthage
-		}
-		prerequisite = {
-			focus = tbh_nf_assasin_city_rumble
+			focus = tbh_nf_secure_coast
 		}
 
 		completion_reward = {
+			OR = {
+				LNS = { has_government = people }
+				has_completed_focus = tbh_nf_the_alamo_was_right
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_consolidate_conquests entered"
@@ -1919,7 +1984,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_form_texas_yehaw
 		icon = GFX_goal_uoa_texas
-		cost = 60
+		cost = 15
 		x = 0
 		y = 13
 
@@ -1946,7 +2011,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
-
 		available = {
 			has_war = no
 			custom_trigger_tooltip = {
@@ -1985,6 +2049,10 @@ focus_tree = {
 				}
 				always = no
 			}
+			if = {
+				limit = { LNS = { has_completed_focus = lns_victory_for_the_greater_good } }
+				has_completed_focus = tbh_nf_restore_the_lone_star
+			}
 		}
 		completion_reward = {
 			if = {
@@ -2004,8 +2072,8 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_broken_apart
 		icon = GFX_goal_TBH_two_coins
-		cost = 40
-		x = -5
+		cost = 30
+		x = 3
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2037,15 +2105,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_the_hard_road
 		icon = GFX_goal_generic_dark_paladins
-		cost = 40
-		x = 0
+		cost = 30
+		x = 1
 		y = 1
 
 		relative_position_id = tbh_nf_broken_apart
 
 		mutually_exclusive = {
 			focus = tbh_nf_the_long_road
-			focus = tbh_nf_the_alamo_was_right
+			# focus = tbh_nf_the_alamo_was_right
 		}
 
 		continue_if_invalid = yes
@@ -2061,6 +2129,7 @@ focus_tree = {
 		}
 
 		available = {
+			LNS = { has_government = people }
 			OR = {
 				has_army_experience > 199
 				AND = {
@@ -2091,15 +2160,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_the_long_road
 		icon = GFX_goal_generic_f76_player3
-		cost = 40
-		x = -2
+		cost = 30
+		x = -1
 		y = 1
 
 		relative_position_id = tbh_nf_broken_apart
 
 		mutually_exclusive = {
 			focus = tbh_nf_the_hard_road
-			focus = tbh_nf_the_alamo_was_right
+			# focus = tbh_nf_the_alamo_was_right
 		}
 
 		continue_if_invalid = yes
@@ -2115,6 +2184,7 @@ focus_tree = {
 		cancelable = no
 
 		available = {
+			LNS = { has_government = people }
 			OR = {
 				has_army_experience > 199
 				AND = {
@@ -2145,20 +2215,20 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_the_alamo_was_right
 		icon = GFX_goal_focus_alamo_ach
-		cost = 40
-		x = 2
+		cost = 30
+		x = 0
 		y = 1
 
-		relative_position_id = tbh_nf_broken_apart
+		relative_position_id = tbh_nf_texas_old_world_blues
 
 		prerequisite = {
-			focus = tbh_nf_broken_apart
+			focus = tbh_nf_texas_old_world_blues
 		}
 
-		mutually_exclusive = {
-			focus = tbh_nf_the_hard_road
-			focus = tbh_nf_the_long_road
-		}
+		# mutually_exclusive = {
+		# 	focus = tbh_nf_the_hard_road
+		# 	focus = tbh_nf_the_long_road
+		# }
 
 		available = {
 			has_completed_focus = tbh_nf_we_have_been_betrayed
@@ -2197,7 +2267,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_combat_our_deficits
 		icon = GFX_goal_TBH_T51
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 
@@ -2206,7 +2276,7 @@ focus_tree = {
 		prerequisite = {
 			focus = tbh_nf_the_hard_road
 			focus = tbh_nf_the_long_road
-			focus = tbh_nf_the_alamo_was_right
+			# focus = tbh_nf_the_alamo_was_right
 		}
 
 		available = {
@@ -2231,7 +2301,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_all_systems_ready
 		icon = GFX_goal_TBH_flag_gear
-		cost = 40
+		cost = 30
 		x = 0
 		y = 1
 
@@ -2302,8 +2372,8 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_our_fatman
 		icon = GFX_goal_generic_nuka_break_nuke
-		cost = 40
-		x = 5
+		cost = 30
+		x = -3
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2333,8 +2403,8 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_things_that_go_boom
 		icon = GFX_goal_generic_grenade_launcher
-		cost = 40
-		x = -2
+		cost = 30
+		x = -1
 		y = 1
 
 		relative_position_id = tbh_nf_our_fatman
@@ -2345,6 +2415,7 @@ focus_tree = {
 
 		mutually_exclusive = {
 			focus = tbh_nf_things_that_spit_lead
+			# focus = tbh_nf_treads_of_destruction
 		}
 
 		available = {
@@ -2378,8 +2449,8 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_things_that_spit_lead
 		icon = GFX_goal_generic_minigun
-		cost = 40
-		x = 2
+		cost = 30
+		x = 1
 		y = 1
 
 		relative_position_id = tbh_nf_our_fatman
@@ -2390,6 +2461,7 @@ focus_tree = {
 
 		mutually_exclusive = {
 			focus = tbh_nf_things_that_go_boom
+			# focus = tbh_nf_treads_of_destruction
 		}
 
 		available = {
@@ -2419,11 +2491,57 @@ focus_tree = {
 			}
 		}
 	}
+	#TEXAS CHANGES
+	# focus = {
+	# 	id = tbh_nf_treads_of_destruction
+	# 	icon = GFX_goal_generic_tank_2
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 1
 
+	# 	relative_position_id = tbh_nf_our_fatman
+
+	# 	prerequisite = {
+	# 		focus = tbh_nf_our_fatman
+	# 	}
+
+	# 	mutually_exclusive = {
+	# 		focus = tbh_nf_things_that_go_boom
+	# 		focus = tbh_nf_things_that_spit_lead
+	# 	}
+
+	# 	available = {
+	# 	}
+
+	# 	completion_reward = {
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead entered"
+	# 		}
+	# 		if = {
+	# 			limit = { has_idea = tbh_military_heritage_bb }
+	# 			swap_ideas = {
+	# 				remove_idea = tbh_military_heritage_bb
+	# 				add_idea = tbh_military_heritage_bbtank
+	# 			}
+	# 			else = {
+	# 				swap_ideas = {
+	# 					remove_idea = tbh_military_heritage_aa
+	# 					add_idea = tbh_military_heritage_aatank
+	# 				}
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = { has_global_flag = debug_logs }
+	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead exited"
+	# 		}
+	# 	}
+	# }
+	#NO LONGER TEXAS CHANGES
 	focus = {
 		id = tbh_nf_things_that_protect
 		icon = GFX_goal_generic_power_armor_blue
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 
@@ -2432,6 +2550,7 @@ focus_tree = {
 		prerequisite = {
 			focus = tbh_nf_things_that_spit_lead
 			focus = tbh_nf_things_that_go_boom
+			# focus = tbh_nf_treads_of_destruction
 		}
 
 		available = {
@@ -2458,7 +2577,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_things_that_make
 		icon = GFX_goal_generic_workshop
-		cost = 40
+		cost = 30
 		x = 0
 		y = 1
 
@@ -2550,7 +2669,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_occupation_theory
 		icon = GFX_goal_generic_pipe_revolver
-		cost = 40
+		cost = 30
 		x = -1
 		y = 1
 
@@ -2584,7 +2703,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_occupation_theory_2
 		icon = GFX_goal_revolver
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 
@@ -2619,7 +2738,7 @@ focus_tree = {
 		id = tbh_nf_mobilization
 		icon = GFX_goal_TBH_conscription_4
 		cost = 30
-		x = -4
+		x = -6
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -2705,7 +2824,7 @@ focus_tree = {
 		id = tbh_nf_mobilization_3
 		icon = GFX_goal_TBH_conscription_2
 		cost = 30
-		x = 4
+		x = 6
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -2790,28 +2909,302 @@ focus_tree = {
 	#TEXAS CHANGES
 	focus = { #HRO
 		id = tbh_nf_houston
-		icon = GFX_goal_TBH_conscription_1
+		icon = EDN_the_houston_conference
 		cost = 30
 		x = 1
 		y = 1
-		relative_position_id = tbh_nf_austin_in_union
+
+		relative_position_id = tbh_nf_assasin_city_rumble
+
 		prerequisite = {
-			focus = tbh_nf_austin_in_union
-			focus = tbh_nf_consolidate_conquests
+			focus = tbh_nf_assasin_city_rumble
 		}
 		will_lead_to_war_with = HRO
 		available = {
 			country_exists = HRO
-			NOT = { country_exists = ACH }
+			HRO = {
+				has_war = no
+			}
+			OR = {
+				879 = { is_owned_by = CAR } 
+				NOT = { country_exists = CAR }
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+			if = {
+				limit = { LNS = { has_completed_focus = lns_victory_of_the_greater_good } }
+				HRO = {
+					country_event = nf_tbh.101
+				}
+				else = {
+					HRO = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = tbh_nf_houston_two
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_houston
+
+		prerequisite = {
+			focus = tbh_nf_houston
+		}
+
+		available = {
+			HRO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			add_resource = {
+				type = advanced
+				amount = 8
+				state = 880
+			}
+			add_resource = {
+				type = composites
+				amount = 8
+				state = 880
+			}
+			add_resource = {
+				type = circuitry
+				amount = 8
+				state = 880
+			}
+			if = {
+				limit = { 
+					has_tech = resource_generator_circuitry_tech_1
+					NOT = { has_tech = resource_generator_circuitry_tech_2 }
+				}
+				set_technology = {
+					resource_generator_circuitry_tech_2 = 1
+				}
+				else_if = {
+					limit = { 
+						NOT = { has_tech = resource_generator_circuitry_tech_1 }
+					}
+					set_technology = {
+						resource_generator_circuitry_tech_1 = 1
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+	focus = { #TLL
+		id = tbh_nf_last_lodge
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -3
+		y = 2
+		relative_position_id = tbh_nf_mister_entertainment
+		prerequisite = {
+			focus = tbh_nf_mister_entertainment
+		}
+		will_lead_to_war_with = TLL
+		available = {
+			OR = {
+				LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+				has_completed_focus = tbh_nf_the_alamo_was_right
+			}
+			country_exists = TLL
 			ai_has_no_other_wars_or_wargoals = yes
 		}
 		bypass = {
-			NOT = { country_exists = HRO }
+			NOT = { country_exists = TLL }
 		}
 		completion_reward = {
-			HRO = {
-				country_event = nf_tbh.101
+			if = {
+				limit = { LNS = { has_completed_focus = lns_victory_of_the_greater_good } }
+				TLL = {
+					country_event = nf_tbh.113
+				}
+				else = {
+					TLL = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
 			}
+		}
+	}
+	focus = {
+		id = tbh_nf_cypher_warband
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_last_lodge
+		prerequisite = {
+			focus = tbh_nf_last_lodge
+		}
+		will_lead_to_war_with = CWB
+		available = {
+			OR = {
+				CWB = {
+					TLL = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				TLL = {
+					is_in_faction_with = TBH
+				}
+				has_completed_focus = tbh_nf_the_alamo_was_right
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			CWB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CWB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tbh_nf_secure_north
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_cypher_warband
+
+		prerequisite = {
+			focus = tbh_nf_cypher_warband
+		}
+		prerequisite = {
+			focus = tbh_nf_desperado_for_law
+		}
+		prerequisite = {
+			focus = tbh_nf_the_question_of_carthage
+		}
+		prerequisite = {
+			focus = tbh_nf_houston_two
+		}
+		prerequisite = {
+			focus = tbh_nf_bayou
+		}
+
+		available = {
+			CWB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TLL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			if = {
+				limit = { LNS = { has_completed_focus = lns_victory_of_the_greater_good } }
+				every_state = {
+					limit = {
+						is_owned_by = TBH
+						is_core_of = CWB
+						is_core_of = TLL
+					}
+					transfer_state_to = TLL
+				}
+				1216 = {
+					add_claim_by = TPM
+					transfer_state_to = TPM
+				}
+				1162 = {
+					add_claim_by = TPM
+					transfer_state_to = TPM
+				}
+			}
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 880
+			}
+			add_resource = {
+				type = water
+				amount = 8
+				state = 880
+			}
+			add_resource = {
+				type = energy
+				amount = 4
+				state = 880
+			}
+			if = {
+				limit = {
+					has_tech = communication_engineering_3
+					NOT = { has_tech = communication_engineering_4 }
+				}
+				set_technology = { communication_engineering_4 = 1 }
+				else_if = {
+					limit = {
+						has_tech = communication_engineering_2
+						NOT = { has_tech = communication_engineering_3 }
+					}
+					set_technology = {
+						communication_engineering_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = communication_engineering_1
+						NOT = { has_tech = communication_engineering_2 }
+					}
+					set_technology = {
+						communication_engineering_2 = 1
+						communication_engineering_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_tech = communication_engineering_1 }
+					}
+					set_technology = {
+						communication_engineering_1 = 1
+						communication_engineering_2 = 1
+						communication_engineering_3 = 1
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {
+			factor = 1.5
 		}
 	}
 	# focus = { #TLP
@@ -2840,9 +3233,9 @@ focus_tree = {
 	# }
 	focus = { #BAM
 		id = tbh_nf_bayou
-		icon = GFX_goal_TBH_conscription_1
+		icon = GFX_goal_uoa_texas
 		cost = 30
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = tbh_nf_approach_the_patrolmen
 		will_lead_to_war_with = BAM
@@ -2851,11 +3244,12 @@ focus_tree = {
 		}
 		available = {
 			country_exists = BAM
-			NOT = { country_exists = TPM }
 			ai_has_no_other_wars_or_wargoals = yes
 		}
 		bypass = {
-			NOT = { country_exists = BAM }
+			BAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
 		}
 		completion_reward = {
 			BAM = {
@@ -2865,16 +3259,149 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = {
+		id = tbh_nf_secure_coast
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = tbh_nf_bayou
+
+		prerequisite = {
+			focus = tbh_nf_bayou
+		}
+		prerequisite = {
+			focus = tbh_nf_houston_two
+		}
+		prerequisite = {
+			focus = tbh_nf_the_question_of_carthage
+		}
+		prerequisite = {
+			focus = tbh_nf_desperado_for_law
+		}
+		prerequisite = {
+			focus = tbh_nf_cypher_warband
+		}
+
+		available = {
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		bypass = {
+			TPM = {
+				GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			880 = {
+				add_extra_state_shared_building_slots = 3
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = dockyard level = 2 } }
+				}
+			}
+			882 = {
+				add_extra_state_shared_building_slots = 2
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = dockyard level = 2 } }
+				}
+			}
+			879 = {
+				add_extra_state_shared_building_slots = 2
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = dockyard level = 1 } }
+				}
+			}
+			870 = {
+				add_extra_state_shared_building_slots = 3
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = { add_offsite_building = { type = dockyard level = 2 } }
+				}
+			}
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 874
+			}
+			add_resource = {
+				type = water
+				amount = 8
+				state = 874
+			}
+			add_resource = {
+				type = energy
+				amount = 4
+				state = 874
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+
 	focus = { #LINCOLN
 		id = tbh_nf_lincoln
-		icon = GFX_goal_TBH_conscription_1
-		cost = 30
+		icon = GFX_goal_uoa_texas
+		cost = 15
 		x = -2
-		y = 0
-		relative_position_id = tbh_nf_houston
+		y = 1
+		relative_position_id = tbh_nf_listening_posts
 		prerequisite = {
-			focus = tbh_nf_austin_in_union
-			focus = tbh_nf_consolidate_conquests
+			focus = tbh_nf_listening_posts
 		}
 		if = {
 			limit = { CBN = { exists = yes } }
@@ -2885,11 +3412,21 @@ focus_tree = {
 			will_lead_to_war_with = LOS
 		}
 		available = {
-			any_country = {
-				has_cosmetic_tag = LIN_lincoln_league
-				OR = {
-					tag = LOS
-					tag = CBN
+			LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+			OR = {
+				AND = {
+					country_exists = CBN
+					NOT = { country_exists = LOS }
+					CBN = {
+						owns_state = 932
+					}
+				}
+				AND = {
+					country_exists = LOS
+					NOT = { country_exists = CBN }
+					LOS = {
+						owns_state = 932
+					}
 				}
 			}
 			NOT = { country_exists = SHA }
@@ -2908,19 +3445,166 @@ focus_tree = {
 					country_event = nf_tbh.104
 				}
 			}
-			if = {
-				limit = { LOS = { exists = yes } }
+			else = {
 				LOS = {
 					country_event = nf_tbh.104
 				}
 			}
 		}
 	}
+	focus = { #EDEN
+		id = tbh_nf_eden
+		icon = GFX_goal_uoa_texas
+		cost = 15
+		x = 2
+		y = 1
+		relative_position_id = tbh_nf_listening_posts
+		prerequisite = {
+			focus = tbh_nf_listening_posts
+		}
+		will_lead_to_war_with = EDN
+		available = {
+			LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+			country_exists = EDN
+			OR = {
+				country_exists = CBN
+				country_exists = LOS
+			}
+			NOT = { country_exists = SHA }
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			NOT = { country_exists = EDN }
+		}
+		completion_reward = {
+			EDN = {
+				country_event = nf_tbh.110
+			}
+		}
+	}
+	focus = {
+		id = tbh_nf_secure_carthage
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = tbh_nf_the_question_of_carthage
+
+		prerequisite = {
+			focus = tbh_nf_cypher_warband
+		}
+		prerequisite = {
+			focus = tbh_nf_desperado_for_law
+		}
+		prerequisite = {
+			focus = tbh_nf_the_question_of_carthage
+		}
+		prerequisite = {
+			focus = tbh_nf_houston_two
+		}
+		prerequisite = {
+			focus = tbh_nf_bayou
+		}
+
+		available = {
+			CAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
+			}
+			if = {
+				limit = { LNS = { has_completed_focus = lns_victory_of_the_greater_good } }
+				every_state = {
+					limit = {
+						is_owned_by = TBH
+						is_core_of = HRO
+					}
+					transfer_state_to = HRO
+				}
+			}
+			add_resource = {
+				type = energy
+				amount = 10
+				state = 884
+			}
+			add_resource = {
+				type = energy
+				amount = 5
+				state = 885
+			}
+			add_resource = {
+				type = energy
+				amount = 5
+				state = 897
+			}
+			if = {
+				limit = {
+					has_tech = resource_generator_power_tech_3
+					NOT = { has_tech = resource_generator_power_tech_4 }
+				}
+				set_technology = { resource_generator_power_tech_4 = 1 }
+				else_if = {
+					limit = {
+						has_tech = resource_generator_tech_2
+						NOT = { has_tech = resource_generator_tech_3 }
+					}
+					set_technology = {
+						resource_generator_tech_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = resource_generator_tech_1
+						NOT = { has_tech = resource_generator_tech_2 }
+					}
+					set_technology = {
+						resource_generator_tech_2 = 1
+						resource_generator_tech_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = resource_generator_tech
+						NOT = { has_tech = resource_generator_tech_1 }
+					}
+					set_technology = {
+						resource_generator_tech_1 = 1
+						resource_generator_tech_2 = 1
+						resource_generator_tech_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_tech = resource_generator_tech }
+					}
+					set_technology = {
+						resource_generator_tech = 1
+						resource_generator_tech_1 = 1
+						resource_generator_tech_2 = 1
+						resource_generator_tech_3 = 1
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
+			}
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
 	focus = { #austin is at war
 		id = tbh_nf_austin_at_war
-		icon = GFX_goal_TBH_conscription_1
+		icon = GFX_goal_attis_army
 		cost = 15
-		x = 17
+		x = 18
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -2949,10 +3633,10 @@ focus_tree = {
 	}
 	focus = { #SUPPORT AUSTIN
 		id = tbh_nf_austin_support
-		icon = GFX_goal_TBH_conscription_1
+		icon = GFX_goal_uoa_medal
 		cost = 15
 		x = 0
-		y = 2
+		y = 1
 
 		relative_position_id = tbh_nf_austin_at_war
 
@@ -2982,9 +3666,9 @@ focus_tree = {
 	}
 	focus = { #AUSTIN IS LOST
 		id = tbh_nf_austin_lost
-		icon = GFX_goal_TBH_conscription_1
+		icon = GFX_goal_MOJ_technology_raids
 		cost = 15
-		x = -1
+		x = 1
 		y = 2
 
 		relative_position_id = tbh_nf_austin_support
@@ -3031,9 +3715,9 @@ focus_tree = {
 	}
 	focus = { #AUSTIN WON
 		id = tbh_nf_austin_won
-		icon = GFX_goal_TBH_conscription_1
+		icon = GFX_goal_LNS_rising_star
 		cost = 15
-		x = 1
+		x = -1
 		y = 2
 
 		relative_position_id = tbh_nf_austin_support
@@ -3055,10 +3739,10 @@ focus_tree = {
 	}
 	focus = { #austin in the union
 		id = tbh_nf_austin_in_union
-		icon = GFX_goal_TBH_conscription_1
+		icon = GFX_goal_uoa_election_poster
 		cost = 15
-		x = 1
-		y = 2
+		x = -1
+		y = 3
 
 		relative_position_id = tbh_nf_austin_lost
 		prerequisite = {

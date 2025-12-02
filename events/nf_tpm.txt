@@ -1,0 +1,2256 @@
+﻿add_namespace = nf_tpm
+add_namespace = nf_tpm_act1
+add_namespace = nf_tpm_act2
+add_namespace = nf_tpm_act3
+add_namespace = nf_tpm_misc_events
+add_namespace = nf_rebublics_big_ask
+add_namespace = nf_tough_crowd
+add_namespace = nf_tbh_tpm_events
+add_namespace =	nf_tpm_events_continued #used for the new segmented events
+
+country_event = {
+	id = nf_tpm.1
+	title = nf_tpm.1.t
+	desc = nf_tpm.1.d
+	picture = GFX_event_vault_generic_4
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm.1.a
+		custom_effect_tooltip = tpm_best_friend
+		country_event = nf_tpm_events_continued.1
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.1
+	title = nf_tpm_events_continued.1.t
+	desc = nf_tpm_events_continued.1.d
+	picture = GFX_event_vault_generic_4
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.1.a
+			875 = {
+				set_temp_variable = { pop_add = -1000 }
+				add_state_population_no_state_name = yes
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+		add_war_support = 0.1
+	}
+	option = {
+		name = nf_tpm_events_continued.1.b
+		875 = {
+				set_temp_variable = { pop_add = -750 }
+				add_state_population_no_state_name = yes
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		add_stability = 0.1
+	}
+	option = {
+		name = nf_tpm_events_continued.1.c
+			875 = {
+				set_temp_variable = { pop_add = -2000 }
+				add_state_population_no_state_name = yes
+				remove_building = {
+					type = arms_factory
+					level = 2
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+		}
+		add_war_support = 0.1
+		add_stability = 0.1
+		add_political_power = 100
+	}
+}
+country_event = {
+	id = nf_tpm.2
+	title = nf_tpm.2.t
+	desc = nf_tpm.2.d
+	picture = GFX_event_generic_ruins_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm.2.a
+		custom_effect_tooltip = tpm_franklin_dash
+		country_event = nf_tpm_events_continued.2
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.2
+	title = nf_tpm_events_continued.2.t
+	desc = nf_tpm_events_continued.2.d
+	picture = GFX_event_generic_ruins_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.2.a
+			876 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			875 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			875 = {
+				add_extra_state_shared_building_slots = 4
+			}
+	}
+	option = {
+		name = nf_tpm_events_continued.2.b
+
+		876 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = nf_tpm_events_continued.2.c
+		876 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+			type = infrastructure
+			level = 2
+			instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_tpm.3
+	title = nf_tpm.3.t
+	desc = nf_tpm.3.d
+	picture = GFX_event_sub_generic_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm.3.a
+		custom_effect_tooltip = tpm_cassette
+		country_event = nf_tpm_events_continued.3
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.3
+	title = nf_tpm_events_continued.3.t
+	desc = nf_tpm_events_continued.3.d
+	picture = GFX_event_sub_generic_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.3.a
+		add_ideas = tpm_rest_stop
+		add_manpower = -25
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 250
+			producer = TPM
+			}
+	}
+	option = {
+		name = nf_tpm_events_continued.3.b
+		add_ideas = tpm_history
+		add_manpower = -250
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 100
+			producer = TPM
+			}
+	}
+	option = {
+		name = nf_tpm_events_continued.3.c
+		add_ideas = tpm_legendary_lawman
+		add_manpower = -500
+	}
+}
+country_event = {
+	id = nf_tpm.4
+	title = nf_tpm.4.t
+	desc = nf_tpm.4.d
+	picture = GFX_event_mot_ranger_sequoia
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm.4.a
+		custom_effect_tooltip = tpm_THETOAST
+		country_event = nf_tpm_events_continued.4
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.4
+	title = nf_tpm_events_continued.4.t
+	desc = nf_tpm_events_continued.4.d
+	picture = GFX_event_mot_ranger_sequoia
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.4.a
+		add_ideas = tpm_mild_corruption
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.4.b
+		add_ideas = tpm_bad_corruption
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.4.c
+		add_ideas = tpm_all_corrupted
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+	}
+}
+###act1
+#reinforce legends
+country_event = {
+	id = nf_tpm_act1.1
+	title = nf_tpm_act1.1.t
+	desc = nf_tpm_act1.1.d
+	picture = GFX_event_sub_generic_sailship
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.1.a
+		country_event = nf_tpm_events_continued.5
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.5
+	title = nf_tpm_events_continued.5.t
+	desc = nf_tpm_events_continued.5.d
+	picture = GFX_event_sub_generic_sailship
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.5.a
+		add_political_power = 100
+	}
+	option = {
+		name = nf_tpm_events_continued.5.b
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = cat_land_doctrine
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_act1.2
+	title = nf_tpm_act1.2.t
+	desc = nf_tpm_act1.2.d
+	picture = GFX_event_sub_generic_swamo
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.2.a
+		custom_effect_tooltip = tpm_yummy_smore
+		country_event = nf_tpm_events_continued.6
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.6
+	title = nf_tpm_events_continued.6.t
+	desc = nf_tpm_events_continued.6.d
+	picture = GFX_event_sub_generic_swamo
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.6.a
+			navy_experience = 25
+			army_experience = 25
+	}
+	option = {
+		name = nf_tpm_events_continued.6.b
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+			}
+	}
+}
+country_event = {
+	id = nf_tpm_act1.3
+	title = nf_tpm_act1.3.t
+	desc = nf_tpm_act1.3.d
+	picture = GFX_event_sub_generic_train_yard
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.3.a
+		custom_effect_tooltip = tpm_callahan_stargazing
+		country_event = nf_tpm_events_continued.7
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.7
+	title = nf_tpm_events_continued.7.t
+	desc = nf_tpm_events_continued.7.d
+	picture = GFX_event_sub_generic_train_yard
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.7.a
+		add_ideas = tpm_civility
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.7.b
+		add_ideas = tpm_something_bigger
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+	}
+}
+country_event = {
+	id = nf_tpm_act1.4
+	title = nf_tpm_act1.4.t
+	desc = nf_tpm_act1.4.d
+	picture = GFX_event_sub_generic_autumn
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.4.a
+		custom_effect_tooltip = tpm_solem_recognition
+		country_event = nf_tpm_events_continued.8
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.8
+	title = nf_tpm_events_continued.8.t
+	desc = nf_tpm_events_continued.8.d
+	picture = GFX_event_sub_generic_autumn
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.8.a
+		add_manpower = 100
+		add_war_support = 0.1
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.8.b
+		add_manpower = 100
+		add_stability = 0.1
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+	}
+}
+#best policy
+country_event = {
+	id = nf_tpm_act1.5
+	title = nf_tpm_act1.5.t
+	desc = nf_tpm_act1.5.d
+	picture = GFX_event_clk_vault_office
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.5.a
+		custom_effect_tooltip = tpm_fixing
+		country_event = nf_tpm_events_continued.9
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.9
+	title = nf_tpm_events_continued.9.t
+	desc = nf_tpm_events_continued.9.d
+	picture = GFX_event_clk_vault_office
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.9.a
+		add_political_power = -10
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = infantry_tech_category
+			}
+	}
+	option = {
+		name = nf_tpm_events_continued.9.b
+		add_political_power = -50
+		add_tech_bonus = {
+				bonus = 0.50
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+country_event = {
+	id = nf_tpm_act1.6
+	title = nf_tpm_act1.6.t
+	desc = nf_tpm_act1.6.d
+	picture = GFX_event_VEG_thekings
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.6.a
+		custom_effect_tooltip = tpm_take_us_to_your_beer
+		country_event = nf_tpm_events_continued.10
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.10
+	title = nf_tpm_events_continued.10.t
+	desc = nf_tpm_events_continued.10.d
+	picture = GFX_event_VEG_thekings
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.10.a
+		add_political_power = -10
+		add_stability = 0.05
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.10.b
+	add_political_power = -100
+	add_stability = 0.05
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+	add_command_power = 100
+	}
+}
+country_event = {
+	id = nf_tpm_act1.7
+	title = nf_tpm_act1.7.t
+	desc = nf_tpm_act1.7.d
+	picture = GFX_event_VEG_wall
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.7.a
+		custom_effect_tooltip = tpm_danny
+		country_event = nf_tpm_events_continued.11
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.11
+	title = nf_tpm_events_continued.11.t
+	desc = nf_tpm_events_continued.11.d
+	picture = GFX_event_VEG_wall
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.11.a
+		add_equipment_to_stockpile = {
+			type = demolitions_equipment_1
+			amount = 300
+			producer = USA
+			}
+	}
+	option = {
+		name = nf_tpm_events_continued.11.b
+		add_equipment_to_stockpile = {
+			type = fireteam_equipment_1
+			amount = 300
+			producer = USA
+			}
+	}
+}
+country_event = {
+	id = nf_tpm_act1.8
+	title = nf_tpm_act1.8.t
+	desc = nf_tpm_act1.8.d
+	picture = GFX_event_ncr_jail
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.8.a
+		country_event = nf_tpm_events_continued.12
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.12
+	title = nf_tpm_events_continued.12.t
+	desc = nf_tpm_events_continued.12.d
+	picture = GFX_event_ncr_jail
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.12.a
+		add_ideas = tpm_boys_come_first
+		add_stability = 0.05
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.12.b
+		add_ideas = tpm_overlooked_agression
+		add_manpower = -1
+		add_stability = -0.05
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+				}
+			}
+	option = {
+		name = nf_tpm_events_continued.12.c
+		add_ideas = tpm_overlooked_bribery
+		add_manpower = -1
+		add_stability = -0.05
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+				}
+			}
+	option = {
+		name = nf_tpm_events_continued.12.e
+		add_ideas = tpm_callahan_stand
+		add_manpower = -2
+		add_stability = -0.15
+		add_popularity = {
+			ideology = people
+			popularity = 0.1
+		}
+	}
+}
+###callahan's revenge
+country_event = {
+	id = nf_tpm_act1.9
+	title = nf_tpm_act1.9.t
+	desc = nf_tpm_act1.9.d
+	picture = GFX_event_generic_settlement_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act1.9.a
+		custom_effect_tooltip = tpm_stagefright
+		country_event = nf_tpm_events_continued.13
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.13
+	title = nf_tpm_events_continued.13.t
+	desc = nf_tpm_events_continued.13.d
+	picture = GFX_event_generic_settlement_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.13.a
+		add_ideas = tpm_lawman_army
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.13.b
+		add_ideas = tpm_motorized_research
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+			}
+	option = {
+		name = nf_tpm_events_continued.13.c
+		add_ideas = tpm_rangers_example
+		add_popularity = {
+			ideology = people
+			popularity = 0.1
+		}
+	}
+}
+###act2
+country_event = {
+	id = nf_tpm_act2.1
+	title = nf_tpm_act2.1.t
+	desc = nf_tpm_act2.1.d
+	picture = GFX_event_rrg_bridge
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act2.1.a
+		country_event = nf_tpm_events_continued.15
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.15
+	title = nf_tpm_events_continued.15.t
+	desc = nf_tpm_events_continued.15.d
+	picture = GFX_event_rrg_bridge
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.15.a
+		add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+			add_manpower = 1000
+	}
+	option = {
+		name = nf_tpm_events_continued.15.b
+		add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+		add_equipment_to_stockpile = {
+			type = demolitions_equipment_1
+			amount = 250
+			producer = USA
+			}
+		add_equipment_to_stockpile = {
+			type = fireteam_equipment_1
+			amount = 250
+			producer = USA
+			}
+		}
+	}
+country_event = {
+	id = nf_tpm_act2.2
+	title = nf_tpm_act2.2.t
+	desc = nf_tpm_act2.2.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act2.2.a
+		custom_effect_tooltip = tpm_question
+		country_event = nf_tpm_events_continued.16
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.16
+	title = nf_tpm_events_continued.16.t
+	desc = nf_tpm_events_continued.16.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.16.a
+		add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+		TBH = { country_event = nf_tbh_tpm_events.13 }
+	}
+}
+country_event = {
+	id = nf_tpm_act2.3
+	title = nf_tpm_act2.3.t
+	desc = nf_tpm_act2.3.d
+	picture = GFX_event_car_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act2.3.a
+		custom_effect_tooltip = tpm_roadtrip
+		country_event = nf_tpm_events_continued.18
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.18
+	title = nf_tpm_events_continued.18.t
+	desc = nf_tpm_events_continued.18.d
+	picture = GFX_event_car_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.18.a
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+				if = {
+					limit = {
+						LNS = {
+							has_country_flag = formed_texas
+						}
+					}
+					LNS = { country_event = nf_tbh_tpm_events.1 }
+				}
+			else = {
+			TBH = { country_event = nf_tbh_tpm_events.1 }
+		}
+	}
+	option = {
+		name = nf_tpm_events_continued.18.b
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+				if = {
+					limit = {
+						LNS = {
+							has_country_flag = formed_texas
+						}
+					}
+					LNS = { country_event = nf_tbh_tpm_events.1 }
+				}
+			else = {
+			TBH = { country_event = nf_tbh_tpm_events.1 }
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_act2.4
+	title = nf_tpm_act2.4.t
+	desc = nf_tpm_act2.4.d
+	picture = GFX_event_sub_generic_autumn
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act2.4.a
+		country_event = nf_tpm_events_continued.19
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.19
+	title = nf_tpm_events_continued.19.t
+	desc = nf_tpm_events_continued.19.d
+	picture = GFX_event_sub_generic_autumn
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.19.a
+		add_political_power = 100
+	}
+	option = {
+		name = nf_tpm_events_continued.19.b
+		set_temp_variable = { caps_to_add = +100 }
+		add_caps = yes
+		}
+	option = {
+		name = nf_tpm_events_continued.19.c
+		add_stability = .05
+		add_war_support = .05
+	}
+}
+###act3
+country_event = {
+	id = nf_tpm_act3.1
+	title = nf_tpm_act3.1.t
+	desc = nf_tpm_act3.1.d
+	picture = GFX_event_ncr_military_base
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.1.a
+		country_event = nf_tpm_events_continued.20
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.20
+	title = nf_tpm_events_continued.20.t
+	desc = nf_tpm_events_continued.20.d
+	picture = GFX_event_ncr_military_base
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.20.a
+		country_event = nf_tpm_events_continued.21
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.21
+	title = nf_tpm_events_continued.21.t
+	desc = nf_tpm_events_continued.21.d
+	picture = GFX_event_ncr_military_base
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.21.a
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+				875 = {
+					set_temp_variable = {
+						pop_add = -1
+					}
+					add_state_population_no_state_name = yes
+				}
+				add_stability = 0.1
+	}
+}
+#left
+country_event = {
+	id = nf_tpm_act3.2
+	title = nf_tpm_act3.2.t
+	desc = nf_tpm_act3.2.d
+	picture = GFX_event_sub_generic_ruins_9
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.2.a
+		country_event = nf_tpm_events_continued.24
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.24
+	title = nf_tpm_events_continued.24.t
+	desc = nf_tpm_events_continued.24.d
+	picture = GFX_event_sub_generic_ruins_9
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.24.a
+		set_politics = {
+			ruling_party = ruler
+		}
+		add_political_power = 100
+		add_ideas = tpm_louisiana_loyalty
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+					has_idea = TPM_callahan_generico
+					has_idea = TPM_callahan_steel
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+						has_idea = TPM_callahan_generico
+						}
+					}
+				deactivate_advisor = TPM_callahan_generico
+				}
+				else = {
+					deactivate_advisor = TPM_callahan_steel
+					}
+				activate_advisor = TPM_callahan_black
+			}
+		}
+	}
+	option = {
+		name = nf_tpm_events_continued.24.b
+		set_politics = {
+			ruling_party = ruler
+		}
+		add_political_power = -100
+		add_ideas = tpm_deputy_alliance
+		TBH = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		CAR = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+					has_idea = TPM_callahan_generico
+					has_idea = TPM_callahan_steel
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+						has_idea = TPM_callahan_generico
+						}
+					}
+				deactivate_advisor = TPM_callahan_generico
+				}
+				else = {
+					deactivate_advisor = TPM_callahan_steel
+					}
+				activate_advisor = TPM_callahan_black
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_act3.3
+	title = nf_tpm_act3.3.t
+	desc = nf_tpm_act3.3.d
+	picture = GFX_event_sub_generic_ruins_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.3.a
+		country_event = nf_tpm_events_continued.25
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.25
+	title = nf_tpm_events_continued.25.t
+	desc = nf_tpm_events_continued.25.d
+	picture = GFX_event_sub_generic_ruins_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.25.a
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+				}
+				add_stability = -0.05
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+			}
+	}
+	option = {
+		name = nf_tpm_events_continued.25.b
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+				add_manpower = -3
+				add_stability = -0.1
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+	}
+}
+#right
+country_event = {
+	id = nf_tpm_act3.4
+	title = nf_tpm_act3.4.t
+	desc = nf_tpm_act3.4.d
+	picture = GFX_event_mot_ranger_sequoia
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.4.a
+		country_event = nf_tpm_events_continued.26
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.26
+	title = nf_tpm_events_continued.26.t
+	desc = nf_tpm_events_continued.26.d
+	picture = GFX_event_mot_ranger_sequoia
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.26.a
+		add_manpower = -1
+		add_stability = 0.1
+		add_war_support = 0.1
+		set_cosmetic_tag = TPM_southwest_lawmen
+		retire_character = TPM_andrews
+			LNS	= {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		hidden_effect = {
+			TPM = {
+				scoped_play_song = "owb_dev_team_the_stretch"
+				}
+		remove_ideas = {
+		tpm_mild_corruption
+		tpm_bad_corruption
+		tpm_all_corrupted
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_act3.5
+	title = nf_tpm_act3.5.t
+	desc = nf_tpm_act3.5.d
+	picture = GFX_event_sub_generic_railroad
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.5.a
+		custom_effect_tooltip = tpm_unlucky
+		country_event = nf_tpm_events_continued.27
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.27
+	title = nf_tpm_events_continued.27.t
+	desc = nf_tpm_events_continued.27.d
+	picture = GFX_event_sub_generic_railroad
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.27.a
+		every_owned_state = {
+		add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+	}
+}
+	option = {
+		name = nf_tpm_events_continued.27.b
+		every_owned_state = {
+		add_extra_state_shared_building_slots = 1
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_act3.6
+	title = nf_tpm_act3.6.t
+	desc = nf_tpm_act3.6.d
+	picture = GFX_event_sub_generic_wreck
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.6.a
+		country_event = nf_tpm_events_continued.28
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.28
+	title = nf_tpm_events_continued.28.t
+	desc = nf_tpm_events_continued.28.d
+	picture = GFX_event_sub_generic_wreck
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.28.a
+		custom_effect_tooltip = tpm_pride_of_fleet
+		navy_experience = 25
+		hidden_effect = {
+		load_oob = TPM_lawmans_lament
+		}
+	}
+	option = {
+		name = nf_tpm_events_continued.28.b
+		870 = {
+			add_resource = {
+				type = metal
+				amount = 16
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_act3.7
+	title = nf_tpm_act3.7.t
+	desc = nf_tpm_act3.7.d
+	picture = GFX_event_ncr_ranger_cards
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.7.a
+		country_event = nf_tpm_events_continued.29
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.29
+	title = nf_tpm_events_continued.29.t
+	desc = nf_tpm_events_continued.29.d
+	picture = GFX_event_ncr_ranger_cards
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.29.a
+		add_political_power = 100
+		add_ideas = tpm_lawmans_laws
+	}
+	option = {
+		name = nf_tpm_events_continued.29.b
+		add_political_power = 50
+		add_ideas = tpm_louisianas_laws
+	}
+	option = {
+		name = nf_tpm_events_continued.29.c
+		add_political_power = -50
+		add_ideas = tpm_unions_laws
+		set_country_flag = accept_texdollar
+				if = {
+					limit = {
+						has_idea = currencygenericcap
+					}
+					swap_ideas = {
+						remove_idea = currencygenericcap
+						add_idea = currencytexdollar
+					}
+				}
+	}
+}
+country_event = {
+	id = nf_tpm_act3.8
+	title = nf_tpm_act3.8.t
+	desc = nf_tpm_act3.8.d
+	picture = GFX_train_works
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.8.a
+		country_event = nf_tpm_events_continued.30
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.30
+	title = nf_tpm_events_continued.30.t
+	desc = nf_tpm_events_continued.30.d
+	picture = GFX_train_works
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.30.a
+				add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+				add_political_power = 50
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+	option = {
+		name = nf_tpm_events_continued.30.b
+				add_popularity = {
+				ideology = people
+				popularity = -0.1
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			set_technology = { military_heritage_unlock_tech = 1 }
+	}
+}
+country_event = {
+	id = nf_tpm_act3.9
+	title = nf_tpm_act3.9.t
+	desc = nf_tpm_act3.9.d
+	picture = GFX_event_mr_entertainment
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.9.a
+		country_event = nf_tpm_events_continued.31
+		hidden_effect = {
+			scoped_sound_effect = "world_news"
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.31
+	title = nf_tpm_events_continued.31.t
+	desc = nf_tpm_events_continued.31.d
+	picture = GFX_event_mr_entertainment
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.31.a
+		add_ideas = tpm_texan_handshake
+	}
+	option = {
+		name = nf_tpm_events_continued.31.b
+		add_ideas = tpm_statehood_question
+	}
+}
+country_event = {
+	id = nf_tpm_act3.10
+	title = nf_tpm_act3.10.t
+	desc = nf_tpm_act3.10.d
+	picture = GFX_event_tpm_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_act3.10.a
+		country_event = nf_tpm_events_continued.32
+		hidden_effect = {
+			set_character_name = {
+				character = TPM_patrol_chief_callahan
+				name = CALLAHAN_NAME_ALT
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.32
+	title = nf_tpm_events_continued.32.t
+	desc = nf_tpm_events_continued.32.d
+	picture = GFX_event_tpm_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.32.a
+		set_cosmetic_tag = TPM_lafayette_lawmen
+		add_country_leader_trait = TPM_content
+		hidden_effect = {
+			TPM = {
+				scoped_play_song = "owb_dev_team_liberty_or_death"
+				}
+		}
+	}
+	option = {
+		name = nf_tpm_events_continued.32.b
+		set_cosmetic_tag = TPM_louisiana_lawmen
+		add_country_leader_trait = TPM_content
+				hidden_effect = {
+			TPM = {
+				scoped_play_song = "owb_dev_team_liberty_or_death"
+				}
+		}
+	}
+}
+###misc events throughout the tree, this includes the austin and "what it is" brances
+country_event = {
+	id = nf_tpm_misc_events.1
+	title = nf_tpm_misc_events.1.t
+	desc = nf_tpm_misc_events.1.d
+	picture = GFX_event_sub_generic_ruins_7
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.1.a
+		country_event = nf_tpm_events_continued.33
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.33
+	title = nf_tpm_events_continued.33.t
+	desc = nf_tpm_events_continued.33.d
+	picture = GFX_event_sub_generic_ruins_7
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.33.a
+		GAM = {
+			kill_country_leader = yes
+		}
+		add_war_support = 0.1
+		add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 300
+			producer = GAM
+			}
+		873 = {
+			add_resistance = -20
+		}
+		874 = {
+			add_resistance = -20
+		}
+	}
+	option = {
+		name = nf_tpm_events_continued.33.b
+		GAM = {
+			kill_country_leader = yes
+		}
+		add_stability = 0.1
+		add_popularity = {
+			ideology = people
+			popularity = 0.1
+				}
+		874 = {
+			add_resource = {
+				type = water
+				amount = 4
+			}
+			add_resource = {
+				type = metal
+				amount = 8
+			}
+		}
+		873 = {
+			add_compliance = 20
+		}
+		874 = {
+			add_compliance = 20
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.2
+	title = nf_tpm_misc_events.2.t
+	desc = nf_tpm_misc_events.2.d
+	picture = GFX_event_sub_generic_boats
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.2.a
+		custom_effect_tooltip = tpm_bayou
+		country_event = nf_tpm_events_continued.34
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.34
+	title = nf_tpm_events_continued.34.t
+	desc = nf_tpm_events_continued.34.d
+	picture = GFX_event_sub_generic_boats
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.34.a
+				add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+		870 = {
+		add_resistance = -20
+		}
+		set_temp_variable = { caps_to_add = 100 }
+		add_caps = yes
+	}
+	option = {
+		name = nf_tpm_events_continued.34.b
+				add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+		870 = {
+		add_compliance = 20
+		}
+		add_political_power = 50
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.3
+	title = nf_tpm_misc_events.3.t
+	desc = nf_tpm_misc_events.3.d
+	picture = GFX_event_MOJ_close_down_van_graffs
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.3.a
+		custom_effect_tooltip = tpm_jim_tt
+		country_event = nf_tpm_events_continued.35
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.35
+	title = nf_tpm_events_continued.35.t
+	desc = nf_tpm_events_continued.35.d
+	picture = GFX_event_MOJ_close_down_van_graffs
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.35.a
+	add_manpower = -1
+	add_stability = 0.1
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+	}
+	option = {
+		name = nf_tpm_events_continued.35.b
+			add_manpower = -2
+			add_stability = -0.10
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.4
+	title = nf_tpm_misc_events.4.t
+	desc = nf_tpm_misc_events.4.d
+	picture = GFX_event_mot_ranger_sequoia
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.4.a
+		custom_effect_tooltip = tpm_franklin
+		country_event = nf_tpm_events_continued.36
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.36
+	title = nf_tpm_events_continued.36.t
+	desc = nf_tpm_events_continued.36.d
+	picture = GFX_event_mot_ranger_sequoia
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.36.a
+			add_ideas = tpm_louisiana_deputies
+	}
+	option = {
+		name = nf_tpm_events_continued.36.b
+		add_ideas = tpm_lament
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.5
+	title = nf_tpm_misc_events.5.t
+	desc = nf_tpm_misc_events.5.d
+	picture = GFX_event_sub_generic_trees
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.5.a
+		country_event = nf_tpm_events_continued.37
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.37
+	title = nf_tpm_events_continued.37.t
+	desc = nf_tpm_events_continued.37.d
+	picture = GFX_event_sub_generic_trees
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.37.a
+		add_political_power = -50
+		add_ideas = mutant_law_ghoul
+		add_ideas = tpm_next_generations
+		}
+	option = {
+		name = nf_tpm_events_continued.37.b
+		add_political_power = 100
+		add_manpower = 500
+		add_ideas = mutant_law_both
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 500
+			producer = UOA
+			}
+		set_technology = {
+			super_mutant_aux_infantry_tech = 1
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.6
+	title = nf_tpm_misc_events.6.t
+	desc = nf_tpm_misc_events.6.d
+	picture = GFX_event_sub_generic_road
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.6.a
+		country_event = nf_tpm_events_continued.38
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.38
+	title = nf_tpm_events_continued.38.t
+	desc = nf_tpm_events_continued.38.d
+	picture = GFX_event_sub_generic_road
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.38.a
+		custom_effect_tooltip = TPM_austin_cannery_line_HAHA_POOR_ASS
+		hidden_effect = {
+		870 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		875 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		874 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		885 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		897 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		894 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		912 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		915 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_tpm_events_continued.38.b
+		custom_effect_tooltip = TPM_austin_cannery_line_bigmoney
+		set_temp_variable = { caps_to_add = -100 }
+		add_caps = yes
+		hidden_effect = {
+		870 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		875 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		874 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		885 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		897 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		894 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		912 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		915 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.7
+	title = nf_tpm_misc_events.7.t
+	desc = nf_tpm_misc_events.7.d
+	picture = GFX_event_sub_generic_ruins_7
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.7.a
+		add_stability = 0.01
+	}
+	option = {
+		name = nf_tpm_misc_events.7.b
+		add_war_support = 0.01
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.8
+	title = nf_tpm_misc_events.8.t
+	desc = nf_tpm_misc_events.8.d
+	picture = GFX_event_sub_generic_ruins_7
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.8.a
+		custom_effect_tooltip = tpm_drunkard
+		country_event = nf_tpm_events_continued.39
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.39
+	title = nf_tpm_events_continued.39.t
+	desc = nf_tpm_events_continued.39.d
+	picture = GFX_event_sub_generic_ruins_7
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.39.a
+		add_stability = 0.05
+		custom_effect_tooltip = TPM_mac_tt
+		add_manpower = -1
+		custom_effect_tooltip = TPM_mac_hangover_tt
+		add_manpower = 1
+		custom_effect_tooltip = TPM_mac_salary_tt
+		set_temp_variable = { caps_to_add = 1 }
+		add_caps = yes
+	}
+}
+country_event = {
+	id = nf_tough_crowd.1
+	title = nf_tough_crowd.1.t
+	desc = nf_tough_crowd.1.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tough_crowd.1.a
+		country_event = nf_tpm_events_continued.14
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.14
+	title = nf_tpm_events_continued.14.t
+	desc = nf_tpm_events_continued.14.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.14.a
+		add_political_power = 100
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+				remove_ideas = tpm_frequently_raided
+		custom_effect_tooltip = TPM_decisions_tt
+	}
+	option = {
+		name = nf_tpm_events_continued.14.b
+		set_temp_variable = { caps_to_add = +100 }
+		add_caps = yes
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+				remove_ideas = tpm_frequently_raided
+		custom_effect_tooltip = TPM_decisions_tt
+	}
+}
+country_event = {
+	id = nf_tbh_tpm_events.1
+	title = nf_tbh_tpm_events.1.t
+	desc = nf_tbh_tpm_events.1.d
+	picture = GFX_event_ach_hood_entrance
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.1.a
+		country_event = nf_tpm_events_continued.41
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.41
+	title = nf_tpm_events_continued.41.t
+	desc = nf_tpm_events_continued.41.d
+	picture = GFX_event_ach_hood_entrance
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = { base = 1 }
+		name = nf_tpm_events_continued.41.a
+		TBH = { country_event = nf_tbh_tpm_events.2 }
+		TPM = { country_event = nf_tbh_tpm_events.3 }
+	}
+	option = {
+		ai_chance = { base = 1 }
+		name = nf_tpm_events_continued.41.b
+		TPM = { country_event = nf_tbh_tpm_events.4 }
+	}
+	option = {
+		ai_chance = { base = 1 }
+		name = nf_tpm_events_continued.41.c
+		TBH = { country_event = nf_tbh_tpm_events.7 }
+		TPM = { country_event = nf_tbh_tpm_events.8 }
+		}
+	}
+country_event = {
+	id = nf_tbh_tpm_events.2
+	title = nf_tbh_tpm_events.2.t
+	desc = nf_tbh_tpm_events.2.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.2.a
+		country_event = nf_tpm_events_continued.42
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.42
+	title = nf_tpm_events_continued.42.t
+	desc = nf_tpm_events_continued.42.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.42.a
+		every_enemy_country = { white_peace = TPM }
+		set_temp_variable = { caps_to_add = 100 }
+		add_caps = yes
+		add_stability = 0.1
+		add_political_power = 100
+		hidden_effect = {
+		TBH = {
+		set_country_flag = tbh_accepted_offer
+		}
+		TPM = {
+		set_country_flag =	TPM_brotherhood_hood_accept
+				}
+			}
+		}
+	}
+country_event = {
+	id = nf_tbh_tpm_events.3
+	title = nf_tbh_tpm_events.3.t
+	desc = nf_tbh_tpm_events.3.d
+	picture = GFX_event_divide1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.3.a
+		country_event = nf_tpm_events_continued.43
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.43
+	title = nf_tpm_events_continued.43.t
+	desc = nf_tpm_events_continued.43.d
+	picture = GFX_event_divide1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.43.a
+		set_temp_variable = { caps_to_add = -100 }
+		add_caps = yes
+		add_stability = -0.1
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+				TPM = {
+					join_texan_economic_union = yes
+				}
+			add_dynamic_modifier = { modifier = texan_economic_union }
+		hidden_effect = {
+		TBH = {
+		set_country_flag = tbh_accepted_offer
+		}
+		TPM = {
+		set_country_flag = TPM_brotherhood_hood_accept
+				}
+			}
+		}
+	}
+country_event = {
+	id = nf_tbh_tpm_events.4
+	title = nf_tbh_tpm_events.4.t
+	desc = nf_tbh_tpm_events.4.d
+	picture = GFX_event_ach_hood_entrance
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.4.a
+		TBH = { country_event = nf_tbh_tpm_events.5 }
+		add_political_power = 100
+		set_temp_variable = { caps_to_add = -100 }
+		add_caps = yes
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+			add_dynamic_modifier = { modifier = texan_economic_union }
+			TBH = {
+				set_autonomy = {
+					target = TPM
+					autonomy_state = autonomy_brotherhood_initiate
+				}
+				set_autonomy = {
+					target = TBH
+					autonomy_state = autonomy_brotherhood_initiate
+				}
+			}
+		hidden_effect = {
+			set_politics = {
+				ruling_party = intellectuals
+			}
+		set_portraits = {
+			character = TPM_patrol_chief_callahan
+			army = { large ="GFX_leader_TPM_callahan_steel_new"	 }
+			civilian = { large ="GFX_leader_TPM_callahan_steel_new" }
+		}
+		TBH = {
+		set_country_flag = tbh_accepted_offer
+		}
+		TPM = {
+		set_country_flag = TPM_brotherhood_hood_accept
+				}
+			}
+		}
+	option = {
+		name = nf_tbh_tpm_events.4.b
+		TBH = { country_event = nf_tbh_tpm_events.6 }
+		TPM = { country_event = nf_tbh_tpm_events.8 }
+			hidden_effect = {
+				TBH = {
+					set_country_flag = tbh_denied_offer
+				}
+				TPM = {
+				set_country_flag = tpm_WAR_WAR_WAR
+				}
+			}
+		}
+	}
+country_event = {
+	id = nf_tbh_tpm_events.5
+	title = nf_tbh_tpm_events.5.t
+	desc = nf_tbh_tpm_events.5.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.5.a
+		custom_effect_tooltip = tpm_close_but_no_cigar
+		country_event = nf_tpm_events_continued.44
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.44
+	title = nf_tpm_events_continued.44.t
+	desc = nf_tpm_events_continued.44.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.44.a
+		TBH = {
+		set_temp_variable = { caps_to_add = 100 }
+		add_caps = yes
+		add_political_power = 150
+		add_stability = 0.05
+		}
+		hidden_effect = {
+		TBH = {
+		set_country_flag = tbh_accepted_offer
+		}
+		TPM = {
+		set_country_flag = TPM_brotherhood_hood_accept
+				}
+			}
+		}
+	}
+country_event = {
+	id = nf_tbh_tpm_events.6
+	title = nf_tbh_tpm_events.6.t
+	desc = nf_tbh_tpm_events.6.d
+	picture = GFX_event_ach_hood_progress
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.6.a
+		add_political_power = -50
+		add_stability = 0.05
+		add_war_support = 0.05
+			hidden_effect = {
+				TBH = {
+					set_country_flag = tbh_denied_offer
+				}
+				TPM = {
+				set_country_flag = tpm_WAR_WAR_WAR
+				}
+			}
+		}
+	}
+country_event = {
+	id = nf_tbh_tpm_events.7
+	title = nf_tbh_tpm_events.7.t
+	desc = nf_tbh_tpm_events.7.d
+	picture = GFX_event_sub_generic_war_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.7.a
+		country_event = nf_tpm_events_continued.45
+		}
+	}
+	country_event = {
+		id = nf_tpm_events_continued.45
+		title = nf_tpm_events_continued.45.t
+		desc = nf_tpm_events_continued.45.d
+		picture = GFX_event_sub_generic_war_room
+		is_triggered_only = yes
+		option = {
+			name = nf_tpm_events_continued.45.a
+			add_political_power = -25
+			add_stability = 0.05
+			add_war_support = 0.05
+				hidden_effect = {
+					TBH = {
+						set_country_flag = tbh_denied_offer
+					}
+					TPM = {
+					set_country_flag = tpm_WAR_WAR_WAR
+					}
+				}
+			}
+		}
+country_event = {
+	id = nf_tbh_tpm_events.8
+	title = nf_tbh_tpm_events.8.t
+	desc = nf_tbh_tpm_events.8.d
+	picture = GFX_event_divide1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.8.a
+		country_event = nf_tpm_events_continued.46
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.46
+	title = nf_tpm_events_continued.46.t
+	desc = nf_tpm_events_continued.46.d
+	picture = GFX_event_divide1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.46.a
+		add_ideas = tpm_tried_to_be_nice
+			hidden_effect = {
+				TBH = {
+					set_country_flag = tbh_denied_offer
+				}
+				TPM = {
+				set_country_flag = tpm_WAR_WAR_WAR
+				}
+			}
+		}
+	}
+country_event = {
+	id = nf_tbh_tpm_events.9
+	title = nf_tbh_tpm_events.9.t
+	desc = nf_tbh_tpm_events.9.d
+	picture = GFX_event_ncr_military_base
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.9.a
+		country_event = nf_tpm_events_continued.22
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.22
+	title = nf_tpm_events_continued.22.t
+	desc = nf_tpm_events_continued.22.d
+	picture = GFX_event_ncr_military_base
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.22.a
+		country_event = nf_tpm_events_continued.23
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.23
+	title = nf_tpm_events_continued.23.t
+	desc = nf_tpm_events_continued.23.d
+	picture = GFX_event_ncr_military_base
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_events_continued.23.a
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+				875 = {
+					set_temp_variable = {
+						pop_add = -1
+					}
+					add_state_population_no_state_name = yes
+				}
+				add_stability = -0.1
+	}
+	option = {
+		name = nf_tpm_events_continued.23.b
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+				}
+				875 = {
+					set_temp_variable = {
+						pop_add = -1
+					}
+					add_state_population_no_state_name = yes
+				}
+				add_war_support = -0.1
+	}
+}
+country_event = {
+	id = nf_tpm_misc_events.10
+	title = nf_tpm_misc_events.10.t
+	desc = nf_tpm_misc_events.10.d
+	picture = GFX_event_ncr_military_base
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tpm_misc_events.10.b
+		country_event = nf_tpm_events_continued.40
+	}
+}
+	country_event = {
+		id = nf_tpm_events_continued.40
+		title = nf_tpm_events_continued.40.t
+		desc = nf_tpm_events_continued.40.d
+		picture = GFX_event_ncr_military_base
+		is_triggered_only = yes
+		option = {
+			name = nf_tpm_events_continued.40.b
+			add_manpower = -1
+			retire_character = TPM_andrews
+			add_stability = 0.2
+			set_cosmetic_tag = TPM_louisiana_lawmen
+			hidden_effect = {
+			TPM = {
+			scoped_play_song = "owb_dev_team_the_stretch"
+			}
+				remove_ideas = {
+					tpm_mild_corruption
+					tpm_bad_corruption
+					tpm_all_corrupted
+					}
+				}
+			}
+		}
+country_event = {
+	id = nf_tbh_tpm_events.11
+	title = nf_tbh_tpm_events.11.t
+	desc = nf_tbh_tpm_events.11.d
+	picture = GFX_event_sub_generic_ruins_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.11.a
+		every_enemy_country = { white_peace = TPM }
+		set_temp_variable = { caps_to_add = -200 }
+		add_caps = yes
+		add_political_power = -100
+		mark_focus_tree_layout_dirty = yes
+		add_dynamic_modifier = { modifier = texan_economic_union }
+		create_or_join_texan_economic_union = yes
+		hidden_effect = {
+			TPM = {
+				join_texan_economic_union = yes
+			}
+		}
+
+	}
+}
+country_event = {
+	id = nf_tbh_tpm_events.12
+	title = nf_tbh_tpm_events.12.t
+	desc = nf_tbh_tpm_events.12.d
+	picture = GFX_event_sub_generic_ruins_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.12.a
+		add_stability = -0.1
+		add_war_support = 0.2
+		add_political_power = 100
+		add_ideas = tpm_independence_assured
+		army_experience = 50
+	}
+}
+country_event = {
+	id = nf_tbh_tpm_events.13
+	title = nf_tbh_tpm_events.13.t
+	desc = nf_tbh_tpm_events.13.d
+	picture = GFX_event_ach_hood_entrance
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_tbh_tpm_events.13.a
+		country_event = nf_tpm_events_continued.17
+	}
+}
+country_event = {
+	id = nf_tpm_events_continued.17
+	title = nf_tpm_events_continued.17.t
+	desc = nf_tpm_events_continued.17.d
+	picture = GFX_event_ach_hood_entrance
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = { base = 75 }
+		name = nf_tpm_events_continued.17.a
+		add_stability = 0.1
+		add_political_power = -50
+		set_temp_variable = { caps_to_add = -200 }
+		add_caps = yes
+		TPM = { country_event = nf_tbh_tpm_events.11 }
+	}
+	option = {
+		ai_chance = { base = 25 }
+		name = nf_tpm_events_continued.17.b
+		add_stability = -0.1
+		add_war_support = -0.1
+		TPM = { country_event = nf_tbh_tpm_events.12 }
+	}
+}

@@ -1,0 +1,376 @@
+##########################
+#    Lone Star Ideas     #
+#  Scripted by HappyNTH  #
+##########################
+
+ideas = {
+	country = {
+		## Starting Ideas ##
+		LNS_idea_hand_gang_resurgence = {
+			picture = generic_spy_intel
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -4
+				local_resources_factor = -0.1
+				encryption_factor = -0.1
+			}
+		}
+		LNS_idea_fatigued_lawmen = {
+			picture = generic_military_draft2
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				NOT = { has_government = ruler }
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.1
+				political_power_factor = -0.05
+				command_power_gain_mult = -0.4
+				cant_faction_call = 1
+				cant_faction_join = 1
+			}
+		}
+		LNS_idea_controllers_of_the_I20 = {
+			picture = lns_lubbock_expedition
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				army_speed_factor = 0.05
+				caps_node_trade_modifier = 0.2
+			}
+		}
+		LNS_idea_tbh_advisors = {
+			picture = generic_BOS_idea_combined_operations
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				NOT = { has_government = ruler }
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.05
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.05
+				}
+			}
+		}
+		LNS_idea_tbh_advisors_strong = {
+			picture = generic_BOS_idea_combined_operations
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				NOT = { has_government = ruler }
+			}
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.1
+				experience_gain_army = 0.1
+			}
+			research_bonus = {
+				infantry_tech_category = 0.1
+				cat_land_doctrine = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.05
+				}
+			}
+		}
+		# TBH choice for buff
+		LNS_idea_tbh_advisors_strong_basic_drills = {
+			picture = generic_BOS_idea_combined_operations
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				NOT = { has_government = ruler }
+			}
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.1
+				experience_gain_army = 0.1
+				training_time_factor = -0.1
+			}
+			research_bonus = {
+				infantry_tech_category = 0.1
+				cat_land_doctrine = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.05
+				}
+			}
+		}
+		LNS_idea_tbh_advisors_strong_advanced_drills = {
+			picture = generic_BOS_idea_combined_operations
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				NOT = { has_government = ruler }
+			}
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.1
+				experience_gain_army = 0.1
+				army_org_Factor = 0.05
+			}
+			research_bonus = {
+				infantry_tech_category = 0.1
+				cat_land_doctrine = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.05
+				}
+			}
+		}
+		# LUB Lubbock Expedition idea
+		LNS_idea_lubbock_expedition = {
+			picture = lns_lubbock_expedition
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+			}
+			research_bonus = {
+				infantry_tech_category = 0.1
+				cat_land_doctrine = 0.1
+			}
+		}
+		## Pre-CW Ideas/Variants ##
+		LNS_idea_empowered_lawmen = {
+			picture = generic_military_draft1
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				NOT = { has_government = ruler }
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.05
+				political_power_factor = -0.15
+				command_power_gain_mult = -0.2
+				cant_faction_call = 1
+				cant_faction_join = 1
+			}
+		}
+		LNS_idea_warlord_rises = {
+			picture = generic_spy_intel
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -8
+				local_resources_factor = -0.15
+				encryption_factor = -0.15
+				production_speed_arms_factory_factor = -0.05
+			}
+		}
+		LNS_idea_foreign_player = {
+			picture = generic_spy_intel
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -16
+				local_resources_factor = -0.2
+				encryption_factor = -0.2
+				production_speed_arms_factory_factor = -0.1
+				army_speed_factor = -0.05
+			}
+		}
+		LNS_idea_caesars_hand = {
+			picture = generic_spy_intel
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -32
+				local_resources_factor = -0.25
+				encryption_factor = -0.25
+				production_speed_arms_factory_factor = -0.15
+				army_speed_factor = -0.1
+				training_time_factor = 0.05
+			}
+		}
+		## Nice Guy Ideas ##
+		LNS_idea_west_in_flames = {
+			picture = brk_campaign_of_terror
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -4
+				stability_factor = -0.1
+			}
+		}
+		LNS_idea_east_in_flames = {
+			picture = brk_campaign_of_terror
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.05
+				local_resources_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+			}
+		}
+		LNS_idea_i10_controller_deal = {
+			picture = flag_LNS
+			allowed = {
+				NOT = { has_war_with = LNS }
+				NOT = { owns_state = 932 }
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				stability_factor = -0.05
+			}
+			research_bonus = {
+				industry = 0.075
+				agriculture_tech = 0.075
+			}
+		}
+		LNS_idea_i10_lns_deal = {
+			picture = flag_LNS
+			allowed = {
+				NOT = {
+					any_country = {
+						has_idea = LNS_idea_i10_controller_deal
+						OR = {
+							has_war_with = LNS
+							owns_state = 932
+						}
+					}
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.02
+				consumer_goods_expected_value = 0.03
+				stability_factor = 0.05
+			}
+		}
+		LNS_idea_controllers_of_the_I10 = {
+			picture = flag_LNS
+			allowed = {
+				NOT = {
+					any_country = {
+						has_idea = LNS_idea_i10_controller_deal
+						OR = {
+							has_war_with = LNS
+							owns_state = 932
+						}
+					}
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.03
+				consumer_goods_expected_value = 0.03
+				stability_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				local_resources_factor = 0.1
+			}
+		}
+		LNS_stars_in_our_eyes = {
+			picture = flag_TEX
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				caps_country_trade_modifier = 0.1
+				stability_factor = 0.05
+				army_morale_factor = 0.1
+			}
+		}
+		LNS_modern_military = {
+			picture = generic_military_draft
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.05
+				planning_speed = 0.15
+			}
+		}
+		LNS_tyrants_of_texas = {
+			picture = legion_crucifixion
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.05
+				army_attack_factor = 0.05
+				breakthrough_factor = 0.05
+				army_morale_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+	}
+}

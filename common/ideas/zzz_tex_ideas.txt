@@ -1,0 +1,205 @@
+##############################
+#        TBoS Ideas          #
+#  Scripted by Happy + Garn  #
+##############################
+
+ideas = {
+	country = {
+		tex_military_heritage = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = yes
+			}
+			research_bonus = {
+				support_tech_category = 0.04
+				infantry_tech_category = 0.04
+				vehicle_tech_category = 0.04
+				support_demolitions_tech_category = 0.08
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				army_org_Factor = 0.1
+				army_morale_factor = 0.15
+				resistance_damage_to_garrison = -0.25
+				compliance_gain = 0.01
+			}
+			equipment_bonus = {
+				demolitions_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+				fireteam_equipment = {
+					soft_attack = 0.1
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tex_keepers_of_law = {
+			picture = tbh_law_1
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.05
+				military_leader_cost_factor = -0.25
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				resistance_target = -0.05
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		tex_keepers_of_law_2 = {
+			picture = tbh_law_2
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.05
+				military_leader_cost_factor = -0.30
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				resistance_target = -0.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+
+		tex_dod_idea = {
+			picture = MOJ_idea_aggressive_policy
+			modifier = {
+				army_org_factor = 0.05
+				defensive_war_stability_factor = 0.05
+			}
+		}
+		tex_dod_idea_2 = {
+			picture = MOJ_idea_aggressive_policy
+			modifier = {
+				army_org_factor = 0.05
+				defensive_war_stability_factor = 0.05
+				justify_war_goal_time = -0.15
+			}
+		}
+		texas_spy_agency = {
+			picture = generic_spy_coup
+			modifier = {
+				encryption = 0.25
+				decryption = 0.25
+			}
+		}
+		tex_airforce_idea_1 = {
+			picture = NORDIC_airforce_democratic
+			modifier = {
+				air_range_factor = 0.2
+				air_training_xp_gain_factor = 0.1
+			}
+		}
+		tex_airforce_idea_2 = {
+			picture = NORDIC_airforce_democratic
+			modifier = {
+				air_range_factor = 0.2
+				air_training_xp_gain_factor = 0.1
+				political_power_factor = 0.10
+			}
+		}
+		tex_airforce_idea_3 = {
+			picture = NORDIC_airforce_democratic
+			modifier = {
+				air_range_factor = 0.2
+				air_training_xp_gain_factor = 0.1
+				political_power_factor = 0.10
+				air_superiority_efficiency = 0.15
+			}
+		}
+		tex_airforce_idea_4 = {
+			picture = NORDIC_airforce_democratic
+			modifier = {
+				air_range_factor = 0.2
+				air_training_xp_gain_factor = 0.1
+				political_power_factor = 0.10
+				air_superiority_efficiency = 0.15
+				ground_attack_factor = 0.15
+			}
+		}
+
+		tex_idea_carthage_gas = {
+			picture = generic_fuel_gas_propane
+			modifier = {
+				fuel_gain_factor = 1
+				max_fuel_factor = 1
+				production_oil_factor = 0.2
+				local_resources_factor = 0.10
+			}
+		}
+
+		tex_idea_running_satellites = {
+			picture = generic_satellite_1
+			modifier = {
+				naval_detection = 0.1
+				air_range_factor = 0.25
+				civilian_intel_factor = 0.25
+				army_intel_factor = 0.25
+				navy_intel_factor = 0.25
+				airforce_intel_factor = 0.25
+				decryption_factor = 1
+				encryption_factor = 1
+				army_speed_factor = 0.1
+			}
+		}
+
+		tex_idea_gulf_shipping = {
+			picture = boat_5
+			modifier = {
+				trade_opinion_factor = 0.15
+				industrial_capacity_dockyard = 0.1
+				naval_coordination = 0.1
+				navy_max_range_factor = 0.15
+				spotting_chance = 0.2
+				caps_income_modifier = 0.15
+				caps_country_trade_modifier = 0.05
+			}
+		}
+
+		tex_idea_national_tv = {
+			picture = generic_radio_concern
+			modifier = {
+				political_power_factor = 0.1
+				drift_defence_factor = 0.2
+				justify_war_goal_time = -0.1
+				compliance_gain = 0.03
+				production_speed_radar_station_factor = 0.2
+				diplomacy_distance_factor = 0.2
+			}
+		}
+		TEX_texas_proper = {
+			picture = rrg_texas2
+			modifier = {
+				conscription = 0.02
+				political_power_factor = 0.2
+				drift_defence_factor = 0.5
+				justify_war_goal_time = 0.25
+			}
+		}
+		TEX_unification_idea = {
+			picture = rrg_texas2
+			modifier = {
+				consumer_goods_expected_value = 0.15
+				political_power_factor = -0.15
+				production_speed_arms_factory_factor = -0.25
+				production_speed_industrial_complex_factor = -0.25
+			}
+		}
+	}
+}

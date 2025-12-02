@@ -1,0 +1,24 @@
+LOI_prep_for_CPF_war = {
+	allowed = {
+		original_tag = LOI
+	}
+	enable = {
+		NOT = { has_global_flag = stc_six_front_war_began }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "STC"
+		value = 100
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = 12	# Covers initial borders plus a few extra
+	}
+
+	ai_strategy = {	# Starts with high civ-to-mil ratio
+		type = added_military_to_civilian_factory_ratio
+		value = 30
+	}
+}

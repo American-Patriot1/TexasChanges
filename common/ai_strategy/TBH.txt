@@ -1,0 +1,485 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+default_unit_production = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		always = yes
+	}
+	abort = { always = no }
+	ai_strategy = {
+		type = role_ratio
+		id = lawkeeper_infantry
+		value = 25
+	}
+	# This strategy doesn't exist anymore @CGS
+	# ai_strategy = {
+	# 	type = template_xp_reserve
+	# 	value = 50
+	# }
+}
+# No longer needed, XP is bypassed for AI
+#broken_apart_tbh_xp_fix = {
+#	allowed = {
+#		original_tag = TBH
+#	}
+#	enable = {
+#		has_idea = tbh_torn_leadership
+#		NOT = { has_completed_focus = tbh_nf_the_long_road }
+#		NOT = { has_completed_focus = tbh_nf_the_hard_road }
+#		NOT = { has_completed_focus = tbh_nf_the_alamo_was_right }
+#	}
+#	abort_when_not_enabled = yes
+#	ai_strategy = {
+#		type = land_xp_spend_priority
+#		id = division_template
+#		value = -1000
+#	}
+#	ai_strategy = {
+#		type = land_xp_spend_priority
+#		id = upgrade_xp_cutoff
+#		value = -1000
+#	}
+	# This strategy doesn't exist anymore @CGS
+	# ai_strategy = {
+	# 	type = template_xp_reserve
+	# 	value = 300
+	# }
+#}
+
+TBH_support_LNS = {
+	allowed = { original_tag = TBH }
+	enable = {
+		has_war = no
+		LNS = {
+			has_war = yes
+			is_in_faction_with = TBH
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = support
+		id = LNS
+		value = 200
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = LNS
+		value = 200
+	}
+}
+
+TBH_support_UOA = {
+	allowed = { original_tag = TBH }
+	enable = {
+		has_war = no
+		UOA = {
+			has_war = yes
+			is_in_faction_with = TBH
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = support
+		id = UOA
+		value = 200
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = UOA
+		value = 200
+	}
+}
+
+TBH_prepare_for_ASS = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		country_exists = ASS
+		has_completed_focus = tbh_nf_listening_posts
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = ASS }
+			has_war = yes
+		}
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "ASS"
+		value = 100
+	}
+}
+
+TBH_handle_ASS = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		has_war_with = ASS
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = ASS
+		value = 50
+	}
+}
+
+TBH_prepare_for_CAR = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		country_exists = CAR
+		has_completed_focus = tbh_nf_a_mutually_benefitial_deal		# Delays onset of strategy if earlier targets died before we did anything somehow
+		ASS = {
+			OR = {
+				exists = no
+				is_ally_with = TBH
+			}
+		}
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = CAR }
+			has_war = yes
+		}
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "CAR"
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer
+		id = "CAR"
+		value = 100
+	}
+}
+
+TBH_handle_CAR = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		has_war_with = CAR
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = CAR
+		value = 50
+	}
+}
+
+TBH_prepare_for_DSP = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		country_exists = DSP
+		has_completed_focus = tbh_nf_the_question_of_carthage
+		CAR = {
+			OR = {
+				exists = no
+				is_ally_with = TBH
+			}
+		}
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = DSP }
+			has_war = yes
+		}
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "DSP"
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer
+		id = "DSP"
+		value = 100
+	}
+}
+
+TBH_handle_DSP = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		has_war_with = DSP
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = DSP
+		value = 50
+	}
+}
+
+TBH_prepare_for_GAM = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		country_exists = GAM
+		has_completed_focus = tbh_nf_the_question_of_carthage
+		CAR = {
+			OR = {
+				exists = no
+				is_ally_with = TBH
+			}
+		}
+		DSP = {
+			OR = {
+				exists = no
+				is_ally_with = TBH
+			}
+		}
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = GAM }
+			has_war = yes
+		}
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "GAM"
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer
+		id = "GAM"
+		value = 100
+	}
+}
+
+TBH_handle_GAM = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		has_war_with = GAM
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = GAM
+		value = 50
+	}
+}
+
+TBH_prepare_for_TPM = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		country_exists = TPM
+		has_completed_focus = tbh_nf_the_question_of_carthage
+		GAM = {
+			OR = {
+				exists = no
+				is_ally_with = TBH
+			}
+		}
+		DSP = {
+			OR = {
+				exists = no
+				is_ally_with = TBH
+			}
+		}
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = TPM }
+			has_war = yes
+		}
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "TPM"
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer
+		id = "TPM"
+		value = 100
+	}
+}
+
+TBH_handle_TPM = {
+	allowed = {
+		original_tag = TBH
+	}
+	enable = {
+		has_war_with = TPM
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = TPM
+		value = 50
+	}
+}
+
+TEX_friends_with_RRG = {
+	allowed = {
+		NOT = {
+			original_tag = TBH
+			original_tag = LNS
+		}
+	}
+	enable = {
+		RRG = {
+			OR = {
+				has_completed_focus = rrg_dantes_inferno	# Takes a while to get to Guerra's relevant focus unlike Rosado, but also unlike Rosado he always does eventually
+				has_completed_focus = rrg_brotherhood_influence
+			}
+		}
+		OR = {
+			original_tag = RRG
+			is_ally_with = RRG
+		}
+	}
+	reversed = yes
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = befriend
+		id = TBH
+		value = 100
+	}
+	ai_strategy = {
+		type = befriend
+		id = LNS
+		value = 100
+	}
+	# ai_strategy = {
+	# 	type = befriend
+	# 	id = TEX	# Reverse strategy doesn't work for tag aliases :(
+	# 	value = 100
+	# }
+	ai_strategy = {
+		type = support
+		id = TBH
+		value = 100
+	}
+	ai_strategy = {
+		type = support
+		id = LNS
+		value = 100
+	}
+	# ai_strategy = {
+	# 	type = support
+	# 	id = TEX	# Reverse strategy doesn't work for tag aliases :(
+	# 	value = 100
+	# }
+}
+
+TEX_no_manual_justify_on_TAA = {
+	allowed = {
+		OR = {
+			original_tag = TBH
+			original_tag = LNS
+		}
+	}
+	enable = {
+		NOT = { has_completed_focus = tex_annex_TAA }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ignore_claim
+		id = TAA
+		value = 1
+	}
+}
+
+TEX_leave_pecos_if_RRG_Guerra = {
+	allowed = {
+		OR = {
+			original_tag = TBH
+			original_tag = LNS
+		}
+	}
+	enable = {
+		NOT = { has_completed_focus = tex_annex_TAA }
+		NOT = { has_country_flag = TEX_hostility_with_rio_flag }
+		RRG = { has_completed_focus = rrg_dantes_inferno }
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = declare_war
+		id = PEC
+		value = -900
+	}
+}
+
+TEX_handle_HRO = {
+	allowed = {
+		OR = {
+			original_tag = TBH
+			original_tag = LNS
+		}
+	}
+	enable = {
+		has_war_with = HRO
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = HRO
+		value = 50
+	}
+}
+
+TEX_handle_BAM = {
+	allowed = {
+		OR = {
+			original_tag = TBH
+			original_tag = LNS
+		}
+	}
+	enable = {
+		has_war_with = BAM
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = BAM
+		value = 50
+	}
+}

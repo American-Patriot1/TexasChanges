@@ -1,0 +1,56 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+IMO_tank_army = {
+	allowed = {
+		original_tag = IMO
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = tank
+		value = 100
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 10
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = motorized
+		value = 10
+	}
+}
+
+IMO_build_civ_early = {
+	allowed = {
+		tag = IMO
+	}
+	enable = {
+		date < 2276.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 16
+	}
+}
