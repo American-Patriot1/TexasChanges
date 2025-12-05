@@ -928,7 +928,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 40
 		x = 3
-		y = 1
+		y = 2
 		relative_position_id = lns_rekindle_economic_union
 		prerequisite = {
 			focus = lns_rekindle_economic_union
@@ -2347,6 +2347,9 @@ focus_tree = {
 		prerequisite = {
 			focus = lns_crucify_opposition
 		}
+		prerequisite = {
+			focus = lns_lone_star_prospers
+		}
 
 		available = {
 			is_in_faction = no
@@ -2469,6 +2472,9 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = tex_union_economic_boom
+		}
+		prerequisite = {
+			focus = lns_lone_star_prospers
 		}
 		available = {
 			custom_trigger_tooltip = {

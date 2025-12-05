@@ -4,11 +4,11 @@
 	shared_focus = {
 		id = tex_two_nations_one_system
 		icon = GFX_goal_generic_BOS_focus_combined_operations
-		cost = 40
-		x = 5
+		cost = 30
+		x = 9
 		y = 4
 		offset = {
-			x = 9
+			x = 5
 			y = 4
 			trigger = {
 				has_focus_tree = nf_lone_star
@@ -59,7 +59,7 @@
 	joint_focus = {
 		id = tex_develop_join_arms_production
 		icon = GFX_goal_generic_ammo_boxes_focus
-		cost = 40
+		cost = 30
 		x = -2
 		y = 1
 		relative_position_id = tex_two_nations_one_system
@@ -99,7 +99,7 @@
 	joint_focus = {
 		id = tex_announce_fiscal_reform
 		icon = GFX_goal_cap_and_cash
-		cost = 40
+		cost = 30
 		x = 0
 		y = 1
 		relative_position_id = tex_two_nations_one_system
@@ -127,7 +127,7 @@
 	joint_focus = {
 		id = tex_expand_inter_nation_inf
 		icon = GFX_goal_generic_infrastructure2
-		cost = 40
+		cost = 30
 		x = 2
 		y = 1
 		relative_position_id = tex_two_nations_one_system
@@ -173,7 +173,7 @@
 	joint_focus = {
 		id = tex_enlargen_tex_mission
 		icon = GFX_goal_BOS_victory_or_death
-		cost = 40
+		cost = 30
 		x = -1
 		y = 1
 		relative_position_id = tex_develop_join_arms_production
@@ -208,7 +208,7 @@
 	joint_focus = {
 		id = tex_enlargen_tex_mission_basic_drills
 		icon = GFX_goal_generic_BOS_focus_t45d_production
-		cost = 40
+		cost = 30
 		x = -1
 		y = 1
 		relative_position_id = tex_enlargen_tex_mission
@@ -236,7 +236,7 @@
 	joint_focus = {
 		id = tex_enlargen_tex_mission_advanced_drills
 		icon = GFX_goal_generic_BOS_focus_t51b_production
-		cost = 40
+		cost = 30
 		x = 1
 		y = 1
 		relative_position_id = tex_enlargen_tex_mission
@@ -264,7 +264,7 @@
 	joint_focus = {
 		id = tex_enlargen_tex_mission_rangers_for_lonestar
 		icon = GFX_goal_BOS_tesla_cannon
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 		relative_position_id = tex_enlargen_tex_mission
@@ -296,7 +296,7 @@
 	joint_focus = {
 		id = tex_adopt_texan_dollar
 		icon = GFX_goal_LNS_texan_dollar
-		cost = 40
+		cost = 30
 		x = -1
 		y = 1
 		relative_position_id = tex_announce_fiscal_reform
@@ -351,7 +351,7 @@
 	joint_focus = {
 		id = tex_focus_on_new_research
 		icon = GFX_goal_generic_advanced_technology_focus
-		cost = 40
+		cost = 30
 		x = 1
 		y = 1
 		relative_position_id = tex_announce_fiscal_reform
@@ -404,7 +404,7 @@
 	joint_focus = {
 		id = tex_enlargen_lns_mission
 		icon = GFX_goal_BOS_generic_industrial
-		cost = 40
+		cost = 30
 		x = 1
 		y = 1
 		relative_position_id = tex_expand_inter_nation_inf
@@ -429,7 +429,7 @@
 	joint_focus = {
 		id = tex_enlargen_lns_mission_metal
 		icon = GFX_goal_generic_metal_focus
-		cost = 40
+		cost = 30
 		x = 1
 		y = 1
 		relative_position_id = tex_enlargen_lns_mission
@@ -461,7 +461,7 @@
 	joint_focus = {
 		id = tex_enlargen_lns_mission_water
 		icon = GFX_goal_water_generic
-		cost = 40
+		cost = 30
 		x = -1
 		y = 1
 		relative_position_id = tex_enlargen_lns_mission
@@ -493,7 +493,7 @@
 	joint_focus = {
 		id = tex_enlargen_lns_mission_advanced
 		icon = GFX_goal_generic_advanced_technology_focus
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 		relative_position_id = tex_enlargen_lns_mission
@@ -523,7 +523,7 @@
 	joint_focus = {
 		id = tex_restore_texas_uni
 		icon = GFX_goal_generic_cities_focus
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 		relative_position_id = tex_announce_fiscal_reform
@@ -560,7 +560,7 @@
 	joint_focus = {
 		id = tex_form_central_bank
 		icon = GFX_goal_bottlecap
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 		relative_position_id = tex_adopt_texan_dollar
@@ -591,7 +591,7 @@
 	joint_focus = {
 		id = tex_share_tech_development
 		icon = GFX_goal_tfv_generic_tech_sharing
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 		relative_position_id = tex_focus_on_new_research
@@ -631,7 +631,7 @@
 	joint_focus = {
 		id = tex_enhance_civilian_commerce
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
-		cost = 40
+		cost = 30
 		x = -1
 		y = 1
 		relative_position_id = tex_form_central_bank
@@ -696,7 +696,7 @@
 	joint_focus = {
 		id = tex_joint_resource_campaigns
 		icon = GFX_goal_generic_metal_focus
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 		relative_position_id = tex_restore_texas_uni
@@ -759,7 +759,7 @@
 	joint_focus = {
 		id = tex_unified_doctrine_research
 		icon = GFX_goal_generic_land_doctrines_focus
-		cost = 40
+		cost = 30
 		x = 1
 		y = 1
 		relative_position_id = tex_share_tech_development
@@ -807,7 +807,7 @@
 	joint_focus = {
 		id = tex_union_economic_boom
 		icon = GFX_goal_generic_BoS_diplomatic_focus
-		cost = 40
+		cost = 30
 		x = 0
 		y = 1
 		relative_position_id = tex_joint_resource_campaigns

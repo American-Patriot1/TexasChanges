@@ -15,7 +15,7 @@ focus_tree = {
 		id = tbh_nf_rhombus_chase
 		icon = GFX_goal_TBH_startup_icon
 		cost = 7
-		x = 16
+		x = 18
 		y = 0
 
 		completion_reward = {
@@ -113,7 +113,7 @@ focus_tree = {
 		id = tbh_nf_development_1
 		icon = GFX_goal_generic_sledgehammers
 		cost = 30
-		x = -2
+		x = -1
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -170,13 +170,13 @@ focus_tree = {
 		id = tbh_nf_development_2
 		icon = GFX_goal_generic_slums_focus
 		cost = 30
-		x = 0
+		x = 1
 		y = 1
 
-		relative_position_id = tbh_nf_development_1
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_development_1
+			focus = tbh_nf_rhombus_legacy
 		}
 
 		completion_reward = {
@@ -227,8 +227,8 @@ focus_tree = {
 		id = tbh_nf_doctrinal_thought
 		icon = GFX_goal_generic_helm_army_2
 		cost = 30
-		x = 2
-		y = 1
+		x = 0
+		y = 2
 
 		relative_position_id = tbh_nf_rhombus_legacy
 
@@ -266,13 +266,21 @@ focus_tree = {
 		icon = GFX_goal_generic_books
 		cost = 30
 		x = 0
-		y = 1
+		y = 3
 
 		relative_position_id = tbh_nf_doctrinal_thought
 
 		prerequisite = {
-			focus = tbh_nf_doctrinal_thought
+			focus = tbh_nf_roots_new_weapons
+			focus = tbh_nf_roots_new_recruits
+			focus = tbh_nf_shores_new_vehicles
+			focus = tbh_nf_shores_new_tactics
+			# focus = tbh_nf_doctrinal_thought
 		}
+
+		# available = {
+		# 	has_completed_focus = tbh_nf_doctrinal_thought
+		# }
 
 		completion_reward = {
 			if = {
@@ -309,13 +317,13 @@ focus_tree = {
 		id = tbh_nf_our_path_roots
 		icon = GFX_goal_TBH_rusk
 		cost = 30
-		x = -4
-		y = 3
+		x = -2
+		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_doctrinal_thought
 
 		prerequisite = {
-			focus = tbh_nf_rhombus_legacy
+			focus = tbh_nf_doctrinal_thought
 		}
 
 		mutually_exclusive = {
@@ -433,13 +441,13 @@ focus_tree = {
 		id = tbh_nf_our_path_new_shores
 		icon = GFX_goal_BOS_victory_or_death
 		cost = 30
-		x = 4
-		y = 3
+		x = 2
+		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_doctrinal_thought
 
 		prerequisite = {
-			focus = tbh_nf_rhombus_legacy
+			focus = tbh_nf_doctrinal_thought
 		}
 
 		mutually_exclusive = {
@@ -632,7 +640,7 @@ focus_tree = {
 		id = tbh_nf_development_3
 		icon = GFX_goal_generic_workshop
 		cost = 30
-		x = 1
+		x = 2
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -747,7 +755,7 @@ focus_tree = {
 		id = tbh_nf_we_have_been_betrayed
 		icon = GFX_goal_MOJ_technology_raids
 		cost = 30
-		x = -18
+		x = -16
 		y = 1
 		prerequisite = {
 			focus = tbh_nf_rhombus_legacy
@@ -779,7 +787,7 @@ focus_tree = {
 		icon = GFX_goal_MOJ_gun_runner_caravan_raids
 		cost = 30
 		x = -1
-		y = 1
+		y = 2
 
 		relative_position_id = tbh_nf_we_have_been_betrayed
 
@@ -825,7 +833,7 @@ focus_tree = {
 		icon = GFX_goal_generic_texas1
 		cost = 30
 		x = 1
-		y = 1
+		y = 2
 
 		relative_position_id = tbh_nf_we_have_been_betrayed
 
@@ -858,7 +866,7 @@ focus_tree = {
 		icon = GFX_goal_generic_power_armour_t51
 		cost = 30
 		x = 0
-		y = 2
+		y = 3
 
 		relative_position_id = tbh_nf_we_have_been_betrayed
 
@@ -884,8 +892,8 @@ focus_tree = {
 		id = tbh_nf_fortress_brotherhood
 		icon = GFX_goal_generic_bunkers_focus
 		cost = 30
-		x = 4
-		y = 1
+		x = 0
+		y = 5
 
 		relative_position_id = tbh_nf_broken_apart
 
@@ -916,7 +924,7 @@ focus_tree = {
 		icon = GFX_goal_generic_mountain_fortress
 		cost = 30
 		x = 0
-		y = 2
+		y = 1
 
 		relative_position_id = tbh_nf_our_future
 
@@ -994,9 +1002,9 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_texas_old_world_blues
 		icon = GFX_goal_MOJ_paladin_thought
-		cost = 40
+		cost = 30
 		x = 0
-		y = 1
+		y = 2
 
 		relative_position_id = tbh_nf_fortress_brotherhood
 
@@ -1081,7 +1089,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_lonestar_reconquest
 		icon = GFX_goal_LNS_rising_star
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 
@@ -1120,7 +1128,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_restore_the_lone_star
 		icon = GFX_goal_LNS_Victory_Lone
-		cost = 40
+		cost = 30
 		x = 0
 		y = 2
 
@@ -1192,7 +1200,7 @@ focus_tree = {
 		id = tbh_nf_listening_posts
 		icon = GFX_goal_generic_thing
 		cost = 30
-		x = 11
+		x = 9
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -1260,15 +1268,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes
 		icon = GFX_KHA_focus_army_1
-		cost = 15
-		x = -1
-		y = 6
+		cost = 30
+		x = -3
+		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_doctrinal_thought_2
 
 		prerequisite = {
-			focus = tbh_nf_our_path_roots_2
 			focus = tbh_nf_our_path_new_shores_2
+			focus = tbh_nf_our_path_roots_2
 		}
 
 		completion_reward = {
@@ -1306,15 +1314,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes_2
 		icon = GFX_goal_NCR_Infantry_Drills
-		cost = 15
-		x = -3
-		y = 6
+		cost = 30
+		x = -1
+		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_doctrinal_thought_2
 
 		prerequisite = {
-			focus = tbh_nf_our_path_roots_2
 			focus = tbh_nf_our_path_new_shores_2
+			focus = tbh_nf_our_path_roots_2
 		}
 
 		completion_reward = {
@@ -1356,17 +1364,16 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes_3
 		icon = GFX_goal_NCR_Infantry_Drills
-		cost = 15
+		cost = 30
 		x = 3
-		y = 6
+		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_doctrinal_thought_2
 
 		prerequisite = {
-			focus = tbh_nf_our_path_roots_2
 			focus = tbh_nf_our_path_new_shores_2
+			focus = tbh_nf_our_path_roots_2
 		}
-
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1406,15 +1413,15 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_national_excersizes_4
 		icon = GFX_KHA_focus_army_1
-		cost = 15
+		cost = 30
 		x = 1
-		y = 6
+		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_doctrinal_thought_2
 
 		prerequisite = {
-			focus = tbh_nf_our_path_roots_2
 			focus = tbh_nf_our_path_new_shores_2
+			focus = tbh_nf_our_path_roots_2
 		}
 
 		completion_reward = {
@@ -1919,10 +1926,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			OR = {
-				LNS = { has_government = people }
-				has_completed_focus = tbh_nf_the_alamo_was_right
-			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_consolidate_conquests entered"
@@ -1984,7 +1987,7 @@ focus_tree = {
 	focus = {
 		id = tbh_nf_form_texas_yehaw
 		icon = GFX_goal_uoa_texas
-		cost = 15
+		cost = 30
 		x = 0
 		y = 13
 
@@ -2055,6 +2058,9 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			hidden_effect = {
+				set_technology = { tools_tech_level_scientific = 1 }
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_form_texas_yehaw entered"
@@ -2073,7 +2079,7 @@ focus_tree = {
 		id = tbh_nf_broken_apart
 		icon = GFX_goal_TBH_two_coins
 		cost = 30
-		x = 3
+		x = 6
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2106,14 +2112,14 @@ focus_tree = {
 		id = tbh_nf_the_hard_road
 		icon = GFX_goal_generic_dark_paladins
 		cost = 30
-		x = 1
+		x = 2
 		y = 1
 
 		relative_position_id = tbh_nf_broken_apart
 
 		mutually_exclusive = {
 			focus = tbh_nf_the_long_road
-			# focus = tbh_nf_the_alamo_was_right
+			focus = tbh_nf_the_alamo_was_right
 		}
 
 		continue_if_invalid = yes
@@ -2161,14 +2167,14 @@ focus_tree = {
 		id = tbh_nf_the_long_road
 		icon = GFX_goal_generic_f76_player3
 		cost = 30
-		x = -1
+		x = -2
 		y = 1
 
 		relative_position_id = tbh_nf_broken_apart
 
 		mutually_exclusive = {
 			focus = tbh_nf_the_hard_road
-			# focus = tbh_nf_the_alamo_was_right
+			focus = tbh_nf_the_alamo_was_right
 		}
 
 		continue_if_invalid = yes
@@ -2219,10 +2225,10 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		relative_position_id = tbh_nf_texas_old_world_blues
+		relative_position_id = tbh_nf_broken_apart
 
 		prerequisite = {
-			focus = tbh_nf_texas_old_world_blues
+			focus = tbh_nf_broken_apart
 		}
 
 		# mutually_exclusive = {
@@ -2246,9 +2252,9 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal entered"
 			}
-			ACH = {
-				puppet = TBH
-			}
+			# ACH = {
+			# 	puppet = TBH
+			# }
 			remove_ideas = tbh_torn_leadership
 			set_technology = {
 				electronics_tech_level_scientific = 1
@@ -2258,9 +2264,9 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_a_mutually_benefitial_deal exited"
 			}
-			ACH = {
-				country_event = nf_event_ach.107
-			}
+			# ACH = {
+			# 	country_event = nf_event_ach.107
+			# }
 		}
 	}
 
@@ -2373,7 +2379,7 @@ focus_tree = {
 		id = tbh_nf_our_fatman
 		icon = GFX_goal_generic_nuka_break_nuke
 		cost = 30
-		x = -3
+		x = -6
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2404,7 +2410,7 @@ focus_tree = {
 		id = tbh_nf_things_that_go_boom
 		icon = GFX_goal_generic_grenade_launcher
 		cost = 30
-		x = -1
+		x = -2
 		y = 1
 
 		relative_position_id = tbh_nf_our_fatman
@@ -2415,7 +2421,7 @@ focus_tree = {
 
 		mutually_exclusive = {
 			focus = tbh_nf_things_that_spit_lead
-			# focus = tbh_nf_treads_of_destruction
+			focus = tbh_nf_powered_destruction
 		}
 
 		available = {
@@ -2450,7 +2456,7 @@ focus_tree = {
 		id = tbh_nf_things_that_spit_lead
 		icon = GFX_goal_generic_minigun
 		cost = 30
-		x = 1
+		x = 2
 		y = 1
 
 		relative_position_id = tbh_nf_our_fatman
@@ -2461,7 +2467,7 @@ focus_tree = {
 
 		mutually_exclusive = {
 			focus = tbh_nf_things_that_go_boom
-			# focus = tbh_nf_treads_of_destruction
+			focus = tbh_nf_powered_destruction
 		}
 
 		available = {
@@ -2492,51 +2498,51 @@ focus_tree = {
 		}
 	}
 	#TEXAS CHANGES
-	# focus = {
-	# 	id = tbh_nf_treads_of_destruction
-	# 	icon = GFX_goal_generic_tank_2
-	# 	cost = 30
-	# 	x = 0
-	# 	y = 1
+	focus = {
+		id = tbh_nf_powered_destruction
+		icon = GFX_goal_BOS_victory_or_death
+		cost = 30
+		x = 0
+		y = 1
 
-	# 	relative_position_id = tbh_nf_our_fatman
+		relative_position_id = tbh_nf_our_fatman
 
-	# 	prerequisite = {
-	# 		focus = tbh_nf_our_fatman
-	# 	}
+		prerequisite = {
+			focus = tbh_nf_our_fatman
+		}
 
-	# 	mutually_exclusive = {
-	# 		focus = tbh_nf_things_that_go_boom
-	# 		focus = tbh_nf_things_that_spit_lead
-	# 	}
+		mutually_exclusive = {
+			focus = tbh_nf_things_that_go_boom
+			focus = tbh_nf_things_that_spit_lead
+		}
 
-	# 	available = {
-	# 	}
+		available = {
+		}
 
-	# 	completion_reward = {
-	# 		if = {
-	# 			limit = { has_global_flag = debug_logs }
-	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead entered"
-	# 		}
-	# 		if = {
-	# 			limit = { has_idea = tbh_military_heritage_bb }
-	# 			swap_ideas = {
-	# 				remove_idea = tbh_military_heritage_bb
-	# 				add_idea = tbh_military_heritage_bbtank
-	# 			}
-	# 			else = {
-	# 				swap_ideas = {
-	# 					remove_idea = tbh_military_heritage_aa
-	# 					add_idea = tbh_military_heritage_aatank
-	# 				}
-	# 			}
-	# 		}
-	# 		if = {
-	# 			limit = { has_global_flag = debug_logs }
-	# 			log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead exited"
-	# 		}
-	# 	}
-	# }
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead entered"
+			}
+			if = {
+				limit = { has_idea = tbh_military_heritage_bb }
+				swap_ideas = {
+					remove_idea = tbh_military_heritage_bb
+					add_idea = tbh_military_heritage_bbarmor
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = tbh_military_heritage_aa
+						add_idea = tbh_military_heritage_aaarmor
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_things_that_spit_lead exited"
+			}
+		}
+	}
 	#NO LONGER TEXAS CHANGES
 	focus = {
 		id = tbh_nf_things_that_protect
@@ -2550,7 +2556,7 @@ focus_tree = {
 		prerequisite = {
 			focus = tbh_nf_things_that_spit_lead
 			focus = tbh_nf_things_that_go_boom
-			# focus = tbh_nf_treads_of_destruction
+			focus = tbh_nf_powered_destruction
 		}
 
 		available = {
@@ -2670,7 +2676,7 @@ focus_tree = {
 		id = tbh_nf_occupation_theory
 		icon = GFX_goal_generic_pipe_revolver
 		cost = 30
-		x = -1
+		x = -2
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2738,7 +2744,7 @@ focus_tree = {
 		id = tbh_nf_mobilization
 		icon = GFX_goal_TBH_conscription_4
 		cost = 30
-		x = -6
+		x = -4
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -2824,7 +2830,7 @@ focus_tree = {
 		id = tbh_nf_mobilization_3
 		icon = GFX_goal_TBH_conscription_2
 		cost = 30
-		x = 6
+		x = 4
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -2909,7 +2915,7 @@ focus_tree = {
 	#TEXAS CHANGES
 	focus = { #HRO
 		id = tbh_nf_houston
-		icon = EDN_the_houston_conference
+		icon = GFX_goal_generic_bomb_space_station
 		cost = 30
 		x = 1
 		y = 1
@@ -2949,7 +2955,7 @@ focus_tree = {
 	}
 	focus = {
 		id = tbh_nf_houston_two
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_generic_satellite
 		cost = 30
 		x = 1
 		y = 1
@@ -3014,7 +3020,7 @@ focus_tree = {
 	}
 	focus = { #TLL
 		id = tbh_nf_last_lodge
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_generic_western
 		cost = 30
 		x = -3
 		y = 2
@@ -3052,7 +3058,7 @@ focus_tree = {
 	}
 	focus = {
 		id = tbh_nf_cypher_warband
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_tribal_generic
 		cost = 30
 		x = -1
 		y = 1
@@ -3089,9 +3095,9 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
+	focus = { #red river
 		id = tbh_nf_secure_north
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_cmc_going_to_the_river
 		cost = 30
 		x = 1
 		y = 1
@@ -3233,7 +3239,7 @@ focus_tree = {
 	# }
 	focus = { #BAM
 		id = tbh_nf_bayou
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_generic_boat_boat
 		cost = 30
 		x = 1
 		y = 1
@@ -3262,7 +3268,7 @@ focus_tree = {
 
 	focus = {
 		id = tbh_nf_secure_coast
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_generic_boat
 		cost = 30
 		x = -1
 		y = 1
@@ -3395,7 +3401,7 @@ focus_tree = {
 
 	focus = { #LINCOLN
 		id = tbh_nf_lincoln
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_LNS_I-10
 		cost = 15
 		x = -2
 		y = 1
@@ -3454,7 +3460,7 @@ focus_tree = {
 	}
 	focus = { #EDEN
 		id = tbh_nf_eden
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_edn_speech
 		cost = 15
 		x = 2
 		y = 1
@@ -3484,7 +3490,7 @@ focus_tree = {
 	}
 	focus = {
 		id = tbh_nf_secure_carthage
-		icon = GFX_goal_uoa_texas
+		icon = GFX_goal_energy
 		cost = 30
 		x = 0
 		y = 1
@@ -3604,7 +3610,7 @@ focus_tree = {
 		id = tbh_nf_austin_at_war
 		icon = GFX_goal_attis_army
 		cost = 15
-		x = 18
+		x = 16
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -3619,12 +3625,16 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			country_exists = UOA
-			NOT = { country_exists = IMO }
-			NOT = { country_exists = SHA }
-			NOT = { country_exists = EDN }
-			NOT = { country_exists = CBN }
-			NOT = { country_exists = LOS }
+			OR = {
+				AND = {
+					country_exists = UOA
+					NOT = { country_exists = IMO }
+					NOT = { country_exists = SHA }
+					NOT = { country_exists = EDN }
+					NOT = { country_exists = CBN }
+					NOT = { country_exists = LOS }
+				}
+			}
 		}
 
 		completion_reward = {
@@ -3636,7 +3646,7 @@ focus_tree = {
 		icon = GFX_goal_uoa_medal
 		cost = 15
 		x = 0
-		y = 1
+		y = 2
 
 		relative_position_id = tbh_nf_austin_at_war
 
@@ -3742,7 +3752,7 @@ focus_tree = {
 		icon = GFX_goal_uoa_election_poster
 		cost = 15
 		x = -1
-		y = 3
+		y = 2
 
 		relative_position_id = tbh_nf_austin_lost
 		prerequisite = {

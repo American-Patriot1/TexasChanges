@@ -649,7 +649,7 @@ ideas = {
 			}
 			removal_cost = -1
 		}
-		tbh_military_heritage_bbtank = {
+		tbh_military_heritage_bbarmor = {
 			picture = generic_BOS_idea_steel_legions
 			allowed = {
 				always = yes
@@ -658,7 +658,7 @@ ideas = {
 				support_tech_category = 0.08
 				infantry_tech_category = 0.08
 				vehicle_tech_category = 0.08
-				tank_tech_category = 0.1
+				power_armor_tech_category = 0.1
 			}
 			modifier = {
 				army_speed_factor = 0.05
@@ -668,7 +668,7 @@ ideas = {
 				air_doctrine_cost_factor = 0.15
 			}
 			equipment_bonus = {
-				tank_equipment = {
+				power_armor_equipment = {
 					soft_attack = 0.1
 					build_cost_ic = 0.1
 					instant = yes
@@ -679,14 +679,14 @@ ideas = {
 			}
 			removal_cost = -1
 		}
-		tbh_military_heritage_aatank = {
+		tbh_military_heritage_aaarmor = {
 			picture = generic_BOS_idea_steel_legions
 			allowed = {
 				always = yes
 			}
 			research_bonus = {
 				cat_land_doctrine = 0.15
-				tank_tech_category = 0.1
+				power_armor_tech_category = 0.1
 			}
 			modifier = {
 				army_org_factor = 0.1
@@ -697,7 +697,7 @@ ideas = {
 				air_doctrine_cost_factor = 0.15
 			}
 			equipment_bonus = {
-				tank_equipment = {
+				power_armor_equipment = {
 					soft_attack = 0.1
 					build_cost_ic = 0.1
 					instant = yes

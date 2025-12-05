@@ -29,10 +29,10 @@ focus_tree = {
 				has_cosmetic_tag = TAA_Texas_Left_proper
 			}
 		}
-		#modifier = {
-		#	add = 100000
-		#	tag = TBH
-		#}
+		# modifier = {
+		# 	add = 100000
+		# 	tag = TBH
+		# }
 	}
 	default = no
 	focus = {
