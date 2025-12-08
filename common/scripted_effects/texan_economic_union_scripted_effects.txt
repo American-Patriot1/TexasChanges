@@ -643,6 +643,10 @@ form_texas_effect = {
 				country_event = nf_texas.52
 			}
 		}
+		TEX = {
+			set_country_flag = has_unique_manpower_law
+			add_ideas = texas_manpower_1
+		}
 		set_politics = { ruling_party = people elections_allowed = no }
 		set_popularities = {
 			people = 68

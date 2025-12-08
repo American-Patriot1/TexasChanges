@@ -3215,7 +3215,8 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = has_unique_manpower_law
 			custom_effect_tooltip = tex_the_ranger_model_tt
-			add_ideas = commonplace_deputization
+			# add_ideas = commonplace_deputization
+			add_ideas = texas_manpower_2
 		}
 	}
 	### Upgrade Law 1
