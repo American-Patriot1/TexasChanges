@@ -643,10 +643,6 @@ form_texas_effect = {
 				country_event = nf_texas.52
 			}
 		}
-		TEX = {
-			set_country_flag = has_unique_manpower_law
-			add_ideas = texas_manpower_1
-		}
 		set_politics = { ruling_party = people elections_allowed = no }
 		set_popularities = {
 			people = 68
@@ -680,6 +676,11 @@ form_texas_effect = {
 				has_country_flag = has_unique_army_wage_law
 			}
 			clr_country_flag = has_unique_army_wage_law	# NOTE: Flag's direct effects are disabled for CPU cost. Kept it here in case that changes @Tran
+		}
+		TEX = {
+			clr_country_flag = has_unique_manpower_law
+			set_country_flag = has_unique_manpower_law
+			add_ideas = texas_manpower_1
 		}
 		mark_focus_tree_layout_dirty = yes
 	}

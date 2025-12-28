@@ -1676,8 +1676,8 @@ ideas = {
 				conscription = 0.12
 				special_forces_min = 10 #special_forces_cap = 0.05
 				industrial_capacity_factory = 0.1
-				cant_faction_call = 1
-				cant_faction_join = 1
+				# cant_faction_call = 1
+				# cant_faction_join = 1
 			}
 			default = yes
 			cancel_if_invalid = no
@@ -3833,21 +3833,21 @@ ideas = {
 	#TEXAS CHANGES MANPOWER LAWS
 		texas_manpower_1 = {
 			picture = recruitment_shotgun
-			cost = 150
-			level = 5
+			cost = 0
+			level = 7
 			removal_cost = -1
 			allowed = {
 				OR = {
 					original_tag = LNS
 					original_tag = TBH
 				}
+				# has_completed_focus = tex_conscription_1
 			}
 			visible = {
 				tag = TEX
 				if = {
 					limit = { tag = TEX }
 				}
-				has_completed_focus = tex_conscription_1
 			}
 			modifier = {
 				conscription = 0.05
@@ -3865,15 +3865,15 @@ ideas = {
 		}
 		texas_manpower_2 = {
 			picture = recruitment_army_man
-			cost = 150
-			level = 4
+			cost = 0
+			level = 6
 			removal_cost = -1
 			allowed = {
 				OR = {
 					original_tag = LNS
 					original_tag = TBH
 				}
-				has_completed_focus = tex_conscription_1
+				# has_completed_focus = tex_conscription_1
 			}
 			visible = {
 				tag = TEX
@@ -3897,15 +3897,15 @@ ideas = {
 		}
 		texas_manpower_3 = {
 			picture = frontier_militias
-			cost = 150
-			level = 3
+			cost = 0
+			level = 5
 			removal_cost = -1
 			allowed = {
 				OR = {
 					original_tag = LNS
 					original_tag = TBH
 				}
-				has_completed_focus = tex_conscription_2
+				# has_completed_focus = tex_conscription_2
 			}
 			visible = {
 				tag = TEX
@@ -3929,15 +3929,15 @@ ideas = {
 		}
 		texas_manpower_4 = {
 			picture = recruitment_cowboy
-			cost = 150
-			level = 2
+			cost = 0
+			level = 4
 			removal_cost = -1
 			allowed = {
 				OR = {
 					original_tag = LNS
 					original_tag = TBH
 				}
-				has_completed_focus = tex_conscription_3
+				# has_completed_focus = tex_conscription_3
 			}
 			visible = {
 				tag = TEX
@@ -3967,15 +3967,15 @@ ideas = {
 		}
 		texas_manpower_5 = {
 			picture = lns_merc_exc
-			cost = 150
-			level = 2
+			cost = 0
+			level = 3
 			removal_cost = -1
 			allowed = {
 				OR = {
 					original_tag = LNS
 					original_tag = TBH
 				}
-				has_completed_focus = tex_conscription_3
+				# has_completed_focus = tex_conscription_3
 			}
 			visible = {
 				tag = TEX
@@ -4004,7 +4004,7 @@ ideas = {
 		}
 		texas_manpower_6 = {
 			picture = COM_rg_colonial_industrial_development
-			cost = 150
+			cost = 0
 			level = 2
 			removal_cost = -1
 			allowed = {
@@ -4012,7 +4012,7 @@ ideas = {
 					original_tag = LNS
 					original_tag = TBH
 				}
-				has_completed_focus = tex_conscription_3
+				# has_completed_focus = tex_conscription_3
 			}
 			visible = {
 				tag = TEX
@@ -4048,7 +4048,7 @@ ideas = {
 		}
 		texas_manpower_7 = {
 			picture = child_conscription
-			cost = 150
+			cost = 0
 			level = 1
 			removal_cost = -1
 			allowed = {
@@ -4056,8 +4056,8 @@ ideas = {
 					original_tag = LNS
 					original_tag = TBH
 				}
-				has_war = yes
-				surrender_progress > 0.5
+				# has_war = yes
+				# surrender_progress > 0.5
 			}
 			visible = {
 				tag = TEX
@@ -4069,20 +4069,20 @@ ideas = {
 				conscription = 0.25
 				mobilization_speed = 1
 				training_time_army_factor = -0.5
-				war_support_weekly = 0.05
-				stability_weekly = -0.05
+				war_support_weekly = 0.005
+				stability_weekly = -0.005
 				weekly_manpower = 10
-				attrition = -0.2
+				attrition = -0.25
 				dig_in_speed_factor = 0.5
-				max_dig_in_factor = 0.2
+				max_dig_in_factor = 0.25
 				consumer_goods_expected_value = -0.25
 				army_core_defence_factor = 0.25
 				army_core_attack_factor = 0.25
 				resistance_damage_to_garrison_on_our_occupied_states = 0.5
-				resistance_target_on_our_occupied_states = 25
-				resistance_decay_on_our_occupied_states = -10
-				resistance_growth_on_our_occupied_states = 10
-				compliance_growth_on_our_occupied_states = -10
+				resistance_target_on_our_occupied_states = 0.25
+				resistance_decay_on_our_occupied_states = -0.10
+				resistance_growth_on_our_occupied_states = 0.10
+				compliance_growth_on_our_occupied_states = -0.10
 			}
 			equipment_bonus = {
 				infantry_equipment = {

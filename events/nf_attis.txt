@@ -1236,6 +1236,9 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
+			TBH = {
+				country_event = nf_tbh.31
+			}
 			924 = {
 				teleport_armies = {
 					to_province = 11499

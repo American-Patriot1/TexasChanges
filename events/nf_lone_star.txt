@@ -584,6 +584,7 @@ country_event = { # The Uprising Spreads!
 	immediate = {
 		hidden_effect = {
 			set_global_flag = LNS_beatdown
+			TBH = { set_country_flag = lone_star_civil_war_active }
 			every_country = {
 					limit = {
 						OR = {

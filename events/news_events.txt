@@ -1,0 +1,1462 @@
+﻿###########################
+# Global News Events
+###########################
+
+add_namespace = news_global
+
+news_event = { #BOS-NCR war!
+	id = news_global.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event news_global.1"}
+	title = news_global.1.t
+	desc = news_global.1.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_global.1.a
+		trigger = {
+			NOT = {
+				tag = BOS
+				is_in_faction_with = NCR
+				tag = NCR
+				has_country_flag = is_brotherhood_nation_proper
+			}
+		}
+	}
+	option = {
+		name = news_global.1.b
+		trigger = {
+			TAG = BOS
+		}
+	}
+	option = {
+		name = news_global.1.c
+		trigger = {
+			is_in_faction_with = NCR
+		}
+	}
+	option = {
+		name = news_global.1.f
+		trigger = {
+			has_country_flag = is_brotherhood_nation_proper
+			NOT = { TAG = BOS }
+		}
+	}
+}
+
+###########################
+# California News Events
+###########################
+
+#For California, Nevada, Arizona, and Oregon
+
+add_namespace = news_cali
+
+news_event = { #NCR wins in Navarro
+	id = news_cali.1
+	title = news_cali.1.t
+	desc = news_cali.1.d
+	picture = GFX_event_NCR_mojave_camp
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.1.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = SHI
+				TAG = EUR
+			}
+		}
+	}
+	option = {
+		name = news_cali.1.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.1.c
+		trigger = { TAG = SHI }
+	}
+	option = {
+		name = news_cali.1.e
+		trigger = { TAG = EUR }
+	}
+}
+
+news_event = { #SHI wins in Navarro
+	id = news_cali.2
+	title = news_cali.2.t
+	desc = news_cali.2.d
+	picture = GFX_event_SHI_good
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.2.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = SHI
+				TAG = EUR
+			}
+		}
+	}
+	option = {
+		name = news_cali.2.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.2.c
+		trigger = { TAG = SHI }
+	}
+	option = {
+		name = news_cali.2.e
+		trigger = { TAG = EUR }
+	}
+}
+
+news_event = { #EUR wins in Navarro
+	id = news_cali.3
+	title = news_cali.3.t
+	desc = news_cali.3.d
+	picture = GFX_event_ENC_assault_team
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.3.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = SHI
+				TAG = EUR
+			}
+		}
+	}
+	option = {
+		name = news_cali.3.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.3.c
+		trigger = { TAG = SHI }
+	}
+	option = {
+		name = news_cali.3.e
+		trigger = { TAG = EUR }
+	}
+}
+
+news_event = { #Crane School wins in SHI
+	id = news_cali.4
+	title = news_cali.4.t
+	desc = news_cali.4.d
+	picture = GFX_event_SHI_good
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.4.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+				TAG = SHI
+			}
+		}
+	}
+	option = {
+		name = news_cali.4.b
+		trigger = { is_in_faction_with = NCR }
+	}
+	option = {
+		name = news_cali.4.c
+		trigger = { TAG = SHI }
+	}
+	option = {
+		name = news_cali.4.e
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #Dragon School wins in SHI
+	id = news_cali.5
+	title = news_cali.5.t
+	desc = news_cali.5.d
+	picture = GFX_event_SHI_good
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.5.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = SHI
+			}
+		}
+	}
+	option = {
+		name = news_cali.5.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.5.c
+		trigger = { TAG = SHI }
+	}
+}
+
+news_event = { #Brotherhood wins in SHI
+	id = news_cali.6
+	title = news_cali.6.t
+	desc = news_cali.6.d
+	picture = GFX_event_SHI_good
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.6.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = SHI
+				TAG = BOS
+			}
+		}
+	}
+	option = {
+		name = news_cali.6.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.6.c
+		trigger = { TAG = SHI }
+	}
+	option = {
+		name = news_cali.6.e
+		trigger = { TAG = BOS }
+	}
+}
+
+news_event = { #Hanlon takes over MOT
+	id = news_cali.7
+	title = news_cali.7.t
+	desc = news_cali.7.d
+	picture = GFX_event_desert_rangers_marching
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.7.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = MOT
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.7.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.7.c
+		trigger = { TAG = MOT }
+	}
+	option = {
+		name = news_cali.7.e
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #Navarro collapses
+	id = news_cali.8
+	title = news_cali.8.t
+	desc = news_cali.8.d
+	picture = GFX_event_NCR_settlers
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.8.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = SHI
+				TAG = EUR
+			}
+		}
+	}
+	option = {
+		name = news_cali.8.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.8.c
+		trigger = { TAG = SHI }
+	}
+	option = {
+		name = news_cali.8.e
+		trigger = { TAG = EUR }
+	}
+}
+
+news_event = { #New Reno chooses Bishops
+	id = news_cali.9
+	title = news_cali.9.t
+	desc = news_cali.9.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.9.a
+		trigger = {
+			NOT = {
+				TAG = NEW
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.9.b
+		trigger = { is_in_faction_with = NCR }
+	}
+	option = {
+		name = news_cali.9.c
+		trigger = { TAG = NEW }
+	}
+	option = {
+		name = news_cali.9.e
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #New Reno chooses Wrights
+	id = news_cali.10
+	title = news_cali.10.t
+	desc = news_cali.10.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.10.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = NEW
+			}
+		}
+	}
+	option = {
+		name = news_cali.10.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.10.c
+		trigger = { TAG = NEW }
+	}
+}
+
+news_event = { #New Reno chooses Broken Brothers
+	id = news_cali.11
+	title = news_cali.11.t
+	desc = news_cali.11.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.11.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = NEW
+			}
+		}
+	}
+	option = {
+		name = news_cali.11.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.11.c
+		trigger = { TAG = NEW }
+	}
+}
+
+news_event = { #Van Graffs take over in New Reno
+	id = news_cali.12
+	title = news_cali.12.t
+	desc = news_cali.12.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.12.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = NEW
+			}
+		}
+	}
+	option = {
+		name = news_cali.12.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.12.c
+		trigger = { TAG = NEW }
+	}
+}
+
+news_event = { #Eureka Joins NCR
+	id = news_cali.13
+	title = news_cali.13.t
+	desc = news_cali.13.d
+	picture = GFX_event_NCR_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.13.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+				TAG = EUR
+			}
+		}
+	}
+	option = {
+		name = news_cali.13.b
+		trigger = {
+			is_in_faction_with = NCR
+			NOT = { TAG = EUR }
+		}
+	}
+	option = {
+		name = news_cali.13.c
+		trigger = { TAG = EUR }
+	}
+	option = {
+		name = news_cali.13.e
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #Lanius comes West
+	id = news_cali.14
+	title = news_cali.14.t
+	desc = news_cali.14.d
+	picture = GFX_event_lanius_planning
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.14.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.14.b
+		trigger = { is_in_faction_with = NCR }
+	}
+	option = {
+		name = news_cali.14.c
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #NCR State of New Vegas
+	id = news_cali.15
+	title = news_cali.15.t
+	desc = news_cali.15.d
+	picture = GFX_event_VEG_strip
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.15.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.15.b
+		trigger = { is_in_faction_with = NCR }
+	}
+	option = {
+		name = news_cali.15.c
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #Baja Republic
+	id = news_cali.16
+	title = news_cali.16.t
+	desc = news_cali.16.d
+	picture = GFX_event_baja_flag
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.16.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.16.b
+		trigger = { is_in_faction_with = NCR }
+	}
+	option = {
+		name = news_cali.16.c
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #Lynette Elected in Vault City
+	id = news_cali.17
+	title = news_cali.17.t
+	desc = news_cali.17.d
+	picture = GFX_event_vault_city_council_building
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.17.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				TAG = VLT
+			}
+		}
+	}
+	option = {
+		name = news_cali.17.b
+		trigger = { is_in_faction_with = NCR }
+	}
+	option = {
+		name = news_cali.17.c
+		trigger = { TAG = VLT }
+	}
+}
+
+news_event = { #Maier Elected in Vault City
+	id = news_cali.18
+	title = news_cali.18.t
+	desc = news_cali.18.d
+	picture = GFX_event_vault_city_council_building
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.18.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				TAG = VLT
+			}
+		}
+	}
+	option = {
+		name = news_cali.18.b
+		trigger = { is_in_faction_with = NCR }
+	}
+	option = {
+		name = news_cali.18.c
+		trigger = { TAG = VLT }
+	}
+}
+
+news_event = { #Vault City Joins NCR Lynette
+	id = news_cali.19
+	title = news_cali.19.t
+	desc = news_cali.19.d
+	picture = GFX_event_vault_city_council_building
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.19.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+				TAG = VLT
+			}
+		}
+	}
+	option = {
+		name = news_cali.19.b
+		trigger = {
+			is_in_faction_with = NCR
+			NOT = { TAG = VLT }
+		}
+	}
+	option = {
+		name = news_cali.19.c
+		trigger = { TAG = VLT }
+	}
+	option = {
+		name = news_cali.19.e
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #Vault City Joins NCR Gordon
+	id = news_cali.20
+	title = news_cali.20.t
+	desc = news_cali.20.d
+	picture = GFX_event_vault_city_council_building
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.20.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+				TAG = VLT
+			}
+		}
+	}
+	option = {
+		name = news_cali.20.b
+		trigger = {
+			is_in_faction_with = NCR
+			NOT = { TAG = VLT }
+		}
+	}
+	option = {
+		name = news_cali.20.c
+		trigger = { TAG = VLT }
+	}
+	option = {
+		name = news_cali.20.e
+		trigger = { is_in_faction_with = CES }
+	}
+}
+
+news_event = { #Brain takes over Vault City
+	id = news_cali.21
+	title = news_cali.21.t
+	desc = news_cali.21.d
+	picture = GFX_event_vault_city_council_building
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.21.a
+		trigger = {
+			NOT = {
+				TAG = VLT
+			}
+		}
+	}
+	option = {
+		name = news_cali.21.b
+		trigger = { TAG = VLT }
+	}
+}
+
+news_event = { #Gordon takes over Vault City
+	id = news_cali.22
+	title = news_cali.22.t
+	desc = news_cali.22.d
+	picture = GFX_event_vault_city_council_building
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.22.a
+		trigger = {
+			NOT = {
+				TAG = VLT
+			}
+		}
+	}
+	option = {
+		name = news_cali.22.b
+		trigger = { TAG = VLT }
+	}
+}
+
+news_event = { #BOS-NCR Peace
+	id = news_cali.23
+	title = news_cali.23.t
+	desc = news_cali.23.d
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.23.a
+		trigger = {
+			NOT = {
+				TAG = BOS
+				TAG = NCR
+				TAG = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.23.b
+		trigger = {
+			OR = {
+				TAG = NCR
+				TAG = BOS
+			}
+		}
+	}
+	option = {
+		name = news_cali.23.c
+		trigger = {
+			TAG = CES
+		}
+	}
+}
+
+news_event = { #Kimball removed
+	id = news_cali.24
+	title = news_cali.24.t
+	desc = news_cali.24.d
+	picture = GFX_event_NCR_congress
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.24.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.24.b
+		trigger = {
+			is_in_faction_with = NCR
+		}
+	}
+	option = {
+		name = news_cali.24.c
+		trigger = {
+			is_in_faction_with = CES
+		}
+	}
+}
+
+news_event = { #Arroyo Joins NCR (Statehood)
+	id = news_cali.25
+	title = news_cali.25.t
+	desc = news_cali.25.d
+	picture = GFX_event_ARR_arroyo
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.25.a
+		trigger = {
+			NOT = {
+				tag = ARR
+				tag = NCR
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.25.b
+		trigger = {
+			OR = {
+				tag = ARR
+				tag = NCR
+			}
+		}
+	}
+	option = {
+		name = news_cali.25.c
+		trigger = {
+			is_in_faction_with = NCR
+			NOT = {
+				tag = ARR
+				tag = NCR
+			}
+		}
+	}
+	option = {
+		name = news_cali.25.e
+		trigger = {
+			is_in_faction_with = CES
+		}
+	}
+}
+
+news_event = { #Arroyo Joins NCR (Independent)
+	id = news_cali.26
+	title = news_cali.26.t
+	desc = news_cali.26.d
+	picture = GFX_event_ARR_arroyo
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.26.a
+		trigger = {
+			NOT = {
+				tag = ARR
+				tag = NCR
+				is_in_faction_with = NCR
+				is_in_faction_with = CES
+			}
+		}
+	}
+	option = {
+		name = news_cali.26.b
+		trigger = {
+			OR = {
+				tag = ARR
+				tag = NCR
+			}
+		}
+	}
+	option = {
+		name = news_cali.26.c
+		trigger = {
+			is_in_faction_with = NCR
+			NOT = {
+				tag = ARR
+				tag = NCR
+			}
+		}
+	}
+	option = {
+		name = news_cali.26.e
+		trigger = {
+			is_in_faction_with = CES
+		}
+	}
+}
+
+news_event = { #Nevadabowl, DES win
+	id = news_cali.27
+	title = news_cali.27.t
+	desc = news_cali.27.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.27.a
+		trigger = {
+			NOT = {
+				TAG = NCR
+				TAG = DES
+			}
+		}
+	}
+	option = {
+		name = news_cali.27.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.27.c
+		trigger = { TAG = DES }
+	}
+}
+
+news_event = { #Nevadabowl, SOK win
+	id = news_cali.28
+	title = news_cali.28.t
+	desc = news_cali.28.d
+	picture = GFX_event_ARR_arroyo
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.28.a
+		trigger = {
+			NOT = {
+				TAG = ARR
+				TAG = SOK
+			}
+		}
+	}
+	option = {
+		name = news_cali.28.b
+		trigger = { TAG = ARR }
+	}
+	option = {
+		name = news_cali.28.c
+		trigger = { TAG = SOK }
+	}
+}
+
+news_event = { #Nevadabowl, TOF win
+	id = news_cali.29
+	title = news_cali.29.t
+	desc = news_cali.29.d
+	picture = GFX_event_rrg_raiders
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.29.a
+		trigger = {
+			NOT = {
+				TAG = TOF
+				TAG = NCR
+			}
+		}
+	}
+	option = {
+		name = news_cali.29.b
+		trigger = { TAG = NCR }
+	}
+	option = {
+		name = news_cali.29.c
+		trigger = { TAG = TOF }
+	}
+}
+
+news_event = { #Nevadabowl, GRD win
+	id = news_cali.30
+	title = news_cali.30.t
+	desc = news_cali.30.d
+	picture = GFX_event_BOS_settler_defense
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.30.a
+		trigger = {
+			NOT = {
+				TAG = GRD
+				TAG = BOS
+			}
+		}
+	}
+	option = {
+		name = news_cali.30.b
+		trigger = { TAG = BOS }
+	}
+	option = {
+		name = news_cali.30.c
+		trigger = { TAG = GRD }
+	}
+}
+
+news_event = { #Nevadabowl, TVT win
+	id = news_cali.31
+	title = news_cali.31.t
+	desc = news_cali.31.d
+	picture = GFX_event_TVT_android
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_cali.31.a
+		trigger = {
+			NOT = {
+				TAG = TVT
+			}
+		}
+	}
+	option = {
+		name = news_cali.31.b
+		trigger = { TAG = TVT }
+	}
+}
+
+###########################
+# East News Events        #
+###########################
+
+#For Texas, Central New Mexico, South Colorado, RRG, West Lousiania, Oklahoma
+
+add_namespace = news_texas
+
+news_event = { #Lone Star Civil War
+	id = news_texas.1
+	title = news_texas.1.t
+	desc = news_texas.1.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	option = {
+		name = news_texas.1.a
+		trigger = {
+			NOT = {
+				TAG = LNS
+				is_in_faction_with = TBH
+			}
+		}
+	}
+	option = {
+		name = news_texas.1.b
+		trigger = { TAG = LNS }
+	}
+	option = {
+		name = news_texas.1.c
+		trigger = {
+			is_in_faction_with = TBH
+			NOT = { TAG = LNS }
+		}
+	}
+}
+
+news_event = { #austin joins teu
+	id = news_texas.2
+	title = news_texas.2.t
+	desc = news_texas.2.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_texas.2.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = TBH
+			}
+		}
+	}
+	option = {
+		name = news_texas.2.b
+		trigger = { TAG = UOA }
+	}
+	option = {
+		name = news_texas.2.c
+		trigger = {
+			is_in_faction_with = TBH
+			NOT = { TAG = LNS }
+		}
+	}
+}
+
+#############################
+# Canada News Events        #
+#############################
+
+# Primarily for the 5.0 region
+
+add_namespace = news_canada
+
+news_event = {	# Nuclear blast over Strathcommune
+	id = news_canada.1
+	title = news_canada.1.t
+	desc = news_canada.1.d
+	picture = GFX_event_generic_nuclear_explosion
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.1.a
+		trigger = { tag = STC }
+	}
+
+	option = {
+		name = news_canada.1.b
+		# trigger = { tag = STC }
+		trigger = { always = no }	# News events don't work for multi option events like this, leaving in alt flavor options in the code for now @Tran
+	}
+
+	option = {
+		name = news_canada.1.c
+		trigger = {
+			OR = {
+				tag = BGR
+				tag = COM
+				tag = LOI
+			}
+		}
+	}
+
+	option = {
+		name = news_canada.1.e
+		trigger = {
+			NOT = {
+				tag = BGR
+				tag = COM
+				tag = LOI
+				tag = STC
+			}
+		}
+	}
+}
+
+news_event = {	# The CPF Civil War Begins
+	id = news_canada.2
+	title = news_canada.2.t
+	desc = news_canada.2.d
+	picture = GFX_event_tarnished_canadian_flag
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.2.a
+		trigger = { tag = STC }
+	}
+
+	option = {
+		name = news_canada.2.b
+		# trigger = { tag = STC }
+		trigger = { always = no }	# News events don't work for multi option events like this, leaving in alt flavor options in the code for now @Tran
+	}
+
+	option = {
+		name = news_canada.2.c
+		trigger = {
+			OR = {
+				tag = BGR
+				tag = COM
+				tag = LOI
+			}
+		}
+	}
+
+	option = {
+		name = news_canada.2.e
+		trigger = {
+			NOT = {
+				tag = BGR
+				tag = COM
+				tag = LOI
+				tag = STC
+			}
+		}
+	}
+}
+
+news_event = {	# Redmond In Flames
+	id = news_canada.3
+	title = news_canada.3.t
+	desc = news_canada.3.d
+	picture = GFX_event_generic_civil_unrest
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.3.a
+		trigger = { tag = STC }
+	}
+
+	option = {
+		name = news_canada.3.b
+		# trigger = { tag = STC }
+		trigger = { always = no }	# News events don't work for multi option events like this, leaving in alt flavor options in the code for now @Tran
+	}
+
+	option = {
+		name = news_canada.3.c
+		trigger = {
+			OR = {
+				tag = BGR
+				tag = COM
+				tag = LOI
+			}
+		}
+	}
+
+	option = {
+		name = news_canada.3.e
+		trigger = {
+			NOT = {
+				tag = BGR
+				tag = COM
+				tag = LOI
+				tag = STC
+			}
+		}
+	}
+}
+
+news_event = {	# BGR Victory
+	id = news_canada.4
+	title = news_canada.4.t
+	desc = news_canada.4.d
+	picture = GFX_event_loi_radio
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.4.a
+		trigger = { tag = BGR }
+	}
+
+	option = {
+		name = news_canada.4.b
+		trigger = { NOT = { tag = BGR } }
+	}
+}
+
+news_event = {	# STC Victory
+	id = news_canada.5
+	title = news_canada.5.t
+	desc = news_canada.5.d
+	picture = GFX_event_loi_radio
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.5.a
+		trigger = { tag = STC }
+	}
+
+	option = {
+		name = news_canada.5.b
+		# trigger = { tag = STC }
+		trigger = { always = no }	# News events don't work for multi option events like this, leaving in alt flavor options in the code for now @Tran
+	}
+
+	option = {
+		name = news_canada.5.c
+		trigger = { NOT = { tag = STC } }
+	}
+}
+
+news_event = {	# COM Victory
+	id = news_canada.6
+	title = news_canada.6.t
+	desc = news_canada.6.d
+	picture = GFX_event_loi_radio
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.6.a
+		trigger = { tag = COM }
+	}
+
+	option = {
+		name = news_canada.6.b
+		trigger = { NOT = { tag = COM } }
+	}
+}
+
+news_event = {	# LOI Solomon Victory
+	id = news_canada.7
+	title = news_canada.7.t
+	desc = news_canada.7.d
+	picture = GFX_event_loi_radio
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.7.a
+		trigger = { tag = LOI }
+	}
+
+	option = {
+		name = news_canada.7.b
+		trigger = { NOT = { tag = LOI } }
+	}
+}
+
+news_event = {	# LOI Ekaternia Victory
+	id = news_canada.8
+	title = news_canada.8.t
+	desc = news_canada.8.d
+	picture = GFX_event_loi_radio
+
+	is_triggered_only = yes
+
+	option = {
+		name = news_canada.8.a
+		trigger = { tag = LOI }
+	}
+
+	option = {
+		name = news_canada.8.b
+		trigger = { NOT = { tag = LOI } }
+	}
+}
+
+  ###############################
+  ###   MCA_COM News Events   ###
+  ###############################
+
+add_namespace = MCA_COM_results
+
+news_event = { #MCA-COM talk alliance
+	id = MCA_COM_results.1
+	title = MCA_COM_results.1.t
+	desc = MCA_COM_results.1.d
+	picture = GFX_event_american_bunting
+
+	is_triggered_only = yes
+
+	option = {
+		name = MCA_COM_results.1.a
+		trigger = { tag = MCA }
+	}
+
+	option = {
+		name = MCA_COM_results.1.b
+		trigger = { tag = COM }
+	}
+
+	option = {
+		name = MCA_COM_results.1.c
+		trigger = {
+			NOT = {
+				TAG = MCA
+				TAG = COM
+			}
+		}
+	}
+
+	option = {
+		name = MCA_COM_results.1.e
+		trigger = {
+			wild_wasteland = yes
+			NOT = {
+				TAG = MCA
+				TAG = COM
+			}
+		}
+	}
+}
+
+news_event = { #MCA-COM talk leads to COM annexation
+	id = MCA_COM_results.2
+	title = MCA_COM_results.2.t
+	desc = MCA_COM_results.2.d
+	picture = GFX_event_com_soldiers_ruins	#pic to big
+
+	is_triggered_only = yes
+
+	option = {
+		name = MCA_COM_results.2.a
+		trigger = { tag = MCA }
+		MCA = { activate_mission = COM_ANNEX }
+	}
+
+	option = {
+		name = MCA_COM_results.2.b
+		trigger = { tag = COM }
+		MCA = { change_tag_from = COM }
+		COM = { activate_mission = COM_ANNEX }
+	}
+
+	option = {
+		name = MCA_COM_results.2.c
+		trigger = {
+			NOT = {
+				TAG = MCA
+				TAG = COM
+			}
+		}
+	}
+
+		option = {
+		name = MCA_COM_results.1.d
+		trigger = {
+			wild_wasteland = yes
+			NOT = {
+				TAG = MCA
+				TAG = COM
+			}
+		}
+	}
+}
+
+news_event = { #MCA-COM talk leads to COM under Johnson annexing MCA
+	id = MCA_COM_results.3
+	title = MCA_COM_results.3.t
+	desc = MCA_COM_results.3.d
+	picture = GFX_event_event_enclave_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = MCA_COM_results.3.a
+		trigger = { tag = MCA }
+		COM = { change_tag_from = MCA }
+		MCA = { activate_mission = MCA_ANNEX }
+	}
+
+	option = {
+		name = MCA_COM_results.3.b
+		trigger = { tag = COM }
+		COM = { activate_mission = MCA_ANNEX }
+	}
+
+	option = {
+		name = MCA_COM_results.3.c
+		trigger = {
+			NOT = {
+				TAG = MCA
+				TAG = COM
+			}
+		}
+	}
+
+		option = {
+		name = MCA_COM_results.1.d
+		trigger = {
+			wild_wasteland = yes
+			NOT = {
+				TAG = MCA
+				TAG = COM
+			}
+		}
+	}
+}
+
+news_event = { #MCA-COM talk leads to COM under Woods maintaining independence
+	id = MCA_COM_results.4
+	title = MCA_COM_results.4.t
+	desc = MCA_COM_results.4.d
+	picture = GFX_event_com_reconstruction1		#pic to big
+
+	is_triggered_only = yes
+
+	option = {
+		name = MCA_COM_results.4.a
+		trigger = { tag = MCA }
+	}
+
+	option = {
+		name = MCA_COM_results.4.b
+		trigger = { tag = COM }
+	}
+
+	option = {
+		name = MCA_COM_results.4.c
+		trigger = {
+			NOT = {
+				TAG = MCA
+				TAG = COM
+			}
+		}
+	}
+}

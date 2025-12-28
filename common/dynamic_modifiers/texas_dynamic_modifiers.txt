@@ -1,0 +1,10 @@
+# Texan Economic Union Modifier
+texan_economic_union = {
+	icon = GFX_idea_corruption_10
+	cant_leave_faction = 1
+	cant_kick_from_the_faction = 1
+	production_speed_buildings_factor = tep_positive
+	line_change_production_efficiency_factor = tep_positive
+	global_building_slots_factor = tep_positive
+	political_power_factor = tep_negative
+}

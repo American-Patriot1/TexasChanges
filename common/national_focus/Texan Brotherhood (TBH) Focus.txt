@@ -113,7 +113,7 @@ focus_tree = {
 		id = tbh_nf_development_1
 		icon = GFX_goal_generic_sledgehammers
 		cost = 30
-		x = -1
+		x = -13
 		y = 1
 
 		relative_position_id = tbh_nf_rhombus_legacy
@@ -170,13 +170,13 @@ focus_tree = {
 		id = tbh_nf_development_2
 		icon = GFX_goal_generic_slums_focus
 		cost = 30
-		x = 1
+		x = 0
 		y = 1
 
-		relative_position_id = tbh_nf_rhombus_legacy
+		relative_position_id = tbh_nf_development_1
 
 		prerequisite = {
-			focus = tbh_nf_rhombus_legacy
+			focus = tbh_nf_development_1
 		}
 
 		completion_reward = {
@@ -640,13 +640,17 @@ focus_tree = {
 		id = tbh_nf_development_3
 		icon = GFX_goal_generic_workshop
 		cost = 30
-		x = 2
+		x = 13
 		y = 1
 
-		relative_position_id = tbh_nf_protector_of_texas
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_protector_of_texas
+			focus = tbh_nf_rhombus_legacy
+		}
+
+		available = {
+			has_completed_focus = tbh_nf_development_2
 		}
 
 		completion_reward = {
@@ -698,7 +702,7 @@ focus_tree = {
 		icon = GFX_goal_generic_megaloader
 		cost = 30
 		x = 0
-		y = 2
+		y = 1
 
 		relative_position_id = tbh_nf_development_3
 
@@ -761,9 +765,24 @@ focus_tree = {
 			focus = tbh_nf_rhombus_legacy
 		}
 		relative_position_id = tbh_nf_rhombus_legacy
+
 		available = {
 			OR = {
 				LNS = { has_completed_focus = lns_victory_for_the_greater_good }
+				has_idea = gamerule_unifier_idea
+			}
+		}
+
+		bypass = {
+			OR = {
+				LNS = { all_core_land_owned_by_prev_sphere = yes }
+				LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+			}
+		}
+		
+		allow_branch = {
+			OR = {
+				has_global_flag = LNS_beatdown
 				has_idea = gamerule_unifier_idea
 			}
 		}
@@ -797,6 +816,10 @@ focus_tree = {
 
 		available = {
 			NOT = { LNS = { has_government = people } }
+			OR = {
+				UOA = { has_government = ruler }
+				NOT = { country_exists = UOA}
+			}
 		}
 
 		mutually_exclusive = {
@@ -807,6 +830,9 @@ focus_tree = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_to_hell_with_texas entered"
+			}
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
 			}
 			if = {
 				limit = {
@@ -825,6 +851,9 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_to_hell_with_texas exited"
 			}
+		}
+		ai_will_do = {
+			base = 5
 		}
 	}
 
@@ -845,6 +874,13 @@ focus_tree = {
 			focus = tbh_nf_to_hell_with_texas
 		}
 
+		bypass = {
+			OR = {
+				LNS = { all_core_land_owned_by_prev_sphere = yes }
+				LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+			}
+		}
+
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -859,12 +895,15 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] tbh_nf_steady_as_she_goes_texas exited"
 			}
 		}
+		ai_will_do = {
+			base = 45
+		}
 	}
 
 	focus = {
 		id = tbh_nf_our_future
 		icon = GFX_goal_generic_power_armour_t51
-		cost = 30
+		cost = 15
 		x = 0
 		y = 3
 
@@ -873,6 +912,13 @@ focus_tree = {
 		prerequisite = {
 			focus = tbh_nf_to_hell_with_texas
 			focus = tbh_nf_steady_as_she_goes_texas
+		}
+
+		bypass = {
+			OR = {
+				LNS = { all_core_land_owned_by_prev_sphere = yes }
+				LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+			}
 		}
 
 		completion_reward = {
@@ -893,17 +939,21 @@ focus_tree = {
 		icon = GFX_goal_generic_bunkers_focus
 		cost = 30
 		x = 0
-		y = 5
+		y = 1
 
-		relative_position_id = tbh_nf_broken_apart
+		relative_position_id = tbh_nf_our_future
 
 		prerequisite = {
-			focus = tbh_nf_broken_apart
+			focus = tbh_nf_our_future
 		}
 
 		available = {
 			has_completed_focus = tbh_nf_to_hell_with_texas
 			NOT = { LNS = { has_government = people } }
+		}
+
+		allow_branch = {
+			has_completed_focus = tbh_nf_to_hell_with_texas
 		}
 
 		completion_reward = {
@@ -936,6 +986,21 @@ focus_tree = {
 			has_completed_focus = tbh_nf_steady_as_she_goes_texas
 		}
 
+		bypass = {
+			OR = {
+				LNS = { all_core_land_owned_by_prev_sphere = yes }
+				LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+			}
+		}
+		
+		allow_branch = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			OR = {
+				has_global_flag = LNS_beatdown
+				has_idea = gamerule_unifier_idea
+			}
+		}
+
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -964,6 +1029,9 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] tbh_nf_fortress_texas exited"
 			}
 		}
+		ai_will_do = {
+			base = 50
+		}
 	}
 
 	focus = {
@@ -979,9 +1047,12 @@ focus_tree = {
 			focus = tbh_nf_fortress_texas
 		}
 
-		# mutually_exclusive = {
-		# 	focus = tbh_nf_texas_old_world_blues
-		# }
+		bypass = {
+			OR = {
+				LNS = { all_core_land_owned_by_prev_sphere = yes }
+				LNS = { has_completed_focus = lns_victory_of_the_greater_good }
+			}
+		}
 
 		completion_reward = {
 			if = {
@@ -997,6 +1068,9 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
 			}
 		}
+		ai_will_do = {
+			base = 50
+		}
 	}
 
 	focus = {
@@ -1011,14 +1085,6 @@ focus_tree = {
 		prerequisite = {
 			focus = tbh_nf_fortress_brotherhood
 		}
-
-		available = {
-			NOT = { LNS = { has_government = people } }
-		}
-
-		# mutually_exclusive = {
-		# 	focus = tbh_nf_texas_our_dreams_and_hopes
-		# }
 
 		completion_reward = {
 			if = {
@@ -1090,23 +1156,40 @@ focus_tree = {
 		id = tbh_nf_lonestar_reconquest
 		icon = GFX_goal_LNS_rising_star
 		cost = 30
-		x = 0
-		y = 2
+		x = -1
+		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
 
 		prerequisite = {
+			focus = tbh_nf_texas_old_world_blues
 			focus = tbh_nf_texas_our_dreams_and_hopes
 		}
 
 		prerequisite = {
 			focus = tbh_nf_protector_of_texas
 		}
+
+		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+		}
+
 		bypass = {
-			LNS = {
-				all_core_land_owned_by_prev_sphere = yes
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			NOT = { country_exists = LNS }
+			OR = {
+				LNS = { all_core_land_owned_by_prev_sphere = yes }
+				has_idea = gamerule_unifier_idea
 			}
 		}
+
+		allow_branch = {
+			OR = {
+				has_global_flag = LNS_beatdown
+				has_idea = gamerule_unifier_idea
+			}
+		}
+		
 		will_lead_to_war_with = LNS
 		completion_reward = {
 			if = {
@@ -1123,12 +1206,15 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
 			}
 		}
+		ai_will_do = {
+			base = 50
+		}
 	}
 
 	focus = {
 		id = tbh_nf_restore_the_lone_star
 		icon = GFX_goal_LNS_Victory_Lone
-		cost = 30
+		cost = 15
 		x = 0
 		y = 2
 
@@ -1145,6 +1231,8 @@ focus_tree = {
 			}
 			release = LNS
 			hidden_effect = {
+				clr_country_flag = lone_star_lost_civil_war
+				set_country_flag = lone_star_won_civil_war
 				LNS = {
 					leave_current_faction = yes
 					complete_national_focus = lns_victory_of_the_greater_good
@@ -1192,6 +1280,9 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] tbh_nf_restore_the_lone_star exited"
 			}
+		}
+		ai_will_do = {
+			base = 50
 		}
 	}
 
@@ -2057,6 +2148,11 @@ focus_tree = {
 				has_completed_focus = tbh_nf_restore_the_lone_star
 			}
 		}
+
+		allow_branch = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+		}
+
 		completion_reward = {
 			hidden_effect = {
 				set_technology = { tools_tech_level_scientific = 1 }
@@ -2079,7 +2175,7 @@ focus_tree = {
 		id = tbh_nf_broken_apart
 		icon = GFX_goal_TBH_two_coins
 		cost = 30
-		x = 6
+		x = 4
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2231,10 +2327,10 @@ focus_tree = {
 			focus = tbh_nf_broken_apart
 		}
 
-		# mutually_exclusive = {
-		# 	focus = tbh_nf_the_hard_road
-		# 	focus = tbh_nf_the_long_road
-		# }
+		mutually_exclusive = {
+			focus = tbh_nf_the_hard_road
+			focus = tbh_nf_the_long_road
+		}
 
 		available = {
 			has_completed_focus = tbh_nf_we_have_been_betrayed
@@ -2245,6 +2341,10 @@ focus_tree = {
 					LNS = { is_ai = yes }
 				}
 			}
+		}
+
+		allow_branch = {
+			has_completed_focus = tbh_nf_to_hell_with_texas
 		}
 
 		completion_reward = {
@@ -2282,7 +2382,7 @@ focus_tree = {
 		prerequisite = {
 			focus = tbh_nf_the_hard_road
 			focus = tbh_nf_the_long_road
-			# focus = tbh_nf_the_alamo_was_right
+			focus = tbh_nf_the_alamo_was_right
 		}
 
 		available = {
@@ -2379,7 +2479,7 @@ focus_tree = {
 		id = tbh_nf_our_fatman
 		icon = GFX_goal_generic_nuka_break_nuke
 		cost = 30
-		x = -6
+		x = -4
 		y = 1
 
 		relative_position_id = tbh_nf_protector_of_texas
@@ -2422,9 +2522,6 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = tbh_nf_things_that_spit_lead
 			focus = tbh_nf_powered_destruction
-		}
-
-		available = {
 		}
 
 		completion_reward = {
@@ -2470,9 +2567,6 @@ focus_tree = {
 			focus = tbh_nf_powered_destruction
 		}
 
-		available = {
-		}
-
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -2516,7 +2610,8 @@ focus_tree = {
 			focus = tbh_nf_things_that_spit_lead
 		}
 
-		available = {
+		allow_branch = {
+			has_completed_focus = tbh_nf_to_hell_with_texas
 		}
 
 		completion_reward = {
@@ -2676,13 +2771,13 @@ focus_tree = {
 		id = tbh_nf_occupation_theory
 		icon = GFX_goal_generic_pipe_revolver
 		cost = 30
-		x = -2
+		x = -1
 		y = 1
 
-		relative_position_id = tbh_nf_protector_of_texas
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_protector_of_texas
+			focus = tbh_nf_rhombus_legacy
 		}
 
 		completion_reward = {
@@ -2710,13 +2805,16 @@ focus_tree = {
 		id = tbh_nf_occupation_theory_2
 		icon = GFX_goal_revolver
 		cost = 30
-		x = 0
-		y = 2
+		x = 1
+		y = 1
 
-		relative_position_id = tbh_nf_occupation_theory
+		relative_position_id = tbh_nf_rhombus_legacy
 
 		prerequisite = {
-			focus = tbh_nf_occupation_theory
+			focus = tbh_nf_rhombus_legacy
+		}
+		available = {
+			has_completed_focus = tbh_nf_occupation_theory
 		}
 
 		completion_reward = {
@@ -2788,7 +2886,7 @@ focus_tree = {
 		icon = GFX_goal_TBH_conscription_3
 		cost = 30
 		x = 0
-		y = 1
+		y = 2
 
 		relative_position_id = tbh_nf_mobilization
 
@@ -2875,7 +2973,7 @@ focus_tree = {
 		icon = GFX_goal_TBH_conscription_1
 		cost = 30
 		x = 0
-		y = 1
+		y = 2
 
 		relative_position_id = tbh_nf_mobilization_3
 
@@ -3619,26 +3717,42 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
 			custom_trigger_tooltip = {
 				tooltip = complete_when_unity_war
 				always = no
 			}
 		}
+
 		bypass = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
 			OR = {
+				has_country_flag = austin_lost_civil_war
 				AND = {
-					country_exists = UOA
-					NOT = { country_exists = IMO }
-					NOT = { country_exists = SHA }
-					NOT = { country_exists = EDN }
-					NOT = { country_exists = CBN }
-					NOT = { country_exists = LOS }
+					UOA = { all_core_land_owned_by_prev_sphere = yes }
+					IMO = { all_core_land_owned_by_prev_sphere = yes }
+					SHA = { all_core_land_owned_by_prev_sphere = yes }
+					EDN = { all_core_land_owned_by_prev_sphere = yes }
+					CBN = { all_core_land_owned_by_prev_sphere = yes }
+					LOS = { all_core_land_owned_by_prev_sphere = yes }
 				}
+				has_idea = gamerule_unifier_idea
+			}
+		}
+
+		allow_branch = {
+			OR = {
+				has_country_flag = austin_lost_civil_war
+				has_country_flag = austin_at_war_active
+				has_idea = gamerule_unifier_idea
 			}
 		}
 
 		completion_reward = {
 			
+		}
+		ai_will_do = {
+			base = 25
 		}
 	}
 	focus = { #SUPPORT AUSTIN
@@ -3655,6 +3769,7 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
 			country_exists = UOA
 			any_country = {
 				has_war_with = UOA
@@ -3662,19 +3777,29 @@ focus_tree = {
 		}
 
 		bypass = {
-			country_exists = UOA
-			NOT = { country_exists = IMO }
-			NOT = { country_exists = SHA }
-			NOT = { country_exists = EDN }
-			NOT = { country_exists = CBN }
-			NOT = { country_exists = LOS }
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			OR = {
+				has_country_flag = austin_lost_civil_war
+				AND = {
+					UOA = { all_core_land_owned_by_prev_sphere = yes }
+					IMO = { all_core_land_owned_by_prev_sphere = yes }
+					SHA = { all_core_land_owned_by_prev_sphere = yes }
+					EDN = { all_core_land_owned_by_prev_sphere = yes }
+					CBN = { all_core_land_owned_by_prev_sphere = yes }
+					LOS = { all_core_land_owned_by_prev_sphere = yes }
+				}
+				has_idea = gamerule_unifier_idea
+			}
 		}
 
 		completion_reward = {
 			
 		}
+		ai_will_do = {
+			base = 25
+		}
 	}
-	focus = { #AUSTIN IS LOST
+	focus = { #AUSTIN LOST
 		id = tbh_nf_austin_lost
 		icon = GFX_goal_MOJ_technology_raids
 		cost = 15
@@ -3691,6 +3816,7 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
 			915 = {
 				OR = {
 					is_owned_by = SHA
@@ -3711,16 +3837,25 @@ focus_tree = {
 		}
 
 		bypass = {
-			country_exists = UOA
-			NOT = {
-				any_country = {
-					has_war_with = UOA
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			OR = {
+				AND = {
+					UOA = { all_core_land_owned_by_prev_sphere = yes }
+					IMO = { all_core_land_owned_by_prev_sphere = yes }
+					SHA = { all_core_land_owned_by_prev_sphere = yes }
+					EDN = { all_core_land_owned_by_prev_sphere = yes }
+					CBN = { all_core_land_owned_by_prev_sphere = yes }
+					LOS = { all_core_land_owned_by_prev_sphere = yes }
 				}
+				has_idea = gamerule_unifier_idea
 			}
 		}
 
 		completion_reward = {
 			
+		}
+		ai_will_do = {
+			base = 25
 		}
 	}
 	focus = { #AUSTIN WON
@@ -3740,11 +3875,20 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
 			country_exists = UOA
+		}
+
+		bypass = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			has_country_flag = austin_lost_civil_war
 		}
 
 		completion_reward = {
 			
+		}
+		ai_will_do = {
+			base = 25
 		}
 	}
 	focus = { #austin in the union
@@ -3760,10 +3904,155 @@ focus_tree = {
 			focus = tbh_nf_austin_won
 		}
 		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
 			country_exists = UOA
 		}
 		completion_reward = {
-			
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			UOA = {
+				remove_ideas = {
+					texas_changes_uoa_not_full_member_of_teu
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = LNS
+						is_neighbor_of = TBH
+						news_is_texas_tag = yes
+					}
+				}
+				news_event = { id = news_texas.2 hours = 6 random_hours = 3 }
+			}
+		}
+		ai_will_do = {
+			base = 25
+		}
+	}
+	focus = {
+		id = tbh_nf_austin_conquest
+		icon = GFX_goal_uoa_medal
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = tbh_nf_protector_of_texas
+
+		prerequisite = {
+			focus = tbh_nf_protector_of_texas
+		}
+
+		available = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			has_completed_focus = tbh_nf_austin_lost
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+
+		bypass = {
+			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+			NOT = { country_exists = UOA }
+			OR = {
+				UOA = { all_core_land_owned_by_prev_sphere = yes }
+				has_idea = gamerule_unifier_idea
+			}
+		}
+		
+		allow_branch = {
+			OR = {
+				has_country_flag = austin_lost_civil_war
+				has_country_flag = austin_at_war_active
+				has_idea = gamerule_unifier_idea
+			}
+		}
+		
+		if = {
+			limit = { 915 = { is_owned_by = SHA }}
+			will_lead_to_war_with = SHA
+			else_if = {
+				limit = { 915 = { is_owned_by = IMO }}
+				will_lead_to_war_with = IMO
+				else_if = {
+					limit = { 915 = { is_owned_by = EDN }}
+					will_lead_to_war_with = EDN
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes entered"
+			}
+			UOA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] tbh_nf_texas_our_dreams_and_hopes exited"
+			}
+		}
+		ai_will_do = {
+			base = 25
+		}
+	}
+
+	focus = {
+		id = tbh_nf_restore_austin
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 15
+		x = 0
+		y = 2
+
+		relative_position_id = tbh_nf_austin_conquest
+
+		prerequisite = {
+			focus = tbh_nf_austin_conquest
+		}
+
+		completion_reward = {
+			release = UOA
+			hidden_effect = {
+				UOA = {
+					leave_current_faction = yes
+					set_politics = {
+						ruling_party = people
+					}
+					set_popularities = {
+						elites = 5
+						people = 75
+						intellectuals = 15
+						ruler = 5
+					}
+					add_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+			}
+			if = {
+				limit = {
+					texan_economic_union_exists = yes
+					NOT = { TBH = { is_in_faction_with = UOA } }
+					TBH = { is_texan_economic_union_member = yes }
+				}
+				UOA = {
+					join_texan_economic_union = yes
+				}
+			}
+			else_if = {
+				limit = {
+					texan_economic_union_exists = no
+					NOT = { TBH = { is_in_faction_with = UOA } }
+				}
+				create_or_join_texan_economic_union = yes
+				UOA = {
+					join_texan_economic_union = yes
+				}
+			}
+			custom_effect_tooltip = tbh_uoa_restauration
+		}
+		ai_will_do = {
+			base = 25
 		}
 	}
 }

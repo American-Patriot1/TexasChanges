@@ -684,6 +684,7 @@ country_event = { # Split ACH off
 	picture = GFX_event_MOJ_contact_the_west
 	immediate = {
 		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
 			add_ideas = tbh_torn_leadership
 			complete_national_focus = tbh_nf_broken_apart
 			set_popularities = {
@@ -882,6 +883,149 @@ country_event = { # ach Demands Richmond
 
 
 ####### TEXAS CHANGES #######
+country_event = { # lone star lost
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.27" }
+	id = nf_tbh.27
+	title = nf_tbh.27.t
+	desc = nf_tbh.27.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			complete_national_focus = tbh_nf_we_have_been_betrayed
+			clr_country_flag = lone_star_civil_war_active
+			set_country_flag = lone_star_lost_civil_war
+		}
+	}
+	option = {
+		name = nf_tbh.27.a
+		effect_tooltip = {
+			TBH = {
+				complete_national_focus = tbh_nf_we_have_been_betrayed
+			}
+		}
+	}
+}
+country_event = { # lone star won
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.28" }
+	id = nf_tbh.28
+	title = nf_tbh.28.t
+	desc = nf_tbh.28.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = lone_star_civil_war_active
+			set_country_flag = lone_star_won_civil_war
+		}
+	}
+	option = {
+		name = nf_tbh.28.a
+		effect_tooltip = {
+			add_stability = 0.05
+			add_political_power = 25
+		}
+	}
+}
+country_event = { # austin lost
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.29" }
+	id = nf_tbh.29
+	title = nf_tbh.29.t
+	desc = nf_tbh.29.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+			clr_country_flag = austin_civil_war_active
+			set_country_flag = austin_lost_civil_war
+		}
+	}
+	option = {
+		name = nf_tbh.29.a
+		effect_tooltip = {
+			TBH = {
+				# complete_national_focus = tbh_nf_we_have_been_betrayed
+			}
+		}
+	}
+}
+country_event = { # austin won
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.30" }
+	id = nf_tbh.30
+	title = nf_tbh.30.t
+	desc = nf_tbh.30.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = austin_civil_war_active
+			set_country_flag = austin_won_civil_war
+		}
+	}
+	option = {
+		name = nf_tbh.30.a
+		effect_tooltip = {
+			add_stability = 0.05
+			add_political_power = 25
+		}
+	}
+}
+country_event = { # austin civil war
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.31" }
+	id = nf_tbh.31
+	title = nf_tbh.31.t
+	desc = nf_tbh.31.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			set_country_flag = austin_civil_war_active
+		}
+	}
+	option = {
+		name = nf_tbh.31.a
+	}
+}
+country_event = { # austin at war shale
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.32" }
+	id = nf_tbh.32
+	title = nf_tbh.32.t
+	desc = nf_tbh.32.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			set_country_flag = austin_at_war_active
+		}
+	}
+	option = {
+		name = nf_tbh.32.a
+	}
+}
+country_event = { # austin at war eden
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.33" }
+	id = nf_tbh.33
+	title = nf_tbh.33.t
+	desc = nf_tbh.33.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			set_country_flag = austin_at_war_active
+		}
+	}
+	option = {
+		name = nf_tbh.33.a
+	}
+}
 
 
 #houston chain
