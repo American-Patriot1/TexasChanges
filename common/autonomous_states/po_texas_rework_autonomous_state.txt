@@ -1,5 +1,5 @@
 autonomy_state = {
-	id = autonomy_texas_changes_free_state
+	id = autonomy_texas_changes_autonomous_state
 	min_freedom_level = 0.8
 	manpower_influence = 0
 	rule = {
@@ -32,10 +32,10 @@ autonomy_state = {
 		}
 	}
 	allowed_levels_filter = {
-		autonomy_texas_changes_unincorporated_territory
-		autonomy_texas_changes_incorporated_territory
-		autonomy_texas_changes_protected_state
-		autonomy_texas_changes_free_state
+		autonomy_texas_changes_territorial_government
+		autonomy_texas_changes_provisional_state
+		autonomy_texas_changes_state_government
+		autonomy_texas_changes_autonomous_state
 	}
 	can_take_level = {
 	}
