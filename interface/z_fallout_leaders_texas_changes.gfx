@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_portrait_TEX_congress"
+		texturefile = "gfx/leaders/texas_changes/texas_capital.dds"
+	}
+}

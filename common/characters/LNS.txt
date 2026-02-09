@@ -481,11 +481,11 @@ characters = {
 		name = PROV_TEX_SENATE_NAME
 		portraits = {
 			army = {
-				large = GFX_Portrait_TEX_provisional_senate
+				large = GFX_portrait_TEX_congress
 				#small = gfx_sprite_type_name_or_file_path
 			}
 			civilian = {
-				large = GFX_Portrait_TEX_provisional_senate
+				large = GFX_portrait_TEX_congress
 				#small = gfx_sprite_type_name_or_file_path
 			}
 		}

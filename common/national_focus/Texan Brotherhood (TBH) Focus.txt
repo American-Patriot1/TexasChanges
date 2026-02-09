@@ -1785,7 +1785,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_completed_focus = tbh_nf_the_question_of_carthage
 			ai_has_no_other_wars_or_wargoals = yes
 		}
 		bypass = {
